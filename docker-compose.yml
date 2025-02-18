@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   nextjs:
-    container_name: dashboard-monitoring
+    container_name: dashboard-posfin
     build: .
     ports:
       - "3000:3000"
