@@ -1,8 +1,7 @@
-version: '3.8'
 services:
   nextjs:
     container_name: dashboard-posfin
-    build: .
+    image: 117.102.70.147/dashboard-posfin:v1
     ports:
       - "3000:3000"
     environment:
