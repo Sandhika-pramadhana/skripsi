@@ -26,14 +26,14 @@ pipeline {
             }
         }
 
-        // stage('Deploy to Portainer') {
-        //     steps {
-        //         script {
-        //         sh "curl -X POST http://117.102.70.147:9943/api/stacks/webhooks/8fdbcff6-fdfd-4f5e-a847-29aa0d5db2d6"
-        //         echo "Deployed to Portainer"
-        //         }
-        //     }
-        // }
+        stage('Deploy to Portainer') {
+            steps {
+                script {
+                sh "curl -X POST http://117.102.70.147:9943/api/stacks/webhooks/3610fae7-80f8-4338-a18e-bf020dab79b9"
+                echo "Deployed to Portainer"
+                }
+            }
+        }
 
         stage('Logout From docker private registry') {
             steps {
