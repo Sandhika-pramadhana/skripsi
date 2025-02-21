@@ -2,12 +2,14 @@ pipeline {
   agent any
   environment {
     IMAGE_PREFIX = '117.102.70.147'
-	IMAGE_APP_NAME = 'dashboard-posfin'
+	  IMAGE_APP_NAME = 'dashboard-posfin'
     IMAGE_TAG = 'v1'
     PRIVATE_REGISTRY_URL = '117.102.70.147'
     PRIVATE_REGISTRY_USER = 'devofficial'
     PRIVATE_REGISTRY_PASSWORD = 'Thomas110515'
-	SERVER_ADDRESS = '8.215.77.122'
+    DOCKER_NETWORK = 'unigoplatformnet'
+    DOCKER_LOG_PATH = '/home/dashboard-posfin/logs'
+	  SERVER_ADDRESS = '8.215.77.122'
     SERVER_SSH_PORT = '22'
     SERVER_SSH_USER = 'deden'
     SERVER_SSH_PASSWORD = 'd3d3n_p0sf1n2024'
@@ -15,7 +17,7 @@ pipeline {
   stages {
     stage('Build image') {
       steps {
-        sh 'docker build -t $IMAGE_PREFIX/$IMAGE_APP_NAME:$IMAGE_TAG .'
+        sh 'docker build -f Dockerfile.prod -t $IMAGE_PREFIX/$IMAGE_APP_NAME:$IMAGE_TAG .'
       }
     }
     stage('Push to docker private registry') {
@@ -42,7 +44,9 @@ pipeline {
 
           sh "sshpass -p $SERVER_SSH_PASSWORD ssh -o StrictHostKeyChecking=no -p $SERVER_SSH_PORT $SERVER_SSH_USER@$SERVER_ADDRESS 'echo $SERVER_SSH_PASSWORD | sudo -S docker login --username=$PRIVATE_REGISTRY_USER --password=$PRIVATE_REGISTRY_PASSWORD  $PRIVATE_REGISTRY_URL'"
 
-          sh "sshpass -p $SERVER_SSH_PASSWORD ssh -o StrictHostKeyChecking=no -p $SERVER_SSH_PORT $SERVER_SSH_USER@$SERVER_ADDRESS 'echo $SERVER_SSH_PASSWORD | sudo -S docker compose up -d'"
+          sh "sshpass -p $SERVER_SSH_PASSWORD ssh -o StrictHostKeyChecking=no -p $SERVER_SSH_PORT $SERVER_SSH_USER@$SERVER_ADDRESS 'echo $SERVER_SSH_PASSWORD | sudo -S docker pull $IMAGE_PREFIX/$IMAGE_APP_NAME:$IMAGE_TAG'"
+
+          sh "sshpass -p $SERVER_SSH_PASSWORD ssh -o StrictHostKeyChecking=no -p $SERVER_SSH_PORT $SERVER_SSH_USER@$SERVER_ADDRESS 'echo $SERVER_SSH_PASSWORD | sudo -S docker run -p 8443:80 -d --rm  -v $DOCKER_LOG_PATH:/var/www/storage/logs --name $IMAGE_APP_NAME --network $DOCKER_NETWORK $IMAGE_PREFIX/$IMAGE_APP_NAME:$IMAGE_TAG'"
 
           sh "sshpass -p $SERVER_SSH_PASSWORD ssh -o StrictHostKeyChecking=no -p $SERVER_SSH_PORT $SERVER_SSH_USER@$SERVER_ADDRESS 'echo $SERVER_SSH_PASSWORD | sudo -S docker logout $PRIVATE_REGISTRY_URL'"
 
