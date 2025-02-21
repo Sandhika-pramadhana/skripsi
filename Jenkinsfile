@@ -40,7 +40,7 @@ pipeline {
               sh "sshpass -p $SERVER_SSH_PASSWORD ssh -o StrictHostKeyChecking=no -p $SERVER_SSH_PORT $SERVER_SSH_USER@$SERVER_ADDRESS 'echo $SERVER_SSH_PASSWORD | sudo -S docker stop $IMAGE_APP_NAME && sudo -S docker rm $IMAGE_APP_NAME'"
           }
 
-          sh "sshpass -p $SERVER_SSH_PASSWORD ssh -o StrictHostKeyChecking=no -p $SERVER_SSH_PORT $SERVER_SSH_USER@$SERVER_ADDRESS 'echo $PRIVATE_REGISTRY_PASSWORD | docker login --username=$PRIVATE_REGISTRY_USER --password-stdin $PRIVATE_REGISTRY_URL'"
+          sh "sshpass -p $SERVER_SSH_PASSWORD ssh -o StrictHostKeyChecking=no -p $SERVER_SSH_PORT $SERVER_SSH_USER@$SERVER_ADDRESS 'echo $PRIVATE_REGISTRY_PASSWORD | sudo -S docker login --username=$PRIVATE_REGISTRY_USER --password=$PRIVATE_REGISTRY_PASSWORD  $PRIVATE_REGISTRY_URL'"
 
           sh "sshpass -p $SERVER_SSH_PASSWORD ssh -o StrictHostKeyChecking=no -p $SERVER_SSH_PORT $SERVER_SSH_USER@$SERVER_ADDRESS 'echo $SERVER_SSH_PASSWORD | sudo -S docker compose pull && docker compose up -d'"
 
