@@ -81,7 +81,7 @@ const FormRole: React.FC<FormRoleProps> = ({
           });
         }
         setIsSubmitting(false);
-      }, [isEdit, data, mutate, onCloseForm]);
+      }, [isEdit, data?.id, toast, mutate, onCloseForm]);
 
       useEffect(() => {
         if (isEdit && open) {

@@ -103,14 +103,14 @@ export function ListTransaction({ startDate, endDate } : TanggalType) {
     if (preference.columnVisibility) {
       setColumnVisibility(preference.columnVisibility);
     }
-  }, []);
+  }, [preference.columnVisibility]);
 
   useEffect(() => {
     savePreference((prev) => ({
       ...prev,
       columnVisibility,
     }));
-  }, [columnVisibility]);
+  }, [columnVisibility, savePreference]);
 
   useEffect(() => {
     table.setPagination((prev) => ({

@@ -84,7 +84,7 @@ const FormTraffic: React.FC<FormTrafficProps> = ({
             });
         }
         setIsSubmitting(false);
-    }, [data, mutate, onCloseForm]);
+    }, [toast, mutate, onCloseForm]);
 
     return (
         <Dialog open={open} onOpenChange={onOpenModal}>
