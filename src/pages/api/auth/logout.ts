@@ -1,3 +1,5 @@
+"use server";
+
 import { destroyCookie } from 'nookies';
 import { NextApiRequest, NextApiResponse } from "next";
 

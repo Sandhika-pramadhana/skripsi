@@ -1,3 +1,5 @@
+"use server";
+
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { APIResponse, Credentials, LoginResponse, LogoutResponse, User } from '@/types/def';
 import userItems from "@/data/user.json";
@@ -16,7 +18,7 @@ export async function verifyUser(username: string, password: string): Promise<bo
 
 export const LoginUser = serverAction(
     async (credentials: Credentials) => {
-      const res = await axios.post<APIResponse<LoginResponse>>("/api/auth/login", credentials, {
+      const res = await axios.post<APIResponse<LoginResponse>>(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/auth/login`, credentials, {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
@@ -36,7 +38,7 @@ export const LoginUser = serverAction(
 
 export const LogoutUser = serverAction(
   async () => {
-    const res = await axios.post<LogoutResponse>("/api/auth/logout", {
+    const res = await axios.post<LogoutResponse>(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/auth/logout`, {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
@@ -49,7 +51,7 @@ export const LogoutUser = serverAction(
       throw new ServerActionError(message, code);
     }
 
-    return res;
+    return { status, message, code };;
   },
   "LOGOUT_USER"
 );
