@@ -1,3 +1,5 @@
+"use server";
+
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -16,7 +18,7 @@ export const getListRole = serverAction(
     size?: number;
   }): Promise<PaginatedAPIResponse<Role>> => {
     const res = await axios.post<PaginatedAPIResponse<Role>>(
-      "/api/role/get",
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/role/get`,
       { 
         page,
         size,
@@ -42,7 +44,7 @@ export const getListRole = serverAction(
 export const getRoles = serverAction(async () => {
 
   const res = await axios.post<PaginatedAPIResponse<Role>>(
-    "/api/role/get",
+    `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/role/get`,
     { paging: 0 },
     {
       headers: {
@@ -63,7 +65,7 @@ export const getRoles = serverAction(async () => {
 // Untuk Create User
 export const createRole = serverAction(
   async (data: Role) => {
-    const res = await axios.post<APIResponse<Role>>("/api/role/create", data, {
+    const res = await axios.post<APIResponse<Role>>(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/role/create`, data, {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
@@ -84,7 +86,7 @@ export const createRole = serverAction(
 // Untuk Update Role
 export const updateRole = serverAction(
   async (data : Role) => {
-    const res = await axios.post("/api/role/update", data, {
+    const res = await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/role/update`, data, {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -104,7 +106,7 @@ export const updateRole = serverAction(
 // Untuk Hapus Role
 export const deleteRole = serverAction(
   async (id: number) => {
-    const res = await axios.post(`/api/role/delete/${id}`, {}, {
+    const res = await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/role/delete/${id}`, {}, {
       headers: {
         'Content-Type': 'application/json',
       },

@@ -1,3 +1,5 @@
+"use server";
+
 import { serverAction, ServerActionError } from "@/actions/action";
 import { getApiToken } from "@/actions/auth/getToken";
 import { APIResponse, PaginatedAPIResponse, PaginationParams, TrafficReportMyTsel } from "@/types/def";

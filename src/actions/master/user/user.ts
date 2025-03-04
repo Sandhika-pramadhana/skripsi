@@ -16,7 +16,7 @@ export const getAllUser = serverAction(
     size?: number;
   }): Promise<PaginatedAPIResponse<User>> => {
     const res = await axios.post<PaginatedAPIResponse<User>>(
-      "/api/user/get",
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/user/get`,
       { 
         page,
         size,
@@ -42,7 +42,7 @@ export const getAllUser = serverAction(
 // Untuk Create User
 export const createUser = serverAction(
   async (data: User) => {
-    const res = await axios.post<APIResponse<User>>("/api/user/create", data, {
+    const res = await axios.post<APIResponse<User>>(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/user/create`, data, {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -62,7 +62,7 @@ export const createUser = serverAction(
 export const updateUser = serverAction(
   async (data: User) => {
 
-    const res = await axios.post("/api/user/update", data, {
+    const res = await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/user/update`, data, {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -83,7 +83,7 @@ export const updateUser = serverAction(
 // Untuk Hapus User
 export const deleteUser = serverAction(
   async (id: number) => {
-    const res = await axios.post(`/api/user/delete/${id}`, {}, {
+    const res = await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/user/delete/${id}`, {}, {
       headers: {
         'Content-Type': 'application/json',
       },

@@ -1,3 +1,5 @@
+"use server";
+
 import axios from "axios";
 import { APIResponse, GlobalData } from "@/types/def";
 import { serverAction, ServerActionError } from "../action";

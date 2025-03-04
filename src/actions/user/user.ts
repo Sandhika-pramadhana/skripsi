@@ -1,3 +1,5 @@
+"use server";
+
 import axios from "axios";
 import { APIResponse, PaginatedAPIResponse, UserGraphResponse } from "@/types/def";
 import { serverAction, ServerActionError } from "../action";

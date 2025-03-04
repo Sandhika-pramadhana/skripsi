@@ -1,3 +1,5 @@
+"use server";
+
 import { ListTransactionData, PaginatedAPIResponse, GlobalData, APIResponse, BookingData, TransactionData } from "@/types/def";
 import { getApiToken } from "../auth/getToken";
 import axios from "axios";
