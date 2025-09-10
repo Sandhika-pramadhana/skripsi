@@ -1,57 +1,93 @@
 "use server";
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { APIResponse, Credentials, LoginResponse, LogoutResponse, User } from '@/types/def';
-import userItems from "@/data/user.json";
-import axios from 'axios';
-import { serverAction, ServerActionError } from '../action';
-
-// Function untuk login
-export async function verifyUser(username: string, password: string): Promise<boolean> {
-    try {
-        const users: User[] = userItems;
-        return users.some(user => user.username === username && user.password === password);
-    } catch (error) {
-        return false;
-    }
-}
+import { APIResponse, Credentials, LoginResponse, LogoutResponse} from "@/types/def";
+import { serverAction, ServerActionError } from "../action";
+import axios from "axios";
+import Cookies from "js-cookie";
+import { EndpointLogin } from "@/types/api";
 
 export const LoginUser = serverAction(
-    async (credentials: Credentials) => {
-      const res = await axios.post<APIResponse<LoginResponse>>(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/auth/login`, credentials, {
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-        },
-      });
-  
+  async (credentials: Credentials) => {
+    try {
+      const res = await axios.post<APIResponse<LoginResponse>>(
+        `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointLogin}`,
+        credentials,
+        {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
       const { status, message, code, data } = res.data;
-  
       if (!status) {
         throw new ServerActionError(message, code);
       }
-  
-      return data;
-    },
-    "LOGIN_USER"
+
+      const token = data?.items?.token;
+      const user = data?.items?.user;
+
+      if (!token || !user) {
+        throw new ServerActionError("Invalid response structure", "500");
+      }
+
+      Cookies.set("token-auth", token, { expires: 1 });
+      Cookies.set("user_id", user.id.toString(), { expires: 1 });
+      Cookies.set("name", user.name, { expires: 1 });
+      Cookies.set("username", user.username, { expires: 1 });
+      Cookies.set("role_id", user.role_id.toString(), { expires: 1 });
+      Cookies.set("roleName", user.roleName, { expires: 1 });
+
+      return { success: true, message: "Login berhasil" };
+    } catch (error) {
+      throw new ServerActionError("Terjadi kesalahan", "500");
+    }
+  },
+  "LOGIN_USER"
 );
 
 export const LogoutUser = serverAction(
   async () => {
-    const res = await axios.post<LogoutResponse>(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/auth/logout`, {
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
-    });
+    try {
+      const token = Cookies.get("token-auth");
+      
+      const res = await axios.post<LogoutResponse>(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/auth/logout`,
+        {},
+        {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      
+      const { status, message, code } = res.data;
+      if (!status) {
+        throw new ServerActionError(message, code);
+      }
 
-    const { status, message, code } = res.data;
+      // Clear all authentication cookies
+      Cookies.remove("token-auth");
+      Cookies.remove("user_id");
+      Cookies.remove("name");
+      Cookies.remove("username");
+      Cookies.remove("roleId");
 
-    if (!status) {
-      throw new ServerActionError(message, code);
+      return { status, message, code };
+    } catch (error) {
+      // Clear cookies even if API call fails
+      Cookies.remove("token-auth");
+      Cookies.remove("user_id");
+      Cookies.remove("name");
+      Cookies.remove("username");
+      Cookies.remove("roleId");
+      
+      throw new ServerActionError("Terjadi kesalahan saat logout", "500");
     }
-
-    return { status, message, code };;
   },
   "LOGOUT_USER"
 );

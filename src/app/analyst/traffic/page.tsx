@@ -1,3 +1,4 @@
+'use client'
 import dynamic from "next/dynamic";
 
 // Dynamically import the OfficeList component with no server-side rendering

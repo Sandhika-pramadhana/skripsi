@@ -8,8 +8,10 @@ export interface Credentials {
 }
 
 export interface LoginResponse {
-    accessToken: string;
-    items: User[];
+    items: {
+        token: string;
+        user: User;
+    }
 }
 
 export interface LogoutResponse {
@@ -35,31 +37,24 @@ export interface AlertSessionMethods {
 export interface PaginatedAPIData<T = unknown> {
     items: T[];
     pagination: Partial<{
-      total: number;
-      count: number;
-      per_page: number;
-      current_page: number;
+      page: number;
+      page_size: number;
+      total_data: number;
       total_page: number;
-      total_pages?: number;
-      links: {
-        previous?: string;
-        next?: string;
-      };
+      current_page: number;
+      current_data: number;
     }>;
 }
-  
+
 export interface APIData<T = unknown> {
     items: T;
     pagination: Partial<{
-      total: number;
-      count: number;
-      per_page: number;
-      current_page: number;
+      page: number;
+      page_size: number;
+      total_data: number;
       total_page: number;
-      links: {
-        previous?: string;
-        next?: string;
-      };
+      current_page: number;
+      current_data: number;
     }>;
 }
   
@@ -67,7 +62,7 @@ export interface APIResponse<T = unknown> {
     status: boolean;
     message: string;
     code: string;
-    data: T;
+    data: T | null;
 }
   
 export interface PaginatedAPIResponse<T = unknown>
@@ -75,13 +70,15 @@ export interface PaginatedAPIResponse<T = unknown>
     // eslint-disable-next-line @typescript-eslint/no-explicit-any, no-unused-vars
     map(arg0: (r: any) => { label: any; value: any }): any;
 }
-  
+
+export interface PaginatedAPIResponseBackend<T = unknown>
+    extends APIResponse<PaginatedAPIData<T>> {}
+
 export interface DataAPIResponse<T = unknown> extends APIResponse<APIData<T>> {}
 
 export type PaginationParams = Partial<{
-    paging: 1 | 0;
-    page: number;
-    size: number;
+    page?: number;
+    page_size?: number;
   }>;
 //#endregion
 
@@ -135,17 +132,26 @@ export interface UserGraphResponse {
 
 export interface User {
     id: number;
-    username: string;
-    password: string;
     name: string;
+    username: string;
+    password: string; 
     roleName: string;
-    roleId: string;
+    role_id: number;   
+    created_at?: string;
+    updated_at?: string;
 }
 
 export interface Role {
     id: number;
-    roleId: string;
     roleName: string;
+    created_at?: string;
+    updated_at?: string;
+  }
+  
+
+export interface UserGraphResponse {
+    date: string;
+    count: number;
 }
 //#endregion
 
@@ -210,4 +216,46 @@ export interface TrafficTotalData {
     SUM_JML_ActiveUser: number;
     SUM_JML_ViewCount: number;
   }
+
+  export interface LogApis {
+    id: string;
+    process_name: string;
+    third_party_name: string;
+    request_date: string;   
+    request_url: string;
+    request_header: string; 
+    request_payload: string; 
+    response_payload: string; 
+    response_date: string;   
+    description: string;
+  }
+
+  export interface callbacks {
+    id: number;
+    order_id: string;
+    user_id: number;
+    order_date: string; 
+    type_id: number;
+    type_name: string;
+    paid_amount: number;
+    va_number?: string | null;
+    paid_date?: string | null;
+    payload?: Record<string, any> | null; 
+    status_id?: number | null;
+    status_name?: string | null;
+    status_message?: string | null;
+  }
+
+  export interface callback_registrations {
+    id: number;
+    uniq_id: number;
+    location_id?: number;      
+    nopend?: string;           
+    api_key?: string | null;   
+    username: string;
+    status_id: string;
+    status_message: string;
+    payload?: Record<string, any> | null;         
+  }
+
 //#endregion

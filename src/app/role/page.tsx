@@ -1,7 +1,8 @@
+'use client'
 import dynamic from "next/dynamic";
 
 // Dynamically import the OfficeList component with no server-side rendering
-const RolesNoSSR = dynamic(() => import("@/features/role"), {
+const RolesNoSSR = dynamic(() => import("@/features/page/role"), {
   ssr: false,
 });
 

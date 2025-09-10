@@ -5,30 +5,25 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { serverAction, ServerActionError } from "@/actions/action";
-import { APIResponse, PaginatedAPIResponse, PaginationParams, Role } from "@/types/def";
+import { getToken } from "@/actions/auth/getToken";
+import { APIResponse, PaginatedAPIResponse } from "@/types/def";
 import axios from "axios";
+import { EndpointRole } from "@/types/api";
 
-// Untuk View Role
-export const getListRole = serverAction(
-  async ({ 
-    page = 1, 
-    size = 10 
-  }: PaginationParams & {
-    page?: number;
-    size?: number;
-  }): Promise<PaginatedAPIResponse<Role>> => {
-    const res = await axios.post<PaginatedAPIResponse<Role>>(
-      `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/role/get`,
-      { 
-        page,
-        size,
+
+// 🔹 Get Roles
+export const getRoles = serverAction(
+  async (params?: { page?: number; page_size?: number }) => {
+    const token = await getToken();
+    const url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointRole}`;
+    const config = {
+      params,
+      headers: {
+        Authorization: `Bearer ${token}`,
       },
-      {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      }
-    );
+    };
+
+    const res = await axios.get<PaginatedAPIResponse<{ roleName: string }>>( url,config);
 
     const { status, message, data, code } = res.data;
 
@@ -36,39 +31,23 @@ export const getListRole = serverAction(
       throw new ServerActionError(message, code);
     }
 
-    return res.data;
+    return data;
   },
-  "GET_LIST_ROLE"
+  "GET_ROLES"
 );
 
-export const getRoles = serverAction(async () => {
-
-  const res = await axios.post<PaginatedAPIResponse<Role>>(
-    `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/role/get`,
-    { paging: 0 },
-    {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    }
-  );
-
-  const { status, message, data, code } = res.data;
-
-  if (!status) {
-    throw new ServerActionError(message, code);
-  }
-
-  return data.items;
-}, "GET_ROLES");
-
-// Untuk Create User
+// 🔹 Create Role
 export const createRole = serverAction(
-  async (data: Role) => {
-    const res = await axios.post<APIResponse<Role>>(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/role/create`, data, {
+  async (roleName: string) => {
+    const token = await getToken();
+    const url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointRole}`;
+
+    const requestData = { roleName };
+
+    const res = await axios.post<APIResponse<any>>(url, requestData, {
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
       },
     });
 
@@ -83,12 +62,18 @@ export const createRole = serverAction(
   "CREATE_ROLE"
 );
 
-// Untuk Update Role
+// 🔹 Update Role
 export const updateRole = serverAction(
-  async (data : Role) => {
-    const res = await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/role/update`, data, {
+  async (id: number, roleName: string) => {
+    const token = await getToken();
+    const url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointRole}?id=${id}`;
+
+    const requestData = { roleName };
+
+    const res = await axios.put<APIResponse<any>>(url, requestData, {
       headers: {
-        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
       },
     });
 
@@ -103,12 +88,16 @@ export const updateRole = serverAction(
   "UPDATE_ROLE"
 );
 
-// Untuk Hapus Role
+// 🔹 Delete Role
 export const deleteRole = serverAction(
   async (id: number) => {
-    const res = await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/role/delete/${id}`, {}, {
+    const token = await getToken();
+    const url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointRole}?id=${id}`;
+
+    const res = await axios.delete<APIResponse<any>>(url, {
       headers: {
-        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
       },
     });
 
