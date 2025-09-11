@@ -9,7 +9,7 @@ import { CircleAlert } from "lucide-react";
 import { useState } from "react";
 import FormDetailCallback from "./form-detail";
 
-
+// Component untuk tombol detail per-row
 const ActionComponent: React.FC<{ row: { original: callbacks } }> = ({ row }) => {
   const [openDetail, setOpenDetail] = useState<boolean>(false);
 

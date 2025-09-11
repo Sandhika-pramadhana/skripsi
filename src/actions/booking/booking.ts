@@ -4,7 +4,7 @@ import axios from "axios";
 import { APIResponse, GlobalData } from "@/types/def";
 import { serverAction, ServerActionError } from "../action";
 
-const API_KEY = process.env.NEXT_PUBLIC_X_API_TOKEN ?? ""; 
+const API_KEY = process.env.NEXT_PUBLIC_X_API_TOKEN ?? ""; // ✅ konsisten
 
 // Untuk Get Data Rekap Booking
 export const getGraphBooking = serverAction(
