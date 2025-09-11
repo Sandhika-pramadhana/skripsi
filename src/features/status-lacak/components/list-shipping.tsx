@@ -131,7 +131,17 @@ export function ListTransaction() {
       columnVisibility,
     },
     manualPagination: true,
-  }), [currentPageData, totalItems, pagination, columnVisibility]);
+  }), [
+    currentPageData,
+    totalItems,
+    pagination,
+    columnVisibility,
+    columns,
+    getCoreRowModel,
+    setColumnVisibility,
+    setPagination
+  ]);
+  
 
   const table = useReactTable(tableConfig);
 
@@ -156,12 +166,14 @@ export function ListTransaction() {
       }, 100);
       return () => clearTimeout(timeoutId);
     }
-  }, [columnVisibility, isPreferenceInitialized]);
+  }, [columnVisibility, isPreferenceInitialized, savePreference]);
+
 
   // reset ke halaman pertama tiap filter berubah
   useEffect(() => {
     setPagination((prev) => ({ ...prev, pageIndex: 0 }));
-  }, [termDebounced, status, startDate, endDate]);
+  }, [termDebounced, status, startDate, endDate, setPagination]);
+
 
   // pagination numbers
   const currentPage = pagination.pageIndex + 1;

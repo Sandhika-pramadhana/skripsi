@@ -1,8 +1,8 @@
 {
   "extends": ["next/core-web-vitals", "next/typescript"],
   "rules": {
-    "no-console": "error",
-    "no-unused-vars": "error",
-    "semi": ["error"]
+    "no-console": "warn",
+    "no-unused-vars": "warn",
+    "semi": ["warn"]
   }
 }

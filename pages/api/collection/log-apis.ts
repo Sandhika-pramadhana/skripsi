@@ -8,7 +8,7 @@ export default async function handler(
   res: NextApiResponse<PaginatedAPIResponseBackend<LogApis> | APIResponse<LogApis>>
 ) {
   authenticateToken(req as AuthenticatedRequest, res, async () => {
-    let db: any = null;
+    let db: { query: Function; end: Function } | null = null;
 
     try {
       if (req.method !== 'GET') {
@@ -60,19 +60,23 @@ export default async function handler(
       const validatedPageSize = Math.min(Math.max(parseInt(page_size as string, 10) || 25, 1), 100);
       const offset = (validatedPage - 1) * validatedPageSize;
 
-      let searchConditions: string[] = [];
-      let searchParams: any[] = [];
+      const searchConditions: string[] = [];
+      const searchParams: any[] = [];
 
       if (term && typeof term === 'string' && term.trim()) {
         searchParams.push(`%${term.trim()}%`, `%${term.trim()}%`, `%${term.trim()}%`);
-        searchConditions.push('(process_name ILIKE $' + (searchParams.length - 2) + 
-                              ' OR third_party_name ILIKE $' + (searchParams.length - 1) + 
-                              ' OR description ILIKE $' + searchParams.length + ')');
+        searchConditions.push(
+          '(process_name ILIKE $' + (searchParams.length - 2) + 
+          ' OR third_party_name ILIKE $' + (searchParams.length - 1) + 
+          ' OR description ILIKE $' + searchParams.length + ')'
+        );
       }
 
       if (startDate && endDate) {
         searchParams.push(startDate, endDate);
-        searchConditions.push(`DATE(request_date) BETWEEN $${searchParams.length - 1} AND $${searchParams.length}`);
+        searchConditions.push(
+          `DATE(request_date) BETWEEN $${searchParams.length - 1} AND $${searchParams.length}`
+        );
       }
 
       const whereClause = searchConditions.length > 0 ? 'WHERE ' + searchConditions.join(' AND ') : '';
@@ -83,7 +87,7 @@ export default async function handler(
       const total_data = parseInt(countResult.rows[0].total_data, 10) || 0;
 
       // paginated data
-      searchParams.push(validatedPageSize, offset); // last two params
+      searchParams.push(validatedPageSize, offset);
       const dataQuery = `SELECT * FROM log_apis ${whereClause} ORDER BY request_date ASC LIMIT $${searchParams.length-1} OFFSET $${searchParams.length}`;
       const dataResult = await db.query(dataQuery, searchParams);
       const rows: LogApis[] = dataResult.rows;
@@ -107,7 +111,7 @@ export default async function handler(
         },
       });
 
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('Error in Log APIs handler:', error);
       return res.status(500).json({
         status: false,

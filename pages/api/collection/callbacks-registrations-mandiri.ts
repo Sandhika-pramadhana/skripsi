@@ -10,7 +10,7 @@ export default async function handler(
   >
 ) {
   authenticateToken(req as AuthenticatedRequest, res, async () => {
-    let db: any = null;
+    let db: { query: Function; end: Function } | null = null; 
 
     try {
       if (req.method !== 'GET') {
@@ -62,24 +62,30 @@ export default async function handler(
       const validatedPageSize = Math.min(Math.max(parseInt(page_size as string, 10) || 25, 1), 100);
       const offset = (validatedPage - 1) * validatedPageSize;
 
-      let searchConditions: string[] = [];
-      let searchParams: any[] = [];
+      const searchConditions: string[] = [];
+      const searchParams: any[] = [];
 
       if (term && typeof term === 'string' && term.trim()) {
         searchParams.push(`%${term.trim()}%`, `%${term.trim()}%`);
-        searchConditions.push('(username ILIKE $' + (searchParams.length - 1) + ' OR status_message ILIKE $' + searchParams.length + ')');
+        searchConditions.push(
+          '(username ILIKE $' + (searchParams.length - 1) + 
+          ' OR status_message ILIKE $' + searchParams.length + ')'
+        );
       }
 
       if (startDate && endDate) {
         searchParams.push(startDate, endDate);
-        searchConditions.push(`DATE(created_at) BETWEEN $${searchParams.length - 1} AND $${searchParams.length}`);
+        searchConditions.push(
+          `DATE(created_at) BETWEEN $${searchParams.length - 1} AND $${searchParams.length}`
+        );
       }
 
       const whereClause = searchConditions.length > 0 ? 'WHERE ' + searchConditions.join(' AND ') : '';
 
       // Handle limit parameter for client-side pagination
-      let dataQuery: string;
-      let limitClause = '';
+      let dataQuery: string; // tetap let karena nilainya ditentukan di if/else
+      let limitClause = '';  // sama, nilainya bisa berubah
+
       if (limit && typeof limit === 'string' && parseInt(limit, 10) > 0) {
         const limitValue = parseInt(limit, 10);
         limitClause = `LIMIT ${limitValue}`;
@@ -91,7 +97,10 @@ export default async function handler(
 
       // Total count query
       const countQuery = `SELECT COUNT(*) AS total_data FROM callback_registrations ${whereClause}`;
-      const countResult = await db.query(countQuery, searchParams.slice(0, searchParams.length - (limit ? 0 : 2)));
+      const countResult = await db.query(
+        countQuery, 
+        searchParams.slice(0, searchParams.length - (limit ? 0 : 2))
+      );
       const total_data = parseInt(countResult.rows[0].total_data, 10) || 0;
 
       // Execute data query
@@ -116,7 +125,7 @@ export default async function handler(
           },
         },
       });
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('Error in callback Registrations handler:', error);
       return res.status(500).json({
         status: false,

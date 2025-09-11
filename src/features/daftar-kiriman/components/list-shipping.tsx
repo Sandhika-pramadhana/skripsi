@@ -119,7 +119,12 @@ export function ListTransaction({ startDate, endDate }: TanggalType) {
     totalItems,
     pagination,
     columnVisibility,
+    columns,
+    getCoreRowModel,
+    setColumnVisibility,
+    setPagination
   ]);
+  
 
   const table = useReactTable(tableConfig);
 
@@ -143,12 +148,13 @@ export function ListTransaction({ startDate, endDate }: TanggalType) {
       }, 100);
       return () => clearTimeout(timeoutId);
     }
-  }, [columnVisibility, isPreferenceInitialized]);
+  }, [columnVisibility, isPreferenceInitialized, savePreference]);
 
   // Reset pagination when filters change
   useEffect(() => {
     setPagination((prev) => ({ ...prev, pageIndex: 0 }));
-  }, [termDebounced, startDate, endDate]);
+  }, [termDebounced, startDate, endDate, setPagination]);
+
 
   // ---------- Numbered pagination ----------
   const pages = useMemo<(number | string)[]>(() => {
