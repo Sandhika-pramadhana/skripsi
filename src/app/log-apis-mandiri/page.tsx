@@ -1,4 +1,4 @@
-'use client';
+'use client'
 import dynamic from "next/dynamic";
 
 // Dynamically import the LogApisMandiri component with no server-side rendering

@@ -1,14 +1,16 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { connectDB2 } from '@/features/core/lib/db'; 
-import { PaginatedAPIResponseBackend, APIResponse, callbacks } from '@/types/def';
+import { PaginatedAPIResponseBackend, APIResponse } from '@/types/def';
 import { authenticateToken, AuthenticatedRequest } from '../middleware/auth';
+import { callbacks} from '@/types/def'
+
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<PaginatedAPIResponseBackend<callbacks> | APIResponse<callbacks>>
 ) {
   authenticateToken(req as AuthenticatedRequest, res, async () => {
-    let db: { query: Function; end: Function } | null = null;
+    let db: any = null;
 
     try {
       if (req.method !== 'GET') {
@@ -23,7 +25,7 @@ export default async function handler(
       db = await connectDB2();
       const { id, term, startDate, endDate, page, page_size, limit } = req.query;
 
-      // ✅ GET by ID
+      // Get id
       if (id) {
         const searchId = typeof id === 'string' ? id.trim() : String(id);
         if (!searchId) {
@@ -55,49 +57,48 @@ export default async function handler(
         });
       }
 
-      // ✅ GET list with pagination & search
+      //GET list pagination & search
       const validatedPage = Math.max(parseInt(page as string, 10) || 1, 1);
       const validatedPageSize = Math.min(Math.max(parseInt(page_size as string, 10) || 25, 1), 100);
       const offset = (validatedPage - 1) * validatedPageSize;
 
-      const searchConditions: string[] = [];
-      const searchParams: any[] = [];
+      let searchConditions: string[] = [];
+      let searchParams: any[] = [];
 
       if (term && typeof term === 'string' && term.trim()) {
         searchParams.push(`%${term.trim()}%`, `%${term.trim()}%`, `%${term.trim()}%`);
-        searchConditions.push(
-          `(order_id ILIKE $${searchParams.length - 2} 
-          OR type_name ILIKE $${searchParams.length - 1} 
-          OR status_name ILIKE $${searchParams.length})`
-        );
+        searchConditions.push('(order_id ILIKE $' + (searchParams.length - 2) + 
+                              ' OR type_name ILIKE $' + (searchParams.length - 1) + 
+                              ' OR status_name ILIKE $' + searchParams.length + ')');
       }
 
       if (startDate && endDate) {
         searchParams.push(startDate, endDate);
-        searchConditions.push(
-          `DATE(order_date) BETWEEN $${searchParams.length - 1} AND $${searchParams.length}`
-        );
+        searchConditions.push(`DATE(order_date) BETWEEN $${searchParams.length - 1} AND $${searchParams.length}`);
       }
 
       const whereClause = searchConditions.length > 0 ? 'WHERE ' + searchConditions.join(' AND ') : '';
 
+      // Handle limit parameter for client-side pagination
       let dataQuery: string;
+      let limitClause = '';
+      
       if (limit && typeof limit === 'string' && parseInt(limit, 10) > 0) {
         const limitValue = parseInt(limit, 10);
-        dataQuery = `SELECT * FROM callbacks ${whereClause} ORDER BY order_date DESC LIMIT ${limitValue}`;
+        limitClause = `LIMIT ${limitValue}`;
+        dataQuery = `SELECT * FROM callbacks ${whereClause} ORDER BY order_date DESC ${limitClause}`;
       } else {
         searchParams.push(validatedPageSize, offset);
-        dataQuery = `SELECT * FROM callbacks ${whereClause} ORDER BY order_date DESC LIMIT $${searchParams.length - 1} OFFSET $${searchParams.length}`;
+        dataQuery = `SELECT * FROM callbacks ${whereClause} ORDER BY order_date DESC LIMIT $${searchParams.length-1} OFFSET $${searchParams.length}`;
       }
 
+      // Total count query
       const countQuery = `SELECT COUNT(*) AS total_data FROM callbacks ${whereClause}`;
-      const countResult = await db.query(
-        countQuery,
-        searchParams.slice(0, searchParams.length - (limit ? 0 : 2))
-      );
+      const countResult = await db.query(countQuery, searchParams.slice(0, searchParams.length - (limit ? 0 : 2)));
       const total_data = parseInt(countResult.rows[0].total_data, 10) || 0;
 
-      const dataParams = limit ? searchParams : searchParams;
+      // Execute data query
+      const dataParams = limit ? searchParams.slice(0, searchParams.length) : searchParams;
       const dataResult = await db.query(dataQuery, dataParams);
       const rows: callbacks[] = dataResult.rows;
 
@@ -120,7 +121,7 @@ export default async function handler(
         },
       });
 
-    } catch (error: unknown) {
+    } catch (error: any) {
       console.error('Error in callbacks handler:', error);
       return res.status(500).json({
         status: false,

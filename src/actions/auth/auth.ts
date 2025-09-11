@@ -1,5 +1,3 @@
-"use server";
-
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { APIResponse, Credentials, LoginResponse, LogoutResponse} from "@/types/def";
 import { serverAction, ServerActionError } from "../action";
