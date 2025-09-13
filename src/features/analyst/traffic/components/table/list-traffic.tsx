@@ -43,12 +43,15 @@ import { TanggalType } from "@/types/def";
 type Preference = {
   columnVisibility: VisibilityState | null;
 };
-const preferenceInit = {
+const preferenceInit: Preference = {
   columnVisibility: null,
 };
 
-export function ListTrafficMyTsel({ startDate, endDate } : TanggalType) {
-  const [preference, savePreference] = useLocalStorage<Preference>("list-transaction-preference",preferenceInit);
+export function ListTrafficMyTsel({ startDate, endDate }: TanggalType) {
+  const [preference, savePreference] = useLocalStorage<Preference>(
+    "list-transaction-preference",
+    preferenceInit
+  );
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
   const [pagination, setPagination] = useState<PaginationState>({
     pageIndex: 0,
@@ -63,26 +66,42 @@ export function ListTrafficMyTsel({ startDate, endDate } : TanggalType) {
     `listTraffic-${startDate}-${endDate}-${JSON.stringify(pagination)}`,
     async () => {
       try {
-        return await unwrap(getListTraffic({
-          startDate: startDate,
-          endDate: endDate,
-          paging: 1,
-          page: pagination.pageIndex + 1,
-          size: pagination.pageSize,
-        }));
+        return await unwrap(
+          getListTraffic({
+            startDate,
+            endDate,
+            page: pagination.pageIndex + 1,
+            page_size: pagination.pageSize, // fix: size → page_size
+          })
+        );
       } catch (error) {
         throw error;
       }
     },
-    {
-      keepPreviousData: true,
-    }
+    { keepPreviousData: true }
   );
+
+  // Helper function to get total count from either pagination structure
+  const getTotalCount = () => {
+    if (!trafficManage?.pagination) return 0;
+    
+    // Check if it has total_data property (first structure)
+    if ('total_data' in trafficManage.pagination) {
+      return trafficManage.pagination.total_data || 0;
+    }
+    
+    // Otherwise use total property (second structure)
+    if ('total' in trafficManage.pagination) {
+      return trafficManage.pagination.total || 0;
+    }
+    
+    return 0;
+  };
 
   const table = useReactTable({
     data: trafficManage?.items || [],
     columns,
-    rowCount: trafficManage?.pagination?.total || 0,
+    rowCount: getTotalCount(),
     getCoreRowModel: getCoreRowModel(),
     onColumnVisibilityChange: setColumnVisibility,
     onPaginationChange: setPagination,
@@ -124,25 +143,23 @@ export function ListTrafficMyTsel({ startDate, endDate } : TanggalType) {
 
       {/* Controls */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
-        <Button 
-          variant="outline" className="bg-[#003366] text-white hover:bg-[#275d94] hover:text-white"
+        <Button
+          variant="outline"
+          className="bg-[#003366] text-white hover:bg-[#275d94] hover:text-white"
           onClick={() => setOpen(true)}
         >
-          <Plus/>Tambah Data Traffic
+          <Plus />Tambah Data Traffic
         </Button>
         <div className="flex items-center gap-4">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline" size="sm">
-                <Rows3/> Tampilkan Kolom <ChevronDownIcon size={16} className="ml-1" />
+                <Rows3 /> Tampilkan Kolom <ChevronDownIcon size={16} className="ml-1" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-40">
               {table.getAllLeafColumns().map((column) => {
-                if (!column.getCanHide()) {
-                  return null;
-                }
-
+                if (!column.getCanHide()) return null;
                 return (
                   <DropdownMenuCheckboxItem
                     key={column.id}
@@ -156,7 +173,6 @@ export function ListTrafficMyTsel({ startDate, endDate } : TanggalType) {
               })}
             </DropdownMenuContent>
           </DropdownMenu>
-
         </div>
       </div>
       {/* End of Controls */}
@@ -166,18 +182,13 @@ export function ListTrafficMyTsel({ startDate, endDate } : TanggalType) {
           <TableHeader className="sticky top-0 z-10 bg-white shadow-sm">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
-                {headerGroup.headers.map((header) => {
-                  return (
-                    <TableHead key={header.id}>
-                      {header.isPlaceholder
-                        ? null
-                        : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext()
-                          )}
-                    </TableHead>
-                  );
-                })}
+                {headerGroup.headers.map((header) => (
+                  <TableHead key={header.id}>
+                    {header.isPlaceholder
+                      ? null
+                      : flexRender(header.column.columnDef.header, header.getContext())}
+                  </TableHead>
+                ))}
               </TableRow>
             ))}
           </TableHeader>
@@ -191,16 +202,13 @@ export function ListTrafficMyTsel({ startDate, endDate } : TanggalType) {
                   </div>
                 </TableCell>
               </TableRow>
-            ) : table.getRowModel().rows?.length ? (
+            ) : table.getRowModel().rows.length ? (
               table.getRowModel().rows.map((row) => (
                 <Fragment key={row.id}>
                   <TableRow key={row.id} data-state={row.getIsSelected() && "selected"}>
                     {row.getVisibleCells().map((cell) => (
                       <TableCell key={cell.id}>
-                        {flexRender(
-                          cell.column.columnDef.cell,
-                          cell.getContext()
-                        )}
+                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
                       </TableCell>
                     ))}
                   </TableRow>
@@ -233,15 +241,12 @@ export function ListTrafficMyTsel({ startDate, endDate } : TanggalType) {
             onClick={() => table.nextPage()}
             disabled={!table.getCanNextPage()}
           >
-              Selanjutnya <ChevronRightIcon />
+            Selanjutnya <ChevronRightIcon />
           </Button>
         </div>
       </footer>
 
-      <FormTraffic
-        open={open}
-        onOpenModal={setOpen}
-      />
+      <FormTraffic open={open} onOpenModal={setOpen} />
     </main>
   );
 }
