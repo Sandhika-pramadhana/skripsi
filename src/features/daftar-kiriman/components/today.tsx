@@ -42,10 +42,15 @@ const TodaySection = () => {
         try {
           const todayDate = new Date().toISOString().split('T')[0];
           const latestData = await getLatestTransactions(todayDate);
-          setBookingToday(latestData.latestBooking.count);
-          setTrxToday(latestData.latestTransaction.count);
+          
+          // Add null checks before accessing .count
+          setBookingToday(latestData.latestBooking?.count ?? 0);
+          setTrxToday(latestData.latestTransaction?.count ?? 0);
         } catch (error) {
-          return error;
+          console.error('Error fetching transactions:', error);
+          // Reset to 0 on error
+          setBookingToday(0);
+          setTrxToday(0);
         }
       }
   
