@@ -3,7 +3,7 @@ pipeline {
   environment {
     IMAGE_PREFIX = '117.102.70.147'
     IMAGE_APP_NAME = 'dashboard-posfin'
-    IMAGE_TAG = 'v1'
+    IMAGE_TAG = 'latest'
     PRIVATE_REGISTRY_URL = '117.102.70.147'
     PRIVATE_REGISTRY_USER = 'devofficial'
     PRIVATE_REGISTRY_PASSWORD = 'Thomas110515'
