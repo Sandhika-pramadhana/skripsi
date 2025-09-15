@@ -15,7 +15,7 @@ export const getListCallbacksMandiri = serverAction(
     }
   ) => {
     const token = await getToken();
-    const url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointCallbacksMandiri}`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/${EndpointCallbacksMandiri}`;
 
     const config = {
       params: {

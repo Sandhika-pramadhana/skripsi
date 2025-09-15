@@ -13,7 +13,7 @@ import { EndpointRole } from "@/types/api";
 export const getRoles = serverAction(
   async (params?: { page?: number; page_size?: number }) => {
     const token = await getToken();
-    const url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointRole}`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/${EndpointRole}`;
     const config = {
       params,
       headers: {
@@ -38,7 +38,7 @@ export const getRoles = serverAction(
 export const createRole = serverAction(
   async (roleName: string) => {
     const token = await getToken();
-    const url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointRole}`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/${EndpointRole}`;
 
     const requestData = { roleName };
 
@@ -64,7 +64,7 @@ export const createRole = serverAction(
 export const updateRole = serverAction(
   async (id: number, roleName: string) => {
     const token = await getToken();
-    const url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointRole}?id=${id}`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/${EndpointRole}?id=${id}`;
 
     const requestData = { roleName };
 
@@ -90,7 +90,7 @@ export const updateRole = serverAction(
 export const deleteRole = serverAction(
   async (id: number) => {
     const token = await getToken();
-    const url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointRole}?id=${id}`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/${EndpointRole}?id=${id}`;
 
     const res = await axios.delete<APIResponse<any>>(url, {
       headers: {
