@@ -8,7 +8,7 @@ COPY package.json package-lock.json ./
 # Install semua dependencies (termasuk husky)
 RUN npm ci
 
-COPY . .
+COPY .env .env
 
 RUN npm run build
 
