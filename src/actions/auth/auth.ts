@@ -9,7 +9,7 @@ export const LoginUser = serverAction(
   async (credentials: Credentials) => {
     try {
       const res = await axios.post<APIResponse<LoginResponse>>(
-        `${process.env.NEXT_PUBLIC_API_URL}/${EndpointLogin}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/api/auth/login`,
         credentials,
         {
           headers: {
