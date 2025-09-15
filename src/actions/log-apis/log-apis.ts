@@ -14,7 +14,7 @@ export const getListLogApis = serverAction(
     }
   ) => {
     const token = await getToken();
-    const url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointLogApis}`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/${EndpointLogApis}`;
 
     const config = {
       params: {

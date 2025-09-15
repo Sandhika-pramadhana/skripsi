@@ -12,7 +12,7 @@ import axios from "axios";
 export const getUsers = serverAction(
   async (params?: PaginationParams) => {
     const token = await getToken();
-    const url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointUser}`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/${EndpointUser}`;
     const config = {
       params: {
         page: params?.page,
@@ -40,7 +40,7 @@ export const getUsers = serverAction(
 export const createUser = serverAction(
   async (data: User) => {
     const token = await getToken();
-    const url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointUser}`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/${EndpointUser}`;
 
     // Transform data to match API expectations
     const requestData = {
@@ -72,7 +72,7 @@ export const createUser = serverAction(
 export const updateUser = serverAction(
   async (data: User) => {
     const token = await getToken();
-    const url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointUser}?id=${data.id}`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/${EndpointUser}?id=${data.id}`;
 
     // Transform data to match API expectations
     const requestData = {
@@ -104,7 +104,7 @@ export const updateUser = serverAction(
 export const deleteUser = serverAction(
   async (id: number) => {
     const token = await getToken();
-    const url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointUser}?id=${id}`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/${EndpointUser}?id=${id}`;
 
     const res = await axios.delete<APIResponse<User>>(url, {
       headers: {
