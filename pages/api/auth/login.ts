@@ -38,7 +38,6 @@ export default async function handler(
 
     const db = await connectDB2();
 
-    // Cari user berdasarkan username (gunakan $1, bukan ?)
     const result = await db.query<User>(
       "SELECT * FROM users WHERE username = $1",
       [username]
