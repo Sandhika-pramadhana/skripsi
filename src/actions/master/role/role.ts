@@ -90,7 +90,7 @@ export const updateRole = serverAction(
 export const deleteRole = serverAction(
   async (id: number) => {
     const token = await getToken();
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/${EndpointRole}?id=${id}`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL_1}/${EndpointRole}?id=${id}`;
 
     const res = await axios.delete<APIResponse<any>>(url, {
       headers: {

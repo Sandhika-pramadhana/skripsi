@@ -14,7 +14,7 @@ export const getListLogApis = serverAction(
     }
   ) => {
     const token = await getToken();
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/${EndpointLogApis}`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL_1}/${EndpointLogApis}`;
 
     const config = {
       params: {
@@ -23,7 +23,7 @@ export const getListLogApis = serverAction(
         term: params?.term,
         startDate: params?.startDate,
         endDate: params?.endDate,
-        limit: params?.limit, // ✅ ini yang bener
+        limit: params?.limit, 
       },
       headers: {
         Authorization: `Bearer ${token}`,

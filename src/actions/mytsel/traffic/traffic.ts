@@ -17,7 +17,7 @@ const API_KEY = process.env.NEXT_PUBLIC_X_API_TOKEN ?? "";
 export const getListTraffic = serverAction(
   async (params?: PaginationParams & { startDate?: string; endDate?: string }) => {
     const res = await axios.get<PaginatedAPIResponse<TrafficReportMyTsel>>(
-      `${process.env.NEXT_PUBLIC_API_URL}/kurir/report/mtsel/traffic`,
+      `${process.env.NEXT_PUBLIC_API_URL_2}/kurir/report/mtsel/traffic`,
       {
         params,
         headers: {

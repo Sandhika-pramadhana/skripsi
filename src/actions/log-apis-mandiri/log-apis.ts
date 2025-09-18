@@ -14,7 +14,7 @@ export const getListLogApisMandiri = serverAction(
     }
   ) => {
     const token = await getToken();
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/${EndpointLogApisMandiri}`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL_1}/${EndpointLogApisMandiri}`;
 
     const config = {
       params: {

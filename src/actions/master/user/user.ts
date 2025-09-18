@@ -12,7 +12,7 @@ import axios from "axios";
 export const getUsers = serverAction(
   async (params?: PaginationParams) => {
     const token = await getToken();
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/${EndpointUser}`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL_1}/${EndpointUser}`;
     const config = {
       params: {
         page: params?.page,
