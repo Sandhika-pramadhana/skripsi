@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { NextApiRequest, NextApiResponse } from "next";
-import { connectDB } from "@/features/core/lib/db";
-import { RowDataPacket } from "mysql2";
+import { connectDB2 } from "@/features/core/lib/db";
 import { PaginatedAPIResponseBackend, APIResponse, Role } from "@/types/def";
 import { authenticateToken, AuthenticatedRequest } from "../middleware/auth";
 
@@ -12,7 +11,7 @@ export default async function handler(
 ) {
   authenticateToken(req as AuthenticatedRequest, res, async () => {
     try {
-      const db = await connectDB();
+      const db = await connectDB2();
       const { id, term } = req.query;
 
       //Handle GET request
@@ -28,12 +27,12 @@ export default async function handler(
             });
           }
 
-          const [rows] = await db.execute<Role[] & RowDataPacket[]>(
-            "SELECT * FROM roles WHERE id = ?",
+          const result = await db.query<Role>(
+            "SELECT * FROM roles WHERE id = $1",
             [Number(id)]
           );
 
-          if (rows.length === 0) {
+          if (result.rows.length === 0) {
             return res.status(404).json({
               status: false,
               code: "404",
@@ -46,7 +45,7 @@ export default async function handler(
             status: true,
             code: "200",
             message: "Success get role by ID.",
-            data: rows[0],
+            data: result.rows[0],
           });
         }
 
@@ -59,22 +58,26 @@ export default async function handler(
         const offset = (validatedPage - 1) * validatedPageSize;
 
         let searchCondition = "";
-        let searchParams: string[] = [];
+        let searchParams: any[] = [];
 
         if (term && typeof term === "string") {
-          searchCondition = `WHERE roleName LIKE ?`;
+          searchCondition = `WHERE "roleName" ILIKE $1`;
           searchParams = [`%${term}%`];
         }
 
-        const [[totalDataRow]] = await db.execute<RowDataPacket[]>(
+        const totalDataResult = await db.query(
           `SELECT COUNT(*) AS total_data FROM roles ${searchCondition}`,
           searchParams
         );
-        const total_data: number = totalDataRow?.total_data || 0;
+        const total_data: number = Number(
+          totalDataResult.rows[0]?.total_data || 0
+        );
 
-        const [rows] = await db.execute<Role[] & RowDataPacket[]>(
-          `SELECT * FROM roles ${searchCondition} LIMIT ? OFFSET ?`,
-          [...searchParams, validatedPageSize.toString(), offset.toString()]
+        const rolesResult = await db.query<Role>(
+          `SELECT * FROM roles ${searchCondition} LIMIT $${searchParams.length + 1} OFFSET $${
+            searchParams.length + 2
+          }`,
+          [...searchParams, validatedPageSize, offset]
         );
 
         const total_page = Math.max(
@@ -87,14 +90,14 @@ export default async function handler(
           code: "200",
           message: "Success get roles.",
           data: {
-            items: rows,
+            items: rolesResult.rows,
             pagination: {
               page: validatedPage,
               page_size: validatedPageSize,
               total_page,
               total_data,
-              current_page: rows.length > 0 ? validatedPage : 0,
-              current_data: rows.length,
+              current_page: rolesResult.rows.length > 0 ? validatedPage : 0,
+              current_data: rolesResult.rows.length,
             },
           },
         });
@@ -113,8 +116,8 @@ export default async function handler(
           });
         }
 
-        await db.execute(
-          "INSERT INTO roles (roleName, created_at, updated_at) VALUES (?, NOW(), NOW())",
+        await db.query(
+          'INSERT INTO roles ("roleName", created_at, updated_at) VALUES ($1, NOW(), NOW())',
           [roleName]
         );
 
@@ -148,12 +151,12 @@ export default async function handler(
           });
         }
 
-        const [result] = await db.execute(
-          "UPDATE roles SET roleName = ?, updated_at = NOW() WHERE id = ?",
+        const result = await db.query(
+          'UPDATE roles SET "roleName" = $1, updated_at = NOW() WHERE id = $2',
           [roleName, Number(id)]
         );
 
-        if ((result as any).affectedRows === 0) {
+        if (result.rowCount === 0) {
           return res.status(404).json({
             status: false,
             code: "404",
@@ -181,11 +184,12 @@ export default async function handler(
           });
         }
 
-        const [result] = await db.execute("DELETE FROM roles WHERE id = ?", [
-          Number(id),
-        ]);
+        const result = await db.query(
+          "DELETE FROM roles WHERE id = $1",
+          [Number(id)]
+        );
 
-        if ((result as any).affectedRows === 0) {
+        if (result.rowCount === 0) {
           return res.status(404).json({
             status: false,
             code: "404",

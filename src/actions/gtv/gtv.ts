@@ -8,7 +8,7 @@ import { serverAction, ServerActionError } from "../action";
 export const getGraphGTV = serverAction(
   async (params?: { startDate?: string; endDate?: string }) => {
     const response = await axios.get<APIResponse<GlobalData>>(
-      `${process.env.NEXT_PUBLIC_API_URL}/kurir/dashboard/statistic/transaction`,
+      `${process.env.NEXT_PUBLIC_API_URL_2}/kurir/dashboard/statistic/transaction`,
       {
         params,
         headers: {

@@ -80,7 +80,7 @@ export const getListTransaction = serverAction(
 export const getGraphTrx = serverAction(
   async (params?: { startDate?: string; endDate?: string }) => {
     const response = await axios.get<APIResponse<GlobalData>>(
-      `${process.env.NEXT_PUBLIC_API_URL}/kurir/dashboard/statistic/transaction`,
+      `${process.env.NEXT_PUBLIC_API_URL_2}/kurir/dashboard/statistic/transaction`,
       {
         params,
         headers: {
@@ -112,7 +112,7 @@ export const getGraphTrx = serverAction(
 export const getCumulativeTransactionStatus = serverAction(
   async (params?: { startDate?: string; endDate?: string; page?: number; size?: number }) => {
     const res = await axios.get<PaginatedAPIResponse<ListTransactionData>>(
-      `${process.env.NEXT_PUBLIC_API_URL}/kurir/dashboard/transaction/list`,
+      `${process.env.NEXT_PUBLIC_API_URL_2}/kurir/dashboard/transaction/list`,
       {
         params,
         headers: {
@@ -138,7 +138,7 @@ export const getLatestTransactions = async (
 
   try {
     const res = await axios.get<APIResponse<GlobalData>>(
-      `${process.env.NEXT_PUBLIC_API_URL}/kurir/dashboard/statistic/transaction`,
+      `${process.env.NEXT_PUBLIC_API_URL_2}/kurir/dashboard/statistic/transaction`,
       {
         headers: {
           "x-api-key": API_KEY,
@@ -172,7 +172,7 @@ export const getLatestTransactions = async (
 export const getGraphBookingTrx = serverAction(
   async (params?: { startDate?: string; endDate?: string }) => {
     const response = await axios.get<APIResponse<GlobalData>>(
-      `${process.env.NEXT_PUBLIC_API_URL}/kurir/dashboard/statistic/transaction`,
+      `${process.env.NEXT_PUBLIC_API_URL_2}/kurir/dashboard/statistic/transaction`,
       {
         params,
         headers: {
