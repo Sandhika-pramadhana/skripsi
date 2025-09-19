@@ -4,13 +4,13 @@ import axios from "axios";
 import { APIResponse, GlobalData } from "@/types/def";
 import { serverAction, ServerActionError } from "../action";
 
-const API_KEY = process.env.NEXT_PUBLIC_X_API_TOKEN ?? ""; // ✅ konsisten
+const API_KEY = process.env.NEXT_PUBLIC_X_API_TOKEN ?? ""; 
 
 // Untuk Get Data Rekap Booking
 export const getGraphBooking = serverAction(
   async (params?: { startDate?: string; endDate?: string }) => {
     const response = await axios.get<APIResponse<GlobalData>>(
-      `${process.env.NEXT_PUBLIC_API_URL}/kurir/dashboard/statistic/transaction`,
+      `${process.env.NEXT_PUBLIC_API_URL_2}/kurir/dashboard/statistic/transaction`,
       {
         params,
         headers: {
@@ -45,7 +45,7 @@ export const getGraphBooking = serverAction(
 export const findBookingDate = async () => {
   try {
     const response = await axios.get<APIResponse<GlobalData>>(
-      `${process.env.NEXT_PUBLIC_API_URL}/kurir/dashboard/statistic/transaction`,
+      `${process.env.NEXT_PUBLIC_API_URL_2}/kurir/dashboard/statistic/transaction`,
       {
         headers: {
           "x-api-key": API_KEY,
