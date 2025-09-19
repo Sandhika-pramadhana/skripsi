@@ -81,7 +81,7 @@ export const getGraphTraffic = serverAction(
 export const createTraffic = serverAction(
   async (data: TrafficReportMyTsel) => {
     const res = await axios.post<APIResponse<TrafficReportMyTsel>>(
-      `${process.env.NEXT_PUBLIC_API_URL}/kurir/report/mtsel/traffic`,
+      `${process.env.NEXT_PUBLIC_API_URL_2}/kurir/report/mtsel/traffic`,
       data,
       {
         headers: {
