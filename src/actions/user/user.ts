@@ -12,7 +12,7 @@ const API_KEY = process.env.NEXT_PUBLIC_X_API_TOKEN ?? "";
 export const getGraphUser = serverAction(
   async (params?: { startDate?: string; endDate?: string }) => {
     const response = await axios.get<PaginatedAPIResponse<UserGraphResponse>>(
-      `${process.env.NEXT_PUBLIC_API_URL}/kurir/dashboard/statistic/user`,
+      `${process.env.NEXT_PUBLIC_API_URL_2}/kurir/dashboard/statistic/user`,
       {
         params,
         headers: {
@@ -46,7 +46,7 @@ export const getLatestUser = async (
 ): Promise<{ latestUser?: UserGraphResponse }> => {
   try {
     const res = await axios.get<APIResponse<{ users: UserGraphResponse[] }>>(
-      `${process.env.NEXT_PUBLIC_API_URL}/kurir/dashboard/statistic/user`,
+      `${process.env.NEXT_PUBLIC_API_URL_2}/kurir/dashboard/statistic/user`,
       {
         params,
         headers: {
@@ -78,7 +78,7 @@ export const getUserToday = async (
   try {
     const response = await axios.get<
       APIResponse<{ items: { date: string; count: number }[] }>
-    >(`${process.env.NEXT_PUBLIC_API_URL}/kurir/dashboard/statistic/user`, {
+    >(`${process.env.NEXT_PUBLIC_API_URL_2}/kurir/dashboard/statistic/user`, {
       headers: {
         "x-api-key": API_KEY,
         Accept: "application/json",
