@@ -44,7 +44,7 @@ function getCumulativeByStatus(transactions: ListTransactionData[]): { statusNam
 export const getListTransaction = serverAction(
   async (params?: { term?: string; startDate?: string; endDate?: string; page?: number; size?: number }) => {
     const res = await axios.get<PaginatedAPIResponse<ListTransactionData>>(
-      `${process.env.NEXT_PUBLIC_API_URL}/kurir/dashboard/transaction/list`,
+      `${process.env.NEXT_PUBLIC_API_URL_2}/kurir/dashboard/transaction/list`,
       {
         params,
         headers: {
