@@ -3,7 +3,7 @@ import { APIResponse, Credentials, LoginResponse, LogoutResponse} from "@/types/
 import { serverAction, ServerActionError } from "../action";
 import axios from "axios";
 import Cookies from "js-cookie";
-import { EndpointLogin } from "@/types/api";
+import { EndpointLogin, EndpointLogout } from "@/types/api";
 
 export const LoginUser = serverAction(
   async (credentials: Credentials) => {
@@ -52,7 +52,7 @@ export const LogoutUser = serverAction(
       const token = Cookies.get("token-auth");
       
       const res = await axios.post<LogoutResponse>(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/auth/logout`,
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/${EndpointLogout}`,
         {},
         {
           headers: {
