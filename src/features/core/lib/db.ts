@@ -44,3 +44,30 @@ export async function connectDB3() {
   return client;
 }
 
+export async function connectDB4() {
+  const client = new Client({
+    host: process.env.NEXT_DB3_HOST || '117.102.70.147',
+    port: Number(process.env.NEXT_DB3_PORT) || 9932,
+    user: process.env.NEXT_DB3_USER || 'postgres',
+    password: process.env.NEXT_DB3_PASSWORD || 'posfin@2024',
+    database: process.env.NEXT_DB3_NAME || 'unigo_kuriragregatord',
+  });
+
+  await client.connect();
+  return client;
+}
+
+
+export async function connectDB5() {
+  const client = new Client({
+    host: process.env.NEXT_DB3_HOST || '117.102.70.147',
+    port: Number(process.env.NEXT_DB3_PORT) || 9932,
+    user: process.env.NEXT_DB3_USER || 'postgres',
+    password: process.env.NEXT_DB3_PASSWORD || 'posfin@2024',
+    database: process.env.NEXT_DB3_NAME || 'agen_mandiridb',
+  });
+
+  await client.connect();
+  return client;
+}
+

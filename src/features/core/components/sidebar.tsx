@@ -1,7 +1,9 @@
+"use client";
+
 import { 
-  Box, ChartColumn, Database, FolderKanban, Home, 
+  Box, Database, FolderKanban, Home, 
   LogOut, PhoneCall, Send, Settings2, Users2,
-  ChevronDown, ChevronRight, FolderKanbanIcon
+  ChevronDown, ChevronRight, FolderKanbanIcon, Server
 } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -20,7 +22,6 @@ import {
   AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger
 } from "@/features/core/components/ui/alert-dialog";
 
-// 🔹 definisikan tipe MenuItem
 type MenuItem = {
   title: string;
   url?: string;
@@ -34,21 +35,52 @@ const baseMenuItems: MenuItem[] = [
   { title: "Dashboard", url: "/dashboard", icon: Home },
   { title: "Daftar Kiriman", url: "/daftar-kiriman", icon: Box },
   { title: "Status Lacak", url: "/status-lacak", icon: Send },
+
   {
     title: "Kurir Tsel",
     icon: FolderKanban,
     children: [
-      { title: "Log APIs", url: "/log-apis", icon: Database },
-      { title: "Callbacks", url: "/callbacks", icon: PhoneCall },
+      {
+        title: "Sandbox",
+        icon: Box,
+        children: [
+          { title: "Log APIs", url: "/tsel/sandbox/log-apis", icon: Database },
+          { title: "Callbacks", url: "/tsel/sandbox/callbacks", icon: PhoneCall },
+        ],
+      },
+      {
+        title: "Production",
+        icon: Server,
+        children: [
+          { title: "Log APIs", url: "/prod/tsel/log-apis", icon: Database },
+          { title: "Callbacks", url: "/prod/tsel/callbacks", icon: PhoneCall },
+        ],
+      },
     ],
   },
+
   {
     title: "Kurir Mandiri",
     icon: FolderKanbanIcon,
     children: [
-      { title: "Log Apis", url: "/log-apis-mandiri", icon: Database },
-      { title: "Callbacks Transactions", url: "/callbacks-mandiri", icon: Database },
-      { title: "Callbacks Registrations", url: "/callbacks-registrations-mandiri", icon: Database },
+      {
+        title: "Sandbox",
+        icon: Box,
+        children: [
+          { title: "Log APIs", url: "/mandiri/sandbox/log-apis", icon: Database },
+          { title: "Callbacks Transactions", url: "/mandiri/sandbox/callbacks-transactions", icon: Database },
+          { title: "Callbacks Registrations", url: "/mandiri/sandbox/callbacks-registrations", icon: Database },
+        ],
+      },
+      {
+        title: "Production",
+        icon: Server,
+        children: [
+          { title: "Log APIs", url: "/prod/mandiri/log-apis-mandiri", icon: Database },
+          { title: "Callbacks Transactions", url: "/prod/mandiri/callbacks-mandiri", icon: Database },
+          { title: "Callbacks Registrations", url: "/prod/mandiri/callbacks-registrations-mandiri", icon: Database },
+        ],
+      },
     ],
   },
 ];
@@ -60,7 +92,7 @@ const adminMenuItems: MenuItem[] = [
   { title: "Role User", url: "/role", icon: Settings2, readOnly: true },
 ];
 
-// Superadmin menu (full CRUD)
+// Superadmin menu
 const superadminMenuItems: MenuItem[] = [
   ...baseMenuItems,
   { title: "Data User", url: "/user", icon: Users2 },
@@ -85,7 +117,8 @@ export function AppSidebar() {
   const [logoutSuccess, setLogoutSuccess] = useState(false);
   const [userRole, setUserRole] = useState<string>("");
   const [menuItems, setMenuItems] = useState<MenuItem[]>(baseMenuItems);
-  const [openMenu, setOpenMenu] = useState<string | null>(null);
+  // Changed to Set to track multiple open menus for nested structure
+  const [openMenus, setOpenMenus] = useState<Set<string>>(new Set());
 
   useEffect(() => {
     const roleName = Cookies.get("roleName") || "client";
@@ -126,8 +159,66 @@ export function AppSidebar() {
     }
   };
 
-  const toggleMenu = (title: string) => {
-    setOpenMenu(openMenu === title ? null : title);
+  const toggleMenu = (menuKey: string) => {
+    setOpenMenus(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(menuKey)) {
+        newSet.delete(menuKey);
+      } else {
+        newSet.add(menuKey);
+      }
+      return newSet;
+    });
+  };
+
+  // Fixed recursive menu renderer
+  const renderMenuItems = (items: MenuItem[], parentKey = "", level = 0) => {
+    return items.map((item, index) => {
+      const itemKey = `${parentKey}-${item.title}-${index}`;
+      const isOpen = openMenus.has(itemKey);
+      
+      return (
+        <SidebarMenuItem key={itemKey}>
+          {!item.children ? (
+            <SidebarMenuButton asChild>
+              <Link href={item.url || "#"} className={level > 0 ? `pl-${level * 4}` : ""}>
+                <item.icon className="text-[#F48120]" size={16} />
+                <span className="text-sm">
+                  {item.title}
+                  {item.readOnly && userRole.toLowerCase() === "admin" && (
+                    <span className="text-xs text-gray-500 ml-1">(View Only)</span>
+                  )}
+                </span>
+              </Link>
+            </SidebarMenuButton>
+          ) : (
+            <div>
+              <SidebarMenuButton 
+                onClick={() => toggleMenu(itemKey)}
+                className={level > 0 ? `pl-${level * 4}` : ""}
+              >
+                <item.icon className="text-[#F48120]" size={16} />
+                <span className="text-sm">{item.title}</span>
+                {isOpen ? (
+                  <ChevronDown size={16} className="ml-auto" />
+                ) : (
+                  <ChevronRight size={16} className="ml-auto" />
+                )}
+              </SidebarMenuButton>
+              
+              {/* Render submenu with proper nesting */}
+              {isOpen && item.children && (
+                <div className="ml-4 mt-1">
+                  <SidebarMenu>
+                    {renderMenuItems(item.children, itemKey, level + 1)}
+                  </SidebarMenu>
+                </div>
+              )}
+            </div>
+          )}
+        </SidebarMenuItem>
+      );
+    });
   };
 
   return (
@@ -138,49 +229,7 @@ export function AppSidebar() {
           <SidebarGroupContent>
             <p className="text-[12px] ml-3 my-1 font-semibold">Report Data</p>
             <SidebarMenu>
-              {menuItems.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  {!item.children ? (
-                    <SidebarMenuButton asChild>
-                      <Link href={item.url || "#"}>
-                        <item.icon className="text-[#F48120]" />
-                        <span>
-                          {item.title}
-                          {item.readOnly && userRole.toLowerCase() === "admin" && (
-                            <span className="text-xs text-gray-500 ml-1">(View Only)</span>
-                          )}
-                        </span>
-                      </Link>
-                    </SidebarMenuButton>
-                  ) : (
-                    <>
-                      <SidebarMenuButton onClick={() => toggleMenu(item.title)}>
-                        <item.icon className="text-[#F48120]" />
-                        <span>{item.title}</span>
-                        {openMenu === item.title ? (
-                          <ChevronDown size={16} className="ml-auto" />
-                        ) : (
-                          <ChevronRight size={16} className="ml-auto" />
-                        )}
-                      </SidebarMenuButton>
-                      {openMenu === item.title && (
-                        <SidebarMenu className="ml-6">
-                          {item.children.map((child) => (
-                            <SidebarMenuItem key={child.title}>
-                              <SidebarMenuButton asChild>
-                                <Link href={child.url || "#"}>
-                                  <child.icon className="text-[#F48120]" />
-                                  <span>{child.title}</span>
-                                </Link>
-                              </SidebarMenuButton>
-                            </SidebarMenuItem>
-                          ))}
-                        </SidebarMenu>
-                      )}
-                    </>
-                  )}
-                </SidebarMenuItem>
-              ))}
+              {renderMenuItems(menuItems)}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
@@ -193,8 +242,9 @@ export function AppSidebar() {
             <SidebarMenuButton>
               <AlertDialog>
                 <AlertDialogTrigger asChild>
-                  <div className="flex gap-2 items-center">
-                    <LogOut size={20} className="text-red-500" /> <span>Logout</span>
+                  <div className="flex gap-2 items-center cursor-pointer">
+                    <LogOut size={20} className="text-red-500" /> 
+                    <span>Logout</span>
                   </div>
                 </AlertDialogTrigger>
                 <AlertDialogContent>
