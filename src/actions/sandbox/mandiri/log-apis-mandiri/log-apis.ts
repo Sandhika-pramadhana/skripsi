@@ -1,6 +1,6 @@
 import axios from "axios";
 import { PaginatedAPIResponse, PaginationParams, LogApis } from "@/types/def";
-import { EndpointLogApisMandiri } from "@/types/api";
+import { EndpointLogApisMandiriSandbox} from "@/types/api";
 import { serverAction, ServerActionError } from "../../../action";
 import { getToken } from "../../../auth/getToken";
 
@@ -14,7 +14,7 @@ export const getListLogApisMandiri = serverAction(
     }
   ) => {
     const token = await getToken();
-    const url = `${process.env.NEXT_PUBLIC_API_URL_1}/${EndpointLogApisMandiri}`;
+    const url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointLogApisMandiriSandbox}`;
 
     const config = {
       params: {

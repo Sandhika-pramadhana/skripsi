@@ -1,6 +1,6 @@
 import axios from "axios";
 import { PaginatedAPIResponse, PaginationParams, callbacks } from "@/types/def";
-import { EndpointCallbacksMandiri } from "@/types/api";
+import { EndpointCallbacksMandiriSandbox } from "@/types/api";
 import { serverAction, ServerActionError } from "../../../action";
 import { getToken } from "../../../auth/getToken";
 
@@ -15,7 +15,7 @@ export const getListCallbacksMandiri = serverAction(
     }
   ) => {
     const token = await getToken();
-    const url = `${process.env.NEXT_PUBLIC_API_URL_1}/${EndpointCallbacksMandiri}`;
+    const url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointCallbacksMandiriSandbox}`;
 
     const config = {
       params: {

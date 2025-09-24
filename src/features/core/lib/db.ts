@@ -46,11 +46,11 @@ export async function connectDB3() {
 
 export async function connectDB4() {
   const client = new Client({
-    host: process.env.NEXT_DB3_HOST || '117.102.70.147',
-    port: Number(process.env.NEXT_DB3_PORT) || 9932,
-    user: process.env.NEXT_DB3_USER || 'postgres',
-    password: process.env.NEXT_DB3_PASSWORD || 'posfin@2024',
-    database: process.env.NEXT_DB3_NAME || 'unigo_kuriragregatord',
+    host: process.env.NEXT_DB4_HOST || '117.102.70.147',
+    port: Number(process.env.NEXT_DB4_PORT) || 9932,
+    user: process.env.NEXT_DB4_USER || 'postgres',
+    password: process.env.NEXT_DB4_PASSWORD || 'posfin@2024',
+    database: process.env.NEXT_DB4_NAME || 'unigo_kuriragregatordb',
   });
 
   await client.connect();
@@ -60,11 +60,11 @@ export async function connectDB4() {
 
 export async function connectDB5() {
   const client = new Client({
-    host: process.env.NEXT_DB3_HOST || '117.102.70.147',
-    port: Number(process.env.NEXT_DB3_PORT) || 9932,
-    user: process.env.NEXT_DB3_USER || 'postgres',
-    password: process.env.NEXT_DB3_PASSWORD || 'posfin@2024',
-    database: process.env.NEXT_DB3_NAME || 'agen_mandiridb',
+    host: process.env.NEXT_DB5_HOST || '117.102.70.147',
+    port: Number(process.env.NEXT_DB5_PORT) || 9932,
+    user: process.env.NEXT_DB5_USER || 'postgres',
+    password: process.env.NEXT_DB5_PASSWORD || 'posfin@2024',
+    database: process.env.NEXT_DB5_NAME || 'agen_mandiridb',
   });
 
   await client.connect();

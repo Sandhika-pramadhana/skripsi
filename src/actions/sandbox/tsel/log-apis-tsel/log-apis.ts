@@ -1,6 +1,6 @@
 import axios from "axios";
 import { PaginatedAPIResponse, PaginationParams, LogApis } from "@/types/def";
-import { EndpointLogApis } from "@/types/api";
+import { EndpointLogApisSandbox } from "@/types/api";
 import { serverAction, ServerActionError } from "../../../action";
 import { getToken } from "../../../auth/getToken";
 
@@ -14,7 +14,7 @@ export const getListLogApis = serverAction(
     }
   ) => {
     const token = await getToken();
-    const url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointLogApis}`;
+    const url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointLogApisSandbox}`;
 
     const config = {
       params: {

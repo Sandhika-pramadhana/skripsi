@@ -44,8 +44,8 @@ const baseMenuItems: MenuItem[] = [
         title: "Sandbox",
         icon: Box,
         children: [
-          { title: "Log APIs", url: "/tsel/sandbox/log-apis", icon: Database },
-          { title: "Callbacks", url: "/tsel/sandbox/callbacks", icon: PhoneCall },
+          { title: "Log APIs", url: "/sandbox/tsel/log-apis", icon: Database },
+          { title: "Callbacks", url: "/sandbox/tsel/callbacks", icon: PhoneCall },
         ],
       },
       {
@@ -67,9 +67,9 @@ const baseMenuItems: MenuItem[] = [
         title: "Sandbox",
         icon: Box,
         children: [
-          { title: "Log APIs", url: "/mandiri/sandbox/log-apis", icon: Database },
-          { title: "Callbacks Transactions", url: "/mandiri/sandbox/callbacks-transactions", icon: Database },
-          { title: "Callbacks Registrations", url: "/mandiri/sandbox/callbacks-registrations", icon: Database },
+          { title: "Log APIs", url: "/sandbox/mandiri/log-apis-mandiri", icon: Database },
+          { title: "Callbacks Transactions", url: "/sandbox/mandiri/callbacks-mandiri", icon: Database },
+          { title: "Callbacks Registrations", url: "/sandbox/mandiri/callbacks-registrations-mandiri", icon: Database },
         ],
       },
       {
