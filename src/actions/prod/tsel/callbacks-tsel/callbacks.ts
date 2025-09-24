@@ -14,7 +14,7 @@ export const getListCallbacks = serverAction(
     }
   ) => {
     const token = await getToken();
-    const url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointCallbacks}`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL_1}/${EndpointCallbacks}`;
 
     const config = {
       params: {
