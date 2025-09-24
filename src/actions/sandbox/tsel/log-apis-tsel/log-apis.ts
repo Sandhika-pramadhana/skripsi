@@ -14,7 +14,7 @@ export const getListLogApis = serverAction(
     }
   ) => {
     const token = await getToken();
-    const url = `${process.env.NEXT_PUBLIC_API_URL_3}/${EndpointLogApisSandbox}`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL_1}/${EndpointLogApisSandbox}`;
 
     const config = {
       params: {
