@@ -7,7 +7,7 @@ pipeline {
     PRIVATE_REGISTRY_URL = '117.102.70.147'
     PRIVATE_REGISTRY_USER = 'devofficial'
     PRIVATE_REGISTRY_PASSWORD = 'Thomas110515'
-    SERVER_ADDRESS = 'dashboard.posfin.id'
+    SERVER_ADDRESS = '8.215.77.122'
     SERVER_SSH_PORT = '22'
     SERVER_SSH_USER = 'deden'
     SERVER_SSH_PASSWORD = 'd3d3n_p0sf1n2024'
@@ -60,7 +60,7 @@ pipeline {
           sh """
             sshpass -p $SERVER_SSH_PASSWORD ssh -o StrictHostKeyChecking=no -p $SERVER_SSH_PORT $SERVER_SSH_USER@$SERVER_ADDRESS '
             echo $SERVER_SSH_PASSWORD | sudo -S docker run -p 3000:3000 -d --rm \
-            -e NEXT_PUBLIC_API_URL=https://dashboard.posfin.id \
+            -e NEXT_PUBLIC_API_URL=http://8.215.77.122:3000 \
             -e NEXT_PUBLIC_API_URL_SANDBOX=https://sandboxkurir.posfin.id \
             -e NEXT_PUBLIC_X_API_TOKEN=SuRyptU70wsIGfshdZDEEGPv1eTh0bN4FLE3C84MdtOo8AwlpkuvKzI9nfaNuavX \
             -e NEXT_PUBLIC_SECRET=c58a4b1b41d66baa51f6f31a5d2b60422a6c58b4f70d2e223d98319bbc27377f \
