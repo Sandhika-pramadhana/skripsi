@@ -1,10 +1,11 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import type { NextApiRequest, NextApiResponse } from "next";
-import { connectDB2 } from "@/features/core/lib/db";
+import { connectDB } from "@/features/core/lib/db";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { APIResponse, User } from "@/types/def";
+import { RowDataPacket } from "mysql2";
 
 const JWT_SECRET = process.env.NEXT_PUBLIC_JWT_SECRET || "secret_key";
 
@@ -36,14 +37,13 @@ export default async function handler(
       });
     }
 
-    const db = await connectDB2();
+    const db = await connectDB();
 
-    const result = await db.query<User>(
-      "SELECT * FROM users WHERE username = $1",
+    // Cari user berdasarkan username
+    const [rows] = await db.execute<User[] & RowDataPacket[]>(
+      "SELECT * FROM users WHERE username = ?",
       [username]
     );
-
-    const rows = result.rows;
 
     if (rows.length === 0) {
       return res.status(401).json({

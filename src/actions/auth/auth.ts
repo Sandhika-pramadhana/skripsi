@@ -52,7 +52,7 @@ export const LogoutUser = serverAction(
       const token = Cookies.get("token-auth");
       
       const res = await axios.post<LogoutResponse>(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL_1}/${EndpointLogout}`,
+        `${process.env.NEXT_PUBLIC_API_BASE_LOCAL}/${EndpointLogout}`,
         {},
         {
           headers: {
