@@ -15,7 +15,7 @@ export const getListCallbacksRegistrationsMandiri = serverAction(
     }
   ) => {
     const token = await getToken();
-    const url = `${process.env.NEXT_PUBLIC_API_URL_3}/${EndpointCallbacksRegistrationsMandiriSandbox}`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL_1}/${EndpointCallbacksRegistrationsMandiriSandbox}`;
 
     const config = {
       params: {

@@ -7,7 +7,7 @@ pipeline {
     PRIVATE_REGISTRY_URL = '117.102.70.147'
     PRIVATE_REGISTRY_USER = 'devofficial'
     PRIVATE_REGISTRY_PASSWORD = 'Thomas110515'
-    SERVER_ADDRESS = '8.215.77.122'
+    SERVER_ADDRESS = 'dashboard.posfin.id'
     SERVER_SSH_PORT = '22'
     SERVER_SSH_USER = 'deden'
     SERVER_SSH_PASSWORD = 'd3d3n_p0sf1n2024'
