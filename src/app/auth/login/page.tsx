@@ -23,7 +23,7 @@ export default function LoginPage() {
   <div className="rounded-3xl overflow-hidden">
     <Image
       alt="bg.jpg"
-      src="/images/bg-dashboard.jpg"
+      src="/asset/images/bg-dashboard.jpg"
       width={1200}
       height={800}
       className="w-full h-full object-cover transform scale-x-[-1] rounded-3xl"
