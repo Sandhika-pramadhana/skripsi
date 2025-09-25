@@ -1,15 +1,19 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { APIResponse, Credentials, LoginResponse, LogoutResponse} from "@/types/def";
+import { APIResponse, Credentials, LoginResponse, LogoutResponse } from "@/types/def";
 import { serverAction, ServerActionError } from "../action";
 import axios from "axios";
 import Cookies from "js-cookie";
-import { EndpointLogin} from "@/types/api";
+import { EndpointLogin } from "@/types/api";
 
 export const LoginUser = serverAction(
-  async (credentials: Credentials) => {
+  async (credentials: Credentials, useDomain: boolean = true) => {
     try {
+      const baseUrl = useDomain
+        ? process.env.NEXT_PUBLIC_API_URL_1 // domain
+        : process.env.NEXT_PUBLIC_API_URL_IP; // IP
+
       const res = await axios.post<APIResponse<LoginResponse>>(
-        `${process.env.NEXT_PUBLIC_API_URL_1}/${EndpointLogin}`,
+        `${baseUrl}/${EndpointLogin}`,
         credentials,
         {
           headers: {
@@ -31,6 +35,7 @@ export const LoginUser = serverAction(
         throw new ServerActionError("Invalid response structure", "500");
       }
 
+      // Set cookie
       Cookies.set("token-auth", token, { expires: 1 });
       Cookies.set("user_id", user.id.toString(), { expires: 1 });
       Cookies.set("name", user.name, { expires: 1 });
@@ -45,4 +50,3 @@ export const LoginUser = serverAction(
   },
   "LOGIN_USER"
 );
-
