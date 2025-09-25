@@ -74,7 +74,7 @@ const LoginForm = () => {
     <>
       <div className="flex flex-col items-center md:items-start gap-5 p-4">
         <Image
-            src="/logo/logo_posfin.png"
+            src="/asset/logo/logo_posfin.png"
             alt="Logo-pos.png"
             width={120}
             height={120}
