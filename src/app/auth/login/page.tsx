@@ -28,6 +28,7 @@ export default function LoginPage() {
       height={800}
       className="w-full h-full object-cover transform scale-x-[-1] rounded-3xl"
       priority
+      unoptimized
     />
   </div>
 </div>
