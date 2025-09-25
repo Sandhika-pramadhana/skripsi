@@ -33,8 +33,6 @@ type MenuItem = {
 // Base menu items
 const baseMenuItems: MenuItem[] = [
   { title: "Dashboard", url: "/dashboard", icon: Home },
-  { title: "Daftar Kiriman", url: "/daftar-kiriman", icon: Box },
-  { title: "Status Lacak", url: "/status-lacak", icon: Send },
 
   {
     title: "Kurir Tsel",
@@ -44,14 +42,16 @@ const baseMenuItems: MenuItem[] = [
         title: "Sandbox",
         icon: Box,
         children: [
-          { title: "Log APIs", url: "/sandbox/tsel/log-apis", icon: Database },
-          { title: "Callbacks", url: "/sandbox/tsel/callbacks", icon: PhoneCall },
+          { title: "Log APIs", url: "/tsel/sandbox/log-apis", icon: Database },
+          { title: "Callbacks", url: "/tsel/sandbox/callbacks", icon: PhoneCall },
         ],
       },
       {
         title: "Production",
         icon: Server,
         children: [
+          { title: "Daftar Kiriman", url: "/prod/tsel/daftar-kiriman", icon: Box },
+          { title: "Status Lacak", url: "/prod/tsel/status-lacak", icon: Send },
           { title: "Log APIs", url: "/prod/tsel/log-apis", icon: Database },
           { title: "Callbacks", url: "/prod/tsel/callbacks", icon: PhoneCall },
         ],
@@ -67,9 +67,9 @@ const baseMenuItems: MenuItem[] = [
         title: "Sandbox",
         icon: Box,
         children: [
-          { title: "Log APIs", url: "/sandbox/mandiri/log-apis-mandiri", icon: Database },
-          { title: "Callbacks Transactions", url: "/sandbox/mandiri/callbacks-mandiri", icon: Database },
-          { title: "Callbacks Registrations", url: "/sandbox/mandiri/callbacks-registrations-mandiri", icon: Database },
+          { title: "Log APIs", url: "/mandiri/sandbox/log-apis", icon: Database },
+          { title: "Callbacks Transactions", url: "/mandiri/sandbox/callbacks-transactions", icon: Database },
+          { title: "Callbacks Registrations", url: "/mandiri/sandbox/callbacks-registrations", icon: Database },
         ],
       },
       {
@@ -171,7 +171,7 @@ export function AppSidebar() {
     });
   };
 
-  // Fixed recursive menu renderer
+  // Recursive menu renderer
   const renderMenuItems = (items: MenuItem[], parentKey = "", level = 0) => {
     return items.map((item, index) => {
       const itemKey = `${parentKey}-${item.title}-${index}`;
@@ -206,7 +206,6 @@ export function AppSidebar() {
                 )}
               </SidebarMenuButton>
               
-              {/* Render submenu with proper nesting */}
               {isOpen && item.children && (
                 <div className="ml-4 mt-1">
                   <SidebarMenu>

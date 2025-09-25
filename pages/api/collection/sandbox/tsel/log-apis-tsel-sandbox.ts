@@ -84,7 +84,7 @@ export default async function handler(
 
       // paginated data
       searchParams.push(validatedPageSize, offset); // last two params
-      const dataQuery = `SELECT * FROM log_apis ${whereClause} ORDER BY request_date ASC LIMIT $${searchParams.length-1} OFFSET $${searchParams.length}`;
+      const dataQuery = `SELECT * FROM log_apis ${whereClause} ORDER BY request_date DESC LIMIT $${searchParams.length-1} OFFSET $${searchParams.length}`;
       const dataResult = await db.query(dataQuery, searchParams);
       const rows: LogApis[] = dataResult.rows;
 

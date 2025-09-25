@@ -9,7 +9,7 @@ import { CircleAlert } from "lucide-react";
 import { useState } from "react";
 import FormDetailLogApiMandiri from "./form-detail";
 
-// Component untuk tombol detail per-row
+
 const ActionComponent: React.FC<{ row: { original: LogApis } }> = ({ row }) => {
   const [openDetail, setOpenDetail] = useState<boolean>(false);
 
@@ -35,7 +35,6 @@ const ActionComponent: React.FC<{ row: { original: LogApis } }> = ({ row }) => {
   );
 };
 
-// Helper render cell panjang
 const TruncatedCell: React.FC<{
   value: string | undefined;
   row: { original: LogApis };
