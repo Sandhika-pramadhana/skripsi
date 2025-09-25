@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
 import { useToast } from "@/features/core/hooks/use-toast";
-import { LogoutUser } from "@/actions/auth/auth";
+import { LogoutUser } from "@/actions/auth/logout";
 import {
   Sidebar, SidebarContent, SidebarFooter, SidebarGroup,
   SidebarGroupLabel, SidebarGroupContent, SidebarMenu,

@@ -15,7 +15,7 @@ import {
   AlertDialogTrigger 
 } from "@/features/core/components/ui/alert-dialog";
 import { useToast } from '@/features/core/hooks/use-toast';
-import { LogoutUser } from "@/actions/auth/auth";
+import { LogoutUser } from "@/actions/auth/logout";
 import { useRouter } from "next/navigation";
 import Cookies from 'js-cookie';
 

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { APIResponse, Credentials, LoginResponse, LogoutResponse } from "@/types/def";
+import { APIResponse, Credentials, LoginResponse } from "@/types/def";
 import { serverAction, ServerActionError } from "../action";
 import axios from "axios";
 import Cookies from "js-cookie";
