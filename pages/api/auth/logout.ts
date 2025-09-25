@@ -24,7 +24,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     return res.status(500).json({
       status: false,
       code: 500,
-      message: `Internal Server Error. ${error instanceof Error ? error.message : String(error)}`,
+      message: `Internal Server Error. ${
+        error instanceof Error ? error.message : String(error)
+      }`,
     });
   }
 }
