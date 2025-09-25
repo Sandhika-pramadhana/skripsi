@@ -79,6 +79,7 @@ const LoginForm = () => {
             width={120}
             height={120}
             priority
+            unoptimized
           />
         <h1 className="text-2xl text-start">
           Selamat Datang <br />
