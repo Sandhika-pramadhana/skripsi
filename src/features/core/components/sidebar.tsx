@@ -50,8 +50,8 @@ const baseMenuItems: MenuItem[] = [
         title: "Production",
         icon: Server,
         children: [
-          { title: "Daftar Kiriman", url: "/prod/tsel/daftar-kiriman", icon: Box },
-          { title: "Status Lacak", url: "/prod/tsel/status-lacak", icon: Send },
+          { title: "Daftar Kiriman", url: "/daftar-kiriman", icon: Box },
+          { title: "Status Lacak", url: "/status-lacak", icon: Send },
           { title: "Log APIs", url: "/prod/tsel/log-apis", icon: Database },
           { title: "Callbacks", url: "/prod/tsel/callbacks", icon: PhoneCall },
         ],
