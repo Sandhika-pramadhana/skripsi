@@ -312,7 +312,7 @@ export function ListCallbacksMandiri() {
 
       <div className="rounded-md border mb-4">
         <Table className="max-h-[calc(100dvh-18rem)] custom-scrollbar">
-          <TableHeader className="sticky top-0 z-10 bg-white shadow-sm">
+          <TableHeader className="sticky top-0 z-1 bg-white shadow-sm">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => (
