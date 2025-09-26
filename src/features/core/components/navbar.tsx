@@ -1,18 +1,17 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { LogOutIcon } from "lucide-react";
-import { 
-  AlertDialog, 
-  AlertDialogAction, 
-  AlertDialogCancel, 
-  AlertDialogContent, 
-  AlertDialogDescription, 
-  AlertDialogFooter, 
-  AlertDialogHeader, 
-  AlertDialogTitle, 
-  AlertDialogTrigger 
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger
 } from "@/features/core/components/ui/alert-dialog";
 import { useToast } from '@/features/core/hooks/use-toast';
 import { LogoutUser } from "@/actions/auth/logout";
@@ -41,7 +40,7 @@ const Navbar: React.FC = () => {
   const handleLogout = async () => {
     try {
       const response = await LogoutUser();
-      
+     
       // Clear all cookies regardless of API response
       Cookies.remove("token-auth");
       Cookies.remove("user_id");
@@ -49,7 +48,7 @@ const Navbar: React.FC = () => {
       Cookies.remove("username");
       Cookies.remove("role_id");
       Cookies.remove("roleName");
-      
+     
       if (response.success) {
         toast({
           title: "Berhasil",
@@ -71,9 +70,9 @@ const Navbar: React.FC = () => {
       });
     }
   };
-  
+ 
   return (
-    <nav className="flex items-center justify-between px-6 py-3 bg-white border-b shadow-sm sticky top-0 z-50">
+    <nav className="flex items-center justify-between px-6 py-3 bg-white border-b shadow-sm sticky top-0 z-1">
       {/* Bagian Kanan */}
       <div className="ml-auto">
         <div className="flex items-center border px-4 rounded-lg p-2">
@@ -92,13 +91,15 @@ const Navbar: React.FC = () => {
             <span className="text-sm font-medium text-gray-800">{userDetails.name}</span>
             <span className="text-xs text-gray-500">{userDetails.roleName}</span>
           </div>
+          
+          {/* Alert Dialog dengan z-index yang tepat */}
           <AlertDialog>
             <AlertDialogTrigger asChild>
-              <div className="p-1 ml-2 rounded-sm text-red-500 hover:bg-red-400 hover:text-white">
+              <div className="p-1 ml-2 rounded-sm text-red-500 hover:bg-red-400 hover:text-white cursor-pointer transition-colors">
                 <LogOutIcon />
               </div>
             </AlertDialogTrigger>
-            <AlertDialogContent>
+            <AlertDialogContent className="z-20">
               <AlertDialogHeader>
                 <AlertDialogTitle>Konfirmasi Keluar?</AlertDialogTitle>
                 <AlertDialogDescription>
