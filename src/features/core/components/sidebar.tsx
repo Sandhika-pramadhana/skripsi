@@ -67,9 +67,9 @@ const baseMenuItems: MenuItem[] = [
         title: "Sandbox",
         icon: Box,
         children: [
-          { title: "Log APIs", url: "/sandbox/mandiri/log-apis", icon: Database },
-          { title: "Callbacks Transactions", url: "/sandbox/mandiri/callbacks-transactions", icon: Database },
-          { title: "Callbacks Registrations", url: "/sandbox/mandiri/callbacks-registrations", icon: Database },
+          { title: "Log APIs", url: "/sandbox/mandiri/log-apis-mandiri", icon: Database },
+          { title: "Callbacks Transactions", url: "/sandbox/mandiri/callbacks-mandiri", icon: Database },
+          { title: "Callbacks Registrations", url: "/sandbox/mandiri/callbacks-registrations-mandiri", icon: Database },
         ],
       },
       {
