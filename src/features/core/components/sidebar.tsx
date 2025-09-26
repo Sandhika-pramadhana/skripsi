@@ -85,13 +85,6 @@ const baseMenuItems: MenuItem[] = [
   },
 ];
 
-// Admin menu (view-only user management)
-const adminMenuItems: MenuItem[] = [
-  ...baseMenuItems,
-  { title: "Data User", url: "/user", icon: Users2, readOnly: true },
-  { title: "Role User", url: "/role", icon: Settings2, readOnly: true },
-];
-
 // Superadmin menu
 const superadminMenuItems: MenuItem[] = [
   ...baseMenuItems,
@@ -104,8 +97,6 @@ const getMenuItemsByRole = (roleName: string): MenuItem[] => {
   switch (roleName.toLowerCase()) {
     case "superadmin":
       return superadminMenuItems;
-    case "admin":
-      return adminMenuItems;
     default:
       return baseMenuItems;
   }
@@ -185,9 +176,6 @@ export function AppSidebar() {
                 <item.icon className="text-[#F48120]" size={16} />
                 <span className="text-sm">
                   {item.title}
-                  {item.readOnly && userRole.toLowerCase() === "admin" && (
-                    <span className="text-xs text-gray-500 ml-1">(View Only)</span>
-                  )}
                 </span>
               </Link>
             </SidebarMenuButton>
