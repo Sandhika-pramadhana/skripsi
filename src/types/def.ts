@@ -139,6 +139,9 @@ export interface User {
     role_id: number;   
     created_at?: string;
     updated_at?: string;
+    login_attempts?: number;
+    last_attempt?: string | null;
+    blocked_until?: string | null;
 }
 
 export interface Role {
