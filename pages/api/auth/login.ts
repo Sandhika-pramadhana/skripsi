@@ -1,11 +1,10 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import type { NextApiRequest, NextApiResponse } from "next";
-import { connectDB } from "@/features/core/lib/db";
+import { connectDB2 } from "@/features/core/lib/db";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { APIResponse, User } from "@/types/def";
-import { RowDataPacket } from "mysql2/promise";
 
 const JWT_SECRET = process.env.NEXT_PUBLIC_JWT_SECRET || "secret_key";
 const MAX_ATTEMPTS = 5;
@@ -13,7 +12,9 @@ const BLOCK_TIME = 5 * 60 * 1000; // 5 menit
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<APIResponse<{ items: { token: string; user: Omit<User, "password"> } }>>
+  res: NextApiResponse<
+    APIResponse<{ items: { token: string; user: Omit<User, "password"> } }>
+  >
 ) {
   if (req.method !== "POST") {
     return res.status(405).json({
@@ -36,12 +37,12 @@ export default async function handler(
       });
     }
 
-    const db = await connectDB();
+    const db = await connectDB2();
 
-    const [rows] = await db.execute<RowDataPacket[]>(
-      "SELECT * FROM users WHERE username = ?",
-      [username]
-    );
+    // Gunakan parameterized query untuk keamanan
+    const { rows } = await db.query("SELECT * FROM users WHERE username = $1", [
+      username,
+    ]);
 
     if (rows.length === 0) {
       return res.status(401).json({
@@ -56,9 +57,14 @@ export default async function handler(
     const now = new Date();
 
     // Cek blokir
-    const blockedUntilTime = user.blocked_until ? new Date(user.blocked_until) : null;
+    const blockedUntilTime = user.blocked_until
+      ? new Date(user.blocked_until)
+      : null;
+
     if (blockedUntilTime && blockedUntilTime > now) {
-      const minutesLeft = Math.ceil((blockedUntilTime.getTime() - now.getTime()) / 60000);
+      const minutesLeft = Math.ceil(
+        (blockedUntilTime.getTime() - now.getTime()) / 60000
+      );
       return res.status(429).json({
         status: false,
         code: "429",
@@ -74,8 +80,10 @@ export default async function handler(
       const newBlockedUntil =
         newCount >= MAX_ATTEMPTS ? new Date(now.getTime() + BLOCK_TIME) : null;
 
-      await db.execute(
-        `UPDATE users SET login_attempts = ?, last_attempt = ?, blocked_until = ? WHERE id = ?`,
+      await db.query(
+        `UPDATE users 
+         SET login_attempts = $1, last_attempt = $2, blocked_until = $3 
+         WHERE id = $4`,
         [newCount, now, newBlockedUntil, user.id]
       );
 
@@ -90,9 +98,9 @@ export default async function handler(
       });
     }
 
-    // Reset login attempt
-    await db.execute(
-      "UPDATE users SET login_attempts = 0, blocked_until = NULL WHERE id = ?",
+    // Reset login attempt setelah berhasil
+    await db.query(
+      "UPDATE users SET login_attempts = 0, blocked_until = NULL WHERE id = $1",
       [user.id]
     );
 
