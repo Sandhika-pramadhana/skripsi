@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { NextApiRequest, NextApiResponse } from "next";
-import { connectDB2 } from "@/features/core/lib/db"; // pastikan connectDB2 pakai 'pg'
+import { connectDB2 } from "@/features/core/lib/db";
 import { PaginatedAPIResponseBackend, APIResponse, Role } from "@/types/def";
 import { authenticateToken, AuthenticatedRequest } from "../middleware/auth";
 
@@ -14,8 +14,9 @@ export default async function handler(
       const db = await connectDB2();
       const { id, term } = req.query;
 
-      // GET
+      //Handle GET request
       if (req.method === "GET") {
+        // GET by ID
         if (id) {
           if (!/^\d+$/.test(id as string)) {
             return res.status(400).json({
@@ -48,7 +49,7 @@ export default async function handler(
           });
         }
 
-        // Pagination
+        // GET with pagination + search
         const page = parseInt(req.query.page as string, 10) || 1;
         const page_size = parseInt(req.query.page_size as string, 10) || 25;
         const validatedPage = page < 1 ? 1 : page;
@@ -57,25 +58,25 @@ export default async function handler(
         const offset = (validatedPage - 1) * validatedPageSize;
 
         let searchCondition = "";
-        const searchParams: any[] = [];
+        let searchParams: any[] = [];
 
         if (term && typeof term === "string") {
           searchCondition = `WHERE "roleName" ILIKE $1`;
-          searchParams.push(`%${term}%`);
+          searchParams = [`%${term}%`];
         }
 
-        const totalQuery = `SELECT COUNT(*) AS total_data FROM roles ${searchCondition}`;
-        const totalResult = await db.query(totalQuery, searchParams);
-        const total_data = parseInt(totalResult.rows[0]?.total_data || "0", 10);
+        const totalDataResult = await db.query(
+          `SELECT COUNT(*) AS total_data FROM roles ${searchCondition}`,
+          searchParams
+        );
+        const total_data: number = Number(
+          totalDataResult.rows[0]?.total_data || 0
+        );
 
-        const dataQuery = `
-          SELECT * FROM roles 
-          ${searchCondition}
-          LIMIT $${searchParams.length + 1}
-          OFFSET $${searchParams.length + 2}
-        `;
-        const result = await db.query<Role>(
-          dataQuery,
+        const rolesResult = await db.query<Role>(
+          `SELECT * FROM roles ${searchCondition} LIMIT $${searchParams.length + 1} OFFSET $${
+            searchParams.length + 2
+          }`,
           [...searchParams, validatedPageSize, offset]
         );
 
@@ -89,20 +90,20 @@ export default async function handler(
           code: "200",
           message: "Success get roles.",
           data: {
-            items: result.rows,
+            items: rolesResult.rows,
             pagination: {
               page: validatedPage,
               page_size: validatedPageSize,
               total_page,
               total_data,
-              current_page: result.rows.length > 0 ? validatedPage : 0,
-              current_data: result.rows.length,
+              current_page: rolesResult.rows.length > 0 ? validatedPage : 0,
+              current_data: rolesResult.rows.length,
             },
           },
         });
       }
 
-      // POST
+      //Handle POST request
       if (req.method === "POST") {
         const { roleName } = req.body;
 
@@ -128,7 +129,7 @@ export default async function handler(
         });
       }
 
-      // PUT
+      //Handle PUT request
       if (req.method === "PUT") {
         if (!id || !/^\d+$/.test(id as string)) {
           return res.status(400).json({
@@ -172,7 +173,7 @@ export default async function handler(
         });
       }
 
-      // DELETE
+      //Handle DELETE request
       if (req.method === "DELETE") {
         if (!id || !/^\d+$/.test(id as string)) {
           return res.status(400).json({
@@ -183,9 +184,10 @@ export default async function handler(
           });
         }
 
-        const result = await db.query("DELETE FROM roles WHERE id = $1", [
-          Number(id),
-        ]);
+        const result = await db.query(
+          "DELETE FROM roles WHERE id = $1",
+          [Number(id)]
+        );
 
         if (result.rowCount === 0) {
           return res.status(404).json({
@@ -204,7 +206,7 @@ export default async function handler(
         });
       }
 
-      // Method not allowed
+      //Method not allowed
       return res.status(405).json({
         status: false,
         code: "405",
