@@ -59,7 +59,7 @@ pipeline {
           // Run the container without network and volumes
           sh """
             sshpass -p $SERVER_SSH_PASSWORD ssh -o StrictHostKeyChecking=no -p $SERVER_SSH_PORT $SERVER_SSH_USER@$SERVER_ADDRESS '
-            echo $SERVER_SSH_PASSWORD | sudo -S docker run -p 3000:3000 -d --rm \
+            echo $SERVER_SSH_PASSWORD | sudo -S docker run -p 3000:3000 -d --network general-network --rm \
             -e NEXT_PUBLIC_API_URL=https://dashboard.posfin.id \
             -e NEXT_PUBLIC_API_URL_IP=http://8.215.77.122:3000 \
             -e NEXT_PUBLIC_API_URL_SANDBOX=https://sandboxkurir.posfin.id \
