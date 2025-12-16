@@ -5,8 +5,6 @@ import { useEffect, useState } from "react";
 import Cookies from 'js-cookie';
 import { Button } from "@/features/core/components/ui/button";
 import { Role } from "@/types/def";
-
-// Re-export Role type for convenience
 export type { Role } from "@/types/def";
 import { CellContext, ColumnDef } from "@tanstack/react-table";
 import { CircleAlert, PenIcon, Trash } from "lucide-react";

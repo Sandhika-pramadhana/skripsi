@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <dws:setTransaction xmlns:dws="http://dwssync_pfi_prd" xmlns:xsd="http://dwssync_pfi_prd/xsd">
+      <dws:input>
+        <xsd:ITEM>
+          <xsd:AUFNR></xsd:AUFNR>
+          <xsd:BUKRS>4000</xsd:BUKRS>
+          <xsd:BLDAT>20251209</xsd:BLDAT>
+          <xsd:BUDAT>20251209</xsd:BUDAT>
+          <xsd:MONAT>12</xsd:MONAT>
+          <xsd:BLART>ZF</xsd:BLART>
+          <xsd:WAERS>IDR</xsd:WAERS>
+          <xsd:XBLNR>29111</xsd:XBLNR>
+          <xsd:BKTXT>ZF20251209--- REV3 ---</xsd:BKTXT>
+          <xsd:BSCHL>01</xsd:BSCHL>
+          <xsd:NEWKO>5000000000</xsd:NEWKO>
+          <xsd:WRBTR>1144972</xsd:WRBTR>
+          <xsd:GSBER>HO00</xsd:GSBER>
+          <xsd:ZFBDT>20251209</xsd:ZFBDT>
+          <xsd:ZTERM>Z030</xsd:ZTERM>
+          <xsd:PRCTR>PFI0040005</xsd:PRCTR>
+          <xsd:ZUONR>REVENUE-AGGPB</xsd:ZUONR>
+          <xsd:KOSTL></xsd:KOSTL>
+          <xsd:WWPRD></xsd:WWPRD>
+          <xsd:KUNNR>5000000000</xsd:KUNNR>
+          <xsd:SGTXT>POSPAY AGGREGATOR</xsd:SGTXT>
+          <xsd:STATE></xsd:STATE>
+        </xsd:ITEM>
+        <xsd:ITEM>
+          <xsd:AUFNR></xsd:AUFNR>
+          <xsd:BUKRS>4000</xsd:BUKRS>
+          <xsd:BLDAT>20251209</xsd:BLDAT>
+          <xsd:BUDAT>20251209</xsd:BUDAT>
+          <xsd:MONAT>12</xsd:MONAT>
+          <xsd:BLART>ZF</xsd:BLART>
+          <xsd:WAERS>IDR</xsd:WAERS>
+          <xsd:XBLNR>29111</xsd:XBLNR>
+          <xsd:BKTXT>ZF20251209--- REV3 ---</xsd:BKTXT>
+          <xsd:BSCHL>50</xsd:BSCHL>
+          <xsd:NEWKO>4100200000</xsd:NEWKO>
+          <xsd:WRBTR>1144972</xsd:WRBTR>
+          <xsd:GSBER>HO00</xsd:GSBER>
+          <xsd:ZFBDT>20251209</xsd:ZFBDT>
+          <xsd:ZTERM>Z030</xsd:ZTERM>
+          <xsd:PRCTR>PFI0040005</xsd:PRCTR>
+          <xsd:ZUONR>REVENUE-AGGPB</xsd:ZUONR>
+          <xsd:KOSTL></xsd:KOSTL>
+          <xsd:WWPRD>12200111</xsd:WWPRD>
+          <xsd:KUNNR></xsd:KUNNR>
+          <xsd:SGTXT>POSPAY AGGREGATOR</xsd:SGTXT>
+          <xsd:STATE></xsd:STATE>
+        </xsd:ITEM>
+      </dws:input>
+      <dws:type>JSON</dws:type>
+    </dws:setTransaction>
+  </soapenv:Body>
+</soapenv:Envelope>

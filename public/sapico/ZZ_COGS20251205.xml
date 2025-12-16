@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <dws:setTransaction xmlns:dws="http://dwssync_pfi_prd" xmlns:xsd="http://dwssync_pfi_prd/xsd">
+      <dws:input>
+        <xsd:ITEM>
+          <xsd:AUFNR></xsd:AUFNR>
+          <xsd:BUKRS>4000</xsd:BUKRS>
+          <xsd:BLDAT>20251205</xsd:BLDAT>
+          <xsd:BUDAT>20251205</xsd:BUDAT>
+          <xsd:MONAT>12</xsd:MONAT>
+          <xsd:BLART>ZZ</xsd:BLART>
+          <xsd:WAERS>IDR</xsd:WAERS>
+          <xsd:XBLNR>29111</xsd:XBLNR>
+          <xsd:BKTXT>ZZ20251205-- REV3 --</xsd:BKTXT>
+          <xsd:BSCHL>40</xsd:BSCHL>
+          <xsd:NEWKO>5100201000</xsd:NEWKO>
+          <xsd:WRBTR>244402</xsd:WRBTR>
+          <xsd:GSBER>HO00</xsd:GSBER>
+          <xsd:ZFBDT>20251205</xsd:ZFBDT>
+          <xsd:ZTERM>Z030</xsd:ZTERM>
+          <xsd:PRCTR>PFI0040005</xsd:PRCTR>
+          <xsd:ZUONR>COGS-AGG</xsd:ZUONR>
+          <xsd:KOSTL>CFI1370000</xsd:KOSTL>
+          <xsd:WWPRD>12200111</xsd:WWPRD>
+          <xsd:KUNNR></xsd:KUNNR>
+          <xsd:SGTXT>COGS AGGREGATOR</xsd:SGTXT>
+          <xsd:STATE></xsd:STATE>
+        </xsd:ITEM>
+        <xsd:ITEM>
+          <xsd:AUFNR></xsd:AUFNR>
+          <xsd:BUKRS>4000</xsd:BUKRS>
+          <xsd:BLDAT>20251205</xsd:BLDAT>
+          <xsd:BUDAT>20251205</xsd:BUDAT>
+          <xsd:MONAT>12</xsd:MONAT>
+          <xsd:BLART>ZZ</xsd:BLART>
+          <xsd:WAERS>IDR</xsd:WAERS>
+          <xsd:XBLNR>29111</xsd:XBLNR>
+          <xsd:BKTXT>ZZ20251205-- REV3 --</xsd:BKTXT>
+          <xsd:BSCHL>31</xsd:BSCHL>
+          <xsd:NEWKO>6400000000</xsd:NEWKO>
+          <xsd:WRBTR>244402</xsd:WRBTR>
+          <xsd:GSBER>HO00</xsd:GSBER>
+          <xsd:ZFBDT>20251205</xsd:ZFBDT>
+          <xsd:ZTERM>Z030</xsd:ZTERM>
+          <xsd:PRCTR>PFI0040005</xsd:PRCTR>
+          <xsd:ZUONR>6400000000</xsd:ZUONR>
+          <xsd:KOSTL></xsd:KOSTL>
+          <xsd:WWPRD></xsd:WWPRD>
+          <xsd:KUNNR></xsd:KUNNR>
+          <xsd:SGTXT>COGS AGGREGATOR</xsd:SGTXT>
+          <xsd:STATE></xsd:STATE>
+        </xsd:ITEM>
+      </dws:input>
+      <dws:type>JSON</dws:type>
+    </dws:setTransaction>
+  </soapenv:Body>
+</soapenv:Envelope>

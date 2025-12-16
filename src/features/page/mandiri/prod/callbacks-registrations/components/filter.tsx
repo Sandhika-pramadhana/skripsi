@@ -8,10 +8,10 @@ import { CalendarSearchIcon, DeleteIcon, FilterIcon, CpuIcon } from 'lucide-reac
 import React, { useState, useEffect, useRef } from 'react';
 
 interface FilterCallbacksRegistrationsSectionProps {
-  startDate: string; // jika ada timestamp di DB, bisa gunakan
+  startDate: string; 
   endDate: string;
-  username: string; // filter ganti dari typeName ke username
-  statusId: string; // filter status_id
+  username: string; 
+  statusId: string; 
   onDateChange: (start: string, end: string) => void;
   onUsernameChange: (username: string) => void;
   onStatusIdChange: (statusId: string) => void;

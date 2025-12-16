@@ -6,7 +6,6 @@ import { CircleAlert } from "lucide-react";
 import { useState } from "react";
 import FormDetailCallbackMandiri from "./form-detail";
 
-// Component untuk tombol detail per-row
 const ActionComponent: React.FC<{ row: { original: callback_registrations } }> = ({ row }) => {
   const [openDetail, setOpenDetail] = useState<boolean>(false);
   return (
@@ -30,7 +29,7 @@ const ActionComponent: React.FC<{ row: { original: callback_registrations } }> =
   );
 };
 
-// Helper render cell panjang untuk status_message
+
 const TruncatedCell: React.FC<{
   value: string | undefined;
   row: { original: callback_registrations };

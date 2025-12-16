@@ -28,7 +28,6 @@ export function FilterLogApisMandiriSection({
 
   const startRef = useRef<HTMLInputElement | null>(null);
 
-  // Sync props -> state
   useEffect(() => {
     setLocalStart(startDate);
     setLocalEnd(endDate);

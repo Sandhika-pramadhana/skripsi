@@ -1,23 +1,22 @@
-import mysql from 'mysql2/promise';
 import { Client } from 'pg';
+import mysql from 'mysql2/promise';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
-// DB 1 (MySQL)
 export async function connectDB() {
-  const connection = await mysql.createConnection({
-    host: process.env.NEXT_DB_HOST || 'localhost',
-    port: Number(process.env.NEXT_DB_PORT) || 3306,
-    user: process.env.NEXT_DB_USER || 'root',
-    password: process.env.NEXT_DB_PASSWORD || 'root',
-    database: process.env.NEXT_DB_NAME || 'dashboard-posfin',
+  const client = new Client({
+    host: process.env.NEXT_DB_HOST || "localhost",
+    port: Number(process.env.NEXT_DB_PORT) || 5432,
+    user: process.env.NEXT_DB_USER || "postgres",
+    password: process.env.NEXT_DB_PASSWORD || "admin123",
+    database: process.env.NEXT_DB_NAME || "mydatabase",
   });
 
-  return connection;
+  await client.connect();
+  return client;
 }
 
-// DB 2 (PostgreSQL)
 export async function connectDB2() {
   const client = new Client({
     host: process.env.NEXT_DB2_HOST || '8.215.77.122',
@@ -71,3 +70,38 @@ export async function connectDB5() {
   return client;
 }
 
+export async function connectDB6() {
+  const connection = await mysql.createConnection({
+    host: process.env.NEXT_DB6_HOST_ || '10.10.99.11',
+    port: Number(process.env.NEXT_DB6_PORT) || 3306,
+    user: process.env.NEXT_DB6_USER || 'root',
+    password: process.env.NEXT_DB6_PASSWORD || 'jamuJu',
+    database: process.env.NEXT_DB6_NAME || 'sapfico',
+  });
+
+  return connection;
+}
+
+export async function connectDB7() {
+  const connection = await mysql.createConnection({
+    host: process.env.NEXT_DB7_HOST_ || '147.139.203.249',
+    port: Number(process.env.NEXT_DB7_PORT) || 3306,
+    user: process.env.NEXT_DB7_USER || 'tribuana',
+    password: process.env.NEXT_DB7_PASSWORD || 'kuc1ngg4r0ng',
+    database: process.env.NEXT_DB7_NAME || 'posfin_ppob',
+  });
+
+  return connection;
+}
+
+export async function connectDB8() {
+  const connection = await mysql.createConnection({
+    host: process.env.NEXT_DB6_HOST_ || '10.10.99.11',
+    port: Number(process.env.NEXT_DB6_PORT) || 3306,
+    user: process.env.NEXT_DB6_USER || 'dss',
+    password: process.env.NEXT_DB6_PASSWORD || 'jamuJu',
+    database: process.env.NEXT_DB6_NAME || 'agen_posfin',
+  });
+
+  return connection;
+}

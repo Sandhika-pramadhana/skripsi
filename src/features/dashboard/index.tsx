@@ -27,7 +27,7 @@ export default function DashboardSection({ children }: { children: React.ReactNo
   const [startDate, setStartDate] = useState<string>('');
   const [endDate, setEndDate] = useState<string>('');
   
-  // Hardcode user role (misal dari props atau context lain)
+  
   const [userRole] = useState<"Superadmin" | "Client" | "Client Pos">("Superadmin");
 
   const handleDateChange = (start: string, end: string) => {

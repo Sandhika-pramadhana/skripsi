@@ -58,9 +58,8 @@ const formSchema = z.object({
 // Mapping role string ke ID
 const roleMapping: Record<string, number> = {
   superadmin: 1,
-  client: 2,
-  "client pos": 3,
-  admin: 4,
+  operational: 2,
+  accounting: 3,
 };
 
 const FormUser: React.FC<FormUserProps> = ({ open, onOpenModal, data, isEdit }) => {
@@ -95,35 +94,14 @@ const FormUser: React.FC<FormUserProps> = ({ open, onOpenModal, data, isEdit }) 
   );
 
   const roleOptions = useMemo((): RoleOption[] => {
-    const rolesArray = roleOptionsSWR?.items || [];
-  
-    const dynamicRoles: RoleOption[] = Array.isArray(rolesArray)
-      ? rolesArray.map((role: any) => ({
-          label: role.roleName,
-          value: String(role.id),
-        }))
-      : [];
-  
     const staticRoles: RoleOption[] = [
       { label: "Superadmin", value: "1" },
-      { label: "Client", value: "2" },
-      { label: "Client POS", value: "3" },
-      { label: "Admin", value: "4" },
+      { label: "Operational", value: "2" },
+      { label: "Accounting", value: "3" },
     ];
   
-    const mergedRoles = [
-      ...staticRoles,
-      ...dynamicRoles.filter(
-        (dRole) =>
-          !staticRoles.some(
-            (sRole) => sRole.label.toLowerCase() === dRole.label.toLowerCase()
-          )
-      ),
-    ];
-    
-  
-    return mergedRoles;
-  }, [roleOptionsSWR]);
+    return staticRoles;
+  }, []);
   
   
 
@@ -137,7 +115,7 @@ const FormUser: React.FC<FormUserProps> = ({ open, onOpenModal, data, isEdit }) 
     const { role, ...otherValues } = values;
 
     // Convert role string ke integer
-    const roleIdInt = roleMapping[role.roleId.toLowerCase()] || parseInt(role.roleId) || 0;
+    const roleIdInt = roleMapping[role.roleName.toLowerCase()] || parseInt(role.roleId) || 0;
 
     const payload: any = {
       ...otherValues,
@@ -170,7 +148,7 @@ const FormUser: React.FC<FormUserProps> = ({ open, onOpenModal, data, isEdit }) 
     if (isEdit && open && data) {
       // Cari role name dari roleMapping
       const roleEntry = Object.entries(roleMapping).find(([, id]) => id === data.role_id);
-      const roleName = roleEntry ? roleEntry[0] : "";
+      const roleName = roleEntry ? roleEntry[0].charAt(0).toUpperCase() + roleEntry[0].slice(1) : "";
 
       form.reset({
         name: data.name,

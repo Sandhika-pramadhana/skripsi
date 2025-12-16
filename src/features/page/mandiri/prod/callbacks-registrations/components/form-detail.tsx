@@ -18,7 +18,6 @@ interface FormDetailCallbackRegistrationsProps {
   data?: callback_registrations;
 }
 
-// helper format value agar object/array tampil rapih
 const formatValue = (value: any) => {
   if (value === null || value === undefined) return "-";
   if (typeof value === "object") {

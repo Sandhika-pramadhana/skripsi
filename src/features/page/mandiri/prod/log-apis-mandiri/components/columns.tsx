@@ -35,7 +35,6 @@ const ActionComponent: React.FC<{ row: { original: LogApis } }> = ({ row }) => {
   );
 };
 
-// Helper render cell panjang
 const TruncatedCell: React.FC<{
   value: string | undefined;
   row: { original: LogApis };

@@ -1,14 +1,14 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import type { NextApiRequest, NextApiResponse } from "next";
-import { connectDB2 } from "@/features/core/lib/db";
+import { connectDB } from "@/features/core/lib/db";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { APIResponse, User } from "@/types/def";
 
 const JWT_SECRET = process.env.NEXT_PUBLIC_JWT_SECRET || "secret_key";
 const MAX_ATTEMPTS = 5;
-const BLOCK_TIME = 5 * 60 * 1000; // 5 menit
+const BLOCK_TIME = 5 * 60 * 1000; 
 
 export default async function handler(
   req: NextApiRequest,
@@ -37,9 +37,9 @@ export default async function handler(
       });
     }
 
-    const db = await connectDB2();
+    const db = await connectDB();
 
-    // Gunakan parameterized query untuk keamanan
+    
     const { rows } = await db.query("SELECT * FROM users WHERE username = $1", [
       username,
     ]);

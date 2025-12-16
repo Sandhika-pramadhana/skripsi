@@ -113,14 +113,14 @@ export function ListLogApisMandiri() {
     if (
       initializedFromPreferences.current &&
       currentVisibilityString !== lastSavedVisibility.current &&
-      Object.keys(columnVisibility).length > 0 // Only save if we have actual visibility data
+      Object.keys(columnVisibility).length > 0 
     ) {
       savePreference((prev) => ({ ...prev, columnVisibility }));
       lastSavedVisibility.current = currentVisibilityString;
     }
   }, [columnVisibility, savePreference]);
 
-  // Reset pagination when filters change (memoized to prevent unnecessary re-renders)
+
   const shouldResetPagination = useMemo(
     () => [termDebounced, processNameDebounced, startDate, endDate].join("|"),
     [termDebounced, processNameDebounced, startDate, endDate]
@@ -134,7 +134,7 @@ export function ListLogApisMandiri() {
     }
   }, [shouldResetPagination]);
 
-  // SWR key (memoized)
+  
   const swrKey = useMemo(() => 
     `listLogApisMandiri-${termDebounced}-${processNameDebounced}-${startDate}-${endDate}-${pagination.pageIndex}-${pagination.pageSize}`,
     [termDebounced, processNameDebounced, startDate, endDate, pagination.pageIndex, pagination.pageSize]
@@ -149,7 +149,7 @@ export function ListLogApisMandiri() {
 
       const res = await unwrap(
         getListLogApisMandiri({
-          page: pagination.pageIndex + 1, // 0-based → 1-based
+          page: pagination.pageIndex + 1,
           page_size: pagination.pageSize,
           term: combinedTerm,
           startDate,
@@ -187,7 +187,7 @@ export function ListLogApisMandiri() {
     manualPagination: true,
   });
 
-  // Memoized pagination logic
+ 
   const currentPage = pagination.pageIndex + 1;
   const pages = useMemo<(number | string)[]>(() => {
     const list: (number | string)[] = [];
