@@ -1,16 +1,17 @@
 import { Client } from 'pg';
-import mysql from 'mysql2/promise';
+import mysql, { Pool } from 'mysql2/promise';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
+/** * POSTGRES */
 export async function connectDB() {
   const client = new Client({
-    host: process.env.NEXT_DB_HOST || "localhost",
+    host: process.env.NEXT_DB_HOST || 'localhost',
     port: Number(process.env.NEXT_DB_PORT) || 5432,
-    user: process.env.NEXT_DB_USER || "postgres",
-    password: process.env.NEXT_DB_PASSWORD || "admin123",
-    database: process.env.NEXT_DB_NAME || "mydatabase",
+    user: process.env.NEXT_DB_USER || 'postgres',
+    password: process.env.NEXT_DB_PASSWORD || 'admin123',
+    database: process.env.NEXT_DB_NAME || 'mydatabase',
   });
 
   await client.connect();
@@ -56,7 +57,6 @@ export async function connectDB4() {
   return client;
 }
 
-
 export async function connectDB5() {
   const client = new Client({
     host: process.env.NEXT_DB5_HOST || '117.102.70.147',
@@ -70,38 +70,49 @@ export async function connectDB5() {
   return client;
 }
 
+/*** MYSQL */
+
+function createMySqlPool(config: {
+  host: string;
+  port: number;
+  user: string;
+  password: string;
+  database: string;
+}): Pool {
+  return mysql.createPool({
+    ...config,
+    connectionLimit: 10,
+    waitForConnections: true,
+    queueLimit: 0,
+  });
+}
+
 export async function connectDB6() {
-  const connection = await mysql.createConnection({
+  return createMySqlPool({
     host: process.env.NEXT_DB6_HOST || '10.10.99.11',
     port: Number(process.env.NEXT_DB6_PORT) || 3306,
     user: process.env.NEXT_DB6_USER || 'root',
     password: process.env.NEXT_DB6_PASSWORD || 'jamuJu',
     database: process.env.NEXT_DB6_NAME || 'sapfico',
   });
-
-  return connection;
 }
 
 export async function connectDB7() {
-  const connection = await mysql.createConnection({
+  return createMySqlPool({
     host: process.env.NEXT_DB7_HOST || '147.139.203.249',
     port: Number(process.env.NEXT_DB7_PORT) || 3306,
     user: process.env.NEXT_DB7_USER || 'tribuana',
     password: process.env.NEXT_DB7_PASSWORD || 'kuc1ngg4r0ng',
     database: process.env.NEXT_DB7_NAME || 'posfin_ppob',
   });
-
-  return connection;
 }
 
 export async function connectDB8() {
-  const connection = await mysql.createConnection({
+  return createMySqlPool({
     host: process.env.NEXT_DB8_HOST || '10.10.99.11',
     port: Number(process.env.NEXT_DB8_PORT) || 3306,
     user: process.env.NEXT_DB8_USER || 'dss',
     password: process.env.NEXT_DB8_PASSWORD || 'jamuJu',
     database: process.env.NEXT_DB8_NAME || 'agen_posfin',
   });
-
-  return connection;
 }
