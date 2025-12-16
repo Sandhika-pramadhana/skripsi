@@ -6,30 +6,40 @@ import Navbar from "@/features/core/components/navbar";
 import ListCallbacksRegistrations from "./components/list-callbacks-registrations";
 import { PhoneCallIcon } from "lucide-react";
 
-export default function CallbacksRegistrationsMandiriSection({ children }: { children: React.ReactNode }) {
+export default function CallbacksRegistrationsMandiriSection({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <SidebarProvider>
       {/* Sidebar */}
       <AppSidebar />
 
       {/* Main Content */}
-      <div className="flex flex-col flex-1">
+      <div className="flex flex-col flex-1 min-w-0">
         {/* Navbar */}
         <Navbar />
 
         {/* Main Section */}
-        <main className="flex-1 p-4">
+        <main className="flex-1 p-4 overflow-x-auto">
           <SidebarTrigger />
+
           {children}
+
           <div className="flex items-center justify-between">
             <div className="flex gap-2 items-center">
               <PhoneCallIcon />
-              <h1 className="font-bold text-2xl my-4">Data Callbacks Mandiri</h1>
+              <h1 className="font-bold text-2xl my-4">
+                Data Callbacks Mandiri
+              </h1>
             </div>
           </div>
 
-          {/* List Callbacks Mandiri */}
-          < ListCallbacksRegistrations/>
+          {/*Table wrapper */}
+          <div className="w-full overflow-x-auto">
+            <ListCallbacksRegistrations />
+          </div>
         </main>
       </div>
     </SidebarProvider>

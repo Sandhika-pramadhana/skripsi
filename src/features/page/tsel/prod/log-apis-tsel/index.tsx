@@ -30,13 +30,11 @@ export default function LogApisSection({
       <AppSidebar />
 
       {/* Main Content */}
-      {/* min-w-0 WAJIB untuk flex + sidebar */}
       <div className="flex flex-col flex-1 min-w-0">
         {/* Navbar */}
         <Navbar />
 
         {/* Main Section */}
-        {/* overflow-x-auto biar table bisa scroll */}
         <main className="flex-1 p-4 overflow-x-auto">
           <SidebarTrigger />
 

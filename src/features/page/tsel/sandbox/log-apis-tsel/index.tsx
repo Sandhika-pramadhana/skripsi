@@ -40,7 +40,7 @@ export default function LogApisSection({
 
           {children}
 
-          {/* Table wrapper (PENTING) */}
+          {/* Table wrapper*/}
           <div className="w-full overflow-x-auto">
             <ListLogApis />
           </div>
