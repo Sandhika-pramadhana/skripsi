@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { connectDB } from '@/features/core/lib/db';
+import { connectDB2 } from '@/features/core/lib/db';
 import bcrypt from 'bcryptjs';
 import { PaginatedAPIResponseBackend, APIResponse, User } from '@/types/def';
 import { authenticateToken, AuthenticatedRequest } from '../middleware/auth';
@@ -14,7 +14,7 @@ export default async function handler(
   // Middleware JWT Authentication
   authenticateToken(req as AuthenticatedRequest, res, async () => {
     try {
-      const db = await connectDB();
+      const db = await connectDB2();
       const { id, term } = req.query;
 
       //Handle GET request

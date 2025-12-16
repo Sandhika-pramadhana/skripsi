@@ -13,7 +13,7 @@ export const insertZG = serverAction(
   async (params: GenerateRevenueParams) => {
     try {
       const token = await getToken();
-      const url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointInsertZG}`;
+      const url = `${process.env.NEXT_PUBLIC_API_URL_1}/${EndpointInsertZG}`;
       
       console.log('Calling Insert ZG API:', url);
       console.log('With params:', params);
@@ -133,10 +133,10 @@ export const generateXmlZG = serverAction(
       // IF-ELSE untuk pilih endpoint berdasarkan environment
       let url: string;
       if (environment === 'sandbox') {
-        url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointGenerateXmlZGQA}`;
+        url = `${process.env.NEXT_PUBLIC_API_URL_1}/${EndpointGenerateXmlZGQA}`;
         console.log('Calling Generate XML ZG SANDBOX:', url);
       } else {
-        url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointGenerateXmlZG}`;
+        url = `${process.env.NEXT_PUBLIC_API_URL_1}/${EndpointGenerateXmlZG}`;
         console.log('Calling Generate XML ZG PRODUCTION:', url);
       }
       

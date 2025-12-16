@@ -17,7 +17,7 @@ export const generateSap = serverAction(
   async (params: GenerateRevenueParams) => {
     try {
       const token = await getToken();
-      const url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointGenerateSap}`;
+      const url = `${process.env.NEXT_PUBLIC_API_URL_1}/${EndpointGenerateSap}`;
 
       console.log("Calling API:", url);
       console.log("With params:", params);
@@ -115,7 +115,7 @@ export const syncRevenue = serverAction(
   async (params: SyncRevenueParams) => {
     try {
       const token = await getToken();
-      const url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointSync}`;
+      const url = `${process.env.NEXT_PUBLIC_API_URL_1}/${EndpointSync}`;
 
       console.log("Calling Sync SAPFICO API:", url);
       console.log("With params:", params);

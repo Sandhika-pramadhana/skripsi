@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import type { NextApiRequest, NextApiResponse } from "next";
-import { connectDB } from "@/features/core/lib/db";
+import { connectDB2 } from "@/features/core/lib/db";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { APIResponse, User } from "@/types/def";
@@ -37,7 +37,7 @@ export default async function handler(
       });
     }
 
-    const db = await connectDB();
+    const db = await connectDB2();
 
     
     const { rows } = await db.query("SELECT * FROM users WHERE username = $1", [

@@ -1,16 +1,14 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { connectDB } from '@/features/core/lib/db'; 
+import { connectDB2 } from '@/features/core/lib/db'; 
 import { APIResponse, PaginatedAPIResponseBackend, transaction_mandiri, TransactionFee_mandiri, TransactionItem_mandiri } from '@/types/def';
 import { authenticateToken, AuthenticatedRequest } from '../../../middleware/auth';
 
-// Define a new type for the detailed transaction response
 type TransactionDetailResponse = {
   transaction: transaction_mandiri;
   items: TransactionItem_mandiri[];
   fees: TransactionFee_mandiri | null;
 };
 
-// Define query result type
 interface QueryResult<T> {
   rows: T[];
 }
@@ -31,12 +29,11 @@ export default async function handler(
         });
       }
 
-      db = await connectDB();
+      db = await connectDB2();
       const { id, term, page, page_size } = req.query;
 
       // get id
       if (id) {
-        /** 1. Ambil transaction utama */
         const trx: QueryResult<transaction_mandiri> = await db.query(
           `SELECT 
             id, 
@@ -85,7 +82,6 @@ export default async function handler(
 
         const transaction = trx.rows[0];
 
-        /** 2. Ambil items berdasarkan transaction_id */
         const itemsQuery: QueryResult<TransactionItem_mandiri> = await db.query(
           `SELECT 
             id,
@@ -105,7 +101,6 @@ export default async function handler(
           [id]
         );
 
-        /** 3. Ambil fees berdasarkan transaction_id  */
         const feesQuery: QueryResult<TransactionFee_mandiri> = await db.query(
           `SELECT 
             id,
@@ -178,7 +173,7 @@ export default async function handler(
           }
         });
 
-        // Regular search across multiple fields
+        
         if (regularSearchTerms.length > 0) {
           const searchPattern = `%${regularSearchTerms.join(' ')}%`;
           params.push(searchPattern);

@@ -14,7 +14,7 @@ export const insertZY = serverAction(
   async (params: { start_date: string; dates: string[]; amounts: number[] }) => {
     try {
       const token = await getToken();
-      const url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointInsertZY}`;
+      const url = `${process.env.NEXT_PUBLIC_API_URL_1}/${EndpointInsertZY}`;
       
       console.log('Calling Insert ZY API:', url);
       console.log('With params:', params);
@@ -119,7 +119,7 @@ export const generateXmlZY = serverAction(
   async (params: GenerateRevenueParams) => {
     try {
       const token = await getToken();
-      const url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointGenerateXmlZY}`;
+      const url = `${process.env.NEXT_PUBLIC_API_URL_1}/${EndpointGenerateXmlZY}`;
       
       console.log('Calling Generate XML ZY API:', url);
       console.log('With params:', params);

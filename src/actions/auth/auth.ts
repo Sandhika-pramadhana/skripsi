@@ -9,9 +9,8 @@ export const LoginUser = serverAction(
   async (credentials: Credentials, useDomain: boolean = true) => {
     try {
       const baseUrl = useDomain
-        ? process.env.NEXT_PUBLIC_API_LOCAL 
-        : process.env.NEXT_PUBLIC_API_LOCAL; 
-
+      ? process.env.NEXT_PUBLIC_API_URL_1 
+      : process.env.NEXT_PUBLIC_API_URL_IP; 
       const res = await axios.post<APIResponse<LoginResponse>>(
         `${baseUrl}/${EndpointLogin}`,
         credentials,

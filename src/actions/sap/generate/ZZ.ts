@@ -32,7 +32,7 @@ export const insertZZ = serverAction(
   }) => {
     try {
       const token = await getToken();
-      const url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointInsertZZ}`;
+      const url = `${process.env.NEXT_PUBLIC_API_URL_1}/${EndpointInsertZZ}`;
       
       console.log('Calling Insert ZZ API:', url);
       console.log('With params:', params);
@@ -137,7 +137,7 @@ export const generateXmlZZ = serverAction(
   async (params: GenerateRevenueParams) => {
     try {
       const token = await getToken();
-      const url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointGenerateXmlZZ}`;
+      const url = `${process.env.NEXT_PUBLIC_API_URL_1}/${EndpointGenerateXmlZZ}`;
       
       console.log('Calling Generate XML ZZ API:', url);
       console.log('With params:', params);

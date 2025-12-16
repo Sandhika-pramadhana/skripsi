@@ -14,7 +14,7 @@ export const getListLogSapico = serverAction(
     }
   ) => {
     const token = await getToken();
-    const url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointLogSapicoPpob}`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL_1}/${EndpointLogSapicoPpob}`;
 
     const config = {
       params: {

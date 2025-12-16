@@ -13,7 +13,7 @@ export const insertZE = serverAction(
   async (params: GenerateRevenueParams) => {
     try {
       const token = await getToken();
-      const url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointInsertZE}`;
+      const url = `${process.env.NEXT_PUBLIC_API_URL_1}/${EndpointInsertZE}`;
       
       console.log('Calling Insert ZE API:', url);
       console.log('With params:', params);
@@ -133,10 +133,10 @@ export const generateXmlZE = serverAction(
       // IF-ELSE untuk pilih endpoint berdasarkan environment
       let url: string;
       if (environment === 'sandbox') {
-        url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointGenerateXmlZEQA}`;
+        url = `${process.env.NEXT_PUBLIC_API_URL_1}/${EndpointGenerateXmlZEQA}`;
         console.log('Calling Generate XML ZE SANDBOX:', url);
       } else {
-        url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointGenerateXmlZE}`;
+        url = `${process.env.NEXT_PUBLIC_API_URL_1}/${EndpointGenerateXmlZE}`;
         console.log('Calling Generate XML ZE PRODUCTION:', url);
       }
       

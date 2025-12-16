@@ -13,7 +13,7 @@ export const insertZF = serverAction(
   async (params: GenerateRevenueParams) => {
     try {
       const token = await getToken();
-      const url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointInsertZF}`;
+      const url = `${process.env.NEXT_PUBLIC_API_URL_1}/${EndpointInsertZF}`;
       
       console.log('Calling Insert ZF API:', url);
       console.log('With params:', params);
@@ -133,10 +133,10 @@ export const generateXmlZF = serverAction(
       // IF-ELSE untuk pilih endpoint berdasarkan environment
       let url: string;
       if (environment === 'sandbox') {
-        url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointGenerateXmlZFQA}`;
+        url = `${process.env.NEXT_PUBLIC_API_URL_1}/${EndpointGenerateXmlZFQA}`;
         console.log('Calling Generate XML ZF SANDBOX:', url);
       } else {
-        url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointGenerateXmlZF}`;
+        url = `${process.env.NEXT_PUBLIC_API_URL_1}/${EndpointGenerateXmlZF}`;
         console.log('Calling Generate XML ZF PRODUCTION:', url);
       }
       

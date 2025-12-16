@@ -27,7 +27,7 @@ export const getListTransactionMandiri = serverAction(
     }
   ) => {
     const token = await getToken();
-    const url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointTransactionMandiri}`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL_1}/${EndpointTransactionMandiri}`;
     const config = {
       params: {
         page: params?.page,
@@ -53,7 +53,7 @@ export const getListTransactionMandiri = serverAction(
 export const getTransactionMandiriById = serverAction(
   async (id: string | number) => {
     const token = await getToken();
-    const url = `${process.env.NEXT_PUBLIC_API_LOCAL}/${EndpointTransactionMandiri}`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL_1}/${EndpointTransactionMandiri}`;
     const config = {
       params: {
         id,

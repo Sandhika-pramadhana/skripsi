@@ -96,11 +96,11 @@ export async function connectDB7() {
 
 export async function connectDB8() {
   const connection = await mysql.createConnection({
-    host: process.env.NEXT_DB6_HOST_ || '10.10.99.11',
-    port: Number(process.env.NEXT_DB6_PORT) || 3306,
-    user: process.env.NEXT_DB6_USER || 'dss',
-    password: process.env.NEXT_DB6_PASSWORD || 'jamuJu',
-    database: process.env.NEXT_DB6_NAME || 'agen_posfin',
+    host: process.env.NEXT_DB8_HOST_ || '10.10.99.11',
+    port: Number(process.env.NEXT_DB8_PORT) || 3306,
+    user: process.env.NEXT_DB8_USER || 'dss',
+    password: process.env.NEXT_DB8_PASSWORD || 'jamuJu',
+    database: process.env.NEXT_DB8_NAME || 'agen_posfin',
   });
 
   return connection;
