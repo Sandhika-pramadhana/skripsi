@@ -25,14 +25,10 @@ export default async function handler(
       db = await connectDB7();
       const { id, term, startDate, endDate, page, page_size, limit } = req.query;
 
-      // GET BY ID
+      //  GET BY ID 
       if (id) {
         const searchId = typeof id === 'string' ? id.trim() : String(id);
-
-        const [rows]: [log_sapico[], any] = await db.query(
-          'SELECT * FROM log_sapico_deposit WHERE id = ?',
-          [searchId]
-        );
+        const [rows] = await db.query('SELECT * FROM log_sapico_deposit WHERE id = ?', [searchId]);
 
         if (!rows || rows.length === 0) {
           return res.status(404).json({
@@ -51,7 +47,7 @@ export default async function handler(
         });
       }
 
-      // PAGINATION DEFAULTS
+  
       const validatedPage = Math.max(parseInt(page as string, 10) || 1, 1);
       const validatedPageSize = Math.min(
         Math.max(parseInt(page_size as string, 10) || 25, 1),
@@ -73,62 +69,29 @@ export default async function handler(
         searchParams.push(startDate, endDate);
       }
 
-      const whereClause =
-        searchConditions.length > 0 ? 'WHERE ' + searchConditions.join(' AND ') : '';
+      const whereClause = searchConditions.length > 0 ? 'WHERE ' + searchConditions.join(' AND ') : '';
+      const countQuery = `SELECT COUNT(*) AS total_data FROM log_sapico_deposit ${whereClause}`;
+      const [countRows] = await db.query(countQuery, searchParams);
+      const total_data = parseInt(countRows[0].total_data, 10) || 0;  // ✅ Simple parse
 
       // DATA QUERY
       let dataQuery = '';
       const dataParams: any[] = [...searchParams];
 
       const parsedLimit = limit ? parseInt(limit as string, 10) : 0;
-      const safeLimit =
-        parsedLimit && parsedLimit > 0
-          ? Math.min(parsedLimit, 1000) // hard limit defensif
-          : 0;
+      const safeLimit = parsedLimit && parsedLimit > 0 ? Math.min(parsedLimit, 1000) : 0;
 
       if (safeLimit > 0) {
-        // non-paginated limited query
-        dataQuery = `
-          SELECT * FROM log_sapico_deposit
-          ${whereClause}
-          ORDER BY tanggal DESC
-          LIMIT ?
-        `;
+        dataQuery = `SELECT * FROM log_sapico_deposit ${whereClause} ORDER BY tanggal DESC LIMIT ?`;
         dataParams.push(safeLimit);
       } else {
-        // normal pagination
-        dataQuery = `
-          SELECT * FROM log_sapico_deposit
-          ${whereClause}
-          ORDER BY tanggal DESC
-          LIMIT ? OFFSET ?
-        `;
+        dataQuery = `SELECT * FROM log_sapico_deposit ${whereClause} ORDER BY tanggal DESC LIMIT ? OFFSET ?`;
         dataParams.push(validatedPageSize, offset);
       }
 
-      // COUNT QUERY
-      const countQuery = `
-        SELECT COUNT(*) AS total_data
-        FROM log_sapico_deposit
-        ${whereClause}
-      `;
-      const [countRows]: [{ total_data: number | string }[], any] = await db.query(
-        countQuery,
-        searchParams
-      );
+      const [dataRows] = await db.query(dataQuery, dataParams);
 
-      const total_data_raw = countRows?.[0]?.total_data ?? 0;
-      const total_data =
-        typeof total_data_raw === 'string'
-          ? parseInt(total_data_raw as string, 10)
-          : (total_data_raw as number);
-
-      const [dataRows]: [log_sapico[], any] = await db.query(dataQuery, dataParams);
-
-      const total_page = Math.max(
-        Math.ceil(total_data / validatedPageSize),
-        1
-      );
+      const total_page = Math.max(Math.ceil(total_data / validatedPageSize), 1);
 
       return res.status(200).json({
         status: true,
@@ -146,16 +109,18 @@ export default async function handler(
           },
         },
       });
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error in log_sapico_deposit handler:', error);
       return res.status(500).json({
         status: false,
         code: '500',
-        message: 'Internal server error',
+        message: `Internal server error: ${error.message}`,
         data: null,
       });
     } finally {
-      if (db) db.end();
+      if (db) {
+        await db.end(); 
+      }
     }
   });
 }

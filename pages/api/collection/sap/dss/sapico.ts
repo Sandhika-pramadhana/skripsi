@@ -9,6 +9,7 @@ export default async function handler(
 ) {
   authenticateToken(req as AuthenticatedRequest, res, async () => {
     let db: any = null;
+    
     try {
       if (req.method !== 'GET') {
         return res.status(405).json({
@@ -22,7 +23,6 @@ export default async function handler(
       db = await connectDB6();
       const { id, term, startDate, endDate, page, page_size, limit } = req.query;
 
-      // By ID
       if (id) {
         const searchId = typeof id === 'string' ? id.trim() : String(id);
         const [rows] = await db.query('SELECT * FROM sapico_temp WHERE id = ?', [searchId]);
@@ -52,33 +52,36 @@ export default async function handler(
       let searchConditions: string[] = [];
       let searchParams: any[] = [];
 
-      // Search term
       if (term && typeof term === 'string' && term.trim()) {
         searchConditions.push('(id_number LIKE ? OR coa LIKE ? OR sgtxt LIKE ? OR no_doc LIKE ?)');
         const searchTerm = `%${term.trim()}%`;
         searchParams.push(searchTerm, searchTerm, searchTerm, searchTerm);
       }
 
-      // Date range
+      // ✅ Date range
       if (startDate && endDate) {
         searchConditions.push('DATE(tgl_trx) BETWEEN ? AND ?');
         searchParams.push(startDate, endDate);
       }
 
       const whereClause = searchConditions.length > 0 ? 'WHERE ' + searchConditions.join(' AND ') : '';
-      let dataQuery = '';
-      let dataParams = [...searchParams];
       
+    
+      const countQuery = `SELECT COUNT(*) AS total_data FROM sapico_temp ${whereClause}`;
+      const [countRows] = await db.query(countQuery, searchParams);
+      const total_data = parseInt(countRows[0].total_data, 10) || 0;  // ✅ Parse + fallback
+
+      let dataQuery: string;
+      let dataParams: any[] = [...searchParams];
+
+      // Data query
       if (limit && parseInt(limit as string, 10) > 0) {
-        dataQuery = `SELECT * FROM sapico_temp ${whereClause} ORDER BY tgl_trx DESC LIMIT ${parseInt(limit as string, 10)}`;
+        const limitValue = parseInt(limit as string, 10);
+        dataQuery = `SELECT * FROM sapico_temp ${whereClause} ORDER BY tgl_trx DESC LIMIT ${limitValue}`;
       } else {
         dataQuery = `SELECT * FROM sapico_temp ${whereClause} ORDER BY tgl_trx DESC LIMIT ? OFFSET ?`;
         dataParams.push(validatedPageSize, offset);
       }
-
-      const countQuery = `SELECT COUNT(*) AS total_data FROM sapico_temp ${whereClause}`;
-      const [countRows] = await db.query(countQuery, searchParams);
-      const total_data = countRows[0].total_data;
 
       const [dataRows] = await db.query(dataQuery, dataParams);
       const total_page = Math.max(Math.ceil(total_data / validatedPageSize), 1);
@@ -99,17 +102,18 @@ export default async function handler(
           },
         },
       });
-    } catch (error) {
+
+    } catch (error: any) {
       console.error('Error in sapico_temp handler:', error);
       return res.status(500).json({
         status: false,
         code: '500',
-        message: 'Internal server error',
+        message: `Internal server error: ${error.message}`,  
         data: null,
       });
     } finally {
       if (db) {
-        db.end();
+        await db.end();  
       }
     }
   });
