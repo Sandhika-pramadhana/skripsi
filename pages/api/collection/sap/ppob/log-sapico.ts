@@ -5,7 +5,9 @@ import { authenticateToken, AuthenticatedRequest } from '../../../middleware/aut
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<PaginatedAPIResponseBackend<log_sapico> | APIResponse<log_sapico>>
+  res: NextApiResponse<
+    PaginatedAPIResponseBackend<log_sapico> | APIResponse<log_sapico>
+  >
 ) {
   authenticateToken(req as AuthenticatedRequest, res, async () => {
     let db: any = null;
@@ -26,12 +28,13 @@ export default async function handler(
       // GET BY ID
       if (id) {
         const searchId = typeof id === 'string' ? id.trim() : String(id);
-        const [rows] = await db.query(
+
+        const [rows]: [log_sapico[], any] = await db.query(
           'SELECT * FROM log_sapico_deposit WHERE id = ?',
           [searchId]
         );
 
-        if (rows.length === 0) {
+        if (!rows || rows.length === 0) {
           return res.status(404).json({
             status: false,
             code: '404',
@@ -50,16 +53,21 @@ export default async function handler(
 
       // PAGINATION DEFAULTS
       const validatedPage = Math.max(parseInt(page as string, 10) || 1, 1);
-      const validatedPageSize = Math.min(Math.max(parseInt(page_size as string, 10) || 25, 1), 100);
+      const validatedPageSize = Math.min(
+        Math.max(parseInt(page_size as string, 10) || 25, 1),
+        100
+      );
       const offset = (validatedPage - 1) * validatedPageSize;
 
-      let searchConditions: string[] = [];
-      let searchParams: any[] = [];
+      const searchConditions: string[] = [];
+      const searchParams: any[] = [];
+
       if (term && typeof term === 'string' && term.trim()) {
         searchConditions.push('(nama_file LIKE ? OR response LIKE ? OR url LIKE ?)');
         const searchTerm = `%${term.trim()}%`;
         searchParams.push(searchTerm, searchTerm, searchTerm);
       }
+
       if (startDate && endDate) {
         searchConditions.push('DATE(tanggal) BETWEEN ? AND ?');
         searchParams.push(startDate, endDate);
@@ -67,30 +75,60 @@ export default async function handler(
 
       const whereClause =
         searchConditions.length > 0 ? 'WHERE ' + searchConditions.join(' AND ') : '';
-      let dataQuery = '';
-      let dataParams = [...searchParams];
 
-      if (limit && parseInt(limit as string, 10) > 0) {
+      // DATA QUERY
+      let dataQuery = '';
+      const dataParams: any[] = [...searchParams];
+
+      const parsedLimit = limit ? parseInt(limit as string, 10) : 0;
+      const safeLimit =
+        parsedLimit && parsedLimit > 0
+          ? Math.min(parsedLimit, 1000) // hard limit defensif
+          : 0;
+
+      if (safeLimit > 0) {
+        // non-paginated limited query
         dataQuery = `
-          SELECT * FROM log_sapico_deposit 
-          ${whereClause} 
-          ORDER BY tanggal DESC 
-          LIMIT ${parseInt(limit as string, 10)}
+          SELECT * FROM log_sapico_deposit
+          ${whereClause}
+          ORDER BY tanggal DESC
+          LIMIT ?
         `;
+        dataParams.push(safeLimit);
       } else {
+        // normal pagination
         dataQuery = `
-          SELECT * FROM log_sapico_deposit 
-          ${whereClause} 
-          ORDER BY tanggal DESC 
+          SELECT * FROM log_sapico_deposit
+          ${whereClause}
+          ORDER BY tanggal DESC
           LIMIT ? OFFSET ?
         `;
         dataParams.push(validatedPageSize, offset);
       }
-      const countQuery = `SELECT COUNT(*) AS total_data FROM log_sapico_deposit ${whereClause}`;
-      const [countRows] = await db.query(countQuery, searchParams);
-      const total_data = countRows[0].total_data;
-      const [dataRows] = await db.query(dataQuery, dataParams);
-      const total_page = Math.max(Math.ceil(total_data / validatedPageSize), 1);
+
+      // COUNT QUERY
+      const countQuery = `
+        SELECT COUNT(*) AS total_data
+        FROM log_sapico_deposit
+        ${whereClause}
+      `;
+      const [countRows]: [{ total_data: number | string }[], any] = await db.query(
+        countQuery,
+        searchParams
+      );
+
+      const total_data_raw = countRows?.[0]?.total_data ?? 0;
+      const total_data =
+        typeof total_data_raw === 'string'
+          ? parseInt(total_data_raw as string, 10)
+          : (total_data_raw as number);
+
+      const [dataRows]: [log_sapico[], any] = await db.query(dataQuery, dataParams);
+
+      const total_page = Math.max(
+        Math.ceil(total_data / validatedPageSize),
+        1
+      );
 
       return res.status(200).json({
         status: true,

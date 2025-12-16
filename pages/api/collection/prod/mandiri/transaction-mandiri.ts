@@ -1,6 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { connectDB2 } from '@/features/core/lib/db'; 
-import { APIResponse, PaginatedAPIResponseBackend, transaction_mandiri, TransactionFee_mandiri, TransactionItem_mandiri } from '@/types/def';
+import { connectDB2 } from '@/features/core/lib/db';
+import {
+  APIResponse,
+  PaginatedAPIResponseBackend,
+  transaction_mandiri,
+  TransactionFee_mandiri,
+  TransactionItem_mandiri,
+} from '@/types/def';
 import { authenticateToken, AuthenticatedRequest } from '../../../middleware/auth';
 
 type TransactionDetailResponse = {
@@ -15,10 +21,13 @@ interface QueryResult<T> {
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<PaginatedAPIResponseBackend<transaction_mandiri> | APIResponse<TransactionDetailResponse>>
+  res: NextApiResponse<
+    PaginatedAPIResponseBackend<transaction_mandiri> | APIResponse<TransactionDetailResponse>
+  >
 ) {
   authenticateToken(req as AuthenticatedRequest, res, async () => {
     let db: any = null;
+
     try {
       if (req.method !== 'GET') {
         return res.status(405).json({
@@ -32,15 +41,15 @@ export default async function handler(
       db = await connectDB2();
       const { id, term, page, page_size } = req.query;
 
-      // get id
+      // Detail by ID
       if (id) {
         const trx: QueryResult<transaction_mandiri> = await db.query(
-          `SELECT 
-            id, 
-            user_id, 
-            location_id, 
-            transaction_date, 
-            category_id, 
+          `SELECT
+            id,
+            user_id,
+            location_id,
+            transaction_date,
+            category_id,
             category_name,
             item_type_id,
             item_type_name,
@@ -66,7 +75,7 @@ export default async function handler(
             connote_id,
             payment_status_id,
             payment_status_name
-          FROM transactions 
+          FROM transactions
           WHERE id = $1`,
           [id]
         );
@@ -83,7 +92,7 @@ export default async function handler(
         const transaction = trx.rows[0];
 
         const itemsQuery: QueryResult<TransactionItem_mandiri> = await db.query(
-          `SELECT 
+          `SELECT
             id,
             transaction_id,
             weight,
@@ -102,7 +111,7 @@ export default async function handler(
         );
 
         const feesQuery: QueryResult<TransactionFee_mandiri> = await db.query(
-          `SELECT 
+          `SELECT
             id,
             transaction_id,
             fee_amount,
@@ -131,117 +140,134 @@ export default async function handler(
         });
       }
 
+      // List + filter + pagination
       const validatedPage = Math.max(parseInt(page as string) || 1, 1);
-      const validatedPageSize = Math.min(Math.max(parseInt(page_size as string) || 25, 1), 100);
+      const validatedPageSize = Math.min(
+        Math.max(parseInt(page_size as string) || 25, 1),
+        100
+      );
       const offset = (validatedPage - 1) * validatedPageSize;
 
       const conditions: string[] = [];
-      const params: any[] = [];
+      const paramsFilter: any[] = [];
 
       if (term && typeof term === 'string') {
         const searchTerm = term.trim();
         const filters = searchTerm.split(' ');
         const regularSearchTerms: string[] = [];
-        
-        filters.forEach(filter => {
+
+        filters.forEach((filter) => {
           if (filter.startsWith('startDate:')) {
             const date = filter.split(':')[1];
             if (date) {
-              params.push(date);
-              conditions.push(`transaction_date >= $${params.length}`);
+              paramsFilter.push(date);
+              conditions.push(`transaction_date >= $${paramsFilter.length}`);
             }
           } else if (filter.startsWith('endDate:')) {
             const date = filter.split(':')[1];
             if (date) {
-              params.push(date);
-              conditions.push(`transaction_date <= $${params.length}`);
+              paramsFilter.push(date);
+              conditions.push(`transaction_date <= $${paramsFilter.length}`);
             }
           } else if (filter.startsWith('minAmount:')) {
             const amount = filter.split(':')[1];
             if (amount) {
-              params.push(parseFloat(amount));
-              conditions.push(`fee_amount >= $${params.length}`);
+              paramsFilter.push(parseFloat(amount));
+              conditions.push(`fee_amount >= $${paramsFilter.length}`);
             }
           } else if (filter.startsWith('maxAmount:')) {
             const amount = filter.split(':')[1];
             if (amount) {
-              params.push(parseFloat(amount));
-              conditions.push(`fee_amount <= $${params.length}`);
+              paramsFilter.push(parseFloat(amount));
+              conditions.push(`fee_amount <= $${paramsFilter.length}`);
             }
           } else if (filter) {
             regularSearchTerms.push(filter);
           }
         });
 
-        
         if (regularSearchTerms.length > 0) {
           const searchPattern = `%${regularSearchTerms.join(' ')}%`;
-          params.push(searchPattern);
+          paramsFilter.push(searchPattern);
           conditions.push(`(
-            category_name ILIKE $${params.length} OR
-            id::text ILIKE $${params.length} OR
-            user_id::text ILIKE $${params.length} OR
-            product_name ILIKE $${params.length} OR
-            status_name ILIKE $${params.length} OR
-            payment_type_name ILIKE $${params.length}
+            category_name ILIKE $${paramsFilter.length} OR
+            id::text ILIKE $${paramsFilter.length} OR
+            user_id::text ILIKE $${paramsFilter.length} OR
+            product_name ILIKE $${paramsFilter.length} OR
+            status_name ILIKE $${paramsFilter.length} OR
+            payment_type_name ILIKE $${paramsFilter.length}
           )`);
         }
       }
 
-      const whereClause = conditions.length > 0 ? `WHERE ${conditions.join(' AND ')}` : '';
+      const whereClause =
+        conditions.length > 0 ? `WHERE ${conditions.join(' AND ')}` : '';
 
-      // Count total data
+      // Hitung total data
       const totalQuery = `
-        SELECT COUNT(*) AS total 
-        FROM transactions 
+        SELECT COUNT(*) AS total
+        FROM transactions
         ${whereClause}
       `;
-      const totalResult: QueryResult<{ total: string }> = await db.query(totalQuery, params);
+      const totalResult: QueryResult<{ total: string }> = await db.query(
+        totalQuery,
+        paramsFilter
+      );
       const total_data = parseInt(totalResult.rows[0].total, 10);
-      params.push(validatedPageSize, offset);
 
-      
-        const rowsQuery = `
-      SELECT 
-        id, 
-        user_id, 
-        location_id, 
-        transaction_date, 
-        category_id, 
-        category_name,
-        item_type_id,
-        item_type_name,
-        product_id,
-        product_name,
-        estimation,
-        payment_type_id,
-        payment_type_name,
-        connote_code,
-        status_id,
-        status_name,
-        awb_url,
-        is_bagging,
-        created_at,
-        updated_at,
-        agent_id,
-        account_number,
-        posdigi_product_id,
-        bill_amount,
-        fee_amount,
-        ref_id,
-        receipt_number,
-        connote_id,
-        payment_status_id,
-        payment_status_name
-      FROM transactions
-      ${whereClause}
-      ORDER BY id DESC
-      LIMIT $${params.length - 1} OFFSET $${params.length}
-    `;
-      const rowsResult: QueryResult<transaction_mandiri> = await db.query(rowsQuery, params);
+
+      const limitIndex = paramsFilter.length + 1;
+      const offsetIndex = paramsFilter.length + 2;
+      const paramsRows = [...paramsFilter, validatedPageSize, offset];
+
+      const rowsQuery = `
+        SELECT
+          id,
+          user_id,
+          location_id,
+          transaction_date,
+          category_id,
+          category_name,
+          item_type_id,
+          item_type_name,
+          product_id,
+          product_name,
+          estimation,
+          payment_type_id,
+          payment_type_name,
+          connote_code,
+          status_id,
+          status_name,
+          awb_url,
+          is_bagging,
+          created_at,
+          updated_at,
+          agent_id,
+          account_number,
+          posdigi_product_id,
+          bill_amount,
+          fee_amount,
+          ref_id,
+          receipt_number,
+          connote_id,
+          payment_status_id,
+          payment_status_name
+        FROM transactions
+        ${whereClause}
+        ORDER BY id DESC
+        LIMIT $${limitIndex} OFFSET $${offsetIndex}
+      `;
+
+      const rowsResult: QueryResult<transaction_mandiri> = await db.query(
+        rowsQuery,
+        paramsRows
+      );
       const rows: transaction_mandiri[] = rowsResult.rows;
 
-      const total_page = Math.max(Math.ceil(total_data / validatedPageSize), 1);
+      const total_page = Math.max(
+        Math.ceil(total_data / validatedPageSize),
+        1
+      );
 
       return res.status(200).json({
         status: true,
