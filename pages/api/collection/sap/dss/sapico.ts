@@ -52,22 +52,20 @@ export default async function handler(
       let searchConditions: string[] = [];
       let searchParams: any[] = [];
 
-      // FIXED: Search term
+      // Search term
       if (term && typeof term === 'string' && term.trim()) {
         searchConditions.push('(id_number LIKE ? OR coa LIKE ? OR sgtxt LIKE ? OR no_doc LIKE ?)');
         const searchTerm = `%${term.trim()}%`;
         searchParams.push(searchTerm, searchTerm, searchTerm, searchTerm);
       }
 
-      // FIXED: Date range
+      // Date range
       if (startDate && endDate) {
         searchConditions.push('DATE(tgl_trx) BETWEEN ? AND ?');
         searchParams.push(startDate, endDate);
       }
 
       const whereClause = searchConditions.length > 0 ? 'WHERE ' + searchConditions.join(' AND ') : '';
-
-      // Limit? (Client Pagination)
       let dataQuery = '';
       let dataParams = [...searchParams];
       
@@ -78,7 +76,6 @@ export default async function handler(
         dataParams.push(validatedPageSize, offset);
       }
 
-      // Total count
       const countQuery = `SELECT COUNT(*) AS total_data FROM sapico_temp ${whereClause}`;
       const [countRows] = await db.query(countQuery, searchParams);
       const total_data = countRows[0].total_data;

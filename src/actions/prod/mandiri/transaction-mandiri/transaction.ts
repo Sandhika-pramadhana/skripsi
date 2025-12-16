@@ -11,14 +11,13 @@ import { EndpointTransactionMandiri } from "@/types/api";
 import { serverAction, ServerActionError } from "../../../action";
 import { getToken } from "../../../auth/getToken";
 
-// Type untuk detail transaction (dengan items dan fees)
 export type TransactionDetailData = {
   transaction: transaction_mandiri;
   items: TransactionItem_mandiri[];
   fees: TransactionFee_mandiri | null;
 };
 
-// 1. GET LIST - untuk pagination (tidak berubah)
+// GET LIST 
 export const getListTransactionMandiri = serverAction(
   async (
     params?: PaginationParams & {
@@ -49,7 +48,7 @@ export const getListTransactionMandiri = serverAction(
   "GET_LIST_TRANSACTION_MANDIRI"
 );
 
-// 2. GET BY ID - untuk detail lengkap (BARU)
+//GET BY ID -
 export const getTransactionMandiriById = serverAction(
   async (id: string | number) => {
     const token = await getToken();

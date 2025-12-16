@@ -72,7 +72,7 @@ export async function connectDB5() {
 
 export async function connectDB6() {
   const connection = await mysql.createConnection({
-    host: process.env.NEXT_DB6_HOST_ || '10.10.99.11',
+    host: process.env.NEXT_DB6_HOST || '10.10.99.11',
     port: Number(process.env.NEXT_DB6_PORT) || 3306,
     user: process.env.NEXT_DB6_USER || 'root',
     password: process.env.NEXT_DB6_PASSWORD || 'jamuJu',
@@ -84,7 +84,7 @@ export async function connectDB6() {
 
 export async function connectDB7() {
   const connection = await mysql.createConnection({
-    host: process.env.NEXT_DB7_HOST_ || '147.139.203.249',
+    host: process.env.NEXT_DB7_HOST || '147.139.203.249',
     port: Number(process.env.NEXT_DB7_PORT) || 3306,
     user: process.env.NEXT_DB7_USER || 'tribuana',
     password: process.env.NEXT_DB7_PASSWORD || 'kuc1ngg4r0ng',
@@ -96,7 +96,7 @@ export async function connectDB7() {
 
 export async function connectDB8() {
   const connection = await mysql.createConnection({
-    host: process.env.NEXT_DB8_HOST_ || '10.10.99.11',
+    host: process.env.NEXT_DB8_HOST || '10.10.99.11',
     port: Number(process.env.NEXT_DB8_PORT) || 3306,
     user: process.env.NEXT_DB8_USER || 'dss',
     password: process.env.NEXT_DB8_PASSWORD || 'jamuJu',
