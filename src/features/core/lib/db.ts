@@ -1,10 +1,10 @@
 import { Client } from 'pg';
-import mysql, { Pool } from 'mysql2/promise';
+import mysql from 'mysql2/promise';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
-/** * POSTGRES */
+/** POSTGRES */
 export async function connectDB() {
   const client = new Client({
     host: process.env.NEXT_DB_HOST || 'localhost',
@@ -70,49 +70,40 @@ export async function connectDB5() {
   return client;
 }
 
-/*** MYSQL */
-
-function createMySqlPool(config: {
-  host: string;
-  port: number;
-  user: string;
-  password: string;
-  database: string;
-}): Pool {
-  return mysql.createPool({
-    ...config,
-    connectionLimit: 10,
-    waitForConnections: true,
-    queueLimit: 0,
-  });
-}
+/** MYSQL */
 
 export async function connectDB6() {
-  return createMySqlPool({
-    host: process.env.NEXT_DB6_HOST || '10.10.99.11',
+  const connection = await mysql.createConnection({
+    host: process.env.NEXT_DB6_HOST || '117.102.70.148',
     port: Number(process.env.NEXT_DB6_PORT) || 3306,
     user: process.env.NEXT_DB6_USER || 'root',
     password: process.env.NEXT_DB6_PASSWORD || 'jamuJu',
     database: process.env.NEXT_DB6_NAME || 'sapfico',
   });
+
+  return connection;
 }
 
 export async function connectDB7() {
-  return createMySqlPool({
+  const connection = await mysql.createConnection({
     host: process.env.NEXT_DB7_HOST || '147.139.203.249',
     port: Number(process.env.NEXT_DB7_PORT) || 3306,
     user: process.env.NEXT_DB7_USER || 'tribuana',
     password: process.env.NEXT_DB7_PASSWORD || 'kuc1ngg4r0ng',
     database: process.env.NEXT_DB7_NAME || 'posfin_ppob',
   });
+
+  return connection;
 }
 
 export async function connectDB8() {
-  return createMySqlPool({
-    host: process.env.NEXT_DB8_HOST || '10.10.99.11',
+  const connection = await mysql.createConnection({
+    host: process.env.NEXT_DB8_HOST || '117.102.70.148',
     port: Number(process.env.NEXT_DB8_PORT) || 3306,
     user: process.env.NEXT_DB8_USER || 'dss',
     password: process.env.NEXT_DB8_PASSWORD || 'jamuJu',
     database: process.env.NEXT_DB8_NAME || 'agen_posfin',
   });
+
+  return connection;
 }
