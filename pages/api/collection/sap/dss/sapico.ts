@@ -58,7 +58,7 @@ export default async function handler(
         searchParams.push(searchTerm, searchTerm, searchTerm, searchTerm);
       }
 
-      // ✅ Date range
+      // Date range
       if (startDate && endDate) {
         searchConditions.push('DATE(tgl_trx) BETWEEN ? AND ?');
         searchParams.push(startDate, endDate);
