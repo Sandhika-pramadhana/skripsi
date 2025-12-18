@@ -101,7 +101,7 @@ export async function connectDB8() {
     host: process.env.NEXT_DB8_HOST || '117.102.70.148',
     port: Number(process.env.NEXT_DB8_PORT) || 3306,
     user: process.env.NEXT_DB8_USER || 'dss',
-    password: process.env.NEXT_DB8_PASSWORD || 'jamuJu',
+    password: process.env.NEXT_DB8_PASSWORD || 'posfin234',
     database: process.env.NEXT_DB8_NAME || 'agen_posfin',
   });
 
