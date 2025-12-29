@@ -8,6 +8,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
+  let pool: any = null;
   let connection: any = null;
   
   try {
@@ -28,18 +29,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       });
     }
 
-    connection = await connectDB6();
+    
+    pool = await connectDB6();
+    connection = await pool.getConnection();
 
-    const results = [];
-    const errors = [];
+    const results: any[] = [];
+    const errors: any[] = [];
 
-    // Generate all dates in range
     const allDates: string[] = [];
     for (let d = new Date(startDate); d <= endDate; d.setDate(d.getDate() + 1)) {
       allDates.push(d.toISOString().split('T')[0]);
     }
 
-    // Process each date
     for (const currentDate of allDates) {
       try {
         await connection.beginTransaction();
@@ -47,7 +48,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         const [year, month] = currentDate.split('-');
         const tableMonth = `${year}_${month}`;
 
-        // Query untuk mendapatkan revenue indirect agency dan takaful agency
         const querySelect = `
           SELECT
             a.rev_indirect_agency + b.rev_takaful_agency as indirect
@@ -83,15 +83,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         `;
 
         const [rows] = await connection.execute(querySelect, [currentDate, currentDate]);
-        const data = (rows as any[])[0];
+        const data = (rows as any[])[0] || {};
 
         const indirect = Number(data.indirect || 0);
 
-        // Calculate PPN 9.91%
         const ppn = indirect * 0.0991;
         const dpp = indirect - ppn;
 
-        // Insert to sapico_temp
         const queryInsert = `
           INSERT INTO sapico_temp(tgl_trx, id_number, amount, coa, sgtxt, ket, flag)
           VALUES
@@ -99,7 +97,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         `;
 
         await connection.execute(queryInsert, [
-          currentDate, dpp
+          currentDate, dpp,
         ]);
 
         await connection.commit();
@@ -109,15 +107,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           success: true,
           dpp: Math.round(dpp),
           ppn: Math.round(ppn),
-          total_indirect: Math.round(indirect)
+          total_indirect: Math.round(indirect),
         });
-
       } catch (error: any) {
-        await connection.rollback();
-        
+        try { await connection.rollback(); } catch {}
         errors.push({
           date: currentDate,
-          error: error.message
+          error: error.message,
         });
       }
     }
@@ -126,24 +122,23 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       success: true,
       message: `Processed ${results.length} dates successfully`,
       results,
-      errors: errors.length > 0 ? errors : undefined
+      errors: errors.length > 0 ? errors : undefined,
     });
 
   } catch (error: any) {
     return res.status(500).json({
       success: false,
       error: error.message || 'Failed to insert ZE data',
-      errorType: error.constructor.name,
+      errorType: error.constructor?.name,
       sqlMessage: error.sqlMessage,
-      details: process.env.NODE_ENV === 'development' ? error.stack : undefined
+      details: process.env.NODE_ENV === 'development' ? error.stack : undefined,
     });
   } finally {
     if (connection) {
-      try {
-        await connection.end();
-      } catch (error: any) {
-        // Silent error
-      }
+      try { await connection.release(); } catch {}
+    }
+    if (pool) {
+      try { await pool.end(); } catch {}
     }
   }
 }

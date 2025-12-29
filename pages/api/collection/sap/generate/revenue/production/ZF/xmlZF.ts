@@ -12,7 +12,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  let connection: any = null;
+  let pool: any = null;
   
   try {
     const { start_date, end_date, environment = 'prod' } = req.body;
@@ -32,12 +32,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(400).json({ error: 'PRD_ENDPOINT not configured' });
     }
 
-    connection = await connectDB7();
+    
+    pool = await connectDB7();
 
     const results: any[] = [];
     const errors: any[] = [];
 
-    // Generate all dates in range
     const allDates: string[] = [];
     for (let d = new Date(startDate); d <= endDate; d.setDate(d.getDate() + 1)) {
       allDates.push(d.toISOString().split('T')[0]);
@@ -50,7 +50,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         const month = dateObj.toISOString().split('-')[1];
         const BLART = "ZF";
 
-        // Ambil data dari sapico_temp untuk ket = "ZF"
         const querySelect = `
           SELECT * 
           FROM sapico_temp
@@ -59,7 +58,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             AND flag = 0 
         `;
 
-        const [rows] = await connection.execute(querySelect, [currentDate]);
+        const [rows] = await pool.execute(querySelect, [currentDate]);
         const datas = rows as any[];
 
         if (datas.length === 0) {
@@ -67,18 +66,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             date: currentDate,
             environment,
             status: 'skipped',
-            message: 'No data found for this date'
+            message: 'No data found for this date',
           });
           continue;
         }
 
-        // Hitung total sum amount
         let total_sum = 0;
         for (const data of datas) {
           total_sum += Number(data.amount);
         }
 
-        //Generate Xml data
         let xml = `<?xml version="1.0" encoding="UTF-8"?>
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
   <soapenv:Header/>
@@ -112,7 +109,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           <xsd:STATE></xsd:STATE>
         </xsd:ITEM>`;
 
-        // Item kedua (Credit - Pendapatan Pihak Berelasi - Aggregator) - PER DATA
         for (const data of datas) {
           xml += `
         <xsd:ITEM>
@@ -148,7 +144,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   </soapenv:Body>
 </soapenv:Envelope>`;
 
-        // Save XML file
         const xmlname = `ZF_Revenue_AGGPB-${startDateFormatted}.xml`;
         const xmlPath = path.join(process.cwd(), 'public', 'sapico', xmlname);
         
@@ -159,7 +154,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         
         fs.writeFileSync(xmlPath, xml);
 
-        // ✅ API CALL - SOAP 1.1 HEADERS
         let apiResponse: any = null;
         let apiSuccess = false;
 
@@ -174,20 +168,17 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
               'SOAPAction': '""',
               'Content-Length': Buffer.byteLength(xml, 'utf8').toString(),
               'User-Agent': 'PHP/8.0.0',
-              'Connection': 'close'
+              Connection: 'close',
             },
             body: xml,
-            signal: controller.signal
+            signal: controller.signal,
           });
 
           clearTimeout(timeoutId);
           
-          if (!response.ok) {
-            apiResponse = await response.text();
-          } else {
-            apiResponse = await response.text();
+          apiResponse = await response.text();
 
-            // Parse response - sama persis
+          if (response.ok) {
             const resultMatch = apiResponse.match(/<ns:return>([\s\S]*?)<\/ns:return>/);
             if (resultMatch) {
               let resultJson = resultMatch[1];
@@ -196,24 +187,21 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
               const jsonData = JSON.parse(resultJson);
               const timestamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
 
-              // Log to database (DB7)
               const queryLog = `
                 INSERT INTO log_sapico_deposit(nama_file, response, tanggal, url) 
                 VALUES (?, ?, ?, ?)
               `;
 
-              await connection.execute(queryLog, [
+              await pool.execute(queryLog, [
                 xmlname,
                 resultJson,
                 timestamp,
-                PRD_ENDPOINT
+                PRD_ENDPOINT,
               ]);
 
-              // Check if successful
               if (jsonData[0]?.MESSG === "Document posted successfully") {
                 apiSuccess = true;
 
-                // Update flag in sapico_temp
                 const queryUpdate = `
                   UPDATE sapico_temp 
                   SET flag = 1, 
@@ -224,10 +212,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                     AND flag = 0
                 `;
 
-                await connection.execute(queryUpdate, [
+                await pool.execute(queryUpdate, [
                   jsonData[0].BELNR,
                   xmlname,
-                  currentDate
+                  currentDate,
                 ]);
               }
             }
@@ -246,14 +234,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           api_response: apiResponse,
           message: apiSuccess 
             ? 'Document posted successfully' 
-            : 'XML created but API call failed or skipped'
+            : 'XML created but API call failed or skipped',
         });
-
       } catch (error: any) {
         errors.push({
           date: currentDate,
           environment,
-          error: error.message
+          error: error.message,
         });
       }
     }
@@ -263,24 +250,21 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       environment,
       message: `Processed ${results.length} dates (${environment})`,
       results,
-      errors: errors.length > 0 ? errors : undefined
+      errors: errors.length > 0 ? errors : undefined,
     });
-
   } catch (error: any) {
     return res.status(500).json({
       success: false,
       error: error.message || 'Failed to generate XML ZF (Production)',
       errorType: error.constructor.name,
       sqlMessage: error.sqlMessage,
-      details: process.env.NODE_ENV === 'development' ? error.stack : undefined
+      details: process.env.NODE_ENV === 'development' ? error.stack : undefined,
     });
   } finally {
-    if (connection) {
+    if (pool) {
       try {
-        await connection.end();
-      } catch (error: any) {
-        // Silent error
-      }
+        await pool.end();
+      } catch {}
     }
   }
 }

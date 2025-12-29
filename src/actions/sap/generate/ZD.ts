@@ -40,7 +40,7 @@ export const insertZD = serverAction(
       console.log('Insert ZD API Response status:', res.status);
       console.log('Insert ZD API Response data:', res.data);
 
-      // Format 1: Backend wrapper { status, message, data, code }
+      
       if (res.data.status !== undefined) {
         const { status, message, data, code } = res.data;
         if (!status) {
@@ -49,7 +49,7 @@ export const insertZD = serverAction(
         return data!;
       }
 
-      // Format 2: Direct API response { success, results, errors }
+      
       if (res.data.success !== undefined) {
         if (!res.data.success) {
           throw new ServerActionError(
@@ -65,7 +65,7 @@ export const insertZD = serverAction(
         } as InsertZDResponse;
       }
 
-      // Format 3: Error response
+      
       if (res.data.error) {
         throw new ServerActionError(res.data.error, '500');
       }
@@ -123,9 +123,8 @@ export const generateXmlZD = serverAction(
   }) => {
     try {
       const token = await getToken();
-      const environment = params.environment || 'production'; // Default production
+      const environment = params.environment || 'production'; 
       
-      // IF-ELSE untuk pilih endpoint berdasarkan environment
       let url: string;
       if (environment === 'sandbox') {
         url = `${process.env.NEXT_PUBLIC_API_URL_1}/${EndpointGenerateXmlZDQA}`;
@@ -143,7 +142,7 @@ export const generateXmlZD = serverAction(
           'Content-Type': 'application/json',
           'X-Environment': environment,
         },
-        timeout: 0, // No timeout for long running process
+        timeout: 0, 
       };
 
       const res = await axios.post<{
@@ -160,7 +159,7 @@ export const generateXmlZD = serverAction(
       console.log(`Generate XML ZD [${environment}] Response status:`, res.status);
       console.log(`Generate XML ZD [${environment}] Response data:`, res.data);
 
-      // Format 1: Backend wrapper { status, message, data, code }
+      
       if (res.data.status !== undefined) {
         const { status, message, data, code } = res.data;
         if (!status) {
@@ -175,7 +174,7 @@ export const generateXmlZD = serverAction(
         };
       }
 
-      // Format 2: Direct API response { success, results, errors }
+      
       if (res.data.success !== undefined) {
         if (!res.data.success) {
           throw new ServerActionError(
@@ -192,7 +191,7 @@ export const generateXmlZD = serverAction(
         } as GenerateXmlZDResponse & { environment: 'sandbox' | 'production' };
       }
 
-      // Format 3: Error response
+      
       if (res.data.error) {
         throw new ServerActionError(res.data.error, '500');
       }

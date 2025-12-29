@@ -737,6 +737,7 @@ export interface GenerateXmlZZResponse {
 export interface SyncRevenueParams {
   year: number;
   month: number;
+  tables?: string[]; 
 }
 
 export interface SyncRevenueResult {

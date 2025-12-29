@@ -12,7 +12,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  let connection: any = null;
+  
+  let pool: any = null;
 
   try {
     const { start_date, end_date, environment = 'prod' } = req.body;
@@ -36,7 +37,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(400).json({ error: 'PRD_ENDPOINT not configured' });
     }
 
-    connection = await connectDB7();
+    
+    pool = await connectDB7();
+
     const allDates: string[] = [];
     for (let d = new Date(startDate); d <= endDate; d.setDate(d.getDate() + 1)) {
       allDates.push(d.toISOString().split('T')[0]);
@@ -52,7 +55,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         const month = dateObj.toISOString().split('-')[1];
         const BLART = 'ZZ';
 
-        // Ambil data ZZ dari sapico_temp
         const querySelect = `
           SELECT *
           FROM sapico_temp
@@ -60,7 +62,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             AND DATE(tgl_trx) = ?
             AND flag = 0
         `;
-        const [rows] = await connection.execute(querySelect, [currentDate]);
+        const [rows] = await pool.execute(querySelect, [currentDate]);
         const datas = rows as any[];
 
         if (datas.length === 0) {
@@ -73,13 +75,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           continue;
         }
 
-        // Hitung total amount
         let total_sum = 0;
         for (const data of datas) {
           total_sum += Number(data.amount);
         }
 
-        // ✅ SOAP FORMAT SAMA PERSIS (SOAP 1.1)
         let xml = `<?xml version="1.0" encoding="UTF-8"?>
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
   <soapenv:Header/>
@@ -87,7 +87,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     <dws:setTransaction xmlns:dws="http://dwssync_pfi_prd" xmlns:xsd="http://dwssync_pfi_prd/xsd">
       <dws:input>`;
 
-        // Detail items BSCHL=40, sesuai generateXmlZZ PHP
+        
         for (const data of datas) {
           xml += `
         <xsd:ITEM>
@@ -116,7 +116,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         </xsd:ITEM>`;
         }
 
-        // Summary BSCHL=31, sama dengan PHP
+        
         xml += `
         <xsd:ITEM>
           <xsd:AUFNR></xsd:AUFNR>
@@ -143,7 +143,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           <xsd:STATE></xsd:STATE>
         </xsd:ITEM>`;
 
-        // Footer XML
         xml += `
       </dws:input>
       <dws:type>JSON</dws:type>
@@ -151,7 +150,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   </soapenv:Body>
 </soapenv:Envelope>`;
 
-        // Simpan file XML
         const xmlname = `ZZ_COGS${startDateFormatted}.xml`;
         const xmlPath = path.join(process.cwd(), 'public', 'sapico', xmlname);
         const dir = path.dirname(xmlPath);
@@ -160,7 +158,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         }
         fs.writeFileSync(xmlPath, xml);
 
-        // ✅ API CALL - SOAP 1.1 HEADERS
         let apiResponse: any = null;
         let apiSuccess = false;
 
@@ -175,14 +172,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
               'SOAPAction': '""',
               'Content-Length': Buffer.byteLength(xml, 'utf8').toString(),
               'User-Agent': 'PHP/8.0.0',
-              'Connection': 'close'
+              Connection: 'close',
             },
             body: xml,
-            signal: controller.signal
+            signal: controller.signal,
           });
 
           clearTimeout(timeoutId);
-          
+
           if (!response.ok) {
             apiResponse = await response.text();
           } else {
@@ -191,17 +188,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             const resultMatch = apiResponse.match(/<ns:return>([\s\S]*?)<\/ns:return>/);
             if (resultMatch) {
               let resultJson = resultMatch[1];
-              resultJson = resultJson.replace(/<\/[^>]*>/g, "");
+              resultJson = resultJson.replace(/<\/[^>]*>/g, '');
 
               const jsonData = JSON.parse(resultJson);
 
-              // log_sapico_deposit
               const timestamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
               const queryLog = `
                 INSERT INTO log_sapico_deposit(nama_file, response, tanggal, url)
                 VALUES (?, ?, ?, ?)
               `;
-              await connection.execute(queryLog, [xmlname, resultJson, timestamp, PRD_ENDPOINT]);
+              await pool.execute(queryLog, [xmlname, resultJson, timestamp, PRD_ENDPOINT]);
 
               if (jsonData[0]?.MESSG === 'Document posted successfully') {
                 apiSuccess = true;
@@ -213,7 +209,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                     AND DATE(tgl_trx) = ?
                     AND flag = 0
                 `;
-                await connection.execute(queryUpdate, [jsonData[0].BELNR, xmlname, currentDate]);
+                await pool.execute(queryUpdate, [jsonData[0].BELNR, xmlname, currentDate]);
               }
             }
           }
@@ -230,7 +226,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           total_amount: Math.round(total_sum),
           record_count: datas.length,
           api_response: apiResponse,
-          message: apiSuccess ? 'Document posted successfully' : 'XML created but API call failed or skipped',
+          message: apiSuccess
+            ? 'Document posted successfully'
+            : 'XML created but API call failed or skipped',
         });
       } catch (error: any) {
         errors.push({
@@ -254,13 +252,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       error: error.message || 'Failed to generate XML ZZ (Production)',
       errorType: error.constructor.name,
       sqlMessage: error.sqlMessage,
-      details: process.env.NODE_ENV === 'development' ? error.stack : undefined
+      details: process.env.NODE_ENV === 'development' ? error.stack : undefined,
     });
   } finally {
-    if (connection) {
+    if (pool) {
       try {
-        await connection.end();
-      } catch (error: any) {}
+        await pool.end();
+      } catch {}
     }
   }
 }

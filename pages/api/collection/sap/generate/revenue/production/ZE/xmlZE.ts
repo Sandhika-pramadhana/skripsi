@@ -12,8 +12,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  let connection6: any = null;  // DB6: sapico_temp
-  let connection7: any = null;  // DB7: log_sapico_deposit
+  let pool6: any = null;  
+  let pool7: any = null;  
   
   try {
     const { start_date, end_date, environment = 'prod' } = req.body;
@@ -33,20 +33,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(400).json({ error: 'PRD_ENDPOINT not configured' });
     }
 
-    // ✅ DUA KONEKSI DB6 & DB7
-    connection6 = await connectDB6();
-    connection7 = await connectDB7();
+    
+    pool6 = await connectDB6();
+    pool7 = await connectDB7();
 
     const results: any[] = [];
     const errors: any[] = [];
 
-    // Generate all dates in range
     const allDates: string[] = [];
     for (let d = new Date(startDate); d <= endDate; d.setDate(d.getDate() + 1)) {
       allDates.push(d.toISOString().split('T')[0]);
     }
 
-    // Process each date
     for (const currentDate of allDates) {
       try {
         const dateObj = new Date(currentDate);
@@ -54,7 +52,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         const month = dateObj.toISOString().split('-')[1];
         const BLART = "ZE";
 
-        // Get data from sapico_temp - ket = "ZE"
+        
         const querySelect = `
           SELECT * 
           FROM sapico_temp
@@ -62,8 +60,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             AND DATE(tgl_trx) = ?
             AND flag = 0 
         `;
-
-        const [rows] = await connection6.execute(querySelect, [currentDate]);
+        const [rows] = await pool6.execute(querySelect, [currentDate]);
         const datas = rows as any[];
 
         if (datas.length === 0) {
@@ -71,18 +68,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             date: currentDate,
             environment,
             status: 'skipped',
-            message: 'No data found for this date'
+            message: 'No data found for this date',
           });
           continue;
         }
 
-        // Calculate total sum
         let total_sum = 0;
         for (const data of datas) {
           total_sum += Number(data.amount);
         }
 
-        // ✅ SOAP FORMAT SAMA PERSIS DENGAN ZD (SOAP 1.1)
         let xml = `<?xml version="1.0" encoding="UTF-8"?>
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
   <soapenv:Header/>
@@ -90,7 +85,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     <dws:setTransaction xmlns:dws="http://dwssync_pfi_prd" xmlns:xsd="http://dwssync_pfi_prd/xsd">
       <dws:input>`;
 
-        // Add first item (Debit - PT Pos Indonesia)
         xml += `
         <xsd:ITEM>
           <xsd:AUFNR></xsd:AUFNR>
@@ -117,7 +111,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           <xsd:STATE></xsd:STATE>
         </xsd:ITEM>`;
 
-        // Add second item (Credit - Revenue Indirect)
         xml += `
         <xsd:ITEM>
           <xsd:AUFNR></xsd:AUFNR>
@@ -151,7 +144,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   </soapenv:Body>
 </soapenv:Envelope>`;
 
-        // Save XML file
         const xmlname = `ZE_Revenue_AGNPB-${startDateFormatted}.xml`;
         const xmlPath = path.join(process.cwd(), 'public', 'sapico', xmlname);
         const dir = path.dirname(xmlPath);
@@ -160,7 +152,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         }
         fs.writeFileSync(xmlPath, xml);
 
-        // API CALL - SOAP 1.1 HEADERS SAMA DENGAN ZD
         let apiResponse: any = null;
         let apiSuccess = false;
 
@@ -175,20 +166,17 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
               'SOAPAction': '""',
               'Content-Length': Buffer.byteLength(xml, 'utf8').toString(),
               'User-Agent': 'PHP/8.0.0',
-              'Connection': 'close'
+              Connection: 'close',
             },
             body: xml,
-            signal: controller.signal
+            signal: controller.signal,
           });
 
           clearTimeout(timeoutId);
-          
-          if (!response.ok) {
-            apiResponse = await response.text();
-          } else {
-            apiResponse = await response.text();
 
-            // Parse response
+          apiResponse = await response.text();
+
+          if (response.ok) {
             const resultMatch = apiResponse.match(/<ns:return>([\s\S]*?)<\/ns:return>/);
             if (resultMatch) {
               let resultJson = resultMatch[1];
@@ -197,23 +185,21 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
               const jsonData = JSON.parse(resultJson);
               const timestamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
 
-              // ✅ LOG ke DB7 (log_sapico_deposit)
+              
               const queryLog = `
                 INSERT INTO log_sapico_deposit(nama_file, response, tanggal, url) 
                 VALUES (?, ?, ?, ?)
               `;
-              await connection7.execute(queryLog, [
+              await pool7.execute(queryLog, [
                 xmlname,
                 resultJson,
                 timestamp,
-                PRD_ENDPOINT
+                PRD_ENDPOINT,
               ]);
 
-              // Check if successful
               if (jsonData[0]?.MESSG === "Document posted successfully") {
                 apiSuccess = true;
 
-                // ✅ UPDATE sapico_temp di DB6 - ket = "ZE"
                 const queryUpdate = `
                   UPDATE sapico_temp 
                   SET flag = 1, 
@@ -223,10 +209,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                     AND DATE(tgl_trx) = ?
                     AND flag = 0
                 `;
-                await connection6.execute(queryUpdate, [
+                await pool6.execute(queryUpdate, [
                   jsonData[0].BELNR,
                   xmlname,
-                  currentDate
+                  currentDate,
                 ]);
               }
             }
@@ -243,16 +229,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           xmlFile: xmlname,
           total_amount: Math.round(total_sum),
           api_response: apiResponse,
-          message: apiSuccess 
-            ? 'Document posted successfully' 
-            : 'XML created but API call failed or skipped'
+          message: apiSuccess
+            ? 'Document posted successfully'
+            : 'XML created but API call failed or skipped',
         });
-
       } catch (error: any) {
         errors.push({
           date: currentDate,
           environment,
-          error: error.message
+          error: error.message,
         });
       }
     }
@@ -262,31 +247,22 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       environment,
       message: `Processed ${results.length} dates (${environment})`,
       results,
-      errors: errors.length > 0 ? errors : undefined
+      errors: errors.length > 0 ? errors : undefined,
     });
-
   } catch (error: any) {
     return res.status(500).json({
       success: false,
       error: error.message || 'Failed to generate XML ZE (Production)',
       errorType: error.constructor.name,
       sqlMessage: error.sqlMessage,
-      details: process.env.NODE_ENV === 'development' ? error.stack : undefined
+      details: process.env.NODE_ENV === 'development' ? error.stack : undefined,
     });
   } finally {
-    if (connection6) {
-      try {
-        await connection6.end();
-      } catch (error: any) {
-        // Silent error
-      }
+    if (pool6) {
+      try { await pool6.end(); } catch {}
     }
-    if (connection7) {
-      try {
-        await connection7.end();
-      } catch (error: any) {
-        // Silent error
-      }
+    if (pool7) {
+      try { await pool7.end(); } catch {}
     }
   }
 }

@@ -12,7 +12,7 @@ import {
 import { serverAction, ServerActionError } from "../../action";
 import { getToken } from "../../auth/getToken";
 
-// ==================== GENERATE SAP (EXISTING) ====================
+// ==================== GENERATE SAP ====================
 export const generateSap = serverAction(
   async (params: GenerateRevenueParams) => {
     try {
@@ -42,7 +42,7 @@ export const generateSap = serverAction(
       console.log("API Response status:", res.status);
       console.log("API Response data:", res.data);
 
-      // Format 1: Backend wrapper { status, message, data, code }
+      
       if (res.data.status !== undefined) {
         const { status, message, data, code } = res.data;
         if (!status) {
@@ -54,12 +54,12 @@ export const generateSap = serverAction(
         return data!;
       }
 
-      // Format 2: Direct API response { weeks }
+      
       if (res.data.weeks) {
         return res.data as GenerateRevenueResponse;
       }
 
-      // Format 3: Error response
+      
       if (res.data.error) {
         throw new ServerActionError(res.data.error, "500");
       }
@@ -144,7 +144,7 @@ export const syncRevenue = serverAction(
 
       console.log("Sync API Response:", res.data);
 
-      // Format 1: Direct success response
+    
       if (res.data.success !== undefined) {
         if (!res.data.success) {
           throw new ServerActionError(
@@ -163,7 +163,6 @@ export const syncRevenue = serverAction(
         } as SyncRevenueResult;
       }
 
-      // Format 2: Error response
       if (res.data.error) {
         throw new ServerActionError(res.data.error, "500");
       }

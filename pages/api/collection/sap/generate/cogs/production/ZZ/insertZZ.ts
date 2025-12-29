@@ -8,12 +8,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
+  let pool: any = null;
   let connection: any = null;
 
   try {
-    const { start_date, dates, amounts } = req.body; 
+    const { start_date, dates, amounts } = req.body;
 
-    // Validasi start_date wajib
+    
     if (!start_date) {
       return res.status(400).json({
         error: 'Start date is required',
@@ -31,7 +32,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         error: 'Amounts array required and must match dates length',
       });
     }
-    const validatedData = [];
+
+    const validatedData: { date: string; amount: number }[] = [];
     for (let i = 0; i < dates.length; i++) {
       const date = new Date(dates[i]);
       const amount = Number(amounts[i]);
@@ -50,11 +52,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       validatedData.push({
         date: date.toISOString().split('T')[0],
-        amount: amount
+        amount,
       });
     }
 
-    connection = await connectDB7();
+  
+    pool = await connectDB7();
+    connection = await pool.getConnection();
 
     try {
       await connection.beginTransaction();
@@ -94,24 +98,29 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         })),
       });
     } catch (error: any) {
-      await connection.rollback();
+      try {
+        await connection.rollback();
+      } catch {}
       throw error;
     }
   } catch (error: any) {
     return res.status(500).json({
       success: false,
       error: error.message || 'Failed to insert ZZ data',
-      errorType: error.constructor.name,
+      errorType: error.constructor?.name,
       sqlMessage: error.sqlMessage,
       details: process.env.NODE_ENV === 'development' ? error.stack : undefined,
     });
   } finally {
     if (connection) {
       try {
-        await connection.end();
-      } catch (error: any) {
-        // Silent error
-      }
+        await connection.release(); 
+      } catch {}
+    }
+    if (pool) {
+      try {
+        await pool.end(); 
+      } catch {}
     }
   }
 }

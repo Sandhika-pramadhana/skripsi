@@ -1,4 +1,3 @@
-// pages/api/revenue/insert-ZY.ts
 import { NextApiRequest, NextApiResponse } from 'next';
 import { connectDB6 } from '@/features/core/lib/db';
 
@@ -9,6 +8,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
+  let pool: any = null;
   let connection: any = null;
   
   try {
@@ -16,46 +16,46 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     // Validasi input
     if (!start_date) {
-      return res.status(400).json({ 
-        error: 'Start date is required' 
+      return res.status(400).json({
+        error: 'Start date is required',
       });
     }
 
     if (!dates || !Array.isArray(dates) || dates.length === 0) {
-      return res.status(400).json({ 
-        error: 'Dates array is required and cannot be empty' 
+      return res.status(400).json({
+        error: 'Dates array is required and cannot be empty',
       });
     }
 
     if (!amounts || !Array.isArray(amounts) || amounts.length !== dates.length) {
-      return res.status(400).json({ 
-        error: 'Amounts array is required and must match dates length' 
+      return res.status(400).json({
+        error: 'Amounts array is required and must match dates length',
       });
     }
 
-    // Validasi setiap amount
     for (let i = 0; i < amounts.length; i++) {
       if (!amounts[i] || isNaN(Number(amounts[i])) || Number(amounts[i]) <= 0) {
-        return res.status(400).json({ 
-          error: `Valid amount is required for day ${i + 1} (positive number)` 
+        return res.status(400).json({
+          error: `Valid amount is required for day ${i + 1} (positive number)`,
         });
       }
     }
 
     const startDate = new Date(start_date);
     if (isNaN(startDate.getTime())) {
-      return res.status(400).json({ 
-        error: 'Invalid start date format' 
+      return res.status(400).json({
+        error: 'Invalid start date format',
       });
     }
 
     if (dates.length > 7) {
-      return res.status(400).json({ 
-        error: 'Maximum 7 days allowed' 
+      return res.status(400).json({
+        error: 'Maximum 7 days allowed',
       });
     }
 
-    connection = await connectDB6();
+    pool = await connectDB6();
+    connection = await pool.getConnection();
 
     try {
       await connection.beginTransaction();
@@ -74,7 +74,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
         const formattedDate = dateObj.toISOString().split('T')[0];
 
-        // ZY Query - Manual amount dari frontend
         const queryInsert = `
           INSERT INTO sapico_temp(tgl_trx, id_number, amount, coa, sgtxt, ket, flag)
           SELECT 
@@ -99,7 +98,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             success: true,
             amount: amount,
             id_number: '12100111-agncogs',
-            ket: 'ZY'
+            ket: 'ZY',
           });
         } catch (insertError: any) {
           results.push({
@@ -108,7 +107,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             amount: amount,
             id_number: '12100111-agncogs',
             ket: 'ZY',
-            error: insertError.message || 'Insert failed'
+            error: insertError.message || 'Insert failed',
           });
         }
       }
@@ -116,34 +115,37 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       await connection.commit();
 
       const totalAmount = results.reduce((sum, item) => sum + (item.amount || 0), 0);
-      const successCount = results.filter(r => r.success).length;
+      const successCount = results.filter((r) => r.success).length;
 
       return res.status(200).json({
         success: true,
         message: `Successfully processed ZY data for ${dates.length} days. ${successCount}/${dates.length} inserted, Total: Rp ${totalAmount.toLocaleString('id-ID')}`,
-        results: results
+        results: results,
       });
-
     } catch (error: any) {
-      await connection.rollback();
+      try {
+        await connection.rollback();
+      } catch {}
       throw error;
     }
-
   } catch (error: any) {
     return res.status(500).json({
       success: false,
       error: error.message || 'Failed to insert ZY data',
-      errorType: error.constructor.name,
+      errorType: error.constructor?.name,
       sqlMessage: error.sqlMessage,
-      details: process.env.NODE_ENV === 'development' ? error.stack : undefined
+      details: process.env.NODE_ENV === 'development' ? error.stack : undefined,
     });
   } finally {
     if (connection) {
       try {
-        await connection.end();
-      } catch (error: any) {
-        // Silent error
-      }
+        await connection.release(); 
+      } catch {}
+    }
+    if (pool) {
+      try {
+        await pool.end(); 
+      } catch {}
     }
   }
 }

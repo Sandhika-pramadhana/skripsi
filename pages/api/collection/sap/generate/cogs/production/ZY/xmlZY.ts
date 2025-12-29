@@ -12,8 +12,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  let connection6: any = null;  // DB6: sapico_temp
-  let connection7: any = null;  // DB7: log_sapico_deposit
+  let pool6: any = null;  
+  let pool7: any = null;  
   
   try {
     const { start_date, end_date, environment = 'prod' } = req.body;
@@ -33,9 +33,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(400).json({ error: 'PRD_ENDPOINT not configured' });
     }
 
-    // ✅ DUA KONEKSI: DB6 (sapico_temp) + DB7 (log_sapico_deposit)
-    connection6 = await connectDB6();
-    connection7 = await connectDB7();
+
+    pool6 = await connectDB6();
+    pool7 = await connectDB7();
 
     const allDates: string[] = [];
     for (let d = new Date(startDate); d <= endDate; d.setDate(d.getDate() + 1)) {
@@ -50,9 +50,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         const dateObj = new Date(currentDate);
         const startDateFormatted = dateObj.toISOString().split('T')[0].replace(/-/g, '');
         const month = dateObj.toISOString().split('-')[1];
-        const BLART = "ZY";
+        const BLART = 'ZY';
 
-        // ✅ QUERY dari DB6 (sapico_temp) - ket = "ZY"
         const querySelect = `
           SELECT * 
           FROM sapico_temp
@@ -61,7 +60,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             AND flag = 0 
         `;
 
-        const [rows] = await connection6.execute(querySelect, [currentDate]);
+    
+        const [rows] = await pool6.execute(querySelect, [currentDate]);
         const datas = rows as any[];
 
         if (datas.length === 0) {
@@ -69,18 +69,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             date: currentDate,
             environment,
             status: 'skipped',
-            message: 'No ZY data found for this date'
+            message: 'No ZY data found for this date',
           });
           continue;
         }
 
-        // Calculate total sum
         let total_sum = 0;
         for (const data of datas) {
           total_sum += Number(data.amount);
         }
 
-        // ✅ SOAP FORMAT SAMA PERSIS (SOAP 1.1)
         let xml = `<?xml version="1.0" encoding="UTF-8"?>
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
   <soapenv:Header/>
@@ -88,7 +86,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     <dws:setTransaction xmlns:dws="http://dwssync_pfi_prd" xmlns:xsd="http://dwssync_pfi_prd/xsd">
       <dws:input>`;
 
-        // Detail items (BSCHL=40) - Loop through each COA - ZY SPECIFIC
+  
         for (const data of datas) {
           const wwprd = parseInt(data.id_number.replace(/\D/g, ''));
           xml += `
@@ -118,7 +116,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         </xsd:ITEM>`;
         }
 
-        // Summary item (BSCHL=31) - ZY SPECIFIC
+      
         xml += `
         <xsd:ITEM>
           <xsd:AUFNR></xsd:AUFNR>
@@ -152,7 +150,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   </soapenv:Body>
 </soapenv:Envelope>`;
 
-        // Save XML file
         const xmlname = `ZY_COGS${startDateFormatted}.xml`;
         const xmlPath = path.join(process.cwd(), 'public', 'sapico', xmlname);
         const dir = path.dirname(xmlPath);
@@ -161,13 +158,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         }
         fs.writeFileSync(xmlPath, xml);
 
-        // ✅ API CALL - SOAP 1.1 HEADERS
         let apiResponse: any = null;
         let apiSuccess = false;
 
         try {
           const controller = new AbortController();
-          const timeoutId = setTimeout(() => controller.abort(), 120000 );
+          const timeoutId = setTimeout(() => controller.abort(), 120000);
 
           const response = await fetch(PRD_ENDPOINT, {
             method: 'POST',
@@ -176,10 +172,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
               'SOAPAction': '""',
               'Content-Length': Buffer.byteLength(xml, 'utf8').toString(),
               'User-Agent': 'PHP/8.0.0',
-              'Connection': 'close'
+              Connection: 'close',
             },
             body: xml,
-            signal: controller.signal
+            signal: controller.signal,
           });
 
           clearTimeout(timeoutId);
@@ -189,27 +185,24 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           } else {
             apiResponse = await response.text();
 
-            // Parse response
             const resultMatch = apiResponse.match(/<ns:return>([\s\S]*?)<\/ns:return>/);
             if (resultMatch) {
               let resultJson = resultMatch[1];
-              resultJson = resultJson.replace(/<\/[^>]*>/g, "");
+              resultJson = resultJson.replace(/<\/[^>]*>/g, '');
 
               const jsonData = JSON.parse(resultJson);
               const timestamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
 
-              // ✅ LOG ke DB7 (log_sapico_deposit)
               const queryLog = `
                 INSERT INTO log_sapico_deposit(nama_file, response, tanggal, url) 
                 VALUES (?, ?, ?, ?)
               `;
-              await connection7.execute(queryLog, [xmlname, resultJson, timestamp, PRD_ENDPOINT]);
+              
+              await pool7.execute(queryLog, [xmlname, resultJson, timestamp, PRD_ENDPOINT]);
 
-              // Check if successful
-              if (jsonData[0]?.MESSG === "Document posted successfully") {
+              if (jsonData[0]?.MESSG === 'Document posted successfully') {
                 apiSuccess = true;
 
-                // ✅ UPDATE sapico_temp di DB6 - ket = "ZY"
                 const queryUpdate = `
                   UPDATE sapico_temp 
                   SET flag = 1, no_doc = ?, file = ?
@@ -217,7 +210,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                     AND DATE(tgl_trx) = ?
                     AND flag = 0
                 `;
-                await connection6.execute(queryUpdate, [jsonData[0].BELNR, xmlname, currentDate]);
+                await pool6.execute(queryUpdate, [jsonData[0].BELNR, xmlname, currentDate]);
               }
             }
           }
@@ -234,14 +227,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           total_amount: Math.round(total_sum),
           record_count: datas.length,
           api_response: apiResponse,
-          message: apiSuccess ? 'Document posted successfully' : 'XML created but API call failed or skipped'
+          message: apiSuccess
+            ? 'Document posted successfully'
+            : 'XML created but API call failed or skipped',
         });
-
       } catch (error: any) {
         errors.push({
           date: currentDate,
           environment,
-          error: error.message
+          error: error.message,
         });
       }
     }
@@ -251,32 +245,23 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       environment,
       message: `Processed ${results.length} dates (${environment})`,
       results,
-      errors: errors.length > 0 ? errors : undefined
+      errors: errors.length > 0 ? errors : undefined,
     });
-
   } catch (error: any) {
     return res.status(500).json({
       success: false,
       error: error.message || 'Failed to generate XML ZY (Production)',
       errorType: error.constructor.name,
       sqlMessage: error.sqlMessage,
-      details: process.env.NODE_ENV === 'development' ? error.stack : undefined
+      details: process.env.NODE_ENV === 'development' ? error.stack : undefined,
     });
   } finally {
-    // ✅ CLOSE 2 KONEKSI
-    if (connection6) {
-      try {
-        await connection6.end();
-      } catch (error: any) {
-        // Silent error
-      }
+    
+    if (pool6) {
+      try { await pool6.end(); } catch {}
     }
-    if (connection7) {
-      try {
-        await connection7.end();
-      } catch (error: any) {
-        // Silent error
-      }
+    if (pool7) {
+      try { await pool7.end(); } catch {}
     }
   }
 }
