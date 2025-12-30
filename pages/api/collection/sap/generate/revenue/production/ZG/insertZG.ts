@@ -134,7 +134,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
     if (pool) {
       try {
-        await pool.end(); 
+
       } catch {}
     }
   }
