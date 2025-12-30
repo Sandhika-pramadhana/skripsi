@@ -100,7 +100,7 @@ const baseMenuItems: MenuItem[] = [
         title: "Generate",
         icon: BoxIcon,
         children:[ 
-          { title: "Generate Data", url: "/sap/generate/generate", icon: Database },
+          { title: "Generate Data", url: "/sap/generate/report", icon: Database },
           { title: "Insert & Send Revenue Data", url: "/sap/generate/Revenue", icon:Send },
           { title: "Insert & Send COGS Data", url: "/sap/generate/cogs", icon:Send },
         ], 

@@ -737,6 +737,8 @@ export interface GenerateXmlZZResponse {
 export interface SyncRevenueParams {
   year: number;
   month: number;
+  startDate: number;     
+  endDate: number;       
   tables?: string[]; 
 }
 
@@ -745,6 +747,8 @@ export interface SyncRevenueResult {
   year: number;
   month: number;
   periode: string;
+  dateRange: string;     
+  lastSync: string;      
   inserted: {
     history_trx_agent: number;
     log_trx_agent: number;
@@ -752,6 +756,7 @@ export interface SyncRevenueResult {
   };
   message?: string;
 }
+
 
 
 //end region

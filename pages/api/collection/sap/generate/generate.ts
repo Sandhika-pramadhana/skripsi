@@ -41,19 +41,19 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       });
     }
 
-    // ✅ OPTIMASI 1: BATASI MAX 7 HARI
+   
     const timeDiff = endDate.getTime() - startDate.getTime();
     const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
     
     if (daysDiff > 7) {
       return res.status(400).json({ 
-        error: `Date range maximum 7 days. Requested: ${daysDiff} days` 
+        error: `maksimal 7 hari. Request: ${daysDiff} hari` 
       });
     }
 
     connection = await connectDB6();
 
-    // ✅ HANYA proses date range yang DIMINTA USER
+  
     const allDates: string[] = [];
     for (let d = new Date(startDate); d <= endDate; d.setDate(d.getDate() + 1)) {
       allDates.push(d.toISOString().split('T')[0]);
@@ -67,7 +67,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     let totalDppMonth = 0;
     let totalPpnMonth = 0;
     
-    // ✅ QUERY SAMA PERSIS - hanya untuk date range yang diminta (max 7 hari)
+    
     const queryPromises = allDates.map(async (currentDate) => {
       const [year, month] = currentDate.split('-');
       const tableMonth = `${year}_${month}`;
@@ -177,7 +177,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         const gross = directRevenue + indirectRevenue + thirdPartyRevenue;
         
         // ✅ DPP = GROSS - PPN (9.91%)
-        const dpp = gross * (1 - 0.0991); // 90.09% dari gross
+        const dpp = gross * (1 - 0.0991); 
         const ppn = gross * 0.0991;
 
         return {
@@ -206,13 +206,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     const dailyResults = await Promise.all(queryPromises);
 
-    // ✅ PROSES HASIL - DIRECT/INDIRECT/THIRDPARTY DIPOTONG PPN
+    
     for (let i = 0; i < allDates.length; i++) {
       const currentDate = allDates[i];
       const result = dailyResults[i];
       const d = new Date(currentDate);
 
-      // ✅ PROPORTIONAL PPN POTONGAN per kategori
+      
       const totalGross = result.gross;
       const totalPpn = result.ppn;
       
@@ -222,22 +222,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       weekData.push({
         date: currentDate,
-        direct: formatNumber(directDpp),           // ✅ Sudah dipotong PPN
-        indirect: formatNumber(indirectDpp),       // ✅ Sudah dipotong PPN
-        thirdparty: formatNumber(thirdpartyDpp),   // ✅ Sudah dipotong PPN
+        direct: formatNumber(directDpp),           
+        indirect: formatNumber(indirectDpp),       
+        thirdparty: formatNumber(thirdpartyDpp),   
         gross_revenue: formatNumber(result.gross),
         dpp: formatNumber(result.dpp)
       });
 
-      // ✅ Gunakan DPP untuk week total (bukan gross)
+      
       weekGross += result.dpp;
 
-      const dayOfMonth = d.getDate();
-      let currentWeek = 1;
-      if (dayOfMonth >= 1 && dayOfMonth <= 7) currentWeek = 1;
-      else if (dayOfMonth >= 8 && dayOfMonth <= 14) currentWeek = 2;
-      else if (dayOfMonth >= 15 && dayOfMonth <= 21) currentWeek = 3;
-      else currentWeek = 4;
 
       const isLastDay = i === allDates.length - 1;
       
@@ -249,7 +243,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         let weekIndirect = 0;
         let weekThirdParty = 0;
 
-        // ✅ Parse formatted DPP values untuk week summary
+        
         weekData.forEach(day => {
           weekDirect += parseFloat(day.direct.replace(/\./g, '')) || 0;
           weekIndirect += parseFloat(day.indirect.replace(/\./g, '')) || 0;

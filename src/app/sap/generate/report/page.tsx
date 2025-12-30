@@ -2,7 +2,7 @@
 import dynamic from "next/dynamic";
 
 // Dynamically import the OfficeList component with no server-side rendering
-const GenerateNoSSR = dynamic(() => import("@/features/page/sap/generate/generate/index"), {
+const GenerateNoSSR = dynamic(() => import("@/features/page/sap/generate/report"), {
   ssr: false,
 });
 

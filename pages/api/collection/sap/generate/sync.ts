@@ -13,17 +13,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   let connection8: any = null; 
 
   try {
-    const { year, month, tables } = req.body as {
+    const { year, month, startDate, endDate, tables } = req.body as {
       year?: number;
       month?: number;
+      startDate?: number; 
+      endDate?: number;    
       tables?: string[];
     };
 
-    if (!year || !month) {
-      return res.status(400).json({ error: 'year dan month wajib diisi' });
+    if (!year || !month || !startDate || !endDate || startDate > endDate) {
+      return res.status(400).json({ error: 'year, month, startDate, endDate wajib diisi' });
     }
 
-    // Validasi table parameter
     const validTables = ['history', 'log', 'partner'] as const;
     const selectedTables: string[] =
       tables && Array.isArray(tables)
@@ -36,6 +37,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     const mm = String(month).padStart(2, '0');
     const ym = `${year}_${mm}`;
+    const dateRange = `${startDate}-${endDate}`;
+
+    // Date range untuk query
+    const startDateFull = `${year}-${mm}-${String(startDate).padStart(2, '0')} 00:00:00`;
+    const endDateFull = `${year}-${mm}-${String(endDate).padStart(2, '0')} 23:59:59`;
 
     // Koneksi ke MySQL
     connection6 = await connectDB6();
@@ -58,32 +64,46 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     };
 
     const inserted: Record<string, number> = {};
+    let lastSync = dateRange;
 
-    // Proses tabel yang dipilih
+    // Proses per tabel - INCREMENTAL SYNC
     for (const tableName of selectedTables) {
       const table = tableMap[tableName];
       if (!table) continue;
 
-      console.log(`Syncing ${tableName}: ${table.source} → ${table.target}`);
+      console.log(`🔄 Incremental Sync ${tableName} (${dateRange}): ${table.source} → ${table.target}`);
 
-      // TRUNCATE target
-      await connection6.query(`TRUNCATE TABLE ${table.target}`);
+      // SINGLE QUERY: Insert atau Update berdasarkan range tanggal
+      const [result]: any = await connection6.query(`
+        INSERT INTO ${table.target} 
+        SELECT * FROM ${table.source} 
+        WHERE created_at >= '${startDateFull}' 
+          AND created_at <= '${endDateFull}'
+        ON DUPLICATE KEY UPDATE
+          created_at = VALUES(created_at),
+          updated_at = NOW()
+      `);
 
-      // INSERT SELECT 
-      const [result]: any = await connection6.query(
-        `INSERT INTO ${table.target} SELECT * FROM ${table.source}`
-      );
-
-      inserted[tableName] = result?.affectedRows || 0;
-      console.log(`✅ ${tableName}: ${inserted[tableName]} rows inserted`);
+      const rowsAffected = result.affectedRows || 0;
+      inserted[tableName] = rowsAffected;
+      
+      // insertCount + updateCount = affectedRows
+      console.log(`✅ ${tableName} ${dateRange}: ${rowsAffected} rows affected (insert+update)`);
     }
 
     return res.status(200).json({
       success: true,
+      year,
+      month,
       periode: ym,
+      dateRange,
+      startDateFull,
+      endDateFull,
+      lastSync,
       tables: selectedTables,
-      inserted,
+      inserted, 
     });
+
   } catch (error: any) {
     console.error('Sync error:', error);
     return res.status(500).json({

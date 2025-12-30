@@ -2,7 +2,7 @@
 import { SidebarProvider, SidebarTrigger } from "@/features/core/components/ui/sidebar";
 import { AppSidebar } from "@/features/core/components/sidebar";
 import Navbar from "@/features/core/components/navbar";
-import ListGenerate from "./components/list-generate";
+import ListGenerate from "../report/components/list-generate";
 import { FileSpreadsheet } from "lucide-react";
 
 export default function GenerateSection({ children }: { children: React.ReactNode }) {
