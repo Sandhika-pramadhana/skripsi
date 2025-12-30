@@ -34,29 +34,28 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     connection = await pool.getConnection();
 
     const querySelect = `
-      SELECT
-        dt.tgl_trx,
-        CEIL(SUM(dt.fee)) AS total_amount
-      FROM (
-        SELECT 
-          DATE(a.transaction_date) AS tgl_trx,
-          CASE 
-            WHEN a.product_id LIKE '%SCF%' 
-              THEN SUM(a.amount) * 0.01
-            ELSE COUNT(*) * b.fee
-          END AS fee
-        FROM data_transactions a
-        JOIN mapping_fee_temp b 
-          ON a.product_id = b.product_id
-        WHERE (a.error_code = 'PF000' OR a.final_status = 'PF000')
-          AND DATE(a.transaction_date) BETWEEN ? AND ?
-        GROUP BY DATE(a.transaction_date), a.product_id, b.fee
-      ) AS dt
-      GROUP BY dt.tgl_trx
-      ORDER BY dt.tgl_trx
-    `;
+  SELECT
+    tgl_trx,
+    CEIL(SUM(fee)) AS total_amount
+  FROM (
+    SELECT 
+      DATE(a.transaction_date) AS tgl_trx,
+      CASE 
+        WHEN a.product_id LIKE '%SCF%' THEN a.amount * 0.01
+        ELSE b.fee  -- HAPUS COUNT(*) - ganti per row fee
+      END AS fee
+    FROM data_transactions a
+    JOIN mapping_fee_temp b ON a.product_id = b.product_id
+    WHERE (a.error_code = 'PF000' OR a.final_status = 'PF000')
+      AND a.transaction_date >= ?
+      AND a.transaction_date < DATE_ADD(?, INTERVAL 1 DAY)
+  ) AS dt
+  GROUP BY tgl_trx
+  ORDER BY tgl_trx
+`;
 
-    const [rows] = await connection.execute(querySelect, [start_date, end_date]);
+const [rows] = await connection.execute(querySelect, [start_date + ' 00:00:00', end_date]);
+
     const data = rows as { tgl_trx: string; total_amount: number }[];
 
     if (data.length === 0) {

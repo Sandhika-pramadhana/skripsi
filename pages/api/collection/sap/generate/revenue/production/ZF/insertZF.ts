@@ -34,18 +34,17 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     connection = await pool.getConnection();
 
     const querySelect = `
-      SELECT
-        DATE(transaction_date) AS tgl_trx,
-        COALESCE(SUM(fee_amount), 0) AS total_amount
-      FROM data_transactions
-      WHERE transaction_type IN ('CLB', 'PAY')
-        AND (error_code = 'PF000' OR final_status = 'PF000')
-        AND DATE(transaction_date) BETWEEN ? AND ?
-      GROUP BY DATE(transaction_date)
-      ORDER BY DATE(transaction_date)
-    `;
-
-    const [rows] = await connection.execute(querySelect, [start_date, end_date]);
+    SELECT
+      DATE(transaction_date) AS tgl_trx,
+      COALESCE(SUM(fee_amount), 0) AS total_amount
+    FROM data_transactions
+    WHERE transaction_type IN ('CLB', 'PAY')
+      AND (error_code = 'PF000' OR final_status = 'PF000')
+      AND transaction_date >= ? 
+      AND transaction_date < DATE_ADD(?, INTERVAL 1 DAY)
+    GROUP BY DATE(transaction_date)
+  `;
+  const [rows] = await connection.execute(querySelect, [start_date + ' 00:00:00', end_date]);
     const data = rows as { tgl_trx: string; total_amount: number }[];
 
     if (data.length === 0) {
@@ -123,7 +122,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
     if (pool) {
       try {
-
+        await pool.end(); 
       } catch {}
     }
   }
