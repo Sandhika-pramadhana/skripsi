@@ -12,7 +12,7 @@ import {
 import { Form, FormControl, FormItem, FormLabel, FormMessage } from "@/features/core/components/ui/form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Role, User } from "@/types/def";
+import { User } from "@/types/def";
 import { Controller, FormProvider, useForm } from "react-hook-form";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import SelectInput from "react-select";
@@ -30,14 +30,6 @@ interface RoleOption {
   value: string;
 }
 
-interface PaginatedAPIData<T> {
-  data: T[];
-  // Add other pagination properties if needed
-  total?: number;
-  page?: number;
-  limit?: number;
-}
-
 interface FormUserProps {
   open: boolean;
   onOpenModal: (open: boolean) => void;
@@ -46,12 +38,12 @@ interface FormUserProps {
 }
 
 const formSchema = z.object({
-  name: z.string().min(1, { message: "Name harus diisi" }),
+  name: z.string().min(1, { message: "Nama harus diisi" }),
   username: z.string().min(1, { message: "Username harus diisi" }),
   password: z.string().min(1, { message: "Password harus diisi" }),
   role: z.object({
-    roleId: z.string(),
-    roleName: z.string(),
+    roleId: z.string().min(1, { message: "Role harus dipilih" }),
+    roleName: z.string().min(1, { message: "Role harus dipilih" }),
   }),
 });
 
@@ -93,20 +85,16 @@ const FormUser: React.FC<FormUserProps> = ({ open, onOpenModal, data, isEdit }) 
     () => unwrap(getRoles())
   );
 
+  // Static role options - sesuai dengan mapping
   const roleOptions = useMemo((): RoleOption[] => {
-    const staticRoles: RoleOption[] = [
+    return [
       { label: "Superadmin", value: "1" },
-      { label: "Operational", value: "2" },
-      { label: "Accounting", value: "3" },
     ];
-  
-    return staticRoles;
   }, []);
-  
-  
 
   const onCloseForm = useCallback(() => {
     form.reset();
+    setShowPassword(false);
     onOpenModal(false);
   }, [form, onOpenModal]);
 
@@ -115,7 +103,7 @@ const FormUser: React.FC<FormUserProps> = ({ open, onOpenModal, data, isEdit }) 
     const { role, ...otherValues } = values;
 
     // Convert role string ke integer
-    const roleIdInt = roleMapping[role.roleName.toLowerCase()] || parseInt(role.roleId) || 0;
+    const roleIdInt = parseInt(role.roleId) || 0;
 
     const payload: any = {
       ...otherValues,
@@ -130,14 +118,18 @@ const FormUser: React.FC<FormUserProps> = ({ open, onOpenModal, data, isEdit }) 
     if (res.success) {
       toast({
         title: "Berhasil",
-        description: `User berhasil ${isEdit ? "diupdate" : "dibuat"}.`,
+        description: `User ${isEdit ? "berhasil diupdate" : "berhasil ditambahkan"}.`,
       });
-      mutate((key) => typeof key === "string" && key.startsWith(`userManage-`));
+      // Mutate both user and role cache
+      mutate((key) => typeof key === "string" && (
+        key.startsWith("userManage-") || 
+        key.startsWith("roleManage-")
+      ));
       onCloseForm();
     } else {
       toast({
         title: "Gagal",
-        description: res.message || `Gagal ${isEdit ? "update" : "buat"} user.`,
+        description: res.message || `Gagal ${isEdit ? "update" : "menambahkan"} user.`,
         variant: "destructive",
       });
     }
@@ -146,17 +138,23 @@ const FormUser: React.FC<FormUserProps> = ({ open, onOpenModal, data, isEdit }) 
 
   useEffect(() => {
     if (isEdit && open && data) {
-      // Cari role name dari roleMapping
-      const roleEntry = Object.entries(roleMapping).find(([, id]) => id === data.role_id);
-      const roleName = roleEntry ? roleEntry[0].charAt(0).toUpperCase() + roleEntry[0].slice(1) : "";
-
       form.reset({
         name: data.name,
         username: data.username,
         password: "",
         role: {
           roleId: data.role_id ? String(data.role_id) : "",
-          roleName: roleName,
+          roleName: data.roleName || "",
+        },
+      });
+    } else if (!isEdit && open) {
+      form.reset({
+        name: "",
+        username: "",
+        password: "",
+        role: {
+          roleId: "",
+          roleName: "",
         },
       });
     }
@@ -170,7 +168,7 @@ const FormUser: React.FC<FormUserProps> = ({ open, onOpenModal, data, isEdit }) 
         </DialogHeader>
         <FormProvider {...form}>
           <div className="mt-1 px-1">
-            <form id="form-user" onSubmit={form.handleSubmit(onSubmit)}>
+            <form id="form-user" onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
               {/* Nama */}
               <Controller
                 control={form.control}
@@ -178,12 +176,18 @@ const FormUser: React.FC<FormUserProps> = ({ open, onOpenModal, data, isEdit }) 
                 render={({ field, fieldState }) => (
                   <FormItem className="grid grid-cols-4 gap-2 items-center">
                     <FormLabel className="col-span-1 text-left">Nama</FormLabel>
-                    <FormControl>
-                      <input {...field} placeholder="Isi nama lengkap" className="text-[12px] col-span-3 border rounded-sm p-2 w-full"/>
-                    </FormControl>
-                    {fieldState.error && (
-                      <FormMessage className="-mt-[0.875rem] min-h-[0.875rem] font-light leading-none">{fieldState.error.message}</FormMessage>
-                    )}
+                    <div className="col-span-3 space-y-1">
+                      <FormControl>
+                        <input 
+                          {...field} 
+                          placeholder="Isi nama lengkap" 
+                          className="text-[12px] border rounded-sm p-2 w-full"
+                        />
+                      </FormControl>
+                      {fieldState.error && (
+                        <FormMessage className="text-xs">{fieldState.error.message}</FormMessage>
+                      )}
+                    </div>
                   </FormItem>
                 )}
               />
@@ -195,12 +199,18 @@ const FormUser: React.FC<FormUserProps> = ({ open, onOpenModal, data, isEdit }) 
                 render={({ field, fieldState }) => (
                   <FormItem className="grid grid-cols-4 gap-2 items-center">
                     <FormLabel className="col-span-1 text-left">Username</FormLabel>
-                    <FormControl>
-                      <input {...field} placeholder="Isi username" className="text-[12px] col-span-3 border rounded-sm p-2 w-full"/>
-                    </FormControl>
-                    {fieldState.error && (
-                      <FormMessage className="-mt-[0.875rem] min-h-[0.875rem] font-light leading-none">{fieldState.error.message}</FormMessage>
-                    )}
+                    <div className="col-span-3 space-y-1">
+                      <FormControl>
+                        <input 
+                          {...field} 
+                          placeholder="Isi username" 
+                          className="text-[12px] border rounded-sm p-2 w-full"
+                        />
+                      </FormControl>
+                      {fieldState.error && (
+                        <FormMessage className="text-xs">{fieldState.error.message}</FormMessage>
+                      )}
+                    </div>
                   </FormItem>
                 )}
               />
@@ -212,21 +222,28 @@ const FormUser: React.FC<FormUserProps> = ({ open, onOpenModal, data, isEdit }) 
                 render={({ field, fieldState }) => (
                   <FormItem className="grid grid-cols-4 gap-2 items-center">
                     <FormLabel className="col-span-1 text-left">Password</FormLabel>
-                    <FormControl>
-                      <div className="relative w-[272px]">
-                        <input {...field} placeholder="Isi password" type={showPassword ? "text" : "password"} className="text-[12px] col-span-3 border rounded-sm p-2 w-full"/>
-                        <button
-                          type="button"
-                          onClick={togglePasswordVisibility}
-                          className="absolute inset-y-0 right-3 flex items-center text-gray-500 focus:outline-none"
-                        >
-                          {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
-                        </button>
-                      </div>
-                    </FormControl>
-                    {fieldState.error && (
-                      <FormMessage className="-mt-[0.875rem] min-h-[0.875rem] font-light leading-none">{fieldState.error.message}</FormMessage>
-                    )}
+                    <div className="col-span-3 space-y-1">
+                      <FormControl>
+                        <div className="relative">
+                          <input 
+                            {...field} 
+                            placeholder={isEdit ? "masukkan password" : "Isi password"} 
+                            type={showPassword ? "text" : "password"} 
+                            className="text-[12px] border rounded-sm p-2 w-full pr-10"
+                          />
+                          <button
+                            type="button"
+                            onClick={togglePasswordVisibility}
+                            className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 focus:outline-none"
+                          >
+                            {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                          </button>
+                        </div>
+                      </FormControl>
+                      {fieldState.error && (
+                        <FormMessage className="text-xs">{fieldState.error.message}</FormMessage>
+                      )}
+                    </div>
                   </FormItem>
                 )}
               />
@@ -238,51 +255,58 @@ const FormUser: React.FC<FormUserProps> = ({ open, onOpenModal, data, isEdit }) 
                 render={({ field, fieldState }) => (
                   <FormItem className="grid grid-cols-4 gap-2 items-center">
                     <FormLabel className="col-span-1 text-left">Role</FormLabel>
-                    <FormControl>
-                      <SelectInput
-                        placeholder="Pilih Role"
-                        options={roleOptions}
-                        value={roleOptions.find((option: RoleOption) => option.value === field.value?.roleId) || null}
-                        onInputChange={(value) => setSearchRole(value)}
-                        onChange={(selected) => {
-                          field.onChange(selected ? {
-                            roleId: selected.value,
-                            roleName: selected.label
-                          } : { roleId: '', roleName: '' });
-                        }}
-                        isLoading={roleOptionsLoading}
-                        noOptionsMessage={() => "Tidak ada data"}
-                        isClearable
-                        className="text-sm w-[272px]"
-                        menuPosition="fixed"
-                        menuPortalTarget={document.body}
-                        styles={{
-                          menuPortal: (base) => ({
-                            ...base,
-                            zIndex: 9999,
-                            pointerEvents: "auto"
-                          }),
-                        }}
-                      />
-                    </FormControl>
-                    {fieldState.error && (
-                      <FormMessage className="-mt-[0.875rem] min-h-[0.875rem] font-light leading-none">{fieldState.error.message}</FormMessage>
-                    )}
+                    <div className="col-span-3 space-y-1">
+                      <FormControl>
+                        <SelectInput
+                          placeholder="Pilih Role"
+                          options={roleOptions}
+                          value={roleOptions.find((option: RoleOption) => option.value === field.value?.roleId) || null}
+                          onInputChange={(value) => setSearchRole(value)}
+                          onChange={(selected) => {
+                            field.onChange(selected ? {
+                              roleId: selected.value,
+                              roleName: selected.label
+                            } : { roleId: '', roleName: '' });
+                          }}
+                          isLoading={roleOptionsLoading}
+                          noOptionsMessage={() => "Tidak ada data"}
+                          isClearable
+                          className="text-sm"
+                          menuPosition="fixed"
+                          menuPortalTarget={document.body}
+                          styles={{
+                            menuPortal: (base) => ({
+                              ...base,
+                              zIndex: 9999,
+                              pointerEvents: "auto"
+                            }),
+                            control: (base) => ({
+                              ...base,
+                              fontSize: '12px',
+                            }),
+                          }}
+                        />
+                      </FormControl>
+                      {fieldState.error && (
+                        <FormMessage className="text-xs">{fieldState.error.message}</FormMessage>
+                      )}
+                    </div>
                   </FormItem>
                 )}
               />
             </form>
           </div>
           <DialogFooter className="py-1 mt-4">
-            <Button variant="outline" onClick={onCloseForm}>Tutup</Button>
+            <Button variant="outline" onClick={onCloseForm} disabled={isSubmitting}>
+              Batal
+            </Button>
             <Button
-              variant="outline"
-              className="bg-[#003366] text-white hover:bg-[#295887] hover:text-white"
+              className="bg-[#003366] text-white hover:bg-[#295887]"
               disabled={isSubmitting}
               type="submit"
               form="form-user"
             >
-              {isEdit ? "Update" : "Tambah"}
+              {isSubmitting ? "Menyimpan..." : (isEdit ? "Update" : "Tambah")}
             </Button>
           </DialogFooter>
         </FormProvider>

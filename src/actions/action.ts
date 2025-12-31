@@ -36,12 +36,8 @@ export function serverAction<Return, Args extends unknown[] = []>(
         console.log(`~~ 🚀 CALL ${functionCode}`, JSON.stringify(args, null, 2));
       }
 
-      const result = await callback(...args);
-
-      if (
-        process.env.NODE_ENV === "development" ||
-        process.env.NODE_ENV === "production"
-      ) {
+      const result = await callback(...args); 
+      if (process.env.NODE_ENV === "development") {
         // eslint-disable-next-line no-console
         console.log(
           `~~ 📡 RETURN ${functionCode}`,
@@ -54,11 +50,7 @@ export function serverAction<Return, Args extends unknown[] = []>(
 
       return { success: true, data: result };
     } catch (error) {
-      if (
-        process.env.NODE_ENV === "development" ||
-        process.env.NODE_ENV === "test" ||
-        process.env.NODE_ENV === "production"
-      ) {
+      if (process.env.NODE_ENV === "development") {
         // eslint-disable-next-line no-console
         console.error(
           `~~ ☄️  ERROR ${functionCode}`,

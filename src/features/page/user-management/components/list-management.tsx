@@ -4,10 +4,8 @@ import { useEffect, useState, Fragment } from "react";
 import Cookies from 'js-cookie';
 import { columns } from "./columns";
 import {
-  ExpandedState,
   flexRender,
   getCoreRowModel,
-  getExpandedRowModel,
   PaginationState,
   useReactTable,
   VisibilityState,
@@ -27,8 +25,9 @@ import {
   ChevronRightIcon,
   LoaderCircleIcon,
   Rows3,
-  Users2,   // ✅ perbaikan import
+  Users2,
   Plus,
+  Search,
 } from "lucide-react";
 
 import { useLocalStorage } from "@uidotdev/usehooks";
@@ -39,6 +38,7 @@ import {
   DropdownMenuTrigger,
   DropdownMenuCheckboxItem,
 } from "@/features/core/components/ui/dropdown-menu";
+import { Input } from "@/features/core/components/ui/input";
 import { getUsers } from "@/actions/master/user/user";
 import useSWR from "swr";
 import { unwrap } from "@/actions/use-action";
@@ -47,25 +47,26 @@ import FormUser from "./form";
 type Preference = {
   columnVisibility: VisibilityState | null;
 };
+
 const preferenceInit: Preference = {
   columnVisibility: null,
 };
 
 export function ListUsers() {
   const [preference, savePreference] = useLocalStorage<Preference>(
-    "list-transaction-preference",
+    "list-user-management-preference",
     preferenceInit
   );
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
   const [pagination, setPagination] = useState<PaginationState>({
     pageIndex: 0,
-    pageSize: 8,
+    pageSize: 10,
   });
   const [open, setOpen] = useState<boolean>(false);
   const [userRole, setUserRole] = useState<string>("");
+  const [searchQuery, setSearchQuery] = useState<string>("");
 
   useEffect(() => {
-    // Get user role from cookies
     const roleName = Cookies.get("roleName") || "client";
     setUserRole(roleName.toLowerCase());
   }, []);
@@ -73,8 +74,9 @@ export function ListUsers() {
   const {
     data: userManage,
     isLoading,
+    error,
   } = useSWR(
-    `userManage-${JSON.stringify(pagination)}`,
+    `userManage-${JSON.stringify(pagination)}-${searchQuery}`,
     async () => {
       try {
         return await unwrap(
@@ -84,11 +86,13 @@ export function ListUsers() {
           })
         );
       } catch (error) {
+        console.error("Error fetching users:", error);
         throw error;
       }
     },
     {
       keepPreviousData: true,
+      revalidateOnFocus: false,
     }
   );
 
@@ -106,9 +110,10 @@ export function ListUsers() {
       columnVisibility,
     },
     manualPagination: true,
+    pageCount: -1,
   });
 
-  // 🔧 Restore dari localStorage sekali saat mount
+  // Restore dari localStorage sekali saat mount
   useEffect(() => {
     if (preference.columnVisibility) {
       setColumnVisibility(preference.columnVisibility);
@@ -116,7 +121,7 @@ export function ListUsers() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // 🔧 Simpan ke localStorage hanya kalau beda
+  // Simpan ke localStorage hanya kalau beda
   useEffect(() => {
     if (
       JSON.stringify(preference.columnVisibility) !==
@@ -129,38 +134,61 @@ export function ListUsers() {
     }
   }, [columnVisibility, preference.columnVisibility, savePreference]);
 
+  // Reset pagination when search changes
+  useEffect(() => {
+    setPagination((prev) => ({ ...prev, pageIndex: 0 }));
+  }, [searchQuery]);
+
   // Check if user has CRUD permissions
   const hasCrudPermissions = userRole === "superadmin";
   const hasViewPermissions = userRole === "superadmin" || userRole === "admin";
 
   return (
     <main className="p-12 pb-4 border mt-3 rounded-lg shadow-sm bg-white">
-      <div className="flex justify-between">
-        <h1 className="text-3xl font-bold mb-4">Daftar Data User</h1>
+      <div className="flex justify-between items-center mb-6">
+        <div>
+          <h1 className="text-3xl font-bold">User Management</h1>
+          <p className="text-sm text-gray-500 mt-1">
+            Kelola data user dan role dalam satu tempat
+          </p>
+        </div>
       </div>
 
       {/* Controls */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
-        {hasCrudPermissions && (
-          <Button
-            variant="outline"
-            className="bg-[#003366] text-white hover:bg-[#275d94] hover:text-white"
-            onClick={() => setOpen(true)}
-          >
-            <Plus /> Tambah User
-          </Button>
-        )}
-        {!hasCrudPermissions && <div></div>}
-        <div className="flex items-center w-full justify-between gap-4">
-          {/* Input Search */}
+        <div className="flex items-center gap-2">
+          {hasCrudPermissions && (
+            <Button
+              variant="outline"
+              className="bg-[#003366] text-white hover:bg-[#275d94] hover:text-white"
+              onClick={() => setOpen(true)}
+            >
+              <Plus size={16} className="mr-2" /> Tambah User
+            </Button>
+          )}
+        </div>
+
+        <div className="flex items-center gap-2">
+          {/* Search Input */}
+          <div className="relative w-64">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={16} />
+            <Input
+              placeholder="Cari nama atau username..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="pl-9 text-sm"
+            />
+          </div>
+
+          {/* Column Visibility Dropdown */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline" size="sm">
-                <Rows3 /> Tampilkan Kolom{" "}
+                <Rows3 size={16} className="mr-2" /> Kolom
                 <ChevronDownIcon size={16} className="ml-1" />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-40">
+            <DropdownMenuContent align="end" className="w-40">
               {table.getAllLeafColumns().map((column) => {
                 if (!column.getCanHide()) {
                   return null;
@@ -206,7 +234,7 @@ export function ListUsers() {
                   <TableRow key={headerGroup.id}>
                     {headerGroup.headers.map((header) => {
                       return (
-                        <TableHead key={header.id}>
+                        <TableHead key={header.id} className="font-semibold">
                           {header.isPlaceholder
                             ? null
                             : flexRender(
@@ -224,11 +252,23 @@ export function ListUsers() {
                   <TableRow>
                     <TableCell
                       colSpan={columns.length}
-                      className="h-24 text-center"
+                      className="h-32 text-center"
                     >
                       <div className="flex flex-col items-center justify-center gap-3">
-                        <LoaderCircleIcon className="animate-spin" />
-                        <p>Loading...</p>
+                        <LoaderCircleIcon className="animate-spin text-[#003366]" size={32} />
+                        <p className="text-sm text-gray-500">Memuat data...</p>
+                      </div>
+                    </TableCell>
+                  </TableRow>
+                ) : error ? (
+                  <TableRow>
+                    <TableCell
+                      colSpan={columns.length}
+                      className="h-32 text-center"
+                    >
+                      <div className="flex flex-col items-center justify-center gap-2">
+                        <p className="text-sm text-red-500">Gagal memuat data</p>
+                        <p className="text-xs text-gray-500">Silakan coba lagi</p>
                       </div>
                     </TableCell>
                   </TableRow>
@@ -236,8 +276,8 @@ export function ListUsers() {
                   table.getRowModel().rows.map((row) => (
                     <Fragment key={row.id}>
                       <TableRow
-                        key={row.id}
                         data-state={row.getIsSelected() && "selected"}
+                        className="hover:bg-gray-50 transition-colors"
                       >
                         {row.getVisibleCells().map((cell) => (
                           <TableCell key={cell.id}>
@@ -254,9 +294,16 @@ export function ListUsers() {
                   <TableRow>
                     <TableCell
                       colSpan={columns.length}
-                      className="h-24 text-center"
+                      className="h-32 text-center"
                     >
-                      No results.
+                      <div className="flex flex-col items-center justify-center gap-2">
+                        <Users2 className="h-10 w-10 text-gray-300" />
+                        <p className="text-sm text-gray-500">
+                          {searchQuery
+                            ? "Tidak ada hasil yang ditemukan"
+                            : "Belum ada data user"}
+                        </p>
+                      </div>
                     </TableCell>
                   </TableRow>
                 )}
@@ -264,23 +311,37 @@ export function ListUsers() {
             </Table>
           </div>
 
-          <footer>
-            <div className="flex items-center justify-end mb-4">
+          {/* Pagination Info & Controls */}
+          <footer className="flex items-center justify-between">
+            <div className="text-sm text-gray-500">
+              Menampilkan{" "}
+              <span className="font-medium text-gray-700">
+                {userManage?.items?.length || 0}
+              </span>{" "}
+              user
+            </div>
+
+            <div className="flex items-center gap-2">
               <Button
-                variant="ghost"
+                variant="outline"
                 size="sm"
                 onClick={() => table.previousPage()}
                 disabled={!table.getCanPreviousPage()}
               >
-                <ChevronLeftIcon /> Sebelumnya
+                <ChevronLeftIcon size={16} className="mr-1" /> Sebelumnya
               </Button>
+              <div className="flex items-center gap-1 px-2">
+                <span className="text-sm text-gray-700">
+                  Halaman {pagination.pageIndex + 1}
+                </span>
+              </div>
               <Button
-                variant="ghost"
+                variant="outline"
                 size="sm"
                 onClick={() => table.nextPage()}
                 disabled={!table.getCanNextPage()}
               >
-                <ChevronRightIcon /> Selanjutnya
+                Selanjutnya <ChevronRightIcon size={16} className="ml-1" />
               </Button>
             </div>
           </footer>

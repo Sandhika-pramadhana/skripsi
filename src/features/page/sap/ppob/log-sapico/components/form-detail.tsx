@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { X } from "lucide-react"; 
 import { Button } from "@/features/core/components/ui/button";
 import {
   Dialog,
@@ -37,12 +38,25 @@ const FormDetailLogSapico: React.FC<FormDetailLogSapicoProps> = ({
 }) => {
   return (
     <Dialog open={open} onOpenChange={onOpenModal}>
-      <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto">
-        <DialogHeader>
-          <DialogTitle>Detail Log SAPICO</DialogTitle>
+      <DialogContent className="max-w-3xl max-h-[80vh] flex flex-col">
+        {/* Fixed Header */}
+        <DialogHeader className="sticky top-0 bg-background/95 backdrop-blur-sm border-b z-20 p-6">
+          <DialogTitle className="flex items-center justify-between">
+            <span>Detail Log SAPICO</span>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="h-8 w-8 p-0 ml-2"
+              onClick={() => onOpenModal(false)}
+            >
+              <X className="h-4 w-4" />
+              <span className="sr-only">Close</span>
+            </Button>
+          </DialogTitle>
         </DialogHeader>
 
-        <div className="px-1 mt-3">
+        {/* Scrollable Content */}
+        <div className="flex-1 overflow-y-auto px-6 pb-6">
           <DescriptionList
             data={[
               { label: "ID", value: formatValue(data?.id) },
@@ -55,7 +69,8 @@ const FormDetailLogSapico: React.FC<FormDetailLogSapicoProps> = ({
           />
         </div>
 
-        <DialogFooter className="py-1 mt-4">
+        {/* Fixed Footer */}
+        <DialogFooter className="sticky bottom-0 bg-background/95 backdrop-blur-sm border-t p-4 z-20">
           <Button variant="outline" onClick={() => onOpenModal(false)}>
             Kembali
           </Button>

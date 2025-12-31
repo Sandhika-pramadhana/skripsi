@@ -126,8 +126,7 @@ const baseMenuItems: MenuItem[] = [
 
 const superadminMenuItems: MenuItem[] = [
   ...baseMenuItems,
-  { title: "Data User", url: "/user", icon: Users2 },
-  { title: "Role User", url: "/role", icon: Settings2 },
+  { title: "User Management", url: "/user-management", icon: Users2 },
 ];
 
 const getMenuItemsByRole = (roleName: string): MenuItem[] => {
