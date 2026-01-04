@@ -225,7 +225,7 @@ export function ZERevenueProcess({
         setInsertData(insertResponse.results as InsertZEResult[]);
       }
 
-      // Step 2: Generate XML
+      // Step 2: Send Data
       setStep('generating');
       const xmlResponse = await unwrap(
         generateXmlAction({
@@ -356,7 +356,7 @@ export function ZERevenueProcess({
             ) : (
               <>
                 <FileCode className="h-4 w-4" />
-                Generate XML
+                Send Data
               </>
             )}
           </Button>
@@ -539,7 +539,7 @@ export function ZERevenueProcess({
               ) : (
                 <TableRow>
                   <TableCell colSpan={xmlColumns.length} className="h-24 text-center">
-                    No data. Click Generate XML to create XML files.
+                    No data. Click Send Data to create XML files.
                   </TableCell>
                 </TableRow>
               )}

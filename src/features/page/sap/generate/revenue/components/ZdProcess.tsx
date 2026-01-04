@@ -67,7 +67,7 @@ export function ZDRevenueProcess({
   const insertColumns = useMemo(() => createInsertZDColumns(), []);
   const xmlColumns = useMemo(() => createXmlColumns(), []);
 
-  // ✅ Statistics untuk ZD dengan Daily DPP
+  // Statistics untuk ZD dengan Daily DPP
   const insertStats = useMemo(() => {
     if (insertData.length === 0) return null;
     
@@ -295,7 +295,7 @@ export function ZDRevenueProcess({
             ) : (
               <>
                 <FileCode className="h-4 w-4" />
-                Generate XML
+                Send Data
               </>
             )}
           </Button>
@@ -452,7 +452,7 @@ export function ZDRevenueProcess({
               ) : (
                 <TableRow>
                   <TableCell colSpan={xmlColumns.length} className="h-24 text-center">
-                    No data. Click Generate XML to create XML files.
+                    No data. Click Send Data to create XML files.
                   </TableCell>
                 </TableRow>
               )}

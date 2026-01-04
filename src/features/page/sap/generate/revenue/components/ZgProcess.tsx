@@ -348,7 +348,7 @@ export function ZGRevenueProcess({
             ) : (
               <>
                 <FileCode className="h-4 w-4" />
-                Generate XML
+                Send Data
               </>
             )}
           </Button>
@@ -525,7 +525,7 @@ export function ZGRevenueProcess({
               ) : (
                 <TableRow>
                   <TableCell colSpan={xmlColumns.length} className="h-24 text-center">
-                    No data. Click Generate XML to create XML files.
+                    No data. Click Send Data to create XML files.
                   </TableCell>
                 </TableRow>
               )}
