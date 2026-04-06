@@ -1,103 +1,102 @@
 "use client";
 
-import { SidebarProvider, SidebarTrigger } from "@/features/core/components/ui/sidebar";
+import {
+  SidebarProvider,
+  useSidebar,
+} from "@/features/core/components/ui/sidebar";
 import { AppSidebar } from "@/features/core/components/sidebar";
 import Navbar from "@/features/core/components/navbar";
+import { Map, Activity, MapPin } from "lucide-react";
 
-/* Component untuk Internal (POSFIN) */
-import GtvSection from "./internal/components/gtv";
-import UserSection from "./internal/components/user";
-import GoalSection from "./internal/components/goal";
-import RevenueSection from "./internal/components/revenue";
+import BandungHeatmapMap from "./components/heatmap";
 
-/* Component untuk Eksternal (Pos IND) */
-import UserExternalPosSection from "@/features/dashboard/eksternal/pos/components/user";
-import GoalExternalPosSection from "@/features/dashboard/eksternal/pos/components/goal";
-
-/* Component untuk Eksternal (MyTsel) */
-import TrxExternalMyTselSection from "@/features/dashboard/eksternal/mytsel/components/trx";
-import ListMyTselTransaction from "@/features/dashboard/eksternal/mytsel/components/list-shipping";
-
-import { FilterDateSection } from "../core/components/filter";
-import { useState } from "react";
-import { HomeIcon } from "lucide-react";
-import { BookTrxGraph } from "./internal/components/book_trx";
-
-export default function DashboardSection({ children }: { children: React.ReactNode }) {
-  const [startDate, setStartDate] = useState<string>('');
-  const [endDate, setEndDate] = useState<string>('');
-  
-  
-  const [userRole] = useState<"Superadmin" | "Client" | "Client Pos">("Superadmin");
-
-  const handleDateChange = (start: string, end: string) => {
-    setStartDate(start);
-    setEndDate(end);
-  };
-
-  const resetDates = () => {
-    setStartDate('');
-    setEndDate('');
-  };
+function DashboardContent({ children }: { children: React.ReactNode }) {
+  const { open: isSidebarOpen } = useSidebar();
 
   return (
-    <SidebarProvider>
+    <div className="flex min-h-screen bg-gray-50">
       <AppSidebar />
+      <Navbar />
 
-      <div className="flex flex-col flex-1">
-        <Navbar />
-
-        <main className="flex-1 p-4">
-          <SidebarTrigger />
+      <div
+        className="flex flex-col flex-1 min-h-screen transition-all duration-300 ease-in-out"
+        style={{
+          marginLeft: isSidebarOpen ? "260px" : "0",
+          width: isSidebarOpen ? "calc(100vw - 260px)" : "100vw",
+          paddingTop: "64px",
+        }}
+      >
+        <main className="flex-1 p-6 w-full">
           {children}
 
-          <div className="flex items-center justify-between">
+          {/* Header */}
+          <div className="flex items-center justify-between mb-6">
             <div className="flex gap-2 items-center">
-              <HomeIcon />
-              <h1 className="font-bold text-2xl my-4">Dashboard Layanan Kurir</h1>
-            </div>
-            <div>
-              <FilterDateSection
-                startDate={startDate}
-                endDate={endDate}
-                onDateChange={handleDateChange}
-                onReset={resetDates}
-              />
+              <Map className="w-7 h-7 text-blue-600" />
+              <h1 className="font-bold text-2xl">
+                Peta Bandung
+              </h1>
             </div>
           </div>
 
-          {userRole === "Superadmin" && (
-            <>
-              <div className="flex gap-2 mt-2">
-                <GoalSection startDate={startDate} endDate={endDate}/>
-                <UserSection startDate={startDate} endDate={endDate}/>
-              </div>
-              <BookTrxGraph startDate={startDate} endDate={endDate}/>
-              <div className="flex gap-2 mt-2">
-                <RevenueSection startDate={startDate} endDate={endDate}/>
-                <GtvSection startDate={startDate} endDate={endDate}/>
-              </div>
-            </>
-          )}
+          {/* MAP */}
+          <div className="mb-6">
+            <div className="bg-white rounded-xl shadow-lg border p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                <MapPin className="w-5 h-5 text-red-600" />
+                Heatmap Lokasi Usaha
+              </h2>
 
-          {userRole === "Client" && (
-            <>
-              <TrxExternalMyTselSection startDate={startDate} endDate={endDate}/>
-              <ListMyTselTransaction/>
-            </>
-          )}
+              <BandungHeatmapMap />
+            </div>
+          </div>
 
-          {userRole === "Client Pos" && (
-            <>
-              <div className="flex gap-2 mt-2">
-                <GoalExternalPosSection startDate={startDate} endDate={endDate}/>
-                <UserExternalPosSection startDate={startDate} endDate={endDate}/>
-              </div>
-              <BookTrxGraph startDate={startDate} endDate={endDate}/>
-            </>
-          )}
+          {/* ANALYTICS */}
+          <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+
+            {/* Statistik */}
+            <div className="xl:col-span-2 bg-white rounded-xl shadow-lg border p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                <Activity className="w-5 h-5 text-green-600" />
+                Analisis Aktivitas Lokasi
+              </h2>
+
+              <p className="text-gray-600">
+                Area dengan warna merah menunjukkan kepadatan aktivitas usaha
+                lebih tinggi. Area biru menunjukkan potensi lokasi usaha baru.
+              </p>
+            </div>
+
+            {/* Info Area */}
+            <div className="bg-white rounded-xl shadow-lg border p-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                <MapPin className="w-5 h-5 text-blue-600" />
+                Informasi Area
+              </h2>
+
+              <ul className="text-gray-600 space-y-2">
+                <li>🔴 Merah → Aktivitas tinggi</li>
+                <li>🟡 Kuning → Aktivitas sedang</li>
+                <li>🔵 Biru → Potensi lokasi baru</li>
+              </ul>
+            </div>
+
+          </div>
+
         </main>
       </div>
+    </div>
+  );
+}
+
+export default function DashboardSection({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <SidebarProvider defaultOpen={true}>
+      <DashboardContent>{children}</DashboardContent>
     </SidebarProvider>
   );
 }

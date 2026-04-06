@@ -1,36 +1,25 @@
-import React, { useEffect, useState } from "react";
-import Image from "next/image";
-import Cookies from 'js-cookie';
+import React from "react";
+import { useSidebar } from "@/features/core/components/ui/sidebar";
 
 const Navbar: React.FC = () => {
-  const [userDetails, setUserDetails] = useState({ name: "", roleName: "" });
-
-  useEffect(() => {
-    const name = Cookies.get('name') || 'Admin POSFIN';
-    const roleName = Cookies.get('roleName') || 'superadmin';
-    setUserDetails({ name, roleName });
-  }, []);
+  const { open: isSidebarOpen } = useSidebar();
 
   return (
-    <nav className="flex items-center justify-between px-6 py-3 bg-white border-b shadow-sm sticky top-0 z-50">
-      {/* Bagian Kanan */}
-      <div className="ml-auto">
-        <div className="flex items-center border px-4 rounded-lg p-2">
-          {/* Avatar */}
-          <div className="w-10 h-10 rounded-full overflow-hidden bg-blue-200 flex items-center justify-center mr-3">
-            <Image
-              src="/asset/images/avatar-icon.png"
-              alt="Admin Avatar"
-              width={40}
-              height={40}
-              objectFit="cover"
-            />
-          </div>
-
-          <div className="flex flex-col">
-            <span className="text-sm font-medium text-gray-800">{userDetails.name}</span>
-            <span className="text-xs text-gray-500">{userDetails.roleName}</span>
-          </div>
+    <nav
+      className="fixed top-0 right-0 px-6 py-3 bg-white border-b shadow-sm z-50 h-16 flex items-center justify-between transition-all duration-300"
+      style={{
+        left: isSidebarOpen ? "260px" : "0",
+        width: isSidebarOpen ? "calc(100vw - 260px)" : "100vw",
+      }}
+    >
+      <div className="flex items-center ml-10 mt-2">
+        <div>
+          <h1 className="text-lg font-bold text-gray-900 leading-tight">
+          Dashboard Analisis Potensi Lokasi Smoothies Bar
+          </h1>
+          <p className="text-xs text-gray-500 font-medium">
+          Kota Bandung - Geospatial Analysis
+          </p>
         </div>
       </div>
     </nav>

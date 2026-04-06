@@ -757,6 +757,41 @@ export interface SyncRevenueResult {
   message?: string;
 }
 
+// Tambahin di types/api.ts
+export interface YahooFinance {
+  symbol: string;
+  name: string;
+  price: number;
+  change: number;
+  changePercent: number;
+}
+export interface ChartPoint {
+  date: string;    
+  day: string;
+  close: number;
+  high: number;
+  low: number;
+}
+
+
+export interface ChartResponse {
+  data: ChartPoint[];
+  summary: { 
+    min: number; 
+    max: number; 
+    avg: number;
+  };
+  symbol: string;
+}
+
+export interface LiveQuote {
+  symbol: string;
+  price: number;
+  change: number;
+  changePercent: number;
+  time: string;
+  marketOpen: boolean;
+}
 
 
 //end region
