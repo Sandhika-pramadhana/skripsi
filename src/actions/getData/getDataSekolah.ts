@@ -7,8 +7,13 @@ export type SekolahData = {
     kecamatan?: string
   ): Promise<SekolahData[]> {
     try {
-      const baseUrl =
-        process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+      const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+  
+      if (!baseUrl) {
+        throw new Error(
+          "NEXT_PUBLIC_API_BASE_URL is not defined. Please configure it in the environment variables."
+        );
+      }
   
       const url = kecamatan
         ? `${baseUrl}/api/data/data-sekolah?kecamatan=${encodeURIComponent(
@@ -26,12 +31,7 @@ export type SekolahData = {
       }
   
       const json = await res.json();
-  
-      if (json.status && json.data) {
-        return json.data;
-      }
-  
-      return [];
+      return json?.data ?? [];
     } catch (err) {
       console.error("Failed to fetch data_sekolah:", err);
       return [];

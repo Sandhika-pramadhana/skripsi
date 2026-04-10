@@ -7,8 +7,10 @@ export type KampusData = {
     kecamatan?: string
   ): Promise<KampusData[]> {
     try {
+      // Gunakan URL production tanpa fallback ke localhost
       const baseUrl =
-        process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+        process.env.NEXT_PUBLIC_API_BASE_URL ||
+        "https://skripsi-one-sandy.vercel.app";
   
       const url = kecamatan
         ? `${baseUrl}/api/data/data-kampus?kecamatan=${encodeURIComponent(
@@ -27,11 +29,7 @@ export type KampusData = {
   
       const json = await res.json();
   
-      if (json.status && json.data) {
-        return json.data;
-      }
-  
-      return [];
+      return json?.data ?? [];
     } catch (err) {
       console.error("Failed to fetch data_kampus:", err);
       return [];
