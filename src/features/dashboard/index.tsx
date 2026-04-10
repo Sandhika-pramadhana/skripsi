@@ -6,7 +6,7 @@ import {
 } from "@/features/core/components/ui/sidebar";
 import { AppSidebar } from "@/features/core/components/sidebar";
 import Navbar from "@/features/core/components/navbar";
-import { Map, Activity, MapPin } from "lucide-react";
+import { Map, Activity, MapPin, Database } from "lucide-react";
 
 import BandungHeatmapMap from "./components/heatmap";
 
@@ -47,13 +47,36 @@ function DashboardContent({ children }: { children: React.ReactNode }) {
                 Heatmap Lokasi Usaha
               </h2>
 
+              {/* Heatmap */}
               <BandungHeatmapMap />
+
+              {/* Keterangan Sumber Data */}
+              <div className="mt-6 p-4 bg-gray-50 border rounded-lg">
+                <h3 className="text-md font-semibold mb-2 flex items-center gap-2 text-gray-800">
+                  <Database className="w-4 h-4 text-blue-600" />
+                  Sumber dan Variabel Data
+                </h3>
+                <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
+                  <li>
+                    <strong>Kepadatan Penduduk</strong> diperoleh dari jumlah penduduk per kecamatan di Kota Bandung.
+                  </li>
+                  <li>
+                    <strong>Jumlah Kampus</strong> merupakan total dari perguruan tinggi <em>negeri</em> dan <em>swasta</em>.
+                  </li>
+                  <li>
+                    <strong>Jumlah Sekolah</strong> merupakan total dari SD, SMP, SMA, dan SMK, baik <em>negeri</em> maupun <em>swasta</em>.
+                  </li>
+                </ul>
+                <p className="text-xs text-gray-500 mt-2">
+                  Sumber: Badan Pusat Statistik (BPS), Dinas Pendidikan Kota Bandung, dan instansi terkait.
+                </p>
+              </div>
             </div>
           </div>
 
           {/* ANALYTICS */}
           <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
-
+            
             {/* Statistik */}
             <div className="xl:col-span-2 bg-white rounded-xl shadow-lg border p-6">
               <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
@@ -62,8 +85,8 @@ function DashboardContent({ children }: { children: React.ReactNode }) {
               </h2>
 
               <p className="text-gray-600">
-                Area dengan warna merah menunjukkan kepadatan aktivitas usaha
-                lebih tinggi. Area biru menunjukkan potensi lokasi usaha baru.
+                Area dengan warna merah menunjukkan kepadatan aktivitas usaha yang lebih tinggi.
+                Area dengan intensitas lebih rendah menunjukkan potensi lokasi strategis untuk membuka usaha baru.
               </p>
             </div>
 
@@ -82,7 +105,6 @@ function DashboardContent({ children }: { children: React.ReactNode }) {
             </div>
 
           </div>
-
         </main>
       </div>
     </div>

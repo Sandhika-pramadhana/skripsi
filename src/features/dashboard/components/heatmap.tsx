@@ -9,16 +9,25 @@ import {
   GeoJSON,
 } from "react-leaflet";
 import L, { Path } from "leaflet";
-import "leaflet.heat";
 
 import {
-  getBandungHeatmapPoints,
-  type HeatmapPoint,
-} from "@/actions/dashboard/heatmap";
+  getDataKecamatan,
+  type KecamatanData,
+} from "@/actions/getData/getDataPenduduk";
+
+import {
+  getDataKampus,
+  type KampusData,
+} from "@/actions/getData/getDataKampus";
+
+import {
+  getDataSekolah,
+  type SekolahData,
+} from "@/actions/getData/getDataSekolah";
 
 import rawGeoJson from "@/data/bandung-kecamatan.json";
 
-// ================= LIST =================
+// ================= LIST KECAMATAN =================
 const BANDUNG_KECAMATAN = [
   "Andir","Antapani","Arcamanik","Astanaanyar","Babakan Ciparay",
   "Bandung Kidul","Bandung Kulon","Bandung Wetan","Batununggal",
@@ -32,13 +41,8 @@ const BANDUNG_KECAMATAN = [
 // ================= TYPES =================
 type KecamatanFeature = {
   type: "Feature";
-  properties: {
-    nama_kecamatan: string;
-  };
-  geometry: {
-    type: "MultiPolygon";
-    coordinates: any;
-  };
+  properties: { nama_kecamatan: string };
+  geometry: { type: "MultiPolygon"; coordinates: any };
 };
 
 type GeoJSONType = {
@@ -46,23 +50,23 @@ type GeoJSONType = {
   features: KecamatanFeature[];
 };
 
-// ================= GROUPING =================
+// ================= NORMALISASI NAMA =================
+const normalizeName = (name: string) =>
+  name.toLowerCase().replace(/\s+/g, "").trim();
+
+// ================= GROUPING GEOJSON =================
 const geoData: GeoJSONType = {
   type: "FeatureCollection",
   features: Object.values(
     (rawGeoJson as any).features.reduce((acc: any, f: any) => {
       const kec = f.properties.nama_kecamatan;
-
       if (!BANDUNG_KECAMATAN.includes(kec)) return acc;
 
       if (!acc[kec]) {
         acc[kec] = {
           type: "Feature",
           properties: { nama_kecamatan: kec },
-          geometry: {
-            type: "MultiPolygon",
-            coordinates: [],
-          },
+          geometry: { type: "MultiPolygon", coordinates: [] },
         };
       }
 
@@ -76,35 +80,6 @@ const geoData: GeoJSONType = {
     }, {})
   ),
 };
-
-// ================= HEATMAP =================
-function Heatmap({ points }: { points: HeatmapPoint[] }) {
-  const map = useMap();
-
-  useEffect(() => {
-    if (!points.length) return;
-
-    const heatPoints = points.map((p) => [
-      p.lat,
-      p.lng,
-      p.weight ?? 1,
-    ]);
-
-    const heatLayer = (L as any).heatLayer(heatPoints, {
-      radius: 25,
-      blur: 20,
-      maxZoom: 18,
-    });
-
-    heatLayer.addTo(map);
-
-    return () => {
-      map.removeLayer(heatLayer);
-    };
-  }, [points, map]);
-
-  return null;
-}
 
 // ================= AUTO ZOOM =================
 function ZoomController({ selected }: { selected?: string }) {
@@ -130,14 +105,26 @@ function ZoomController({ selected }: { selected?: string }) {
   return null;
 }
 
-// ================= LAYER =================
-function KecamatanLayer({ selected }: { selected?: string }) {
+// ================= LAYER KECAMATAN =================
+function KecamatanLayer({
+  selected,
+  pendudukMap,
+  kampusMap,
+  sekolahMap,
+}: {
+  selected?: string;
+  pendudukMap: Map<string, KecamatanData>;
+  kampusMap: Map<string, KampusData>;
+  sekolahMap: Map<string, SekolahData>;
+}) {
   const map = useMap();
-  const [zoom, setZoom] = useState(map.getZoom());
+  const [zoom, setZoom] = useState<number>(map.getZoom());
 
-  // ✅ FIX: useRef agar closure di event handler selalu baca nilai terbaru
   const selectedRef = useRef(selected);
   const zoomRef = useRef(zoom);
+  const pendudukRef = useRef(pendudukMap);
+  const kampusRef = useRef(kampusMap);
+  const sekolahRef = useRef(sekolahMap);
 
   useEffect(() => {
     selectedRef.current = selected;
@@ -148,8 +135,22 @@ function KecamatanLayer({ selected }: { selected?: string }) {
   }, [zoom]);
 
   useEffect(() => {
+    pendudukRef.current = pendudukMap;
+  }, [pendudukMap]);
+
+  useEffect(() => {
+    kampusRef.current = kampusMap;
+  }, [kampusMap]);
+
+  useEffect(() => {
+    sekolahRef.current = sekolahMap;
+  }, [sekolahMap]);
+
+  // ✅ FIX ERROR: Cleanup tidak mengembalikan nilai
+  useEffect(() => {
     const onZoom = () => setZoom(map.getZoom());
     map.on("zoomend", onZoom);
+
     return () => {
       map.off("zoomend", onZoom);
     };
@@ -157,10 +158,10 @@ function KecamatanLayer({ selected }: { selected?: string }) {
 
   return (
     <GeoJSON
+      key={zoom}
       data={geoData as any}
       style={(feature: any) => {
         const name = feature.properties.nama_kecamatan;
-
         const dynamicOpacity = Math.min(
           0.6,
           Math.max(0.05, (zoom - 10) * 0.1)
@@ -195,21 +196,46 @@ function KecamatanLayer({ selected }: { selected?: string }) {
         const name = feature.properties.nama_kecamatan;
         const l = layer as Path;
 
-        l.bindTooltip(name);
+        const buildTooltip = () => {
+          const key = normalizeName(name);
+
+          const penduduk = pendudukRef.current.get(key);
+          const kampus = kampusRef.current.get(key);
+          const sekolah = sekolahRef.current.get(key);
+
+          return `
+            <div style="font-size:13px;font-weight:600;color:#222;">
+              ${name}
+            </div>
+            <div style="font-size:12px;color:#555;">
+              👥 Penduduk: <b>${penduduk?.jumlah_penduduk?.toLocaleString("id-ID") ?? 0}</b> jiwa
+            </div>
+            <div style="font-size:12px;color:#555;">
+              🎓 Kampus: <b>${kampus?.jumlah_kampus ?? 0}</b>
+            </div>
+            <div style="font-size:12px;color:#555;">
+              🏫 Sekolah: <b>${sekolah?.jumlah_sekolah ?? 0}</b>
+            </div>
+          `;
+        };
+
+        l.bindTooltip(() => buildTooltip(), {
+          sticky: true,
+          direction: "top",
+          opacity: 1,
+          className: "kecamatan-tooltip",
+        });
 
         l.on({
           mouseover: () => {
-            // ✅ Jangan override highlight kecamatan yang sedang dipilih
             if (name === selectedRef.current) return;
             l.setStyle({ fillOpacity: 0.8 });
           },
           mouseout: () => {
-            // ✅ Baca ref terbaru, bukan nilai dari closure lama
             const currentSelected = selectedRef.current;
             const currentZoom = zoomRef.current;
 
             if (name === currentSelected) {
-              // Pertahankan highlight kecamatan yang dipilih
               l.setStyle({ fillOpacity: 0.9 });
               return;
             }
@@ -217,7 +243,10 @@ function KecamatanLayer({ selected }: { selected?: string }) {
             l.setStyle({
               fillOpacity: currentSelected
                 ? 0.1
-                : Math.min(0.6, Math.max(0.05, (currentZoom - 10) * 0.1)),
+                : Math.min(
+                    0.6,
+                    Math.max(0.05, (currentZoom - 10) * 0.1)
+                  ),
             });
           },
         });
@@ -226,10 +255,21 @@ function KecamatanLayer({ selected }: { selected?: string }) {
   );
 }
 
-// ================= MAIN =================
+// ================= MAIN COMPONENT =================
 export default function BandungHeatmapMap() {
-  const [points, setPoints] = useState<HeatmapPoint[]>([]);
   const [kecamatan, setKecamatan] = useState("");
+
+  const [pendudukMap, setPendudukMap] = useState<
+    Map<string, KecamatanData>
+  >(new Map());
+
+  const [kampusMap, setKampusMap] = useState<
+    Map<string, KampusData>
+  >(new Map());
+
+  const [sekolahMap, setSekolahMap] = useState<
+    Map<string, SekolahData>
+  >(new Map());
 
   const kecamatanList = useMemo(() => {
     return geoData.features.map(
@@ -238,19 +278,54 @@ export default function BandungHeatmapMap() {
   }, []);
 
   useEffect(() => {
-    const load = async () => {
-      const res = await getBandungHeatmapPoints(
-        kecamatan || undefined
+    const loadData = async () => {
+      const [penduduk, kampus, sekolah] = await Promise.all([
+        getDataKecamatan(),
+        getDataKampus(),
+        getDataSekolah(),
+      ]);
+
+      const pendudukMapped = new Map<string, KecamatanData>();
+      penduduk.forEach((d) =>
+        pendudukMapped.set(normalizeName(d.kecamatan), d)
       );
-      if (res.success) setPoints(res.data);
+
+      const kampusMapped = new Map<string, KampusData>();
+      kampus.forEach((d) =>
+        kampusMapped.set(normalizeName(d.kecamatan), d)
+      );
+
+      const sekolahMapped = new Map<string, SekolahData>();
+      sekolah.forEach((d) =>
+        sekolahMapped.set(normalizeName(d.kecamatan), d)
+      );
+
+      setPendudukMap(pendudukMapped);
+      setKampusMap(kampusMapped);
+      setSekolahMap(sekolahMapped);
     };
 
-    load();
-  }, [kecamatan]);
+    loadData();
+  }, []);
 
   return (
     <div>
-      {/* SELECT */}
+      {/* Tooltip CSS */}
+      <style>{`
+        .kecamatan-tooltip {
+          background: white;
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          padding: 6px 10px;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+          pointer-events: none;
+        }
+        .kecamatan-tooltip::before {
+          display: none;
+        }
+      `}</style>
+
+      {/* SELECT KECAMATAN */}
       <div className="mb-4 relative w-[260px]">
         <select
           value={kecamatan}
@@ -265,7 +340,6 @@ export default function BandungHeatmapMap() {
           ))}
         </select>
 
-        {/* ICON */}
         <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center">
           <svg
             className="w-4 h-4 text-gray-500"
@@ -287,11 +361,13 @@ export default function BandungHeatmapMap() {
           style={{ width: "100%", height: "100%" }}
         >
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-
           <ZoomController selected={kecamatan} />
-          <KecamatanLayer selected={kecamatan} />
-
-          <Heatmap points={points} />
+          <KecamatanLayer
+            selected={kecamatan}
+            pendudukMap={pendudukMap}
+            kampusMap={kampusMap}
+            sekolahMap={sekolahMap}
+          />
         </MapContainer>
       </div>
     </div>
