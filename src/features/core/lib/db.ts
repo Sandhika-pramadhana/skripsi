@@ -1,4 +1,4 @@
-import mysql, { Pool } from 'mysql2/promise';
+import mysql, { Pool } from "mysql2/promise";
 
 /** Singleton MySQL Connection Pool */
 let pool: Pool | null = null;
@@ -14,6 +14,9 @@ export function connectDB(): Pool {
       connectionLimit: 10,
       waitForConnections: true,
       queueLimit: 0,
+      ssl: {
+        rejectUnauthorized: false,
+      },
     });
 
     console.log("✅ Database Connected to Railway");
