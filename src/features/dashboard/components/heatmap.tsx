@@ -26,6 +26,7 @@ import smpGeoJson from "@/data/titik-smp.json";
 import smaGeoJson from "@/data/titik-sma.json";
 import kampusGeoJson from "@/data/titik-universitas.json";
 import mallGeoJson from "@/data/titik-mall.json";
+import kompetitorGeoJson from "@/data/titik-kompetitor.json";
 
 // ================= LIST KECAMATAN =================
 const BANDUNG_KECAMATAN = [
@@ -92,13 +93,14 @@ const createDotIcon = (color: string) =>
     iconAnchor: [4, 4],
   });
 
-const LAYER_CONFIG = {
-  sd:     { color: "#3B82F6", label: "SD",     icon: "🏫" },
-  smp:    { color: "#10B981", label: "SMP",    icon: "🏫" },
-  sma:    { color: "#F59E0B", label: "SMA",    icon: "🏫" },
-  kampus: { color: "#8B5CF6", label: "Kampus", icon: "🎓" },
-  mall:   { color: "#EF4444", label: "Mall",   icon: "🛍️" },
-} as const;
+  const LAYER_CONFIG = {
+    sd:         { color: "#3B82F6", label: "SD",         icon: "🏫" },
+    smp:        { color: "#10B981", label: "SMP",        icon: "🏫" },
+    sma:        { color: "#F59E0B", label: "SMA",        icon: "🏫" },
+    kampus:     { color: "#8B5CF6", label: "Kampus",     icon: "🎓" },
+    mall:       { color: "#EF4444", label: "Mall",       icon: "🛍️" },
+    kompetitor: { color: "#000000", label: "Kompetitor", icon: "📍" },
+  } as const;
 
 type LayerKey = keyof typeof LAYER_CONFIG;
 
@@ -278,13 +280,13 @@ export default function BandungHeatmapMap() {
   const [kampusMap, setKampusMap] = useState<Map<string, KampusData>>(new Map());
   const [sekolahMap, setSekolahMap] = useState<Map<string, SekolahData>>(new Map());
 
-  // Toggle visibility per layer
   const [visibleLayers, setVisibleLayers] = useState<Record<LayerKey, boolean>>({
     sd: false,
     smp: false,
     sma: false,
     kampus: false,
     mall: false,
+    kompetitor: false,
   });
 
   const toggleLayer = (key: LayerKey) =>
@@ -394,6 +396,7 @@ export default function BandungHeatmapMap() {
           <PointLayer data={smaGeoJson}    layerKey="sma"    visible={visibleLayers.sma}    nameField="nama" />
           <PointLayer data={kampusGeoJson} layerKey="kampus" visible={visibleLayers.kampus} nameField="nama" />
           <PointLayer data={mallGeoJson}   layerKey="mall"   visible={visibleLayers.mall}   nameField="nama" />
+          <PointLayer data={kompetitorGeoJson} layerKey="kompetitor" visible={visibleLayers.kompetitor} nameField="nama"/>
         </MapContainer>
       </div>
     </div>

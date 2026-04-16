@@ -1,0 +1,405 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [107.62077660000001, -6.8668241]
+        },
+        "properties": {
+          "osm_id": "3809369309",
+          "name": "Campions Juice",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"shop\"=>\"kiosk\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [107.5629329, -6.9640893]
+        },
+        "properties": {
+          "osm_id": "4327193261",
+          "name": "Aneka Juice",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:city\"=>\"Bandung, Jawa Barat\",\"addr:street\"=>\"Ruko Taman Kopo Indah Blok A\",\"amenity\"=>\"fast_food\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [107.55708120000001, -6.9607296]
+        },
+        "properties": {
+          "osm_id": "4327219160",
+          "name": "Ayam Goreng Tulang Lunak Rahayu - Be Yoghurt and Juice",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:city\"=>\"Bandung, Jawa Barat\",\"addr:housenumber\"=>\"18\",\"addr:street\"=>\"l. Taman Kopo Indah III Blok A\",\"amenity\"=>\"restaurant\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [107.5954155, -6.8884932]
+        },
+        "properties": {
+          "osm_id": "5119336933",
+          "name": "Just Wax",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"leisure\"=>\"fitness_centre\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [107.5956622, -6.8885612]
+        },
+        "properties": {
+          "osm_id": "5119357422",
+          "name": "Day's & Smoothie",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"shop\"=>\"gift\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [107.60874480000001, -6.9170955]
+        },
+        "properties": {
+          "osm_id": "5803815257",
+          "name": "Justus Steakhouse",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"restaurant\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [107.5967705, -6.9069307]
+        },
+        "properties": {
+          "osm_id": "7076331269",
+          "name": "Juice Bar",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": null
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [107.6204538, -6.9048489]
+        },
+        "properties": {
+          "osm_id": "9743382697",
+          "name": "Justus Steak House",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:full\"=>\"Jl. Cimanuk No. 8, Citarum, Bandung Wetan\",\"amenity\"=>\"security_booth\",\"office\"=>\"security\",\"wheelchair\"=>\"no\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [107.6050563, -6.8934069]
+        },
+        "properties": {
+          "osm_id": "11013530705",
+          "name": "Justus",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"restaurant\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [107.6975489, -6.9556414]
+        },
+        "properties": {
+          "osm_id": "11538747849",
+          "name": "MM Juice",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:country\"=>\"ID\",\"addr:place\"=>\"Summarecon Mall Bandung\",\"addr:province\"=>\"Jawa Barat\",\"addr:subdistrict\"=>\"Gedebage\",\"level\"=>\"1\",\"shop\"=>\"beverages\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [107.6113683, -6.9084444]
+        },
+        "properties": {
+          "osm_id": "11987527994",
+          "name": "Justus Burger & Steak",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"restaurant\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [107.59578470000001, -6.8893868]
+        },
+        "properties": {
+          "osm_id": "11989946038",
+          "name": "Justus Steak House",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"restaurant\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [107.5961276, -6.8884196]
+        },
+        "properties": {
+          "osm_id": "12012280713",
+          "name": "Justus",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"restaurant\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [107.6045809, -6.8741614]
+        },
+        "properties": {
+          "osm_id": "12482391291",
+          "name": "Juice For You",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"fast_food\",\"cuisine\"=>\"juice\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [107.6117848, -6.8812498]
+        },
+        "properties": {
+          "osm_id": "13067825597",
+          "name": "Shary Juice",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"fast_food\",\"cuisine\"=>\"juice\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [107.580528, -6.9599952]
+        },
+        "properties": {
+          "osm_id": "13455908145",
+          "name": "Justus Steak House",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"restaurant\",\"cuisine\"=>\"steak_house\""
+        }
+      },
+  
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [107.5818, -6.9152]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "The Smoothie Club",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Holis Regency, Babakan Ciparay",
+          "is_in": "Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"cafe\",\"cuisine\"=>\"smoothies\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [107.5998, -6.9325]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "NARA Smoothie Bar",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Peta No.67, Astanaanyar",
+          "is_in": "Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"fast_food\",\"cuisine\"=>\"smoothie_bowl\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [107.6145, -6.9038]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "LOS Tropis",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Gempol Kulon No.20, Citarum",
+          "is_in": "Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"shop\"=>\"beverages\",\"cuisine\"=>\"fresh_juice\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [107.6122, -6.9055]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "Fit Fuel",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Maulana Yusuf No.2, Citarum",
+          "is_in": "Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"restaurant\",\"cuisine\"=>\"healthy_food_smoothies\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [107.6167, -6.9012]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "Juicide Juice Bar",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Ambon No.21, Citarum",
+          "is_in": "Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"bar\",\"cuisine\"=>\"cold_pressed_juice\""
+        }
+      }
+    ]
+  }
