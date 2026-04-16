@@ -61,14 +61,17 @@ function DashboardContent({ children }: { children: React.ReactNode }) {
                     <strong>Kepadatan Penduduk</strong> diperoleh dari jumlah penduduk per kecamatan di Kota Bandung.
                   </li>
                   <li>
-                    <strong>Jumlah Kampus</strong> merupakan total dari perguruan tinggi <em>negeri</em> dan <em>swasta</em>.
+                    <strong>Pusat Keramaian</strong> gabungan seluruh titik pendidikan dan pusat perbelanjaan, meliputi SD, SMP, SMA, SMK, dan Kampus (negeri maupun swasta), serta Mall di tiap kecamatan.
                   </li>
                   <li>
-                    <strong>Jumlah Sekolah</strong> merupakan total dari SD, SMP, SMA, dan SMK, baik <em>negeri</em> maupun <em>swasta</em>.
+                    <strong>Kompetitor Smoothies Bar</strong> merupakan jumlah usaha minuman sejenis (smoothies, juice bar, minuman sehat) yang telah beroperasi di tiap kecamatan.
+                  </li>
+                  <li>
+                    <strong>Jarak ke Jalan Utama</strong> merupakan rata-rata jarak lokasi usaha ke jalan arteri atau kolektor terdekat di tiap kecamatan, dalam satuan meter.
                   </li>
                 </ul>
                 <p className="text-xs text-gray-500 mt-2">
-                  Sumber: Badan Pusat Statistik (BPS), Dinas Pendidikan Kota Bandung, dan instansi terkait.
+                  Sumber: Badan Pusat Statistik (BPS), Dinas Pendidikan Kota Bandung, Google Maps, dan instansi terkait.
                 </p>
               </div>
             </div>
@@ -76,14 +79,13 @@ function DashboardContent({ children }: { children: React.ReactNode }) {
 
           {/* ANALYTICS */}
           <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
-            
+
             {/* Statistik */}
             <div className="xl:col-span-2 bg-white rounded-xl shadow-lg border p-6">
               <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
                 <Activity className="w-5 h-5 text-green-600" />
                 Analisis Aktivitas Lokasi
               </h2>
-
               <p className="text-gray-600">
                 Area dengan warna merah menunjukkan kepadatan aktivitas usaha yang lebih tinggi.
                 Area dengan intensitas lebih rendah menunjukkan potensi lokasi strategis untuk membuka usaha baru.
@@ -96,7 +98,6 @@ function DashboardContent({ children }: { children: React.ReactNode }) {
                 <MapPin className="w-5 h-5 text-blue-600" />
                 Informasi Area
               </h2>
-
               <ul className="text-gray-600 space-y-2">
                 <li>🔴 Merah → Aktivitas tinggi</li>
                 <li>🟡 Kuning → Aktivitas sedang</li>

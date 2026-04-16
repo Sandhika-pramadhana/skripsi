@@ -5,6 +5,8 @@ let pool: Pool | null = null;
 
 export function connectDB(): Pool {
   if (!pool) {
+    const isDev = process.env.NODE_ENV === "development";
+
     pool = mysql.createPool({
       host: process.env.NEXT_DB_HOST,
       port: Number(process.env.NEXT_DB_PORT),
@@ -14,12 +16,18 @@ export function connectDB(): Pool {
       connectionLimit: 10,
       waitForConnections: true,
       queueLimit: 0,
-      ssl: {
-        rejectUnauthorized: false,
-      },
+      ssl: isDev
+        ? undefined
+        : {
+            rejectUnauthorized: false,
+          },
     });
 
-    console.log("✅ Database Connected to Railway");
+    console.log(
+      isDev
+        ? "✅ Database Connected (LOCAL)"
+        : "✅ Database Connected (PRODUCTION)"
+    );
   }
 
   return pool;

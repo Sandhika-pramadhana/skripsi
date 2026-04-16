@@ -1,0 +1,687 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6050273,
+            -6.8752133
+          ]
+        },
+        "properties": {
+          "osm_id": "479732485",
+          "name": "Universitas Katolik Parahyangan",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"school\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.5745998,
+            -6.8722885
+          ]
+        },
+        "properties": {
+          "osm_id": "1107474835",
+          "name": "Politeknik Bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"college\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.61087130000001,
+            -6.9116663
+          ]
+        },
+        "properties": {
+          "osm_id": "1342970055",
+          "name": "Universitas Katolik Parahyangan",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"university\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.5618668,
+            -6.8734327
+          ]
+        },
+        "properties": {
+          "osm_id": "2417247222",
+          "name": "Politeknik TEDC Bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"building\"=>\"yes\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6395281,
+            -6.8988185
+          ]
+        },
+        "properties": {
+          "osm_id": "4315331597",
+          "name": "Institut Teknologi Nasional",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:housenumber\"=>\"No. 23\",\"addr:street\"=>\"Jalan PH.H. Mustofa, Cikutra, Cibeunying Kidul, Neglasari, Cibeunying Kaler,\",\"amenity\"=>\"university\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6259866,
+            -6.9271072
+          ]
+        },
+        "properties": {
+          "osm_id": "4315338668",
+          "name": "Institut Teknologi Adityawarman",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:housenumber\"=>\"No. 37\",\"addr:street\"=>\"Jl Terusan Halimun Burangrang Bandung\",\"amenity\"=>\"university\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.62746550000001,
+            -6.9107914
+          ]
+        },
+        "properties": {
+          "osm_id": "4329257058",
+          "name": "The British Institute",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:housenumber\"=>\"189A\",\"addr:street\"=>\"Jl. LL.RE. Martadinata\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6342973,
+            -6.8965816
+          ]
+        },
+        "properties": {
+          "osm_id": "4329452898",
+          "name": "Politeknik LP3I Bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:housenumber\"=>\"59\",\"addr:street\"=>\"Jl. Pahlawan , Sukaluyu, Cibeunying Kaler\",\"amenity\"=>\"university\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.63461640000001,
+            -6.8947444
+          ]
+        },
+        "properties": {
+          "osm_id": "4329467501",
+          "name": "Politeknik Agp",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:housenumber\"=>\"83\",\"addr:street\"=>\"Jl. Pahlawan , Sukaluyu, Cibeunying Kaler\",\"amenity\"=>\"university\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6435144,
+            -6.8962936
+          ]
+        },
+        "properties": {
+          "osm_id": "4329574162",
+          "name": "Universitas Bandung Raya Fakusltas Pertanian",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:housenumber\"=>\"171\",\"addr:street\"=>\"Jl. Cikutra , Neglasari, Cibeunying Kaler\",\"amenity\"=>\"university\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6357174,
+            -6.8978831
+          ]
+        },
+        "properties": {
+          "osm_id": "4329588258",
+          "name": "Institut Teknologi Nasional",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:housenumber\"=>\"23\",\"addr:street\"=>\"Jalan PH.H. Mustofa\",\"amenity\"=>\"college\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.57679060000001,
+            -6.8731011
+          ]
+        },
+        "properties": {
+          "osm_id": "4333540481",
+          "name": "GOR Politeknik Pos Indonesia",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:city\"=>\"bandung\",\"addr:housenumber\"=>\"54\",\"addr:street\"=>\"Jl.Sariasih\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.58140270000001,
+            -6.9055946
+          ]
+        },
+        "properties": {
+          "osm_id": "4370460566",
+          "name": "Universitas Nurtanio Bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"university\",\"building\"=>\"school\",\"name:en\"=>\"Unnur\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.5814914,
+            -6.9046256
+          ]
+        },
+        "properties": {
+          "osm_id": "4370463021",
+          "name": "Gerbang Depan Universitas Nurtanio",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": null
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.5798378,
+            -6.9056849
+          ]
+        },
+        "properties": {
+          "osm_id": "4370465155",
+          "name": "Jalan masuk Universitas Nurtanio PintuNurtanio Utara",
+          "barrier": "gate",
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"access\"=>\"private\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6082084,
+            -6.9049335
+          ]
+        },
+        "properties": {
+          "osm_id": "4375146228",
+          "name": "Universitas Pasundan (Unpas)",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:housenumber\"=>\"6\",\"addr:postcode\"=>\"40116\",\"addr:street\"=>\"Jalan Taman Sari\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6498848,
+            -6.9096786
+          ]
+        },
+        "properties": {
+          "osm_id": "5155499912",
+          "name": "Universitas BSI",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:street\"=>\"Jl. Sulaksana\",\"amenity\"=>\"school\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.650094,
+            -6.9064327
+          ]
+        },
+        "properties": {
+          "osm_id": "5155499914",
+          "name": "Politeknik Geologi dan Pertambangan",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:street\"=>\"Jl. Sulaksana\",\"amenity\"=>\"school\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.61803660000001,
+            -6.9062164
+          ]
+        },
+        "properties": {
+          "osm_id": "9743382690",
+          "name": "Pos Satpam Goethe Institut Bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:full\"=>\"Jl. L. L. R.E. Martadinata No. 48, Citarum, Bandung Wetan\",\"office\"=>\"security\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.64482210000001,
+            -6.8979318
+          ]
+        },
+        "properties": {
+          "osm_id": "9803314549",
+          "name": "Universitas Widyatama",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"university\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.65236220000001,
+            -6.9010231
+          ]
+        },
+        "properties": {
+          "osm_id": "9808548007",
+          "name": "Politeknik Pajajaran Direktorat Ruko Surapati Core",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"university\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.5938619,
+            -6.8643165
+          ]
+        },
+        "properties": {
+          "osm_id": "10162132647",
+          "name": "Program Studi Arsitektur Universitas Pendidikan Indonesia",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:housenumber\"=>\"207\",\"addr:postcode\"=>\"40154\",\"addr:street\"=>\"Jalan Dokter Setiabudi\",\"office\"=>\"educational_institution\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.60868880000001,
+            -6.904676
+          ]
+        },
+        "properties": {
+          "osm_id": "10656700010",
+          "name": "Perpustakaan Universitas Pasundan",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:postcode\"=>\"40132\",\"addr:street\"=>\"Jl. Tamansari No.8, Lb. Siliwangi, Kecamatan Coblong\",\"amenity\"=>\"library\",\"operator\"=>\"Universitas Pasundan\",\"operator:type\"=>\"university\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.7154595,
+            -6.9212427
+          ]
+        },
+        "properties": {
+          "osm_id": "10813330157",
+          "name": "TK Bandung Institut",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"kindergarten\",\"task\"=>\"109\",\"wheelchair\"=>\"no\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.7099587,
+            -6.9355706
+          ]
+        },
+        "properties": {
+          "osm_id": "12806516347",
+          "name": "Universitas Bhakti Kencana",
+          "barrier": null,
+          "highway": "bus_stop",
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"bus\"=>\"yes\",\"pole\"=>\"no\",\"public_transport\"=>\"platform\",\"shelter\"=>\"yes\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.7099558,
+            -6.9356286
+          ]
+        },
+        "properties": {
+          "osm_id": "12806516348",
+          "name": "Universitas Bhakti Kencana",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.62315020000001,
+            -6.9281529
+          ]
+        },
+        "properties": {
+          "osm_id": "12986824557",
+          "name": "Universitas Aisyiyah",
+          "barrier": null,
+          "highway": "bus_stop",
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"bench\"=>\"no\",\"bin\"=>\"no\",\"bus\"=>\"yes\",\"lit\"=>\"no\",\"pole\"=>\"flag\",\"public_transport\"=>\"platform\",\"shelter\"=>\"no\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6231948,
+            -6.9281529
+          ]
+        },
+        "properties": {
+          "osm_id": "12986852698",
+          "name": "Universitas Aisyiyah",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.64556250000001,
+            -6.9719375
+          ]
+        },
+        "properties": {
+          "osm_id": "13077938801",
+          "name": "Institut Agama Islam Persatuan Islam (PERSIS) Bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"college\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.5731023,
+            -6.9117008
+          ]
+        },
+        "properties": {
+          "osm_id": "13259851119",
+          "name": "Institut Kesehatan Rajawali",
+          "barrier": null,
+          "highway": "bus_stop",
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"bench\"=>\"no\",\"bin\"=>\"no\",\"bus\"=>\"yes\",\"lit\"=>\"no\",\"pole\"=>\"no\",\"public_transport\"=>\"platform\",\"shelter\"=>\"no\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.57307460000001,
+            -6.9116873
+          ]
+        },
+        "properties": {
+          "osm_id": "13259851120",
+          "name": "Institut Kesehatan Rajawali",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
+        }
+      }
+    ]
+  }

@@ -1,0 +1,1303 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.614526,
+            -6.9147418
+          ]
+        },
+        "properties": {
+          "osm_id": "31288438",
+          "name": "SMPN 5",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"school\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6180692,
+            -6.9059498
+          ]
+        },
+        "properties": {
+          "osm_id": "1107777609",
+          "name": "SMP SMA Yahya YPK Yahya",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:housenumber\"=>\"71A - 73\",\"addr:street\"=>\"Jl. LLRE Martadinata\",\"amenity\"=>\"school\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6265975,
+            -6.8903413
+          ]
+        },
+        "properties": {
+          "osm_id": "1388221862",
+          "name": "SMP/ SMA Nasional",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"school\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.62508550000001,
+            -6.8877225
+          ]
+        },
+        "properties": {
+          "osm_id": "1388222371",
+          "name": "SMP / SMA Kemah Indonesia",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"school\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6034266,
+            -6.8909182
+          ]
+        },
+        "properties": {
+          "osm_id": "1896152878",
+          "name": "SMP Pasundan 1",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:postcode\"=>\"40131\",\"addr:street\"=>\"Jalan Bapak Husen Dalam\",\"amenity\"=>\"school\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.60676880000001,
+            -6.9256576
+          ]
+        },
+        "properties": {
+          "osm_id": "1919646275",
+          "name": "SMPN 43 Bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:street\"=>\"Balonggede\",\"amenity\"=>\"school\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.630962,
+            -6.9109009
+          ]
+        },
+        "properties": {
+          "osm_id": "2493385976",
+          "name": "SMP Santa Ursula",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:housenumber\"=>\"1\",\"addr:street\"=>\"Jalan Taman Anggrek\",\"amenity\"=>\"school\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6140378,
+            -6.9144392
+          ]
+        },
+        "properties": {
+          "osm_id": "3374033498",
+          "name": "SMP Negeri 2 Bandung",
+          "barrier": null,
+          "highway": "bus_stop",
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"bench\"=>\"yes\",\"bin\"=>\"yes\",\"bus\"=>\"yes\",\"lit\"=>\"yes\",\"pole\"=>\"traffic_sign\",\"public_transport\"=>\"platform\",\"shelter\"=>\"yes\",\"tactile_paving\"=>\"yes\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6798172,
+            -6.9644172
+          ]
+        },
+        "properties": {
+          "osm_id": "3383628375",
+          "name": "SMP Negeri 51 Bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6798153,
+            -6.9644956
+          ]
+        },
+        "properties": {
+          "osm_id": "3383661732",
+          "name": "SMP Negeri 51 Bandung",
+          "barrier": null,
+          "highway": "bus_stop",
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"bench\"=>\"yes\",\"bin\"=>\"yes\",\"bus\"=>\"yes\",\"lit\"=>\"yes\",\"pole\"=>\"traffic_sign\",\"public_transport\"=>\"platform\",\"shelter\"=>\"yes\",\"tactile_paving\"=>\"yes\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.64350130000001,
+            -6.9432575
+          ]
+        },
+        "properties": {
+          "osm_id": "4143041691",
+          "name": "SMP VIJAYA KUSUMA",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:street\"=>\"Jalan Ibrahim Adji\",\"amenity\"=>\"school\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.56996880000001,
+            -6.9153786
+          ]
+        },
+        "properties": {
+          "osm_id": "4327949871",
+          "name": "SMP Pasundan 7",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:housenumber\"=>\"11\",\"addr:street\"=>\"Jl. Cijerah Gang Pelita\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.597212,
+            -6.9033651
+          ]
+        },
+        "properties": {
+          "osm_id": "4328004844",
+          "name": "SMPK 1 BPK Penabur",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:city\"=>\"Bandung, Jawa Barat\",\"addr:housenumber\"=>\"157\",\"addr:street\"=>\"Jalan HOS Tjokroaminoto , Pamoyanan, Cicendo\",\"amenity\"=>\"school\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.611423,
+            -6.9128355
+          ]
+        },
+        "properties": {
+          "osm_id": "4328166911",
+          "name": "TK SD SMP SMA Santa Angela Bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:housenumber\"=>\"24\",\"addr:street\"=>\"Jl Merdeka\",\"amenity\"=>\"school\",\"denomination\"=>\"roman_catholic\",\"grades\"=>\"1-12\",\"operator\"=>\"Yayasan Widya Bhakti\",\"operator:type\"=>\"private\",\"religion\"=>\"christian\",\"website\"=>\"https://portal.santa-angela.sch.id/\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.59571860000001,
+            -6.8745529
+          ]
+        },
+        "properties": {
+          "osm_id": "4329650788",
+          "name": "SMPN 15 Bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:housenumber\"=>\"89\",\"addr:street\"=>\"Jl. Setiabudhi\",\"amenity\"=>\"school\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6083018,
+            -6.9348195
+          ]
+        },
+        "properties": {
+          "osm_id": "4370600241",
+          "name": "SMPN 11 Bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"school\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.62934960000001,
+            -6.8998537
+          ]
+        },
+        "properties": {
+          "osm_id": "5832220641",
+          "name": "SMPN 63 Kota Bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.58617260000001,
+            -6.8516157
+          ]
+        },
+        "properties": {
+          "osm_id": "9182125702",
+          "name": "SMP Tahfidz Mahkota Al Hidayah",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"school\",\"denomination\"=>\"sunni\",\"operator\"=>\"Yayasan Kamilul Hidayah\",\"operator:type\"=>\"religious\",\"religion\"=>\"muslim\",\"website\"=>\"http://www.al-hidayah.org\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.58891550000001,
+            -6.9260341
+          ]
+        },
+        "properties": {
+          "osm_id": "9805512682",
+          "name": "SMP Swadaya 1 Bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"school\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6225303,
+            -6.9233601
+          ]
+        },
+        "properties": {
+          "osm_id": "9805978343",
+          "name": "SMA SMP Edu Global Bandung - Sekolah Bilingual Integrated Cambridge",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:city\"=>\"Kota Bandung\",\"addr:district\"=>\"Lengkong\",\"addr:housename\"=>\"SMA Edu Global Bandung\",\"addr:housenumber\"=>\"38\",\"addr:postcode\"=>\"40262\",\"addr:province\"=>\"Jawa Barat\",\"addr:street\"=>\"Jalan Jenderal Gatot Subroto\",\"addr:subdistrict\"=>\"Malabar\",\"amenity\"=>\"school\",\"brand\"=>\"Edu Global School\",\"education\"=>\"school\",\"email\"=>\"ict@egs.sch.id\",\"internet_access\"=>\"yes\",\"phone\"=>\"+6282112113574\",\"website\"=>\"https://www.eduglobal.sch.id/\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.630157,
+            -6.9081075
+          ]
+        },
+        "properties": {
+          "osm_id": "9807953321",
+          "name": "SMPN 14 Bandung (Lapangan Supratman A)",
+          "barrier": null,
+          "highway": "bus_stop",
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"bench\"=>\"yes\",\"bin\"=>\"no\",\"bus\"=>\"yes\",\"lit\"=>\"no\",\"mapillary\"=>\"163358672892961\",\"pole\"=>\"flag\",\"public_transport\"=>\"platform\",\"route_ref\"=>\"5\",\"shelter\"=>\"yes\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.5687129,
+            -6.9425114
+          ]
+        },
+        "properties": {
+          "osm_id": "9814216609",
+          "name": "SMP Negeri 39 Bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"school\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6729219,
+            -6.9067402
+          ]
+        },
+        "properties": {
+          "osm_id": "9814361947",
+          "name": "SMPN 17 Bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"school\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6695954,
+            -6.908962
+          ]
+        },
+        "properties": {
+          "osm_id": "9814551684",
+          "name": "SMP - SMA Mutiara Bunda Bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"school\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6602424,
+            -6.9363552
+          ]
+        },
+        "properties": {
+          "osm_id": "9814622919",
+          "name": "SMPI Al Washliyah Bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"school\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6754078,
+            -6.9288073
+          ]
+        },
+        "properties": {
+          "osm_id": "9816109347",
+          "name": "SMPIT Luqmanul Hakim",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"school\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6761744,
+            -6.9300994
+          ]
+        },
+        "properties": {
+          "osm_id": "9816109870",
+          "name": "SMP Surya Kencana Bhakti",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"school\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6081312,
+            -6.9642949
+          ]
+        },
+        "properties": {
+          "osm_id": "9816121940",
+          "name": "SMP Nurul Hidayah Dayeuhkolot",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"school\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6252744,
+            -6.927954
+          ]
+        },
+        "properties": {
+          "osm_id": "9816141623",
+          "name": "SMP Maarif Bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"school\",\"religion\"=>\"muslim\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.5599477,
+            -6.9092512
+          ]
+        },
+        "properties": {
+          "osm_id": "9816226729",
+          "name": "SMP Muslimin Cibeureum",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"school\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.5607836,
+            -6.9043921
+          ]
+        },
+        "properties": {
+          "osm_id": "9816742922",
+          "name": "SMP PGRI Cibeureum",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"school\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.5635768,
+            -6.9242841
+          ]
+        },
+        "properties": {
+          "osm_id": "10006417943",
+          "name": "SMP Negeri 4 Cimahi",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:street\"=>\"Jalan Melong Raya\",\"amenity\"=>\"school\",\"grades\"=>\"7-9\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.5865005,
+            -6.8608756
+          ]
+        },
+        "properties": {
+          "osm_id": "10153269149",
+          "name": "SMP 29 BANDUNG",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": null
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.63011630000001,
+            -6.9080655
+          ]
+        },
+        "properties": {
+          "osm_id": "11707030832",
+          "name": "SMPN 14 Bandung (Lapangan Supratman A)",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.629359,
+            -6.8999494
+          ]
+        },
+        "properties": {
+          "osm_id": "11883306551",
+          "name": "SMPN 63 Kota Bandung",
+          "barrier": null,
+          "highway": "bus_stop",
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"bus\"=>\"yes\",\"pole\"=>\"totem\",\"public_transport\"=>\"platform\",\"shelter\"=>\"yes\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6245691,
+            -6.9725234
+          ]
+        },
+        "properties": {
+          "osm_id": "12189364141",
+          "name": "SMP Telkom Bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:street\"=>\"jl.Radio Palasari\",\"amenity\"=>\"school\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6549714,
+            -6.9173249
+          ]
+        },
+        "properties": {
+          "osm_id": "12625157021",
+          "name": "SMP Muhamadiyah 8 bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:district\"=>\"Antapani\",\"addr:street\"=>\"Jalan Kadipaten Raya no 4-6\",\"addr:subdistrict\"=>\"Antapani Kidul\",\"amenity\"=>\"school\",\"grades\"=>\"7-9\",\"religion\"=>\"muslim\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.606724,
+            -6.9257638
+          ]
+        },
+        "properties": {
+          "osm_id": "12808948221",
+          "name": "SMP Negeri 43 Bandung",
+          "barrier": null,
+          "highway": "bus_stop",
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"bench\"=>\"yes\",\"bin\"=>\"no\",\"bus\"=>\"yes\",\"lit\"=>\"no\",\"pole\"=>\"no\",\"public_transport\"=>\"platform\",\"shelter\"=>\"yes\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6067208,
+            -6.9257892
+          ]
+        },
+        "properties": {
+          "osm_id": "12808948222",
+          "name": "SMP Negeri 43 Bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.5956946,
+            -6.8740452
+          ]
+        },
+        "properties": {
+          "osm_id": "12809082549",
+          "name": "SMPN 15 Bandung",
+          "barrier": null,
+          "highway": "bus_stop",
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"bus\"=>\"yes\",\"pole\"=>\"totem\",\"public_transport\"=>\"platform\",\"shelter\"=>\"no\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.5957592,
+            -6.8739356
+          ]
+        },
+        "properties": {
+          "osm_id": "12809082550",
+          "name": "SMPN 15 Bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6337376,
+            -6.9121909
+          ]
+        },
+        "properties": {
+          "osm_id": "12811695424",
+          "name": "SMPN 22 Bandung",
+          "barrier": null,
+          "highway": "bus_stop",
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"bench\"=>\"yes\",\"bus\"=>\"yes\",\"pole\"=>\"traffic_sign\",\"public_transport\"=>\"platform\",\"shelter\"=>\"yes\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.633699,
+            -6.9122228
+          ]
+        },
+        "properties": {
+          "osm_id": "12811695425",
+          "name": "SMPN 22 Bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.61399150000001,
+            -6.9144408
+          ]
+        },
+        "properties": {
+          "osm_id": "12887182816",
+          "name": "SMP Negeri 2 Bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.56707150000001,
+            -6.9763833
+          ]
+        },
+        "properties": {
+          "osm_id": "13011520157",
+          "name": "SMP Negeri 1 Margahayu",
+          "barrier": null,
+          "highway": "bus_stop",
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"bus\"=>\"yes\",\"pole\"=>\"traffic_sign\",\"public_transport\"=>\"platform\",\"shelter\"=>\"yes\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.5670857,
+            -6.9763112
+          ]
+        },
+        "properties": {
+          "osm_id": "13011520158",
+          "name": "SMP Negeri 1 Margahayu",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6333427,
+            -6.9119823
+          ]
+        },
+        "properties": {
+          "osm_id": "13114541495",
+          "name": "Seberang SMP Negeri 22 Bandung",
+          "barrier": null,
+          "highway": "bus_stop",
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"bench\"=>\"no\",\"bin\"=>\"no\",\"bus\"=>\"yes\",\"lit\"=>\"no\",\"pole\"=>\"totem\",\"public_transport\"=>\"platform\",\"shelter\"=>\"no\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6333824,
+            -6.911965
+          ]
+        },
+        "properties": {
+          "osm_id": "13114705834",
+          "name": "Seberang SMP Negeri 22 Bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6259625,
+            -6.9498578
+          ]
+        },
+        "properties": {
+          "osm_id": "13136484063",
+          "name": "Boseh SMPN 34",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"bicycle_rental\",\"brand\"=>\"Boseh\",\"brand:wikidata\"=>\"Q56392276\",\"network\"=>\"Boseh\",\"network:wikidata\"=>\"Q56392276\",\"operator\"=>\"UPT Angkutan Dinas Perhubungan Kota Bandung\",\"operator:type\"=>\"government\",\"operator:wikidata\"=>\"Q135037597\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.61346320000001,
+            -6.9136201
+          ]
+        },
+        "properties": {
+          "osm_id": "13178943084",
+          "name": "Seberang SMP Negeri 2 Bandung",
+          "barrier": null,
+          "highway": "bus_stop",
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"bench\"=>\"yes\",\"bin\"=>\"yes\",\"bus\"=>\"yes\",\"lit\"=>\"yes\",\"pole\"=>\"traffic_sign\",\"public_transport\"=>\"platform\",\"shelter\"=>\"yes\",\"tactile_paving\"=>\"yes\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6135126,
+            -6.9135895
+          ]
+        },
+        "properties": {
+          "osm_id": "13178943085",
+          "name": "Seberang SMP Negeri 2 Bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6144795,
+            -6.9151846
+          ]
+        },
+        "properties": {
+          "osm_id": "13178984116",
+          "name": "Seberang SMP Negeri 5 Bandung",
+          "barrier": null,
+          "highway": "bus_stop",
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"bench\"=>\"yes\",\"bin\"=>\"yes\",\"bus\"=>\"yes\",\"lit\"=>\"yes\",\"pole\"=>\"traffic_sign\",\"public_transport\"=>\"platform\",\"shelter\"=>\"yes\",\"tactile_paving\"=>\"yes\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6144958,
+            -6.9150621
+          ]
+        },
+        "properties": {
+          "osm_id": "13178984117",
+          "name": "Seberang SMP Negeri 5 Bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.7021651,
+            -6.9605739
+          ]
+        },
+        "properties": {
+          "osm_id": "13242787530",
+          "name": "SMPI Al-Azhar 42 Summarecon",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"school\",\"isced:level\"=>\"2\",\"name:id\"=>\"Sekolah Menengah Pertama Islam Al Azhar 42 Summarecon\",\"operator\"=>\"Yayasan Al Azhar\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.5964581,
+            -6.9120531
+          ]
+        },
+        "properties": {
+          "osm_id": "13257407215",
+          "name": "SMP Negeri 1 Bandung",
+          "barrier": null,
+          "highway": "bus_stop",
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"bench\"=>\"no\",\"bin\"=>\"no\",\"bus\"=>\"yes\",\"lit\"=>\"no\",\"pole\"=>\"no\",\"public_transport\"=>\"platform\",\"shelter\"=>\"no\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.59645,
+            -6.9120078
+          ]
+        },
+        "properties": {
+          "osm_id": "13257407216",
+          "name": "SMP Negeri 1 Bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.60723030000001,
+            -6.9253573
+          ]
+        },
+        "properties": {
+          "osm_id": "13261248389",
+          "name": "Samping SMP Negeri 43 Bandung",
+          "barrier": null,
+          "highway": "bus_stop",
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"bench\"=>\"no\",\"bin\"=>\"no\",\"bus\"=>\"yes\",\"lit\"=>\"yes\",\"pole\"=>\"no\",\"public_transport\"=>\"platform\",\"shelter\"=>\"no\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.60719940000001,
+            -6.9253454
+          ]
+        },
+        "properties": {
+          "osm_id": "13261248390",
+          "name": "Samping SMP Negeri 43 Bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.706637,
+            -6.9181433
+          ]
+        },
+        "properties": {
+          "osm_id": "13666070360",
+          "name": "SMP Guna Dharma",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"school\",\"isced:level\"=>\"2\",\"official_name\"=>\"Sekolah Menengah Pertama Guna Dharma\""
+        }
+      }
+    ]
+  }
