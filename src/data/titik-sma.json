@@ -248,28 +248,6 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            107.59258890000001,
-            -6.9166475
-          ]
-        },
-        "properties": {
-          "osm_id": "4328124562",
-          "name": "SMA Trinitas",
-          "barrier": null,
-          "highway": null,
-          "ref": null,
-          "address": null,
-          "is_in": null,
-          "place": null,
-          "man_made": null,
-          "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:housenumber\"=>\"209\",\"addr:street\"=>\"Jl. Kb. Jati\",\"amenity\"=>\"school\",\"wikidata\"=>\"Q7842520\",\"wikipedia\"=>\"en:Trinitas Senior High School\""
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
             107.611423,
             -6.9128355
           ]
@@ -285,6 +263,28 @@
           "place": null,
           "man_made": null,
           "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:housenumber\"=>\"24\",\"addr:street\"=>\"Jl Merdeka\",\"amenity\"=>\"school\",\"denomination\"=>\"roman_catholic\",\"grades\"=>\"1-12\",\"operator\"=>\"Yayasan Widya Bhakti\",\"operator:type\"=>\"private\",\"religion\"=>\"christian\",\"website\"=>\"https://portal.santa-angela.sch.id/\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.61833660000001,
+            -6.9062164
+          ]
+        },
+        "properties": {
+          "osm_id": "314486518",
+          "name": "SD,SMP,SMA Taruna Bakti",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:full\"=>\"Jl. L.L.R.E. Martadinata No.52, Citarum, Kec. Bandung Wetan\",\"addr:postcode\"=>\"40115\",\"amenity\"=>\"school\",\"operator\"=>\"Yayasan Taruna Bakti\""
         }
       },
       {
@@ -637,28 +637,6 @@
           "place": null,
           "man_made": null,
           "other_tags": "\"bench\"=>\"yes\",\"bin\"=>\"no\",\"bus\"=>\"yes\",\"departures_board\"=>\"no\",\"lit\"=>\"no\",\"pole\"=>\"traffic_sign\",\"public_transport\"=>\"platform\",\"route_ref\"=>\"2\",\"shelter\"=>\"no\""
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            107.6267411,
-            -6.9095119
-          ]
-        },
-        "properties": {
-          "osm_id": "11727886578",
-          "name": "SMA Kartika",
-          "barrier": null,
-          "highway": "bus_stop",
-          "ref": null,
-          "address": null,
-          "is_in": null,
-          "place": null,
-          "man_made": null,
-          "other_tags": "\"bench\"=>\"yes\",\"bin\"=>\"no\",\"bus\"=>\"yes\",\"lit\"=>\"yes\",\"pole\"=>\"no\",\"public_transport\"=>\"platform\",\"shelter\"=>\"yes\""
         }
       },
       {

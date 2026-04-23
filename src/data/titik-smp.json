@@ -1260,6 +1260,50 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
+            107.5938619,
+            -6.8660165
+          ]
+        },
+        "properties": {
+          "osm_id": "10162132647",
+          "name": "SMP NEGERI 12 BANDUNG",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:housenumber\"=>\"207\",\"addr:postcode\"=>\"40154\",\"addr:street\"=>\"Jalan Dokter Setiabudi\",\"office\"=>\"educational_institution\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6201660000001,
+            -6.9052164
+          ]
+        },
+        "properties": {
+          "osm_id": "4514578291",
+          "name": "SMP Negeri 44 Bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:full\"=>\"Jl. Cikutra No.7, Neglasari, Kec. Cibeunying Kaler\",\"addr:postcode\"=>\"40124\",\"amenity\"=>\"school\",\"school:type\"=>\"public\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
             107.60719940000001,
             -6.9253454
           ]

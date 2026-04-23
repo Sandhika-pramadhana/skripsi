@@ -6,9 +6,10 @@ import {
 } from "@/features/core/components/ui/sidebar";
 import { AppSidebar } from "@/features/core/components/sidebar";
 import Navbar from "@/features/core/components/navbar";
-import { Map, Activity, MapPin, Database } from "lucide-react";
+import { Map, MapPin, Database } from "lucide-react";
 
 import BandungHeatmapMap from "./components/heatmap";
+import AnalisisDashboard from "./components/analisis";  // ← tambah ini
 
 function DashboardContent({ children }: { children: React.ReactNode }) {
   const { open: isSidebarOpen } = useSidebar();
@@ -33,9 +34,7 @@ function DashboardContent({ children }: { children: React.ReactNode }) {
           <div className="flex items-center justify-between mb-6">
             <div className="flex gap-2 items-center">
               <Map className="w-7 h-7 text-blue-600" />
-              <h1 className="font-bold text-2xl">
-                Peta Bandung
-              </h1>
+              <h1 className="font-bold text-2xl">Peta Bandung</h1>
             </div>
           </div>
 
@@ -47,7 +46,6 @@ function DashboardContent({ children }: { children: React.ReactNode }) {
                 Heatmap Lokasi Usaha
               </h2>
 
-              {/* Heatmap */}
               <BandungHeatmapMap />
 
               {/* Keterangan Sumber Data */}
@@ -58,54 +56,37 @@ function DashboardContent({ children }: { children: React.ReactNode }) {
                 </h3>
                 <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
                   <li>
-                    <strong>Kepadatan Penduduk</strong> diperoleh dari jumlah penduduk per kecamatan di Kota Bandung.
+                    <strong>Kepadatan Penduduk</strong> diperoleh dari jumlah
+                    penduduk per kecamatan di Kota Bandung.
                   </li>
                   <li>
-                    <strong>Pusat Keramaian</strong> gabungan seluruh titik pendidikan dan pusat perbelanjaan, meliputi SD, SMP, SMA, SMK, dan Kampus (negeri maupun swasta), serta Mall di tiap kecamatan.
+                    <strong>Pusat Keramaian</strong> gabungan seluruh titik
+                    pendidikan dan pusat perbelanjaan, meliputi SD, SMP, SMA,
+                    SMK, dan Kampus (negeri maupun swasta), serta Mall di tiap
+                    kecamatan.
                   </li>
                   <li>
-                    <strong>Kompetitor Smoothies Bar</strong> merupakan jumlah usaha minuman sejenis (smoothies, juice bar, minuman sehat) yang telah beroperasi di tiap kecamatan.
+                    <strong>Kompetitor Smoothies Bar</strong> merupakan jumlah
+                    usaha minuman sejenis (smoothies, juice bar, minuman sehat)
+                    yang telah beroperasi di tiap kecamatan.
                   </li>
                   <li>
-                    <strong>Jarak ke Jalan Utama</strong> merupakan rata-rata jarak lokasi usaha ke jalan arteri atau kolektor terdekat di tiap kecamatan, dalam satuan meter.
+                    <strong>Jarak ke Jalan Utama</strong> merupakan rata-rata
+                    jarak lokasi usaha ke jalan arteri atau kolektor terdekat di
+                    tiap kecamatan, dalam satuan meter.
                   </li>
                 </ul>
                 <p className="text-xs text-gray-500 mt-2">
-                  Sumber: Badan Pusat Statistik (BPS), Dinas Pendidikan Kota Bandung, Google Maps, dan instansi terkait.
+                  Sumber: Badan Pusat Statistik (BPS), Dinas Pendidikan Kota
+                  Bandung, Google Maps, dan instansi terkait.
                 </p>
               </div>
             </div>
           </div>
 
-          {/* ANALYTICS */}
-          <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+          {/* ANALYTICS — diganti dengan komponen AnalisisDashboard */}
+          <AnalisisDashboard />
 
-            {/* Statistik */}
-            <div className="xl:col-span-2 bg-white rounded-xl shadow-lg border p-6">
-              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                <Activity className="w-5 h-5 text-green-600" />
-                Analisis Aktivitas Lokasi
-              </h2>
-              <p className="text-gray-600">
-                Area dengan warna merah menunjukkan kepadatan aktivitas usaha yang lebih tinggi.
-                Area dengan intensitas lebih rendah menunjukkan potensi lokasi strategis untuk membuka usaha baru.
-              </p>
-            </div>
-
-            {/* Info Area */}
-            <div className="bg-white rounded-xl shadow-lg border p-6">
-              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-blue-600" />
-                Informasi Area
-              </h2>
-              <ul className="text-gray-600 space-y-2">
-                <li>🔴 Merah → Aktivitas tinggi</li>
-                <li>🟡 Kuning → Aktivitas sedang</li>
-                <li>🔵 Biru → Potensi lokasi baru</li>
-              </ul>
-            </div>
-
-          </div>
         </main>
       </div>
     </div>

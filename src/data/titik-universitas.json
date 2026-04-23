@@ -254,7 +254,7 @@
         },
         "properties": {
           "osm_id": "4333540481",
-          "name": "GOR Politeknik Pos Indonesia",
+          "name": "ULBI",
           "barrier": null,
           "highway": null,
           "ref": null,
@@ -292,21 +292,21 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            107.5814914,
-            -6.9046256
+            107.594732,
+            -6.946955
           ]
         },
         "properties": {
-          "osm_id": "4370463021",
-          "name": "Gerbang Depan Universitas Nurtanio",
+          "osm_id": null,
+          "name": "Universitas Teknologi Bandung (UTB)",
           "barrier": null,
           "highway": null,
           "ref": null,
-          "address": null,
-          "is_in": null,
+          "address": "Jl. Soekarno-Hatta No.378, Kebon Lega",
+          "is_in": "Bojongloa Kidul, Bandung",
           "place": null,
           "man_made": null,
-          "other_tags": null
+          "other_tags": "\"amenity\"=>\"university\",\"faculty\"=>\"Industri Kreatif, Ekonomi dan Bisnis\",\"description\"=>\"Dulu STT Bandung, resmi universitas 15 Februari 2024\""
         }
       },
       {
@@ -314,21 +314,307 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            107.5798378,
-            -6.9056849
+            107.637341,
+            -6.959742
           ]
         },
         "properties": {
-          "osm_id": "4370465155",
-          "name": "Jalan masuk Universitas Nurtanio PintuNurtanio Utara",
-          "barrier": "gate",
+          "osm_id": null,
+          "name": "Universitas Indonesia Membangun (INABA)",
+          "barrier": null,
           "highway": null,
           "ref": null,
-          "address": null,
-          "is_in": null,
+          "address": "Jl. Soekarno-Hatta No. 448, Batununggal",
+          "is_in": "Bandung Kidul, Bandung",
           "place": null,
           "man_made": null,
-          "other_tags": "\"access\"=>\"private\""
+          "other_tags": "\"amenity\"=>\"university\",\"faculty\"=>\"Akuntansi, Manajemen, Psikologi, Ilmu Komunikasi\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.601556,
+            -6.916723
+          ]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "Sekolah Tinggi Ilmu Kesehatan (STIKes) Kebon Jati",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Kebon Jati No. 38, Kebon Jeruk",
+          "is_in": "Andir, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"college\",\"subject\"=>\"health_sciences\",\"focus\"=>\"nursing\",\"affiliation\"=>\"RS Kebon Jati\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.637341,
+            -6.951742
+          ]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "Institut Digital Ekonomi LPKIA",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Soekarno-Hatta No. 456, Batununggal",
+          "is_in": "Bandung Kidul, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"university\",\"focus\"=>\"Digital Economy, IT, Business Computer\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.637341,
+            -6.958742
+          ]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "Sekolah Tinggi Pertanian (STIPER) Jawa Barat",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Terusan Buah Batu No. 241",
+          "is_in": "Bandung Kidul, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"college\",\"subject\"=>\"agriculture\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.637341,
+            -6.953742
+          ]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "Sekolah Tinggi Farmasi Indonesia (STFI)",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Soekarno-Hatta No. 354, Batununggal",
+          "is_in": "Bandung Kidul, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"college\",\"subject\"=>\"pharmacy\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.637341,
+            -6.952742
+          ]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "STIE Kridatama Bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Terusan Borobudur No. 1-4, Wates",
+          "is_in": "Bandung Kidul, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"college\",\"subject\"=>\"economics\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.653424,
+            -6.942223
+          ]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "Universitas Islam Nusantara (UNINUS)",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Soekarno-Hatta No.530, Sekejati",
+          "is_in": "Buahbatu, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"university\",\"est\"=>\"1959\",\"status\"=>\"private_oldest\",\"programs\"=>\"7 undergraduate, 3 master, 1 doctoral\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.649321,
+            -6.949782
+          ]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "Universitas Bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Cipagalo Girang No.24, Margasari",
+          "is_in": "Buahbatu, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"university\",\"note\"=>\"financial_crisis_reported\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.643321,
+            -6.949782
+          ]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "Universitas Teknologi Digital (Digitech University)",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Buah Batu No.26, Burangrang",
+          "is_in": "Lengkong (Border of Buahbatu), Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"university\",\"old_name\"=>\"STEMBI Bandung\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.632598,
+            -6.974574
+          ]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "Telkom University",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Telekomunikasi No. 1, Terusan Buahbatu",
+          "is_in": "Dayeuhkolot, Kabupaten Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"university\",\"rank\"=>\"top_private\",\"area\"=>\"Dayeuhkolot\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.593732,
+            -6.955955
+          ]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "Universitas Mandiri",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Borobudur No.1-4, Cibaduyut Kidul",
+          "is_in": "Bojongloa Kidul, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"university\",\"status\"=>\"private\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.595750,
+            -6.954000
+          ]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "Politeknik Kridatama Bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Terusan Borobudur, Cibaduyut Kidul",
+          "is_in": "Bojongloa Kidul, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"college\",\"type\"=>\"vokasi\",\"class\"=>\"reguler, karyawan\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.593921,
+            -6.952512
+          ]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "STMIK Mardira Indonesia",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Cibaduyut Raya, Cibaduyut Wetan",
+          "is_in": "Bojongloa Kidul, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"college\",\"focus\"=>\"manajemen informatika, teknik komputer\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.595621,
+            -6.953842
+          ]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "STIE Kridatama Bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Borobudur No.1-4, Cibaduyut Kidul",
+          "is_in": "Bojongloa Kidul, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"college\",\"subject\"=>\"ekonomi\",\"class\"=>\"karyawan\""
         }
       },
       {
@@ -469,12 +755,12 @@
           "type": "Point",
           "coordinates": [
             107.5938619,
-            -6.8643165
+            -6.8663165
           ]
         },
         "properties": {
           "osm_id": "10162132647",
-          "name": "Program Studi Arsitektur Universitas Pendidikan Indonesia",
+          "name": "Universitas Pasundan Setiabudhi",
           "barrier": null,
           "highway": null,
           "ref": null,
@@ -490,13 +776,13 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            107.60868880000001,
-            -6.904676
+            107.592476,
+            -6.915099
           ]
         },
         "properties": {
-          "osm_id": "10656700010",
-          "name": "Perpustakaan Universitas Pasundan",
+          "osm_id": "5304675432",
+          "name": "BINUS University @Bandung - Paskal",
           "barrier": null,
           "highway": null,
           "ref": null,
@@ -504,9 +790,31 @@
           "is_in": null,
           "place": null,
           "man_made": null,
-          "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:postcode\"=>\"40132\",\"addr:street\"=>\"Jl. Tamansari No.8, Lb. Siliwangi, Kecamatan Coblong\",\"amenity\"=>\"library\",\"operator\"=>\"Universitas Pasundan\",\"operator:type\"=>\"university\""
+          "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:full\"=>\"Paskal Hyper Square, Jl. Pasir Kaliki No.25-27\",\"addr:postcode\"=>\"40181\",\"office\"=>\"educational_institution\",\"amenity\"=>\"university\""
         }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.607569,
+          -6.903429
+        ]
       },
+      "properties": {
+        "osm_id": "251347072",
+        "name": "Universitas Islam Bandung (UNISBA)",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": null,
+        "is_in": null,
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:full\"=>\"Jl. Tamansari No.1, Tamansari, Kec. Bandung Wetan\",\"addr:postcode\"=>\"40116\",\"office\"=>\"educational_institution\",\"amenity\"=>\"university\",\"religion\"=>\"muslim\""
+      }
+    },
       {
         "type": "Feature",
         "geometry": {
@@ -549,6 +857,28 @@
           "place": null,
           "man_made": null,
           "other_tags": "\"bus\"=>\"yes\",\"pole\"=>\"no\",\"public_transport\"=>\"platform\",\"shelter\"=>\"yes\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.6129934,
+            -6.9284918
+          ]
+        },
+        "properties": {
+          "osm_id": "520970335",
+          "name": "Universitas Pasundan - Kampus I Lengkong",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": null,
+          "is_in": null,
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:housenumber\"=>\"68\",\"addr:postcode\"=>\"40261\",\"addr:street\"=>\"Jalan Lengkong Besar\",\"office\"=>\"educational_institution\",\"amenity\"=>\"university\""
         }
       },
       {
@@ -639,6 +969,28 @@
           "other_tags": "\"amenity\"=>\"college\""
         }
       },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              107.5923341,
+              -6.8610545
+            ]
+          },
+          "properties": {
+            "osm_id": "273766649",
+            "name": "Universitas Pendidikan Indonesia",
+            "barrier": null,
+            "highway": null,
+            "ref": null,
+            "address": null,
+            "is_in": null,
+            "place": null,
+            "man_made": null,
+            "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:housenumber\"=>\"193\",\"addr:postcode\"=>\"40153\",\"addr:street\"=>\"Jalan Dokter Setiabudi\",\"office\"=>\"educational_institution\",\"amenity\"=>\"university\""
+          }
+        },
       {
         "type": "Feature",
         "geometry": {

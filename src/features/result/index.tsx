@@ -6,11 +6,10 @@ import {
 } from "@/features/core/components/ui/sidebar";
 import { AppSidebar } from "@/features/core/components/sidebar";
 import Navbar from "@/features/core/components/navbar";
-import { History } from "lucide-react";
 
-import HistoryAnalisis from "./components/HistoryAnalisis";
+import ResultPage from "./components/result";
 
-function HistoryContent() {
+function ResultContent() {
   const { open: isSidebarOpen } = useSidebar();
 
   return (
@@ -26,34 +25,18 @@ function HistoryContent() {
           paddingTop: "64px",
         }}
       >
-        <main className="flex-1 p-6 w-full">
-
-          {/* Header */}
-          <div className="flex items-center gap-3 mb-6">
-            <History className="w-7 h-7 text-blue-600" />
-            <div>
-              <h1 className="font-bold text-2xl text-gray-900">
-                Riwayat Analisis
-              </h1>
-              <p className="text-sm text-gray-400 mt-0.5">
-                Daftar kecamatan yang telah dianalisis sebelumnya
-              </p>
-            </div>
-          </div>
-
-          {/* Tabel history */}
-          <HistoryAnalisis />
-
+        <main className="flex-1 w-full">
+          <ResultPage />
         </main>
       </div>
     </div>
   );
 }
 
-export default function HistorySection() {
+export default function ResultSection() {
   return (
     <SidebarProvider defaultOpen={true}>
-      <HistoryContent />
+      <ResultContent />
     </SidebarProvider>
   );
 }

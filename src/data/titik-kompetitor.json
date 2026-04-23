@@ -386,6 +386,534 @@
         "type": "Feature",
         "geometry": {
           "type": "Point",
+          "coordinates": [
+            107.589852,
+            -6.862421
+          ]
+        },
+        "properties": {
+          "osm_id": "11195610228",
+          "name": "Gumijus - Gegerkalong",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Gegerkalong Hilir No.106",
+          "is_in": "Sukasari, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"cafe\",\"cuisine\"=>\"juice;smoothies\",\"style\"=>\"modern\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.591632,
+            -6.865324
+          ]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "GG Juicy 'n Fruity",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Gegerkalong Girang No.23",
+          "is_in": "Sukasari, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"cafe\",\"cuisine\"=>\"juice;dessert\",\"specialty\"=>\"thick_juice\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.592415,
+            -6.865487
+          ]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "Jus Egan 71",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Gegerkalong Girang No.71",
+          "is_in": "Sukasari, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"fast_food\",\"cuisine\"=>\"juice\",\"price_range\"=>\"budget\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.592182,
+            -6.864321
+          ]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "Juice Kidding Gegerkalong",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Gegerkalong Tengah No.66",
+          "is_in": "Sukasari, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"cafe\",\"cuisine\"=>\"juice;smoothies\",\"service\"=>\"dine_in;delivery\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.592442,
+            -6.864661
+          ]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "Tianlala UPI Gerlong",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Gegerkalong Girang, Gegerkalong",
+          "is_in": "Sukasari, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"cafe\",\"cuisine\"=>\"tea;juice;ice_cream\",\"brand\"=>\"Tianlala\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.590196,
+            -6.863872
+          ]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "Wedrink Gerlong Girang",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Gegerkalong Girang No.65a",
+          "is_in": "Sukasari, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"cafe\",\"cuisine\"=>\"tea;coffee;fruit_drink\",\"brand\"=>\"We Drink\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.587806,
+            -6.863612
+          ]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "SMOOLY JUICE KPAD",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Gegerkalong Hilir, KPAD",
+          "is_in": "Sukasari, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"cafe\",\"cuisine\"=>\"juice;smoothies\",\"location\"=>\"KPAD\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.604443,
+            -6.879101
+          ]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "Juice For You Ciumbuleuit",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Ciumbuleuit No.163",
+          "is_in": "Cidadap, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"juice_bar\",\"cuisine\"=>\"cold_pressed;smoothies\",\"specialty\"=>\"detox_juice\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.610521,
+            -6.872341
+          ]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "ASTHA JUS MILKSHAKE & BOBA",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Bukit Raya Atas",
+          "is_in": "Cidadap, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"cafe\",\"cuisine\"=>\"juice;milkshake;boba\",\"opening_hours\"=>\"late_night\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.606782,
+            -6.883415
+          ]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "JUS CiDEE Yogya Ciumbuleuit",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Yogya Ciumbuleuit, Jl. Ciumbuleuit",
+          "is_in": "Cidadap, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"juice_bar\",\"location\"=>\"supermarket\",\"rating\"=>\"4.8\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.604314,
+            -6.874892
+          ]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "Fruity Healthy and Delicious Drink",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Ciumbuleuit No.94 (Area UNPAR)",
+          "is_in": "Cidadap, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"kiosk\",\"cuisine\"=>\"juice\",\"target\"=>\"students\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.605214,
+            -6.877892
+          ]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "Buah Segar Ananda",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Ciumbuleuit",
+          "is_in": "Cidadap, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"fruit_shop\",\"service\"=>\"fresh_juice;fruit_slices\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.591245,
+            -6.915234
+          ]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "Boost Juice - 23 Paskal",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "23 Paskal Shopping Center, Kebon Jeruk",
+          "is_in": "Andir, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"cafe\",\"cuisine\"=>\"juice;smoothies\",\"brand\"=>\"Boost\",\"location\"=>\"mall\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.576892,
+            -6.912451
+          ]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "Bar Juice Dua Saudara",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Babakan Cianjur No.51, Campaka",
+          "is_in": "Andir, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"fast_food\",\"cuisine\"=>\"juice\",\"price_range\"=>\"budget\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.581234,
+            -6.915678
+          ]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "Fifara Jus",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Pelita Karya I No.4, Maleber",
+          "is_in": "Andir, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"fast_food\",\"cuisine\"=>\"juice\",\"service\"=>\"takeaway\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.587654,
+            -6.913212
+          ]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "Fortune Juice",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Ciroyom, Dungus Cariang",
+          "is_in": "Andir, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"fast_food\",\"cuisine\"=>\"juice\",\"opening_hours\"=>\"late_night\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.578901,
+            -6.911234
+          ]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "Arisa 1 Juice",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Garuda, Kec. Andir",
+          "is_in": "Andir, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"fast_food\",\"cuisine\"=>\"juice\",\"rating\"=>\"high\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.604514,
+            -6.872992
+          ]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "Tianlala Ciumbuleuit",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Ciumbuleuit No.42A",
+          "is_in": "Cidadap, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"cafe\",\"cuisine\"=>\"tea;juice;ice_cream\",\"brand\"=>\"Tianlala\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.604514,
+            -6.874892
+          ]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "Chatime Yogya Ciumbuleuit",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Yogya Ciumbuleuit Lt. GF",
+          "is_in": "Cidadap, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"cafe\",\"cuisine\"=>\"bubble_tea;fruit_tea\",\"brand\"=>\"Chatime\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            107.604514,
+            -6.872892
+          ]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "Mixue Ciumbuleuit",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Ciumbuleuit No.105",
+          "is_in": "Cidadap, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"cafe\",\"cuisine\"=>\"ice_cream;tea;fruit_tea\",\"brand\"=>\"Mixue\""
+        }
+      },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              107.623124,
+              -6.932451
+            ]
+          },
+          "properties": {
+            "osm_id": null,
+            "name": "Gumijus - Buah Batu",
+            "barrier": null,
+            "highway": null,
+            "ref": null,
+            "address": "Jl. Buah Batu No.79, Malabar",
+            "is_in": "Lengkong, Bandung",
+            "place": null,
+            "man_made": null,
+            "other_tags": "\"amenity\"=>\"cafe\",\"cuisine\"=>\"juice;smoothies\",\"brand\"=>\"Gumijus\""
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              107.643215,
+              -6.954218
+            ]
+          },
+          "properties": {
+            "osm_id": null,
+            "name": "JUICE BOSS CAB. BUAH BATU",
+            "barrier": null,
+            "highway": null,
+            "ref": null,
+            "address": "Jl. Taman Saturnus II, Margahayu Raya",
+            "is_in": "Rancasari, Bandung",
+            "place": null,
+            "man_made": null,
+            "other_tags": "\"amenity\"=>\"fast_food\",\"cuisine\"=>\"juice\",\"specialty\"=>\"Mix Juice\""
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              107.658912,
+              -6.951234
+            ]
+          },
+          "properties": {
+            "osm_id": null,
+            "name": "Lussy juice rancabolang",
+            "barrier": null,
+            "highway": null,
+            "ref": null,
+            "address": "Jl. Rancabolang No.120, Sekejati",
+            "is_in": "Buahbatu, Bandung",
+            "place": null,
+            "man_made": null,
+            "other_tags": "\"amenity\"=>\"fast_food\",\"cuisine\"=>\"juice\",\"price_range\"=>\"budget\""
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              107.651234,
+              -6.958765
+            ]
+          },
+          "properties": {
+            "osm_id": null,
+            "name": "Dunia Buah Margacinta",
+            "barrier": null,
+            "highway": null,
+            "ref": null,
+            "address": "Jl. Margacinta No.116 (Samping Borma)",
+            "is_in": "Buahbatu, Bandung",
+            "place": null,
+            "man_made": null,
+            "other_tags": "\"amenity\"=>\"shop;juice_bar\",\"shop\"=>\"fruit\",\"service\"=>\"freshly_squeezed\""
+          }
+        },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
           "coordinates": [107.6167, -6.9012]
         },
         "properties": {
