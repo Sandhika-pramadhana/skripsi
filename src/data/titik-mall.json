@@ -1,401 +1,385 @@
 {
-    "type": "FeatureCollection",
-    "features": [
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            107.58299310000001,
-            -6.8807039
-          ]
-        },
-        "properties": {
-          "osm_id": "29391283",
-          "name": "Setrasari Mall",
-          "barrier": null,
-          "highway": null,
-          "ref": null,
-          "address": null,
-          "is_in": null,
-          "place": null,
-          "man_made": null,
-          "other_tags": "\"shop\"=>\"mall\""
-        }
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.58299310000001, -6.8807039]
       },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            107.58157290000001,
-            -6.8813709
-          ]
-        },
-        "properties": {
-          "osm_id": "1107662815",
-          "name": "Bank Mandiri Cabang Setrasari Mall",
-          "barrier": null,
-          "highway": null,
-          "ref": null,
-          "address": null,
-          "is_in": null,
-          "place": null,
-          "man_made": null,
-          "other_tags": "\"amenity\"=>\"bank\""
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            107.5849629,
-            -6.8925026
-          ]
-        },
-        "properties": {
-          "osm_id": "2958261154",
-          "name": "Mall d'Botanica",
-          "barrier": null,
-          "highway": "bus_stop",
-          "ref": null,
-          "address": null,
-          "is_in": null,
-          "place": null,
-          "man_made": null,
-          "other_tags": "\"bench\"=>\"no\",\"bus\"=>\"yes\",\"covered\"=>\"no\",\"pole\"=>\"traffic_sign\",\"public_transport\"=>\"platform\",\"shelter\"=>\"no\""
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            107.6580268,
-            -6.9403972
-          ]
-        },
-        "properties": {
-          "osm_id": "3272226033",
-          "name": "Metro Indah Mall",
-          "barrier": null,
-          "highway": null,
-          "ref": null,
-          "address": null,
-          "is_in": null,
-          "place": null,
-          "man_made": null,
-          "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            107.6966507,
-            -6.9156817
-          ]
-        },
-        "properties": {
-          "osm_id": "5825155308",
-          "name": "Ubertos Mall",
-          "barrier": null,
-          "highway": null,
-          "ref": null,
-          "address": null,
-          "is_in": null,
-          "place": null,
-          "man_made": null,
-          "other_tags": "\"shop\"=>\"mall\""
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            107.604422,
-            -6.9231405
-          ]
-        },
-        "properties": {
-          "osm_id": "10793604336",
-          "name": "ATM Mandiri Kings Mall",
-          "barrier": null,
-          "highway": null,
-          "ref": null,
-          "address": null,
-          "is_in": null,
-          "place": null,
-          "man_made": null,
-          "other_tags": "\"amenity\"=>\"atm\""
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            107.69661880000001,
-            -6.9553491
-          ]
-        },
-        "properties": {
-          "osm_id": "11270910317",
-          "name": "Shuttle Summarecon Mall Bandung",
-          "barrier": null,
-          "highway": "bus_stop",
-          "ref": null,
-          "address": null,
-          "is_in": null,
-          "place": null,
-          "man_made": null,
-          "other_tags": "\"bus\"=>\"yes\",\"pole\"=>\"yes\",\"public_transport\"=>\"platform\",\"shelter\"=>\"no\""
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            107.699168,
-            -6.9552762
-          ]
-        },
-        "properties": {
-          "osm_id": "11730486994",
-          "name": "Kantin Summarecon Mall",
-          "barrier": null,
-          "highway": null,
-          "ref": null,
-          "address": null,
-          "is_in": null,
-          "place": null,
-          "man_made": null,
-          "other_tags": "\"amenity\"=>\"restaurant\""
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            107.69916180000001,
-            -6.9555627
-          ]
-        },
-        "properties": {
-          "osm_id": "11730486995",
-          "name": "Summarecon Mall Bandung",
-          "barrier": null,
-          "highway": "bus_stop",
-          "ref": null,
-          "address": null,
-          "is_in": null,
-          "place": null,
-          "man_made": null,
-          "other_tags": "\"bench\"=>\"yes\",\"bin\"=>\"yes\",\"bus\"=>\"yes\",\"departures_board\"=>\"no\",\"lit\"=>\"yes\",\"pole\"=>\"yes\",\"public_transport\"=>\"platform\",\"shelter\"=>\"yes\""
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            107.6992029,
-            -6.955658
-          ]
-        },
-        "properties": {
-          "osm_id": "11730486996",
-          "name": "Summarecon Mall Bandung",
-          "barrier": null,
-          "highway": null,
-          "ref": null,
-          "address": null,
-          "is_in": null,
-          "place": null,
-          "man_made": null,
-          "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            107.6590371,
-            -6.9417178
-          ]
-        },
-        "properties": {
-          "osm_id": "11870378925",
-          "name": "Moz5 Salon Muslimah Metro Indah Mall",
-          "barrier": null,
-          "highway": null,
-          "ref": null,
-          "address": null,
-          "is_in": null,
-          "place": null,
-          "man_made": null,
-          "other_tags": "\"shop\"=>\"hairdresser\""
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            107.5849478,
-            -6.8925604
-          ]
-        },
-        "properties": {
-          "osm_id": "12013144935",
-          "name": "Mall d'Botanica",
-          "barrier": null,
-          "highway": null,
-          "ref": null,
-          "address": null,
-          "is_in": null,
-          "place": null,
-          "man_made": null,
-          "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            107.6580287,
-            -6.9404384
-          ]
-        },
-        "properties": {
-          "osm_id": "12806868630",
-          "name": "Metro Indah Mall",
-          "barrier": null,
-          "highway": "bus_stop",
-          "ref": null,
-          "address": null,
-          "is_in": null,
-          "place": null,
-          "man_made": null,
-          "other_tags": "\"bench\"=>\"yes\",\"bus\"=>\"yes\",\"lit\"=>\"no\",\"pole\"=>\"no\",\"public_transport\"=>\"platform\",\"shelter\"=>\"yes\""
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            107.6354788,
-            -6.9274681
-          ]
-        },
-        "properties": {
-          "osm_id": "12981921139",
-          "name": "Seberang Trans Studio Mall",
-          "barrier": null,
-          "highway": "bus_stop",
-          "ref": null,
-          "address": null,
-          "is_in": null,
-          "place": null,
-          "man_made": null,
-          "other_tags": "\"bench\"=>\"yes\",\"bin\"=>\"no\",\"bus\"=>\"yes\",\"lit\"=>\"yes\",\"pole\"=>\"flag\",\"public_transport\"=>\"platform\",\"shelter\"=>\"no\""
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            107.6355184,
-            -6.9274065
-          ]
-        },
-        "properties": {
-          "osm_id": "12981961719",
-          "name": "Seberang Trans Studio Mall",
-          "barrier": null,
-          "highway": null,
-          "ref": null,
-          "address": null,
-          "is_in": null,
-          "place": null,
-          "man_made": null,
-          "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            107.63506310000001,
-            -6.9270367
-          ]
-        },
-        "properties": {
-          "osm_id": "13254056448",
-          "name": "Trans Studio Mall",
-          "barrier": null,
-          "highway": "bus_stop",
-          "ref": null,
-          "address": null,
-          "is_in": null,
-          "place": null,
-          "man_made": null,
-          "other_tags": "\"bench\"=>\"no\",\"bin\"=>\"no\",\"bus\"=>\"yes\",\"lit\"=>\"no\",\"pole\"=>\"no\",\"public_transport\"=>\"platform\",\"shelter\"=>\"no\""
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            107.6350472,
-            -6.9270783
-          ]
-        },
-        "properties": {
-          "osm_id": "13254056449",
-          "name": "Trans Studio Mall",
-          "barrier": null,
-          "highway": null,
-          "ref": null,
-          "address": null,
-          "is_in": null,
-          "place": null,
-          "man_made": null,
-          "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            107.69656420000001,
-            -6.9553172
-          ]
-        },
-        "properties": {
-          "osm_id": "13608060606",
-          "name": "Shuttle Summarecon Mall Bandung",
-          "barrier": null,
-          "highway": null,
-          "ref": null,
-          "address": null,
-          "is_in": null,
-          "place": null,
-          "man_made": null,
-          "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
-        }
+      "properties": {
+        "osm_id": "29391283",
+        "name": "Setrasari Mall",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": null,
+        "is_in": null,
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"shop\"=>\"mall\""
       }
-    ]
-  }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.5849629, -6.8925026]
+      },
+      "properties": {
+        "osm_id": "2958261154",
+        "name": "Mall d'Botanica",
+        "barrier": null,
+        "highway": "bus_stop",
+        "ref": null,
+        "address": null,
+        "is_in": null,
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"bench\"=>\"no\",\"bus\"=>\"yes\",\"covered\"=>\"no\",\"pole\"=>\"traffic_sign\",\"public_transport\"=>\"platform\",\"shelter\"=>\"no\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.6580268, -6.9403972]
+      },
+      "properties": {
+        "osm_id": "3272226033",
+        "name": "Metro Indah Mall",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": null,
+        "is_in": null,
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.6966507, -6.9156817]
+      },
+      "properties": {
+        "osm_id": "5825155308",
+        "name": "Ubertos Mall",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": null,
+        "is_in": null,
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"shop\"=>\"mall\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.604422, -6.9231405]
+      },
+      "properties": {
+        "osm_id": "10793604336",
+        "name": "Kings Mall",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": null,
+        "is_in": null,
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"atm\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.610828, -6.908665]
+      },
+      "properties": {
+        "osm_id": "27357418",
+        "name": "Bandung Indah Plaza",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Merdeka No.56",
+        "is_in": "Sumur Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"shop\"=>\"mall\",\"operator\"=>\"Lippo Malls\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.596007, -6.889564]
+      },
+      "properties": {
+        "osm_id": "31462847",
+        "name": "Paris Van Java",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Sukajadi No.131",
+        "is_in": "Sukajadi",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"shop\"=>\"mall\",\"type\"=>\"resort_lifestyle_place\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.605014, -6.894317]
+      },
+      "properties": {
+        "osm_id": "42857193",
+        "name": "Cihampelas Walk",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Cihampelas No.160",
+        "is_in": "Coblong",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"shop\"=>\"mall\",\"opening_hours\"=>\"10:00-22:00\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.594539, -6.915273]
+      },
+      "properties": {
+        "osm_id": "539102847",
+        "name": "23 Paskal Shopping Center",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Pasir Kaliki No.25",
+        "is_in": "Andir",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"shop\"=>\"mall\",\"wheelchair\"=>\"yes\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.597008, -6.905735]
+      },
+      "properties": {
+        "osm_id": "28471920",
+        "name": "Istana Plaza",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Pasir Kaliki No.121",
+        "is_in": "Cicendo",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"shop\"=>\"mall\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.609104, -6.908135]
+      },
+      "properties": {
+        "osm_id": "84729103",
+        "name": "Istana BEC",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Purnawarman No.13",
+        "is_in": "Sumur Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"shop\"=>\"electronics\",\"amenity\"=>\"mall\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.609000, -6.899012]
+      },
+      "properties": {
+        "osm_id": "19283746",
+        "name": "Balubur Town Square",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Tamansari No.P-1",
+        "is_in": "Bandung Wetan",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"shop\"=>\"mall\",\"short_name\"=>\"Baltos\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.604072, -6.917654]
+      },
+      "properties": {
+        "osm_id": "112837465",
+        "name": "Pasar Baru Trade Center",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": null,
+        "is_in": null,
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"shop\"=>\"mall\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.575792, -6.931824]
+      },
+      "properties": {
+        "osm_id": "1192837465",
+        "name": "Yogya Sumbersari Junction",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": null,
+        "is_in": null,
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"shop\"=>\"mall\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.605747, -6.923649]
+      },
+      "properties": {
+        "osm_id": "428371920",
+        "name": "Yogya Grand Kepatihan",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": null,
+        "is_in": null,
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"shop\"=>\"mall\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.6992029, -6.955658]
+      },
+      "properties": {
+        "osm_id": "11730486996",
+        "name": "Summarecon Mall Bandung",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": null,
+        "is_in": null,
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.5849478, -6.8925604]
+      },
+      "properties": {
+        "osm_id": "12013144935",
+        "name": "Mall d'Botanica",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": null,
+        "is_in": null,
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.6580287, -6.9404384]
+      },
+      "properties": {
+        "osm_id": "12806868630",
+        "name": "Metro Indah Mall",
+        "barrier": null,
+        "highway": "bus_stop",
+        "ref": null,
+        "address": null,
+        "is_in": null,
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"bench\"=>\"yes\",\"bus\"=>\"yes\",\"lit\"=>\"no\",\"pole\"=>\"no\",\"public_transport\"=>\"platform\",\"shelter\"=>\"yes\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.63506310000001, -6.9270367]
+      },
+      "properties": {
+        "osm_id": "13254056448",
+        "name": "Trans Studio Mall",
+        "barrier": null,
+        "highway": "bus_stop",
+        "ref": null,
+        "address": null,
+        "is_in": null,
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"bench\"=>\"no\",\"bin\"=>\"no\",\"bus\"=>\"yes\",\"lit\"=>\"no\",\"pole\"=>\"no\",\"public_transport\"=>\"platform\",\"shelter\"=>\"no\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.6350472, -6.9270783]
+      },
+      "properties": {
+        "osm_id": "13254056449",
+        "name": "Trans Studio Mall",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": null,
+        "is_in": null,
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
+      }
+    }
+  ]
+}

@@ -62,3 +62,54 @@ body {
   0% { transform: translateX(0); }
   100% { transform: translateX(-33.333%); }
 }
+/* Animasi dasar */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Utility classes buat dipakai di komponen */
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease forwards;
+    opacity: 0; /* start hidden */
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0;
+  }
+
+  /* Delay helpers */
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 0.85s ease forwards;
+}

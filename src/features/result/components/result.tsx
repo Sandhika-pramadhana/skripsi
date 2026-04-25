@@ -14,8 +14,6 @@ import {
   XCircle,
 } from "lucide-react";
 
-// ─── Tipe ─────────────────────────────────────────────────────────────────────
-
 interface HasilAnalisis {
   kecamatan: string;
   kelas: "Tinggi" | "Sedang" | "Rendah";
@@ -29,8 +27,6 @@ interface HasilAnalisis {
   analisis_kompetitor: string;
   rekomendasi: string;
 }
-
-// ─── Config ───────────────────────────────────────────────────────────────────
 
 const KELAS_CONFIG = {
   Tinggi: {
@@ -68,23 +64,26 @@ const KELAS_CONFIG = {
   },
 } as const;
 
-// ─── Kartu fitur ──────────────────────────────────────────────────────────────
-
 function KartuFitur({
   icon: Icon,
   label,
   nilai,
   satuan,
   deskripsi,
+  delay,
 }: {
   icon: React.ElementType;
   label: string;
   nilai: string | number;
   satuan: string;
   deskripsi: string;
+  delay: number;
 }) {
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 p-4 shadow-sm">
+    <div
+      className="fade-up bg-white rounded-2xl border border-gray-100 p-4 shadow-sm"
+      style={{ animationDelay: `${delay}ms` }}
+    >
       <div className="flex items-center gap-2 mb-3">
         <div className="w-7 h-7 bg-gray-100 rounded-lg flex items-center justify-center">
           <Icon className="w-3.5 h-3.5 text-gray-500" />
@@ -101,8 +100,6 @@ function KartuFitur({
     </div>
   );
 }
-
-// ─── Kartu narasi ─────────────────────────────────────────────────────────────
 
 function KartuNarasi({
   nomor,
@@ -128,8 +125,6 @@ function KartuNarasi({
   );
 }
 
-// ─── Konten utama ─────────────────────────────────────────────────────────────
-
 function ResultContent() {
   const router       = useRouter();
   const searchParams = useSearchParams();
@@ -138,6 +133,7 @@ function ResultContent() {
   const [hasil, setHasil]     = useState<HasilAnalisis | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError]     = useState("");
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     if (!namaKec) {
@@ -153,14 +149,18 @@ function ResultContent() {
         const found = data.find(
           (d) => d.kecamatan.toLowerCase() === namaKec.toLowerCase()
         );
-        if (found) setHasil(found);
-        else setError(`Kecamatan "${namaKec}" tidak ditemukan dalam data.`);
+        if (found) {
+          setHasil(found);
+          // Micro-delay supaya browser sempat paint dulu sebelum animasi jalan
+          setTimeout(() => setVisible(true), 50);
+        } else {
+          setError(`Kecamatan "${namaKec}" tidak ditemukan dalam data.`);
+        }
       })
       .catch(() => setError("Gagal memuat data analisis."))
       .finally(() => setLoading(false));
   }, [namaKec]);
 
-  // Loading
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
@@ -172,7 +172,6 @@ function ResultContent() {
     );
   }
 
-  // Error
   if (error || !hasil) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
@@ -192,6 +191,11 @@ function ResultContent() {
 
   const cfg = KELAS_CONFIG[hasil.kelas];
 
+  // Kalau visible false, sembunyiin semua (sebelum animasi mulai)
+  if (!visible) {
+    return <div className="min-h-screen bg-gray-50" />;
+  }
+
   return (
     <div className="min-h-screen bg-gray-50 py-10 px-4">
       <div className="max-w-2xl mx-auto space-y-5">
@@ -199,14 +203,18 @@ function ResultContent() {
         {/* Tombol kembali */}
         <button
           onClick={() => router.back()}
-          className="flex items-center gap-1.5 text-gray-400 hover:text-gray-700 text-sm transition-colors"
+          className="fade-up flex items-center gap-1.5 text-gray-400 hover:text-gray-700 text-sm transition-colors"
+          style={{ animationDelay: "0ms" }}
         >
           <ArrowLeft className="w-4 h-4" />
           Kembali
         </button>
 
-        {/* ── Hero card — full color ── */}
-        <div className={`bg-gradient-to-br ${cfg.gradient} rounded-2xl shadow-sm p-6`}>
+        {/* Hero card */}
+        <div
+          className={`fade-up bg-gradient-to-br ${cfg.gradient} rounded-2xl shadow-sm p-6`}
+          style={{ animationDelay: "80ms" }}
+        >
           <div className="flex items-start justify-between mb-4">
             <div>
               <p className="text-xs font-semibold text-white/60 uppercase tracking-widest mb-1">
@@ -216,7 +224,6 @@ function ResultContent() {
                 Kec. {hasil.kecamatan}
               </h1>
             </div>
-
             <span className="flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full bg-white/20 text-white">
               <cfg.Icon className="w-3.5 h-3.5" />
               {hasil.kelas.toUpperCase()}
@@ -242,9 +249,12 @@ function ResultContent() {
           </div>
         </div>
 
-        {/* ── Statistik fitur ── */}
+        {/* Data Variabel */}
         <section>
-          <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3 px-1">
+          <p
+            className="fade-up text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3 px-1"
+            style={{ animationDelay: "160ms" }}
+          >
             Data Variabel
           </p>
           <div className="grid grid-cols-2 gap-3">
@@ -254,6 +264,7 @@ function ResultContent() {
               nilai={hasil.kepadatan_jiwa_km2?.toLocaleString("id-ID")}
               satuan="jiwa/km²"
               deskripsi="Basis konsumen potensial"
+              delay={200}
             />
             <KartuFitur
               icon={MapPin}
@@ -261,6 +272,7 @@ function ResultContent() {
               nilai={hasil.skor_poi}
               satuan="poin"
               deskripsi="Mall, kampus, sekolah"
+              delay={240}
             />
             <KartuFitur
               icon={Store}
@@ -268,6 +280,7 @@ function ResultContent() {
               nilai={hasil.jumlah_kompetitor}
               satuan="usaha"
               deskripsi="Dalam radius 1 km"
+              delay={280}
             />
             <KartuFitur
               icon={Navigation}
@@ -275,12 +288,16 @@ function ResultContent() {
               nilai={hasil.jarak_jalan_km}
               satuan="km"
               deskripsi="Ke arteri utama"
+              delay={320}
             />
           </div>
         </section>
 
-        {/* ── Analisis naratif ── */}
-        <section className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+        {/* Analisis naratif */}
+        <section
+          className="fade-up bg-white rounded-2xl border border-gray-100 shadow-sm p-6"
+          style={{ animationDelay: "380ms" }}
+        >
           <div className="flex items-center gap-2 mb-5">
             <TrendingUp className={`w-4 h-4 ${cfg.iconColor}`} />
             <p className="font-semibold text-gray-700 text-sm">Analisis Lengkap</p>
@@ -293,8 +310,11 @@ function ResultContent() {
           </div>
         </section>
 
-        {/* ── Tombol aksi ── */}
-        <div className="pb-6">
+        {/* Tombol aksi */}
+        <div
+          className="fade-up pb-6"
+          style={{ animationDelay: "460ms" }}
+        >
           <button
             onClick={() => router.push("/dashboard")}
             className="w-full py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-xl text-sm font-medium transition-colors"
@@ -307,8 +327,6 @@ function ResultContent() {
     </div>
   );
 }
-
-// ─── Export dengan Suspense ───────────────────────────────────────────────────
 
 export default function ResultPage() {
   return (

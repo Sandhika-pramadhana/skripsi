@@ -1,29 +1,31 @@
 "use client";
 
-import {
-  SidebarProvider,
-  useSidebar,
-} from "@/features/core/components/ui/sidebar";
+import { useEffect, useState } from "react";
+import { SidebarProvider, useSidebar } from "@/features/core/components/ui/sidebar";
 import { AppSidebar } from "@/features/core/components/sidebar";
 import Navbar from "@/features/core/components/navbar";
 import { Map, MapPin, Database } from "lucide-react";
-
 import BandungHeatmapMap from "./components/heatmap";
-import AnalisisDashboard from "./components/analisis";  // ← tambah ini
+import AnalisisDashboard from "./components/analisis";
 
 function DashboardContent({ children }: { children: React.ReactNode }) {
   const { open: isSidebarOpen } = useSidebar();
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => setVisible(true), 50);
+    return () => clearTimeout(t);
+  }, []);
 
   return (
     <div className="flex min-h-screen bg-gray-50">
       <AppSidebar />
       <Navbar />
-
       <div
         className="flex flex-col flex-1 min-h-screen transition-all duration-300 ease-in-out"
         style={{
           marginLeft: isSidebarOpen ? "260px" : "0",
-          width: isSidebarOpen ? "calc(100vw - 260px)" : "100vw",
+          width     : isSidebarOpen ? "calc(100vw - 260px)" : "100vw",
           paddingTop: "64px",
         }}
       >
@@ -31,7 +33,10 @@ function DashboardContent({ children }: { children: React.ReactNode }) {
           {children}
 
           {/* Header */}
-          <div className="flex items-center justify-between mb-6">
+          <div
+            className="fade-up flex items-center justify-between mb-6"
+            style={{ animationDelay: "0ms" }}
+          >
             <div className="flex gap-2 items-center">
               <Map className="w-7 h-7 text-blue-600" />
               <h1 className="font-bold text-2xl">Peta Bandung</h1>
@@ -39,7 +44,10 @@ function DashboardContent({ children }: { children: React.ReactNode }) {
           </div>
 
           {/* MAP */}
-          <div className="mb-6">
+          <div
+            className="fade-up mb-6"
+            style={{ animationDelay: "80ms" }}
+          >
             <div className="bg-white rounded-xl shadow-lg border p-6">
               <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
                 <MapPin className="w-5 h-5 text-red-600" />
@@ -49,7 +57,10 @@ function DashboardContent({ children }: { children: React.ReactNode }) {
               <BandungHeatmapMap />
 
               {/* Keterangan Sumber Data */}
-              <div className="mt-6 p-4 bg-gray-50 border rounded-lg">
+              <div
+                className="fade-up mt-6 p-4 bg-gray-50 border rounded-lg"
+                style={{ animationDelay: "160ms" }}
+              >
                 <h3 className="text-md font-semibold mb-2 flex items-center gap-2 text-gray-800">
                   <Database className="w-4 h-4 text-blue-600" />
                   Sumber dan Variabel Data
@@ -84,20 +95,20 @@ function DashboardContent({ children }: { children: React.ReactNode }) {
             </div>
           </div>
 
-          {/* ANALYTICS — diganti dengan komponen AnalisisDashboard */}
-          <AnalisisDashboard />
-
+          {/* ANALYTICS */}
+          <div
+            className="fade-up"
+            style={{ animationDelay: "240ms" }}
+          >
+            <AnalisisDashboard />
+          </div>
         </main>
       </div>
     </div>
   );
 }
 
-export default function DashboardSection({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function DashboardSection({ children }: { children: React.ReactNode }) {
   return (
     <SidebarProvider defaultOpen={true}>
       <DashboardContent>{children}</DashboardContent>
