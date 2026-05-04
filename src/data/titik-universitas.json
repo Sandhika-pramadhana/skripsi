@@ -72,28 +72,6 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            107.5618668,
-            -6.8734327
-          ]
-        },
-        "properties": {
-          "osm_id": "2417247222",
-          "name": "Politeknik TEDC Bandung",
-          "barrier": null,
-          "highway": null,
-          "ref": null,
-          "address": null,
-          "is_in": null,
-          "place": null,
-          "man_made": null,
-          "other_tags": "\"building\"=>\"yes\""
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
             107.6395281,
             -6.8988185
           ]
@@ -109,6 +87,83 @@
           "place": null,
           "man_made": null,
           "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:housenumber\"=>\"No. 23\",\"addr:street\"=>\"Jalan PH.H. Mustofa, Cikutra, Cibeunying Kidul, Neglasari, Cibeunying Kaler,\",\"amenity\"=>\"university\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [107.6843, -6.9198]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "Universitas Al-Ghifari",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Cisaranten Kulon No.140",
+          "is_in": "Arcamanik, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"university\",\"type\"=>\"private\",\"rating\"=>\"4.6\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [107.6840, -6.9202]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "Politeknik Al-Islam Bandung",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Cisaranten Kulon No.120",
+          "is_in": "Arcamanik, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"university\",\"type\"=>\"politeknik\",\"rating\"=>\"4.8\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [107.6756, -6.9310]
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "STMIK JABAR",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Soekarno-Hatta No.777",
+          "is_in": "Arcamanik, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"university\",\"type\"=>\"private\",\"rating\"=>\"4.5\""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [107.6499, -6.9104]
+          
+        },
+        "properties": {
+          "osm_id": null,
+          "name": "ARS University",
+          "barrier": null,
+          "highway": null,
+          "ref": null,
+          "address": "Jl. Antapani Lama, Jl. Terusan Sekolah No.1",
+          "is_in": "kiara condong, Bandung",
+          "place": null,
+          "man_made": null,
+          "other_tags": "\"amenity\"=>\"university\",\"type\"=>\"private\",\"rating\"=>\"4.6\""
         }
       },
       {

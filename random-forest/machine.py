@@ -1,14 +1,13 @@
 """
 =============================================================================
 ANALISIS PELUANG USAHA SMOOTHIES BAR DI KOTA BANDUNG
-Menggunakan Metode Random Forest dengan Output Deskripsi Naratif
-Versi lengkap dengan koneksi MySQL / MariaDB
+Menggunakan Metode Random Forest
 
 Variabel Independen (Fitur):
-    F1 - Kepadatan penduduk (jiwa/km²)              → dari MySQL
-    F2 - Skor kedekatan pusat keramaian (terbobot)  → dari GeoJSON
-    F3 - Tekanan kompetitor (jumlah dalam radius)   → dari GeoJSON
-    F4 - Aksesibilitas jalan (jarak ke arteri utama)→ dari GeoJSON
+    F1 - Kepadatan penduduk (jiwa/km²)              → MySQL
+    F2 - Skor kedekatan pusat keramaian (terbobot)  → GeoJSON
+    F3 - Tekanan kompetitor (jumlah dalam radius)   → GeoJSON
+    F4 - Aksesibilitas jalan (jarak ke arteri utama)→ GeoJSON
 
 Output:
     hasil_analisis_smoothies.txt  — deskripsi naratif per kecamatan
@@ -33,9 +32,9 @@ import warnings
 warnings.filterwarnings("ignore")
 
 
-# =============================================================================
-# KONFIGURASI — SESUAIKAN BAGIAN INI
-# =============================================================================
+
+# KONFIGURASI — DB
+
 
 DB_CONFIG = {
     "host"    : "mainline.proxy.rlwy.net",
@@ -45,7 +44,7 @@ DB_CONFIG = {
     "password": "phsqybAnMApgQDlguPZZhpuKelqRVznf",
 }
 
-# Nama tabel dan kolom data penduduk di database
+
 TABEL_PENDUDUK   = "data_kecamatan"
 KOLOM_KECAMATAN  = "kecamatan"
 KOLOM_PENDUDUK   = "jumlah_penduduk"
@@ -59,6 +58,7 @@ PATH_SMA        = "src/data/titik-sma.json"
 PATH_SMK        = "src/data/titik-smk.json"
 PATH_SMP        = "src/data/titik-smp.json"
 PATH_UNIVERSITAS= "src/data/titik-universitas.json"
+PATH_PERKANTORAN = "src/data/titik-perkantoran.json"
 
 # Path output
 PATH_OUTPUT_JSON = "public/hasil_analisis.json"
@@ -72,9 +72,9 @@ MAX_DEPTH       = 5        # kedalaman maksimum pohon
 RANDOM_STATE    = 42
 
 
-# =============================================================================
-# BAGIAN 1: MEMUAT DATA PENDUDUK DARI MySQL
-# =============================================================================
+
+#  DATA PENDUDUK Mysql
+
 
 def muat_penduduk_mysql() -> pd.DataFrame:
     """
@@ -154,6 +154,7 @@ def muat_data_spasial() -> tuple[gpd.GeoDataFrame, gpd.GeoDataFrame, gpd.GeoData
         (PATH_SMK,         "SMK"),
         (PATH_SMP,         "SMP"),
         (PATH_UNIVERSITAS, "Universitas"),
+        (PATH_PERKANTORAN,  "Perkantoran"),
     ]:
         tmp = gpd.read_file(path)
         tmp["kategori"] = kategori
@@ -205,17 +206,18 @@ def hitung_fitur(
     BOBOT_POI = {
         "Mall"       : 3.0,
         "Universitas": 2.5,
+        "Perkantoran" : 2.0,
         "SMA"        : 1.5,
         "SMK"        : 1.5,
         "SMP"        : 1.0,
         "SD"         : 0.5,
     }
-    PUSAT_KOTA = Point(793_000, 9_228_500)  # UTM 48S — approx. Alun-alun Bandung
+    PUSAT_KOTA = Point(789_700, 9_234_200)  # UTM 48S — approx. Alun-alun Bandung
 
     records = []
 
     for _, kec in gdf_kec.iterrows():
-        # Deteksi nama kolom kecamatan secara fleksibel
+        # Deteksi nama kolom kecamatan
         nama = (
             kec.get("nama_kecamatan")
             or kec.get("KECAMATAN")
@@ -262,9 +264,8 @@ def hitung_fitur(
     return df
 
 
-# =============================================================================
-# BAGIAN 4: LABELING HEURISTIK
-# =============================================================================
+# LABELING HEURISTIK
+
 
 def buat_label_heuristik(df: pd.DataFrame) -> pd.DataFrame:
     """

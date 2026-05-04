@@ -73,7 +73,7 @@ function DashboardContent({ children }: { children: React.ReactNode }) {
                   <li>
                     <strong>Pusat Keramaian</strong> gabungan seluruh titik
                     pendidikan dan pusat perbelanjaan, meliputi SD, SMP, SMA,
-                    SMK, dan Kampus (negeri maupun swasta), serta Mall di tiap
+                    SMK, dan Kampus (negeri & swasta), serta Mall & perkantoran di tiap
                     kecamatan.
                   </li>
                   <li>

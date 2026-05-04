@@ -24,9 +24,11 @@ import kecamatanGeoJson from "@/data/bandung-kecamatan.json";
 import sdGeoJson from "@/data/titik-sd.json";
 import smpGeoJson from "@/data/titik-smp.json";
 import smaGeoJson from "@/data/titik-sma.json";
+import smkGeoJson from "@/data/titik-smk.json";
 import kampusGeoJson from "@/data/titik-universitas.json";
 import mallGeoJson from "@/data/titik-mall.json";
 import kompetitorGeoJson from "@/data/titik-kompetitor.json";
+import kantorGeoJson from "@/data/titik-perkantoran.json";
 
 // ================= LIST KECAMATAN =================
 const BANDUNG_KECAMATAN = [
@@ -94,12 +96,14 @@ const createDotIcon = (color: string) =>
   });
 
   const LAYER_CONFIG = {
-    sd:         { color: "#3B82F6", label: "SD",         icon: "🏫" },
-    smp:        { color: "#10B981", label: "SMP",        icon: "🏫" },
-    sma:        { color: "#F59E0B", label: "SMA",        icon: "🏫" },
-    kampus:     { color: "#8B5CF6", label: "Kampus",     icon: "🎓" },
-    mall:       { color: "#EF4444", label: "Mall",       icon: "🛍️" },
-    kompetitor: { color: "#000000", label: "Kompetitor", icon: "📍" },
+    sd:          { color: "#3B82F6", label: "SD",          icon: "🏫" },
+    smp:         { color: "#10B981", label: "SMP",         icon: "🏫" },
+    sma:         { color: "#F59E0B", label: "SMA",         icon: "🏫" },
+    smk:         { color: "#F97316", label: "SMK",         icon: "🏫" },
+    kampus:      { color: "#8B5CF6", label: "Kampus",      icon: "🎓" },
+    mall:        { color: "#EF4444", label: "Mall",        icon: "🛍️" },
+    perkantoran: { color: "#0EA5E9", label: "Perkantoran", icon: "🏢" }, 
+    kompetitor:  { color: "#000000", label: "Kompetitor",  icon: "📍" },
   } as const;
 
 type LayerKey = keyof typeof LAYER_CONFIG;
@@ -284,9 +288,11 @@ export default function BandungHeatmapMap() {
     sd: false,
     smp: false,
     sma: false,
+    smk: false,
     kampus: false,
     mall: false,
     kompetitor: false,
+    perkantoran: false,
   });
 
   const toggleLayer = (key: LayerKey) =>
@@ -394,9 +400,11 @@ export default function BandungHeatmapMap() {
           <PointLayer data={sdGeoJson}     layerKey="sd"     visible={visibleLayers.sd}     nameField="nama" />
           <PointLayer data={smpGeoJson}    layerKey="smp"    visible={visibleLayers.smp}    nameField="nama" />
           <PointLayer data={smaGeoJson}    layerKey="sma"    visible={visibleLayers.sma}    nameField="nama" />
+          <PointLayer data={smkGeoJson} layerKey="smk" visible={visibleLayers.smk} nameField="nama" />
           <PointLayer data={kampusGeoJson} layerKey="kampus" visible={visibleLayers.kampus} nameField="nama" />
           <PointLayer data={mallGeoJson}   layerKey="mall"   visible={visibleLayers.mall}   nameField="nama" />
           <PointLayer data={kompetitorGeoJson} layerKey="kompetitor" visible={visibleLayers.kompetitor} nameField="nama"/>
+          <PointLayer data={kantorGeoJson} layerKey="perkantoran" visible={visibleLayers.perkantoran} nameField="nama"/>
         </MapContainer>
       </div>
     </div>

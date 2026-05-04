@@ -271,7 +271,7 @@ function ResultContent() {
               label="Skor Keramaian"
               nilai={hasil.skor_poi}
               satuan="poin"
-              deskripsi="Mall, kampus, sekolah"
+              deskripsi="Mall, kampus, sekolah, perkantoran"
               delay={240}
             />
             <KartuFitur

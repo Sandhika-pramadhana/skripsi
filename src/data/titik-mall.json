@@ -5,7 +5,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.58299310000001, -6.8807039]
+        "coordinates": [
+          107.58299310000001,
+          -6.8807039
+        ]
       },
       "properties": {
         "osm_id": "29391283",
@@ -24,7 +27,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.5849629, -6.8925026]
+        "coordinates": [
+          107.5849629,
+          -6.8925026
+        ]
       },
       "properties": {
         "osm_id": "2958261154",
@@ -43,26 +49,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.6580268, -6.9403972]
-      },
-      "properties": {
-        "osm_id": "3272226033",
-        "name": "Metro Indah Mall",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
-        "address": null,
-        "is_in": null,
-        "place": null,
-        "man_made": null,
-        "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [107.6966507, -6.9156817]
+        "coordinates": [
+          107.6966507,
+          -6.9156817
+        ]
       },
       "properties": {
         "osm_id": "5825155308",
@@ -81,7 +71,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.604422, -6.9231405]
+        "coordinates": [
+          107.604422,
+          -6.9231405
+        ]
       },
       "properties": {
         "osm_id": "10793604336",
@@ -94,13 +87,17 @@
         "place": null,
         "man_made": null,
         "other_tags": "\"amenity\"=>\"atm\""
-      }
+      },
+      "id": 4
     },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.610828, -6.908665]
+        "coordinates": [
+          107.610828,
+          -6.908665
+        ]
       },
       "properties": {
         "osm_id": "27357418",
@@ -113,13 +110,17 @@
         "place": null,
         "man_made": null,
         "other_tags": "\"shop\"=>\"mall\",\"operator\"=>\"Lippo Malls\""
-      }
+      },
+      "id": 5
     },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.596007, -6.889564]
+        "coordinates": [
+          107.596007,
+          -6.889564
+        ]
       },
       "properties": {
         "osm_id": "31462847",
@@ -132,13 +133,17 @@
         "place": null,
         "man_made": null,
         "other_tags": "\"shop\"=>\"mall\",\"type\"=>\"resort_lifestyle_place\""
-      }
+      },
+      "id": 6
     },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.605014, -6.894317]
+        "coordinates": [
+          107.605014,
+          -6.894317
+        ]
       },
       "properties": {
         "osm_id": "42857193",
@@ -151,13 +156,17 @@
         "place": null,
         "man_made": null,
         "other_tags": "\"shop\"=>\"mall\",\"opening_hours\"=>\"10:00-22:00\""
-      }
+      },
+      "id": 7
     },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.594539, -6.915273]
+        "coordinates": [
+          107.594539,
+          -6.915273
+        ]
       },
       "properties": {
         "osm_id": "539102847",
@@ -170,13 +179,17 @@
         "place": null,
         "man_made": null,
         "other_tags": "\"shop\"=>\"mall\",\"wheelchair\"=>\"yes\""
-      }
+      },
+      "id": 8
     },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.597008, -6.905735]
+        "coordinates": [
+          107.597008,
+          -6.905735
+        ]
       },
       "properties": {
         "osm_id": "28471920",
@@ -189,13 +202,17 @@
         "place": null,
         "man_made": null,
         "other_tags": "\"shop\"=>\"mall\""
-      }
+      },
+      "id": 9
     },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.609104, -6.908135]
+        "coordinates": [
+          107.609104,
+          -6.908135
+        ]
       },
       "properties": {
         "osm_id": "84729103",
@@ -208,13 +225,17 @@
         "place": null,
         "man_made": null,
         "other_tags": "\"shop\"=>\"electronics\",\"amenity\"=>\"mall\""
-      }
+      },
+      "id": 10
     },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.609000, -6.899012]
+        "coordinates": [
+          107.609,
+          -6.899012
+        ]
       },
       "properties": {
         "osm_id": "19283746",
@@ -233,7 +254,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.604072, -6.917654]
+        "coordinates": [
+          107.604072,
+          -6.917654
+        ]
       },
       "properties": {
         "osm_id": "112837465",
@@ -246,13 +270,17 @@
         "place": null,
         "man_made": null,
         "other_tags": "\"shop\"=>\"mall\""
-      }
+      },
+      "id": 12
     },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.575792, -6.931824]
+        "coordinates": [
+          107.575792,
+          -6.931824
+        ]
       },
       "properties": {
         "osm_id": "1192837465",
@@ -265,13 +293,17 @@
         "place": null,
         "man_made": null,
         "other_tags": "\"shop\"=>\"mall\""
-      }
+      },
+      "id": 13
     },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.605747, -6.923649]
+        "coordinates": [
+          107.605747,
+          -6.923649
+        ]
       },
       "properties": {
         "osm_id": "428371920",
@@ -284,13 +316,17 @@
         "place": null,
         "man_made": null,
         "other_tags": "\"shop\"=>\"mall\""
-      }
+      },
+      "id": 14
     },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.6992029, -6.955658]
+        "coordinates": [
+          107.6992029,
+          -6.955658
+        ]
       },
       "properties": {
         "osm_id": "11730486996",
@@ -309,7 +345,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.5849478, -6.8925604]
+        "coordinates": [
+          107.5849478,
+          -6.8925604
+        ]
       },
       "properties": {
         "osm_id": "12013144935",
@@ -328,7 +367,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.6580287, -6.9404384]
+        "coordinates": [
+          107.6580287,
+          -6.9404384
+        ]
       },
       "properties": {
         "osm_id": "12806868630",
@@ -341,32 +383,36 @@
         "place": null,
         "man_made": null,
         "other_tags": "\"bench\"=>\"yes\",\"bus\"=>\"yes\",\"lit\"=>\"no\",\"pole\"=>\"no\",\"public_transport\"=>\"platform\",\"shelter\"=>\"yes\""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [107.63506310000001, -6.9270367]
       },
-      "properties": {
-        "osm_id": "13254056448",
-        "name": "Trans Studio Mall",
-        "barrier": null,
-        "highway": "bus_stop",
-        "ref": null,
-        "address": null,
-        "is_in": null,
-        "place": null,
-        "man_made": null,
-        "other_tags": "\"bench\"=>\"no\",\"bin\"=>\"no\",\"bus\"=>\"yes\",\"lit\"=>\"no\",\"pole\"=>\"no\",\"public_transport\"=>\"platform\",\"shelter\"=>\"no\""
-      }
+      "id": 17
     },
+    {
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [107.641031767373, -6.946227841765735]
+  },
+  "properties": {
+    "osm_id": null,
+    "name": "Tenth Avenue Mall",
+    "barrier": null,
+    "highway": null,
+    "ref": null,
+    "address": "Jl. Soekarno-Hatta No.526, Cijaura, Kec. Buahbatu, Kota Bandung, Jawa Barat 40286",
+    "is_in": "Buahbatu, Bandung",
+    "place": null,
+    "man_made": null,
+    "other_tags": "\"shop\"=>\"mall\",\"amenity\"=>\"shopping_centre\""
+  }
+},
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.6350472, -6.9270783]
+        "coordinates": [
+          107.6350472,
+          -6.9270783
+        ]
       },
       "properties": {
         "osm_id": "13254056449",
@@ -379,7 +425,8 @@
         "place": null,
         "man_made": null,
         "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
-      }
+      },
+      "id": 19
     }
   ]
 }

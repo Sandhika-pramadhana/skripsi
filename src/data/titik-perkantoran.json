@@ -1,0 +1,1930 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Gedung Sate (Kantor Gubernur Jawa Barat)",
+        "kecamatan": "Bandung Wetan",
+        "jenis": "Pemerintahan Provinsi",
+        "alamat": "Jl. Diponegoro No.22"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6191,
+          -6.9025
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Telkom Indonesia (Graha Merah Putih)",
+        "kecamatan": "Sumur Bandung",
+        "jenis": "BUMN Telekomunikasi",
+        "alamat": "Jl. Lembong No.11"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6192,
+          -6.9065
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Kantor Pusat PT Pos Indonesia",
+        "kecamatan": "Sumur Bandung",
+        "jenis": "BUMN Logistik",
+        "alamat": "Jl. Cilaki No.73"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6206,
+          -6.9015
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Balai Kota Bandung",
+        "kecamatan": "Sumur Bandung",
+        "jenis": "Pemerintahan Kota",
+        "alamat": "Jl. Wastukencana No.2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6097,
+          -6.9135
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Kantor Pusat Bank BJB",
+        "kecamatan": "Sumur Bandung",
+        "jenis": "Perbankan",
+        "alamat": "Jl. Naripan No.12"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6088,
+          -6.9196
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "PLN Unit Induk Distribusi Jabar",
+        "kecamatan": "Sumur Bandung",
+        "jenis": "BUMN Energi",
+        "alamat": "Jl. Asia Afrika No.63"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6081,
+          -6.9212
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Polda Jawa Barat",
+        "kecamatan": "Panyileukan",
+        "jenis": "Keamanan/Polisi",
+        "alamat": "Jl. Soekarno-Hatta No.748"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.7125,
+          -6.9388
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Bandung Digital Valley (Telkom)",
+        "kecamatan": "Coblong",
+        "jenis": "Teknologi/Startup",
+        "alamat": "Menara Riset ITB, Jl. Ganesha No.15"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6104,
+          -6.8911
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.614832,
+          -6.920512
+        ]
+      },
+      "properties": {
+        "name": "BNI Kantor Wilayah 04 Bandung",
+        "address": "Jl. Asia Afrika No.119",
+        "is_in": "Sumur Bandung, Bandung",
+        "other_tags": "\"amenity\"=>\"bank\",\"office\"=>\"regional_office\",\"brand\"=>\"BNI\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.612541,
+          -6.921635
+        ]
+      },
+      "properties": {
+        "name": "Bank Mandiri Regional VI / Jawa 1",
+        "address": "Jl. Asia Afrika No.107",
+        "is_in": "Sumur Bandung, Bandung",
+        "other_tags": "\"amenity\"=>\"bank\",\"office\"=>\"regional_office\",\"brand\"=>\"Mandiri\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.610215,
+          -6.921842
+        ]
+      },
+      "properties": {
+        "name": "Bank BRI Kantor Wilayah Bandung",
+        "address": "Jl. Asia Afrika No.57-59",
+        "is_in": "Sumur Bandung, Bandung",
+        "other_tags": "\"amenity\"=>\"bank\",\"office\"=>\"regional_office\",\"brand\"=>\"BRI\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.611524,
+          -6.918231
+        ]
+      },
+      "properties": {
+        "name": "Menara BCA Bandung",
+        "address": "Jl. Asia Afrika No.122-124",
+        "is_in": "Sumur Bandung, Bandung",
+        "other_tags": "\"amenity\"=>\"bank\",\"office\"=>\"main_branch\",\"brand\"=>\"BCA\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.61,
+          -6.914925
+        ]
+      },
+      "properties": {
+        "name": "Bank Indonesia",
+        "address": "Jl. Braga No.108",
+        "is_in": "Sumur Bandung, Bandung",
+        "other_tags": "\"amenity\"=>\"bank\",\"office\"=>\"central_bank\",\"status\"=>\"National\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.617842,
+          -6.920152
+        ]
+      },
+      "properties": {
+        "name": "CIMB Niaga Finance",
+        "address": "Jl. Asia Afrika No.141-149",
+        "is_in": "Sumur Bandung, Bandung",
+        "other_tags": "\"amenity\"=>\"bank\",\"office\"=>\"finance\",\"brand\"=>\"CIMB Niaga\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.612845,
+          -6.894215
+        ]
+      },
+      "properties": {
+        "name": "Otoritas Jasa Keuangan (OJK) Regional 2",
+        "address": "Jl. Ir. H. Juanda No.152",
+        "is_in": "Bandung Wetan, Bandung",
+        "other_tags": "\"amenity\"=>\"government\",\"office\"=>\"financial_regulator\",\"status\"=>\"Central\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.601245,
+          -6.912541
+        ]
+      },
+      "properties": {
+        "name": "Bank BTN Kantor Wilayah 2",
+        "address": "Jl. Jawa No.7",
+        "is_in": "Sumur Bandung, Bandung",
+        "other_tags": "\"amenity\"=>\"bank\",\"office\"=>\"regional_office\",\"brand\"=>\"BTN\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.605412,
+          -6.915231
+        ]
+      },
+      "properties": {
+        "name": "Bank OCBC NISP Tower",
+        "address": "Jl. Asia Afrika No.100",
+        "is_in": "Sumur Bandung, Bandung",
+        "other_tags": "\"amenity\"=>\"bank\",\"office\"=>\"branch_office\",\"brand\"=>\"OCBC\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.625142,
+          -6.925412
+        ]
+      },
+      "properties": {
+        "name": "Bank Mega Regional Bandung",
+        "address": "Jl. Gatot Subroto No.283",
+        "is_in": "Batununggal, Bandung",
+        "other_tags": "\"amenity\"=>\"bank\",\"office\"=>\"regional_office\",\"brand\"=>\"Mega\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6312225,
+          -6.909342
+        ]
+      },
+      "properties": {
+        "name": "Posdigi",
+        "address": "Jl. Jamuju No.2, Cihapit",
+        "is_in": "Bandung Wetan, Bandung",
+        "other_tags": "\"amenity\"=>\"office\",\"office\"=>\"telecommunication;logistics\",\"status\"=>\"BUMN\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.619842,
+          -6.900215
+        ]
+      },
+      "properties": {
+        "name": "Gedung Telkom Japati",
+        "address": "Jl. Japati No.1, Sadang Serang",
+        "is_in": "Coblong, Bandung",
+        "other_tags": "\"amenity\"=>\"office\",\"office\"=>\"telecommunication\",\"status\"=>\"BUMN\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5983245,
+          -6.8981416
+        ]
+      },
+      "properties": {
+        "name": "RSUP Dr. Hasan Sadikin Bandung",
+        "address": "Jl. Pasteur No.38, Pasteur",
+        "is_in": "Sukajadi, Bandung",
+        "other_tags": "\"amenity\"=>\"hospital\",\"healthcare\"=>\"hospital\",\"status\"=>\"National_Referral\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6138866,
+          -6.908704
+        ]
+      },
+      "properties": {
+        "name": "Disdukcapil Kota Bandung",
+        "address": "Jl. Ambon No.1B, Citarum",
+        "is_in": "Bandung Wetan, Bandung",
+        "other_tags": "\"amenity\"=>\"government\",\"office\"=>\"registry_office\",\"status\"=>\"City\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.615234,
+          -6.904122
+        ]
+      },
+      "properties": {
+        "name": "Kantor Dinas Kesehatan Prov. Jabar",
+        "address": "Jl. Pasteur No.25, Citarum",
+        "is_in": "Bandung Wetan, Bandung",
+        "other_tags": "\"amenity\"=>\"government\",\"office\"=>\"health_department\",\"status\"=>\"Provincial\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.620245,
+          -6.901512
+        ]
+      },
+      "properties": {
+        "name": "Kantor Dinas Pendidikan Prov. Jabar",
+        "address": "Jl. Dr. Rajiman No.6, Citarum",
+        "is_in": "Bandung Wetan, Bandung",
+        "other_tags": "\"amenity\"=>\"government\",\"office\"=>\"education_department\",\"status\"=>\"Provincial\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.619154,
+          -6.904512
+        ]
+      },
+      "properties": {
+        "name": "Dinas Bina Marga & Penataan Ruang Jabar",
+        "address": "Jl. Asia Afrika No.79 (Kantor Lama) / Jl. Diponegoro",
+        "is_in": "Bandung Wetan, Bandung",
+        "other_tags": "\"amenity\"=>\"government\",\"office\"=>\"public_works\",\"status\"=>\"Provincial\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6132179,
+          -6.9049601
+        ]
+      },
+      "properties": {
+        "name": "NextSPACE Trunojoyo",
+        "address": "Jl. Trunojoyo No.11, Citarum",
+        "is_in": "Bandung Wetan, Bandung",
+        "other_tags": "\"amenity\"=>\"office\",\"office\"=>\"coworking\",\"status\"=>\"Private\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.631526,
+          -6.909631
+        ]
+      },
+      "properties": {
+        "name": "Gedung Pratyaksa",
+        "address": "Jl. Supratman No.3, Cihapit",
+        "is_in": "Bandung Wetan, Bandung",
+        "other_tags": "\"amenity\"=>\"office\",\"office\"=>\"commercial\",\"status\"=>\"Private\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.616542,
+          -6.907812
+        ]
+      },
+      "properties": {
+        "name": "Kantor Pengadilan Tinggi Bandung",
+        "address": "Jl. Cimuncang No.21 (Lama) / Jl. Cimanuk No.31",
+        "is_in": "Bandung Wetan, Bandung",
+        "other_tags": "\"amenity\"=>\"government\",\"office\"=>\"court\",\"status\"=>\"National\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5881799,
+          -6.8925576
+        ]
+      },
+      "properties": {
+        "name": "Kantor Kecamatan Sukajadi",
+        "address": "Jl. Sukamulya No.4, Sukagalih",
+        "is_in": "Sukajadi, Bandung",
+        "other_tags": "\"amenity\"=>\"government\",\"office\"=>\"district_office\",\"status\"=>\"City\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5969071,
+          -6.8950215
+        ]
+      },
+      "properties": {
+        "name": "Graha Sukajadi",
+        "address": "Jl. Sukajadi No.25, Sukabungah",
+        "is_in": "Sukajadi, Bandung",
+        "other_tags": "\"amenity\"=>\"office\",\"office\"=>\"commercial\",\"status\"=>\"Private\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5962376,
+          -6.883665
+        ]
+      },
+      "properties": {
+        "name": "Bank Mandiri - KCP Bandung Sukajadi",
+        "address": "Jl. Sukajadi No.171, Pasteur",
+        "is_in": "Sukajadi, Bandung",
+        "other_tags": "\"amenity\"=>\"bank\",\"office\"=>\"branch_office\",\"brand\"=>\"Mandiri\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5966316,
+          -6.8805628
+        ]
+      },
+      "properties": {
+        "name": "bank bjb Kantor Cabang Sukajadi",
+        "address": "Jl. Sukajadi No.216, Pasteur",
+        "is_in": "Sukajadi, Bandung",
+        "other_tags": "\"amenity\"=>\"bank\",\"office\"=>\"branch_office\",\"brand\"=>\"BJB\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.597048,
+          -6.8967329
+        ]
+      },
+      "properties": {
+        "name": "BNI Sukajadi",
+        "address": "Jl. Sukajadi No.1, Sukabungah",
+        "is_in": "Sukajadi, Bandung",
+        "other_tags": "\"amenity\"=>\"bank\",\"office\"=>\"branch_office\",\"brand\"=>\"BNI\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5992155,
+          -6.899886
+        ]
+      },
+      "properties": {
+        "name": "Bank Mandiri RS Hasan Sadikin",
+        "address": "Jl. Pasteur No.38",
+        "is_in": "Sukajadi, Bandung",
+        "other_tags": "\"amenity\"=>\"bank\",\"office\"=>\"branch_office\",\"brand\"=>\"Mandiri\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5815575,
+          -6.8813732
+        ]
+      },
+      "properties": {
+        "name": "Bank Mandiri Setrasari Plaza",
+        "address": "Jl. Prof. drg. Soeria Soemantri No.5",
+        "is_in": "Sukajadi, Bandung",
+        "other_tags": "\"amenity\"=>\"bank\",\"office\"=>\"branch_office\",\"brand\"=>\"Mandiri\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5743441,
+          -6.8854781
+        ]
+      },
+      "properties": {
+        "name": "Kantor BaPenDa UPTD PPD Wil. Bandung Barat",
+        "address": "Jl. Sarimadu No.94 Blok 25",
+        "is_in": "Sukajadi, Bandung",
+        "other_tags": "\"amenity\"=>\"government\",\"office\"=>\"tax_office\",\"status\"=>\"Provincial\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5970355,
+          -6.8962226
+        ]
+      },
+      "properties": {
+        "name": "Collaborate Coworking (Sewa Kantor)",
+        "address": "Jl. Sukajadi No.5, Sukabungah",
+        "is_in": "Sukajadi, Bandung",
+        "other_tags": "\"amenity\"=>\"office\",\"office\"=>\"coworking\",\"status\"=>\"Private\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5888241,
+          -6.8715421
+        ]
+      },
+      "properties": {
+        "name": "Kantor Kecamatan Sukasari",
+        "address": "Jl. Gegerkalong Hilir No.155",
+        "is_in": "Sukasari, Bandung",
+        "other_tags": "\"amenity\"=>\"government\",\"office\"=>\"district_office\",\"status\"=>\"City\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5932512,
+          -6.8718425
+        ]
+      },
+      "properties": {
+        "name": "Telkom Corporate University (Gegerkalong)",
+        "address": "Jl. Gegerkalong Hilir No.47",
+        "is_in": "Sukasari, Bandung",
+        "other_tags": "\"amenity\"=>\"office\",\"office\"=>\"education_center\",\"status\"=>\"BUMN\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5925412,
+          -6.8712154
+        ]
+      },
+      "properties": {
+        "name": "Telkom Riset & IT Center",
+        "address": "Jl. Gegerkalong Hilir No.47",
+        "is_in": "Sukasari, Bandung",
+        "other_tags": "\"amenity\"=>\"office\",\"office\"=>\"research\",\"status\"=>\"BUMN\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5968412,
+          -6.8745124
+        ]
+      },
+      "properties": {
+        "name": "Kantor Kelurahan Gegerkalong",
+        "address": "Jl. Sukajadi Atas No.277i",
+        "is_in": "Sukasari, Bandung",
+        "other_tags": "\"amenity\"=>\"government\",\"office\"=>\"sub_district_office\",\"status\"=>\"City\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5912451,
+          -6.8716541
+        ]
+      },
+      "properties": {
+        "name": "KUA Kecamatan Sukasari",
+        "address": "Jl. LPM No.1, Gegerkalong",
+        "is_in": "Sukasari, Bandung",
+        "other_tags": "\"amenity\"=>\"government\",\"office\"=>\"religious_affairs\",\"status\"=>\"Central\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5921425,
+          -6.8612451
+        ]
+      },
+      "properties": {
+        "name": "Kantor Kelurahan Isola",
+        "address": "Jl. Setiabudi No.241",
+        "is_in": "Sukasari, Bandung",
+        "other_tags": "\"amenity\"=>\"government\",\"office\"=>\"sub_district_office\",\"status\"=>\"City\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5812451,
+          -6.8752412
+        ]
+      },
+      "properties": {
+        "name": "Kantor Kelurahan Sarijadi",
+        "address": "Jl. Sarijadi Raya No.1",
+        "is_in": "Sukasari, Bandung",
+        "other_tags": "\"amenity\"=>\"government\",\"office\"=>\"sub_district_office\",\"status\"=>\"City\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5945124,
+          -6.8698541
+        ]
+      },
+      "properties": {
+        "name": "BPJS Ketenagakerjaan Bandung Suci (Kantor Cabang)",
+        "address": "Jl. Setiabudi No.164",
+        "is_in": "Sukasari, Bandung",
+        "other_tags": "\"amenity\"=>\"office\",\"office\"=>\"social_security\",\"status\"=>\"BUMN\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.608845,
+          -6.919632
+        ]
+      },
+      "properties": {
+        "name": "Kantor Pusat Bank BJB",
+        "address": "Jl. Naripan No.12, Braga",
+        "is_in": "Sumur Bandung, Bandung",
+        "other_tags": "\"amenity\"=>\"bank\",\"office\"=>\"headquarters\",\"status\"=>\"BUMD\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.611152,
+          -6.940521
+        ]
+      },
+      "properties": {
+        "name": "PT INTI (Persero)",
+        "address": "Jl. Moch. Toha No.77, Cigereleng",
+        "is_in": "Regol, Bandung",
+        "other_tags": "\"amenity\"=>\"office\",\"office\"=>\"technology;manufacturing\",\"status\"=>\"BUMN\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.641528,
+          -6.898912
+        ]
+      },
+      "properties": {
+        "name": "KPP Pratama Bandung Cibeunying",
+        "address": "Jl. PPH. Mustofa No.22",
+        "is_in": "Cibeunying Kaler, Bandung",
+        "other_tags": "\"amenity\"=>\"government\",\"office\"=>\"tax_office\",\"status\"=>\"Central\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.581235,
+          -6.901245
+        ]
+      },
+      "properties": {
+        "name": "PT Dirgantara Indonesia (Persero)",
+        "address": "Jl. Pajajaran No.154",
+        "is_in": "Cicendo, Bandung",
+        "other_tags": "\"amenity\"=>\"office\",\"office\"=>\"aerospace\",\"status\"=>\"BUMN\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.613812,
+          -6.921645
+        ]
+      },
+      "properties": {
+        "name": "Kanwil DJP Jawa Barat I",
+        "address": "Jl. Asia Afrika No.114",
+        "is_in": "Sumur Bandung, Bandung",
+        "other_tags": "\"amenity\"=>\"government\",\"office\"=>\"tax_office\",\"status\"=>\"Central\""
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "PT Kereta Api Indonesia (Persero) Pusat",
+        "kecamatan": "Cicendo",
+        "jenis": "BUMN Transportasi",
+        "alamat": "Jl. Perintis Kemerdekaan No.1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6061,
+          -6.9144
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Bio Farma (Persero)",
+        "kecamatan": "Sukajadi",
+        "jenis": "BUMN Farmasi",
+        "alamat": "Jl. Pasteur No.28"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5994,
+          -6.8996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6160704,
+          -6.9219462
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "Regus - Bandung, Wisma Monex",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Asia Afrika No.133-137, Kebon Pisang",
+        "is_in": "Sumur Bandung, Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"office\",\"office\"=>\"coworking\",\"status\"=>\"Private\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.61781579999999,
+          -6.9175761
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "Tekape Workspace",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Sunda No.85, Kebon Pisang",
+        "is_in": "Sumur Bandung, Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"office\",\"office\"=>\"coworking\",\"status\"=>\"Private\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6157399,
+          -6.922439799999999
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "HQuarters Business Residence",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Asia Afrika No.158, Paledang",
+        "is_in": "Lengkong, Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"office\",\"office\"=>\"coworking\",\"status\"=>\"Private\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6008061,
+          -6.8871024
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "18Building - Office & Kost Bandung",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Lamping No.18, Pasteur",
+        "is_in": "Sukajadi, Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"office\",\"office\"=>\"coworking\",\"status\"=>\"Private\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.60738269999999,
+          -6.9206644
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "vOffice - Menara BRI Bandung",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Asia Afrika No.57-59 Lt 11",
+        "is_in": "Sumur Bandung, Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"office\",\"office\"=>\"virtual_office\",\"status\"=>\"Private\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6156293,
+          -6.921822199999999
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "Gedung GRAHA SELARAS",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Asia Afrika No.129, Kebon Pisang",
+        "is_in": "Sumur Bandung, Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"office\",\"office\"=>\"commercial\",\"status\"=>\"Private\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.616436,
+          -6.922274
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "Wisma Bumiputera Bandung",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Asia Afrika No.141-149, Kebon Pisang",
+        "is_in": "Sumur Bandung, Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"office\",\"office\"=>\"commercial\",\"status\"=>\"Private\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6073907,
+          -6.9208761
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "Menara BRI Bandung",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Asia Afrika No.57, Braga",
+        "is_in": "Sumur Bandung, Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"office\",\"office\"=>\"commercial\",\"status\"=>\"BUMN\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.61694349999999,
+          -6.9113614
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "Nomad CoWorking",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Belitung No.3F, Merdeka",
+        "is_in": "Sumur Bandung, Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"office\",\"office\"=>\"coworking\",\"status\"=>\"Private\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6268333,
+          -6.906911699999999
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "Office & Beyond Bengawan Building",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Bengawan No.76, Cihapit",
+        "is_in": "Bandung Wetan, Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"office\",\"office\"=>\"coworking\",\"status\"=>\"Private\""
+      },
+      "id": 62
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6191,
+          -6.9025
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "Gedung Sate (Kantor Gubernur Jawa Barat)",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Diponegoro No.22",
+        "is_in": "Bandung Wetan, Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"government\",\"office\"=>\"provincial_government\",\"status\"=>\"Provincial\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6061,
+          -6.9144
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "PT Kereta Api Indonesia (Persero) Pusat",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Perintis Kemerdekaan No.1",
+        "is_in": "Cicendo, Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"office\",\"office\"=>\"transportation\",\"status\"=>\"BUMN\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5994,
+          -6.8996
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "Bio Farma (Persero)",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Pasteur No.28",
+        "is_in": "Sukajadi, Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"office\",\"office\"=>\"pharmaceutical\",\"status\"=>\"BUMN\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6441,
+          -6.9304
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "PT Pindad (Persero)",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Terusan Gatot Subroto No.517",
+        "is_in": "Kiaracondong, Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"office\",\"office\"=>\"defense\",\"status\"=>\"BUMN\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.57093761061395,
+          -6.91651421843833
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "PT Plastin Eka Prakarsa",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Raya Cijerah No.21, Cibuntu, Kec. Bandung Kulon, Kota Bandung, Jawa Barat 40213",
+        "is_in": "Bandung Kulon, Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"factory\",\"industrial\"=>\"plastic\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.57162927692919,
+          -6.91520248045403
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "PT Lautan Luas Tbk",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Jend. Sudirman No.757, Cibuntu, Kec. Bandung Kulon, Kota Bandung, Jawa Barat 40212",
+        "is_in": "Bandung Kulon, Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"office\",\"office\"=>\"industrial\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.56766173649613,
+          -6.928735443610484
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "PT Kartika Inti Sejati",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Paralon No.7, Cigondewah Kaler, Kec. Bandung Kulon, Kota Bandung, Jawa Barat 40214",
+        "is_in": "Bandung Kulon, Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"factory\",\"name\"=>\"PT Kartika Inti Sejati\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.56077382373832,
+          -6.930759031050026
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "PT Kahatex (Gerbang 3)",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Gempol Sari No.16, Cijerah, Kec. Bandung Kulon, Kota Bandung, Jawa Barat 40213",
+        "is_in": "Bandung Kulon, Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"factory\",\"industrial\"=>\"textile\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.56772037266174,
+          -6.933850859070374
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "PT Karya Utama Putra Mandiri",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Cicukang Holis No.60 Kav F2, Cigondewah Kaler, Kec. Bandung Kulon, Kota Bandung, Jawa Barat 40214",
+        "is_in": "Bandung Kulon, Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"factory\",\"name\"=>\"PT Karya Utama Putra Mandiri\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5681119443514,
+          -6.936159020699334
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "PT Sinar Mulia Plasindo Lestari - Head Office",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Cicukang Holis No.22, Caringin, Kec. Bandung Kulon, Kota Bandung, Jawa Barat 40212",
+        "is_in": "Bandung Kulon, Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"office\",\"office\"=>\"company\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.56824273527558,
+          -6.936430237030106
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "CV Kanca Kemas Lestari",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Cicukang Holis No.20, Caringin, Kec. Bandung Kulon, Kota Bandung, Jawa Barat 40212",
+        "is_in": "Bandung Kulon, Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"factory\",\"industrial\"=>\"packaging\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5653328759914,
+          -6.931293750729145
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "PT Euodoo",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Paralon II No.21, Cigondewah Kaler, Kec. Bandung Kulon, Kota Bandung, Jawa Barat 40214",
+        "is_in": "Bandung Kulon, Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"office\",\"office\"=>\"company\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.59699911898349,
+          -6.934469351232076
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "Rumah Sakit Immanuel Bandung",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Raya Kopo No.161, Situsaeur, Kec. Bojongloa Kidul, Kota Bandung, Jawa Barat 40233",
+        "is_in": "Bojongloa Kidul, Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"hospital\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.60043496118512,
+          -6.914624810512611
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "Rumah Sakit Santosa Bandung Central",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Kebon Jati No.38, Kb. Jeruk, Kec. Andir, Kota Bandung, Jawa Barat 40181",
+        "is_in": "Andir, Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"hospital\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5960701557184,
+          -6.915049944146696
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "Rumah Sakit Kebonjati",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Kebon Jati No.152, Ciroyom, Kec. Andir, Kota Bandung, Jawa Barat 40181",
+        "is_in": "Andir, Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"hospital\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.59865900540888,
+          -6.905379781473825
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "RS Melinda 2",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Dr. Cipto No.1, Pasir Kaliki, Kec. Cicendo, Kota Bandung, Jawa Barat 40171",
+        "is_in": "Cicendo, Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"hospital\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.61109050728504,
+          -6.9052557480463665
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "RS Sariningsih Martadinata",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. L. L. R.E. Martadinata No.9, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115",
+        "is_in": "Bandung Wetan, Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"hospital\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.61583821670347,
+          -6.905441798118676
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "RSKB Halmahera Siaga",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. L. L. R.E. Martadinata No.28, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115",
+        "is_in": "Bandung Wetan, Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"hospital\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.61365177164987,
+          -6.917720944766716
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "Rumah Sakit Umum Bungsu",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Veteran No.6, Kb. Pisang, Kec. Sumur Bandung, Kota Bandung, Jawa Barat 40112",
+        "is_in": "Sumur Bandung, Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"hospital\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.58831396768926,
+          -6.894449241227593
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "Rumah Sakit Umum Hermina Pasteur",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Dr. Djunjunan No.107, Pasteur, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
+        "is_in": "Cicendo, Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"hospital\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.60319621346787,
+          -6.890825261074135
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "Rumah Sakit Advent Bandung",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Cihampelas No.161, Cipaganti, Kecamatan Coblong, Kota Bandung, Jawa Barat 40131",
+        "is_in": "Coblong, Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"hospital\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.57371568793691,
+          -6.909663015486267
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "Rumah Sakit Rajawali",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Rajawali Barat No.38, Maleber, Kec. Andir, Kota Bandung, Jawa Barat 40184",
+        "is_in": "Andir, Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"hospital\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.61404648702738,
+          -6.893189604099766
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "Rumah Sakit Santo Borromeus",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Ir. H. Juanda No.100, Lebakgede, Kecamatan Coblong, Kota Bandung, Jawa Barat 40132",
+        "is_in": "Coblong, Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"hospital\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.61649378375874,
+          -6.900771393499267
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "Dewan Perwakilan Rakyat Daerah (DPRD) Provinsi Jawa Barat",
+        "address": "Jl. Diponegoro No.27, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115",
+        "is_in": "Bandung Wetan, Bandung",
+        "other_tags": "\"office\"=>\"government\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.61770297826544,
+          -6.903742404955694
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "Ruang SIPKD Provinsi Jawa Barat",
+        "address": "Gedung A Sekretariat Daerah Provinsi Jawa Barat, Kompleks Gedung Sate, Jl. Cilamaya No.22, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115",
+        "is_in": "Bandung Wetan, Bandung",
+        "other_tags": "\"office\"=>\"government\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.61809604353499,
+          -6.898595480196858
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "Kantor Cabang Pertamina Bandung",
+        "address": "Jl. Wirayuda Timur No.1, Lebakgede, Kecamatan Coblong, Kota Bandung, Jawa Barat 40132",
+        "is_in": "Coblong, Bandung",
+        "other_tags": "\"office\"=>\"company\",\"brand\"=>\"Pertamina\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.61748079784215,
+          -6.9061959998915805
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "Pos Indonesia. PT",
+        "address": "Jl. Banda No.30, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115",
+        "is_in": "Bandung Wetan, Bandung",
+        "other_tags": "\"office\"=>\"company\",\"brand\"=>\"Pos Indonesia\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.61827863832872,
+          -6.90177645029534
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "Jabar Digital Service",
+        "address": "Jl. Diponegoro No.22, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115",
+        "is_in": "Bandung Wetan, Bandung",
+        "other_tags": "\"office\"=>\"government\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.61962522972422,
+          -6.901657086236418
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "Yakes Telkom Kantor Pusat",
+        "address": "Jl. Cilaki No.73, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115",
+        "is_in": "Bandung Wetan, Bandung",
+        "other_tags": "\"office\"=>\"company\",\"brand\"=>\"Telkom\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.62090730882882,
+          -6.900110075963509
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "Badan Geologi Kementerian Energi dan Sumber Daya Mineral",
+        "address": "Jl. Diponegoro No.57, Cihaur Geulis, Kec. Cibeunying Kaler, Kota Bandung, Jawa Barat 40122",
+        "is_in": "Cibeunying Kaler, Bandung",
+        "other_tags": "\"office\"=>\"government\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.62259984729283,
+          -6.8989397544193585
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "Badan Kepegawaian Negara Kantor Regional III",
+        "address": "Jl. Surapati No.10, Cihaur Geulis, Kec. Cibeunying Kaler, Kota Bandung, Jawa Barat 40122",
+        "is_in": "Cibeunying Kaler, Bandung",
+        "other_tags": "\"office\"=>\"government\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.62347551883447,
+          -6.899283740434076
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "Kantor Wilayah Bea Cukai Jawa Barat",
+        "address": "Jl. Surapati No.12, Cihaur Geulis, Kec. Cibeunying Kaler, Kota Bandung, Jawa Barat 40122",
+        "is_in": "Cibeunying Kaler, Bandung",
+        "other_tags": "\"office\"=>\"government\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.63178241502717,
+          -6.898954592677424
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "Kantor Imigrasi Kelas I TPI Bandung",
+        "address": "Jl. Surapati No.82, Cihaur Geulis, Kec. Cibeunying Kaler, Kota Bandung, Jawa Barat 40122",
+        "is_in": "Cibeunying Kaler, Bandung",
+        "other_tags": "\"office\"=>\"government\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.63970447667717,
+          -6.8982773300995515
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "BPJS Ketenagakerjaan Bandung Suci",
+        "address": "Jl. Khp Hasan Mustopa No.39, Neglasari, Kec. Cibeunying Kaler, Kota Bandung, Jawa Barat 40124",
+        "is_in": "Cibeunying Kaler, Bandung",
+        "other_tags": "\"office\"=>\"government\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.63750613118533,
+          -6.900818889141637
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "Kantor BPPD UPT Utara Kota Bandung",
+        "address": "Jl. Terusan Katamso No.16, Cikutra, Kec. Cibeunying Kidul, Kota Bandung, Jawa Barat 40124",
+        "is_in": "Cibeunying Kidul, Bandung",
+        "other_tags": "\"office\"=>\"government\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.63721394602503,
+          -6.899727677963275
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "Kantor Kecamatan Cibeunying Kidul",
+        "address": "Jl. Sukasenang Raya No.11, Cikutra, Kec. Cibeunying Kidul, Kota Bandung, Jawa Barat 40124",
+        "is_in": "Cibeunying Kidul, Bandung",
+        "other_tags": "\"office\"=>\"government\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.63782614350377,
+          -6.8989817853310305
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "LLDIKTI Wilayah IV",
+        "address": "Jl. Khp Hasan Mustopa No.38, Cikutra, Kec. Cibeunying Kidul, Kota Bandung, Jawa Barat 40124",
+        "is_in": "Cibeunying Kidul, Bandung",
+        "other_tags": "\"office\"=>\"government\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.64256943252794,
+          -6.89903309939074
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "PT TASPEN (PERSERO) KCU BANDUNG",
+        "address": "Jl. Khp Hasan Mustopa No.78, Cikutra, Kec. Cibeunying Kidul, Kota Bandung, Jawa Barat 40124",
+        "is_in": "Cibeunying Kidul, Bandung",
+        "other_tags": "\"office\"=>\"company\",\"brand\"=>\"Taspen\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.63019471582882,
+          -6.902225092746702
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "PT Kencana Makmur Lestari",
+        "address": "Jl. Terusan Ciliwung No.24, Cihaur Geulis, Kec. Cibeunying Kaler, Kota Bandung, Jawa Barat 40122",
+        "is_in": "Cibeunying Kaler, Bandung",
+        "other_tags": "\"office\"=>\"company\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6314096690082,
+          -6.908036775483552
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "PLN Icon Plus SBU Regional Jawa Barat",
+        "address": "Jl. Supratman No.58, Sukamaju, Kec. Cibeunying Kidul, Kota Bandung, Jawa Barat 40121",
+        "is_in": "Cibeunying Kidul, Bandung",
+        "other_tags": "\"office\"=>\"company\",\"brand\"=>\"PLN\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6094987546006,
+          -6.905617703905719
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "Kantor Pelayanan Pajak Pratama - Bandung Cibeunying",
+        "address": "Jl. Purnawarman No.21, Babakan Ciamis, Kec. Sumur Bandung, Kota Bandung, Jawa Barat 40117",
+        "is_in": "Sumur Bandung, Bandung",
+        "other_tags": "\"office\"=>\"government\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.60754711350314,
+          -6.913662694724277
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "BNI Perintis Kemerdekaan",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Perintis Kemerdekaan",
+        "is_in": "Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"bank\",\"brand\"=>\"BNI\""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.581235,
+          -6.901245
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "PT Dirgantara Indonesia (Persero)",
+        "barrier": null,
+        "highway": null,
+        "ref": null,
+        "address": "Jl. Pajajaran No.154",
+        "is_in": "Cicendo, Bandung",
+        "place": null,
+        "man_made": null,
+        "other_tags": "\"amenity\"=>\"office\",\"office\"=>\"aerospace\",\"status\"=>\"BUMN\""
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "PT Pindad (Persero)",
+        "kecamatan": "Kiaracondong",
+        "jenis": "BUMN Pertahanan",
+        "alamat": "Jl. Terusan Gatot Subroto No.517"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6441,
+          -6.9304
+        ]
+      }
+    }
+  ]
+}

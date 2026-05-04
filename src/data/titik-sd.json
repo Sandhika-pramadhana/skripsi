@@ -622,28 +622,6 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            107.5586239,
-            -6.9240201
-          ]
-        },
-        "properties": {
-          "osm_id": "9807711626",
-          "name": "SD Negeri Melong Asih 4,5,7,8",
-          "barrier": null,
-          "highway": null,
-          "ref": null,
-          "address": null,
-          "is_in": null,
-          "place": null,
-          "man_made": null,
-          "other_tags": "\"amenity\"=>\"school\""
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
             107.6296905,
             -6.9072435
           ]
@@ -710,50 +688,6 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            107.56477980000001,
-            -6.9108546
-          ]
-        },
-        "properties": {
-          "osm_id": "9814555497",
-          "name": "SD Langensari Cimahi",
-          "barrier": null,
-          "highway": null,
-          "ref": null,
-          "address": null,
-          "is_in": null,
-          "place": null,
-          "man_made": null,
-          "other_tags": "\"amenity\"=>\"school\""
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            107.55259860000001,
-            -6.9201682
-          ]
-        },
-        "properties": {
-          "osm_id": "9816204809",
-          "name": "SD Juara Cimahi",
-          "barrier": null,
-          "highway": null,
-          "ref": null,
-          "address": null,
-          "is_in": null,
-          "place": null,
-          "man_made": null,
-          "other_tags": "\"amenity\"=>\"school\""
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
             107.5662059,
             -6.9099588
           ]
@@ -783,28 +717,6 @@
         "properties": {
           "osm_id": "9816403952",
           "name": "SDN 035 Soka Kota Bandung",
-          "barrier": null,
-          "highway": null,
-          "ref": null,
-          "address": null,
-          "is_in": null,
-          "place": null,
-          "man_made": null,
-          "other_tags": "\"amenity\"=>\"school\""
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            107.558913,
-            -6.9205059
-          ]
-        },
-        "properties": {
-          "osm_id": "9816529721",
-          "name": "SDN Melong Mandiri 2",
           "barrier": null,
           "highway": null,
           "ref": null,
