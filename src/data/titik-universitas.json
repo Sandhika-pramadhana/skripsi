@@ -170,6 +170,18 @@
         "type": "Feature",
         "geometry": {
           "type": "Point",
+          "coordinates": [107.7087040, -6.9199270]
+        },
+        "properties": {
+          "name": "Akper Bhakti Kencana",
+          "category": "Kampus",
+          "address": "Jl. AH. Nasution No.349, Pasanggrahan"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
           "coordinates": [
             107.6259866,
             -6.9271072

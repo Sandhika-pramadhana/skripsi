@@ -827,6 +827,66 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
+        "coordinates": [107.6716885, -6.9573945]
+      },
+      "properties": {
+        "name": "SMA Negeri 21 Bandung",
+        "category": "SMA",
+        "address": "Jl. Manjahlega No.30, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.6654954, -6.9661695]
+      },
+      "properties": {
+        "name": "SMA Negeri 25 Kota Bandung",
+        "category": "SMA",
+        "address": "Jl. Baturaden VIII No.21, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.7158780, -6.9026901]
+      },
+      "properties": {
+        "name": "Sekolah Menengah Atas Daarul Qur'an Bandung",
+        "category": "SMA",
+        "address": "Jl. Nagrog No.85, Pasanggrahan"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.57406379999999, -6.878063]
+      },
+      "properties": {
+        "name": "SMAN 15 Bandung",
+        "category": "SMA",
+        "address": "Jl. Sarimanis No.1, Sarijadi, Kec. Sukasari, Kota Bandung, Jawa Barat 40151"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.7074614, -6.8985836]
+      },
+      "properties": {
+        "name": "Sekolah Karakter YASIPA",
+        "category": "SMA",
+        "address": "Sekeburuy, Pasirwangi"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
         "coordinates": [
           107.6154977991097,
           -6.91219404731635

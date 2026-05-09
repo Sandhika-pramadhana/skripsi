@@ -7,13 +7,13 @@ import { Activity, MapPin, Search, ChevronRight, Loader2 } from "lucide-react";
 interface HasilAnalisis {
   kecamatan: string;
   kelas: "Tinggi" | "Sedang" | "Rendah";
+  level_lokasi: "Lokasi Utama" | "Lokasi Alternatif" | "Lokasi Cadangan";
   kepercayaan_persen: number;
   kepadatan_jiwa_km2: number;
   skor_poi: number;
   jumlah_kompetitor: number;
   jarak_jalan_km: number;
-  kondisi_umum: string;
-  analisis_pasar: string;
+  poin_analisis: string[];
   analisis_kompetitor: string;
   rekomendasi: string;
 }
@@ -42,6 +42,13 @@ const KELAS_CONFIG = {
   },
 } as const;
 
+// Konfigurasi badge level lokasi
+const LEVEL_CONFIG = {
+  "Lokasi Utama"      : { bg: "bg-emerald-500", text: "text-white",        icon: "●" },
+  "Lokasi Alternatif" : { bg: "bg-amber-400",   text: "text-white",        icon: "●" },
+  "Lokasi Cadangan"   : { bg: "bg-red-400",     text: "text-white",        icon: "●" },
+} as const;
+
 function StatBox({ label, nilai, satuan }: { label: string; nilai: string | number; satuan: string }) {
   return (
     <div className="bg-white rounded-xl border border-gray-100 p-3 text-center shadow-sm">
@@ -54,14 +61,13 @@ function StatBox({ label, nilai, satuan }: { label: string; nilai: string | numb
   );
 }
 
-function ParagrafKartu({ label, teks }: { label: string; teks: string }) {
+// Badge level lokasi — ditampilkan prominent di atas kartu hasil
+function LevelBadge({ level }: { level: HasilAnalisis["level_lokasi"] }) {
+  const cfg = LEVEL_CONFIG[level];
   return (
-    <div className="bg-white rounded-xl border border-gray-100 p-4 shadow-sm">
-      <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-1.5">
-        {label}
-      </p>
-      <p className="text-sm text-gray-700 leading-relaxed">{teks}</p>
-    </div>
+    <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold ${cfg.bg} ${cfg.text}`}>
+      {cfg.icon} {level}
+    </span>
   );
 }
 
@@ -91,7 +97,6 @@ export default function AnalisisDashboard() {
       .finally(() => setLoadingData(false));
   }, []);
 
-  // Autocomplete (FIX)
   useEffect(() => {
     if (isPickingRef.current) {
       isPickingRef.current = false;
@@ -108,7 +113,6 @@ export default function AnalisisDashboard() {
       d.kecamatan.toLowerCase().includes(query.toLowerCase())
     );
 
-    // ✅ FIX: hilangkan dropdown kalau exact match (biar "andir" gak muncul lagi)
     const isExact = filtered.some(
       (d) => d.kecamatan.toLowerCase() === query.toLowerCase()
     );
@@ -122,7 +126,6 @@ export default function AnalisisDashboard() {
     }
   }, [query, semuaData]);
 
-  // Tutup dropdown klik luar
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (
@@ -144,17 +147,17 @@ export default function AnalisisDashboard() {
         method : "POST",
         headers: { "Content-Type": "application/json" },
         body   : JSON.stringify({
-          kecamatan          : data.kecamatan,
-          kelas              : data.kelas,
-          kepercayaan        : data.kepercayaan_persen,
-          kepadatan          : data.kepadatan_jiwa_km2,
-          skor_poi           : data.skor_poi,
-          kompetitor         : data.jumlah_kompetitor,
-          jarak_jalan        : data.jarak_jalan_km,
-          kondisi_umum       : data.kondisi_umum,
-          analisis_pasar     : data.analisis_pasar,
-          analisis_kompetitor: data.analisis_kompetitor,
-          rekomendasi        : data.rekomendasi,
+          kecamatan           : data.kecamatan,
+          kelas               : data.kelas,
+          level_lokasi        : data.level_lokasi,
+          kepercayaan         : data.kepercayaan_persen,
+          kepadatan           : data.kepadatan_jiwa_km2,
+          skor_poi            : data.skor_poi,
+          kompetitor          : data.jumlah_kompetitor,
+          jarak_jalan         : data.jarak_jalan_km,
+          poin_analisis       : data.poin_analisis,
+          analisis_kompetitor : data.analisis_kompetitor,
+          rekomendasi         : data.rekomendasi,
         }),
       });
     } catch {
@@ -223,6 +226,7 @@ export default function AnalisisDashboard() {
   return (
     <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 items-start">
 
+      {/* ── Panel Utama ── */}
       <div className="xl:col-span-2 bg-white rounded-xl shadow-lg border p-6">
         <h2 className="text-xl font-semibold mb-1 flex items-center gap-2">
           <Activity className="w-5 h-5 text-green-600" />
@@ -232,6 +236,7 @@ export default function AnalisisDashboard() {
           Masukkan nama kecamatan untuk melihat hasil analisis Random Forest.
         </p>
 
+        {/* Search */}
         <form onSubmit={handleSubmit} className="mb-5">
           <div className="flex gap-2">
             <div className="relative flex-1">
@@ -240,21 +245,14 @@ export default function AnalisisDashboard() {
                 ref={inputRef}
                 type="text"
                 value={query}
-                onChange={(e) => {
-                  setQuery(e.target.value);
-                  setError(""); // ✅ hasil tidak dihapus lagi
-                }}
-                onFocus={() => {
-                  if (saran.length > 0 && query.length >= 2) setShowDropdown(true);
-                }}
-                placeholder={
-                  loadingData ? "Memuat daftar kecamatan..." : "Ketik nama kecamatan..."
-                }
+                onChange={(e) => { setQuery(e.target.value); setError(""); }}
+                onFocus={() => { if (saran.length > 0 && query.length >= 2) setShowDropdown(true); }}
+                placeholder={loadingData ? "Memuat daftar kecamatan..." : "Ketik nama kecamatan..."}
                 disabled={loadingData}
                 className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-gray-200 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent disabled:bg-gray-50 disabled:text-gray-400"
               />
 
-              {showDropdown && saran.length > 0 && query.length >= 2 && (
+              {showDropdown && saran.length > 0 && (
                 <ul
                   ref={dropdownRef}
                   className="absolute z-10 w-full mt-1 bg-white border border-gray-100 rounded-xl shadow-xl overflow-hidden"
@@ -264,10 +262,7 @@ export default function AnalisisDashboard() {
                     return (
                       <li
                         key={s.kecamatan}
-                        onMouseDown={(e) => {
-                          e.preventDefault();
-                          handlePilih(s.kecamatan);
-                        }}
+                        onMouseDown={(e) => { e.preventDefault(); handlePilih(s.kecamatan); }}
                         className="flex items-center justify-between px-4 py-2.5 hover:bg-gray-50 cursor-pointer text-sm"
                       >
                         <span className="text-gray-700">{s.kecamatan}</span>
@@ -304,28 +299,30 @@ export default function AnalisisDashboard() {
           </div>
         )}
 
+        {/* ── Kartu Hasil ── */}
         {hasil && cfg && !loading && (
           <div className={`rounded-2xl border ${cfg.border} ${cfg.bg} p-5`}>
+
+            {/* Header: nama + level badge */}
             <div className="flex items-start justify-between mb-4">
               <div>
                 <h3 className="text-lg font-bold text-gray-900">
                   Kec. {hasil.kecamatan}
                 </h3>
-                <div className="flex items-center gap-2 mt-0.5">
-                  <span className={`w-2 h-2 rounded-full ${cfg.dot}`} />
-                  <span className={`text-xs font-semibold ${cfg.label}`}>
-                    Peluang {hasil.kelas}
-                  </span>
+                <div className="flex items-center gap-2 mt-1">
+                  <LevelBadge level={hasil.level_lokasi} />
                   <span className="text-xs text-gray-400">
-                    · Kepercayaan {hasil.kepercayaan_persen}%
+                    Kepercayaan {hasil.kepercayaan_persen}%
                   </span>
                 </div>
               </div>
+              {/* Badge kelas tetap ada sebagai info tambahan */}
               <span className={`text-xs font-bold px-3 py-1.5 rounded-full ${cfg.badge}`}>
                 {hasil.kelas.toUpperCase()}
               </span>
             </div>
 
+            {/* Stat boxes */}
             <div className="grid grid-cols-2 gap-2 mb-4">
               <StatBox label="Kepadatan Penduduk" nilai={hasil.kepadatan_jiwa_km2?.toLocaleString("id-ID")} satuan="jiwa/km²" />
               <StatBox label="Skor Keramaian"     nilai={hasil.skor_poi}          satuan="poin" />
@@ -333,11 +330,35 @@ export default function AnalisisDashboard() {
               <StatBox label="Jarak Jalan Utama"   nilai={hasil.jarak_jalan_km}   satuan="km" />
             </div>
 
-            <div className="flex flex-col gap-2 mb-4">
-              <ParagrafKartu label="Kondisi Umum"        teks={hasil.kondisi_umum} />
-              <ParagrafKartu label="Analisis Pasar"      teks={hasil.analisis_pasar} />
-              <ParagrafKartu label="Analisis Kompetitor" teks={hasil.analisis_kompetitor} />
-              <ParagrafKartu label="Rekomendasi"         teks={hasil.rekomendasi} />
+            {/* Analisis — poin-poin gabungan */}
+            <div className="bg-white rounded-xl border border-gray-100 p-4 shadow-sm mb-3">
+              <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">
+                Analisis
+              </p>
+              <ul className="space-y-2">
+                {hasil.poin_analisis.map((poin, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
+                    <span className={`mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0 ${cfg.dot}`} />
+                    {poin}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Kompetitor */}
+            <div className="bg-white rounded-xl border border-gray-100 p-4 shadow-sm mb-3">
+              <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-1.5">
+                Analisis Kompetitor
+              </p>
+              <p className="text-sm text-gray-700">{hasil.analisis_kompetitor}</p>
+            </div>
+
+            {/* Rekomendasi — styling menonjol sesuai level */}
+            <div className={`rounded-xl border ${cfg.border} p-4 mb-4`}>
+              <p className="text-xs font-semibold uppercase tracking-widest mb-1.5 ${cfg.label}">
+                Rekomendasi · {hasil.level_lokasi}
+              </p>
+              <p className="text-sm font-medium text-gray-800">{hasil.rekomendasi}</p>
             </div>
 
             <button
@@ -351,25 +372,42 @@ export default function AnalisisDashboard() {
         )}
       </div>
 
+      {/* ── Panel Kanan: Legenda ── */}
       <div>
         <div className="sticky top-6 bg-white rounded-xl shadow-lg border p-6">
           <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
             <MapPin className="w-5 h-5 text-blue-600" />
-            Informasi Area
+            Level Lokasi
           </h2>
 
-          <ul className="space-y-3">
+          <ul className="space-y-4">
             {(
               [
-                { dot: "bg-emerald-500", kelas: "Tinggi", desc: "Peluang usaha besar, basis konsumen kuat, akses baik." },
-                { dot: "bg-amber-400",   kelas: "Sedang", desc: "Potensi moderat, perlu diferensiasi produk." },
-                { dot: "bg-red-400",     kelas: "Rendah", desc: "Kurang direkomendasikan sebagai prioritas awal." },
+                {
+                  dot  : "bg-emerald-500",
+                  level: "Lokasi Utama",
+                  kelas: "Peluang Tinggi",
+                  desc : "Basis konsumen besar, akses baik, prioritas pertama.",
+                },
+                {
+                  dot  : "bg-amber-400",
+                  level: "Lokasi Alternatif",
+                  kelas: "Peluang Sedang",
+                  desc : "Potensi cukup, perlu diferensiasi dan survei lanjut.",
+                },
+                {
+                  dot  : "bg-red-400",
+                  level: "Lokasi Cadangan",
+                  kelas: "Peluang Rendah",
+                  desc : "Kurang direkomendasikan",
+                },
               ] as const
             ).map((item) => (
-              <li key={item.kelas} className="flex items-start gap-3">
+              <li key={item.level} className="flex items-start gap-3">
                 <span className={`w-2.5 h-2.5 rounded-full mt-1 flex-shrink-0 ${item.dot}`} />
                 <div>
-                  <p className="text-sm font-semibold text-gray-700">{item.kelas}</p>
+                  <p className="text-sm font-semibold text-gray-700">{item.level}</p>
+                  <p className="text-xs font-medium text-gray-500 mb-0.5">{item.kelas}</p>
                   <p className="text-xs text-gray-400">{item.desc}</p>
                 </div>
               </li>

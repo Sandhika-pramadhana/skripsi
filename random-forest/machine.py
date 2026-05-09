@@ -4,13 +4,13 @@ ANALISIS PELUANG USAHA SMOOTHIES BAR DI KOTA BANDUNG
 Menggunakan Metode Random Forest
 
 Variabel Independen (Fitur):
-    F1 - Kepadatan penduduk (jiwa/km²)              → MySQL
-    F2 - Skor kedekatan pusat keramaian (terbobot)  → GeoJSON
-    F3 - Tekanan kompetitor (jumlah dalam radius)   → GeoJSON
-    F4 - Aksesibilitas jalan (jarak ke arteri utama)→ GeoJSON
+    F1 - Kepadatan penduduk (jiwa/km2)              -> MySQL
+    F2 - Skor kedekatan pusat keramaian (terbobot)  -> GeoJSON
+    F3 - Tekanan kompetitor (jumlah dalam radius)   -> GeoJSON
+    F4 - Aksesibilitas jalan (jarak ke arteri utama)-> GeoJSON
 
 Output:
-    hasil_analisis_smoothies.txt  — deskripsi naratif per kecamatan
+    hasil_analisis.json           — data per kecamatan untuk FE React
     data_fitur_kecamatan.csv      — tabel fitur + label (lampiran skripsi)
 
 Instalasi dependensi:
@@ -18,6 +18,8 @@ Instalasi dependensi:
 =============================================================================
 """
 
+import sys
+import io
 import numpy as np
 import pandas as pd
 import geopandas as gpd
@@ -32,9 +34,13 @@ import warnings
 warnings.filterwarnings("ignore")
 
 
+if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 
+
+# =============================================================================
 # KONFIGURASI — DB
-
+# =============================================================================
 
 DB_CONFIG = {
     "host"    : "mainline.proxy.rlwy.net",
@@ -44,20 +50,19 @@ DB_CONFIG = {
     "password": "phsqybAnMApgQDlguPZZhpuKelqRVznf",
 }
 
-
 TABEL_PENDUDUK   = "data_kecamatan"
 KOLOM_KECAMATAN  = "kecamatan"
 KOLOM_PENDUDUK   = "jumlah_penduduk"
 
 # Path file GeoJSON
-PATH_KECAMATAN  = "src/data/bandung-kecamatan.json"
-PATH_KOMPETITOR = "src/data/titik-kompetitor.json"
-PATH_MALL       = "src/data/titik-mall.json"
-PATH_SD         = "src/data/titik-sd.json"
-PATH_SMA        = "src/data/titik-sma.json"
-PATH_SMK        = "src/data/titik-smk.json"
-PATH_SMP        = "src/data/titik-smp.json"
-PATH_UNIVERSITAS= "src/data/titik-universitas.json"
+PATH_KECAMATAN   = "src/data/bandung-kecamatan.json"
+PATH_KOMPETITOR  = "src/data/titik-kompetitor.json"
+PATH_MALL        = "src/data/titik-mall.json"
+PATH_SD          = "src/data/titik-sd.json"
+PATH_SMA         = "src/data/titik-sma.json"
+PATH_SMK         = "src/data/titik-smk.json"
+PATH_SMP         = "src/data/titik-smp.json"
+PATH_UNIVERSITAS = "src/data/titik-universitas.json"
 PATH_PERKANTORAN = "src/data/titik-perkantoran.json"
 
 # Path output
@@ -65,26 +70,25 @@ PATH_OUTPUT_JSON = "public/hasil_analisis.json"
 PATH_OUTPUT_CSV  = "data_fitur_kecamatan.csv"
 
 # Parameter model
-RADIUS_POI_M    = 1000.0   # radius pencarian POI dalam meter
-RADIUS_KOMP_M   = 1000.0   # radius pencarian kompetitor dalam meter
-N_ESTIMATORS    = 200      # jumlah pohon Random Forest
-MAX_DEPTH       = 5        # kedalaman maksimum pohon
-RANDOM_STATE    = 42
+RADIUS_POI_M  = 1000.0  # radius pencarian POI dalam meter
+RADIUS_KOMP_M = 1000.0  # radius pencarian kompetitor dalam meter
+N_ESTIMATORS  = 200     # jumlah pohon Random Forest
+MAX_DEPTH     = 5       # kedalaman maksimum pohon
+RANDOM_STATE  = 42
 
 
-
-#  DATA PENDUDUK Mysql
-
+# =============================================================================
+# BAGIAN 1: DATA PENDUDUK — MySQL
+# =============================================================================
 
 def muat_penduduk_mysql() -> pd.DataFrame:
     """
     Memuat data jumlah penduduk per kecamatan dari tabel MySQL.
 
     Struktur tabel minimal yang dibutuhkan:
-        CREATE TABLE penduduk_kecamatan (
+        CREATE TABLE data_kecamatan (
             kecamatan        VARCHAR(100) NOT NULL,
-            jumlah_penduduk  INT NOT NULL,
-            tahun            YEAR          -- opsional, jika multitahun
+            jumlah_penduduk  INT NOT NULL
         );
 
     Returns:
@@ -154,7 +158,7 @@ def muat_data_spasial() -> tuple[gpd.GeoDataFrame, gpd.GeoDataFrame, gpd.GeoData
         (PATH_SMK,         "SMK"),
         (PATH_SMP,         "SMP"),
         (PATH_UNIVERSITAS, "Universitas"),
-        (PATH_PERKANTORAN,  "Perkantoran"),
+        (PATH_PERKANTORAN, "Perkantoran"),
     ]:
         tmp = gpd.read_file(path)
         tmp["kategori"] = kategori
@@ -176,37 +180,39 @@ def muat_data_spasial() -> tuple[gpd.GeoDataFrame, gpd.GeoDataFrame, gpd.GeoData
 
 
 # =============================================================================
-# BAGIAN 3: REKAYASA FITUR (FEATURE ENGINEERING)
+# BAGIAN 3 (REVISI): REKAYASA FITUR — per kecamatan (bukan radius centroid)
 # =============================================================================
 
 def hitung_fitur(
-    gdf_kec   : gpd.GeoDataFrame,
-    gdf_poi   : gpd.GeoDataFrame,
-    gdf_komp  : gpd.GeoDataFrame,
-    df_pddk   : pd.DataFrame,
+    gdf_kec  : gpd.GeoDataFrame,
+    gdf_poi  : gpd.GeoDataFrame,
+    gdf_komp : gpd.GeoDataFrame,
+    df_pddk  : pd.DataFrame,
 ) -> pd.DataFrame:
     """
     Menghitung 4 fitur utama untuk setiap kecamatan.
 
-    Catatan metodologi:
-        F1 — Kepadatan penduduk: jumlah penduduk dibagi luas wilayah (km²).
-             Sumber data: MySQL (BPS Kota Bandung).
-        F2 — Skor POI terbobot: akumulasi bobot titik keramaian dalam
-             radius RADIUS_POI_M dari centroid kecamatan. Bobot lebih
-             tinggi diberikan pada fasilitas dengan daya beli lebih besar
-             (Mall=3.0, Universitas=2.5, SMA/SMK=1.5, SMP=1.0, SD=0.5).
-        F3 — Jumlah kompetitor: hitungan titik usaha sejenis dalam
-             radius RADIUS_KOMP_M dari centroid kecamatan.
-        F4 — Jarak ke pusat kota (proxy aksesibilitas jalan):
-             jarak Euclidean dari centroid ke titik referensi pusat
-             Kota Bandung (UTM approx. alun-alun). Idealnya diganti
-             dengan data jaringan jalan OSM untuk akurasi lebih tinggi.
+    REVISI METODOLOGI (sesuai masukan):
+        F2 — Skor POI terbobot: titik POI dihitung jika berada di DALAM
+             polygon kecamatan (bukan radius dari centroid). Menggunakan
+             geopandas.sjoin dengan predicate='within'.
+        F3 — Jumlah kompetitor: sama seperti F2, dihitung per wilayah
+             polygon kecamatan masing-masing.
+        F4 — Jarak ke pusat kota: tetap menggunakan jarak Euclidean dari
+             centroid kecamatan ke titik referensi pusat Kota Bandung
+             (proxy aksesibilitas jalan utama).
+
+    Catatan skripsi:
+        Pendekatan 'per kecamatan' lebih sesuai untuk analisis agregat
+        wilayah karena menghilangkan bias buffer yang tumpang tindih antar
+        kecamatan bertetangga. Setiap POI dan kompetitor dihitung tepat
+        satu kali untuk kecamatan tempat ia berada.
     """
 
     BOBOT_POI = {
         "Mall"       : 3.0,
         "Universitas": 2.5,
-        "Perkantoran" : 2.0,
+        "Perkantoran": 2.0,
         "SMA"        : 1.5,
         "SMK"        : 1.5,
         "SMP"        : 1.0,
@@ -214,9 +220,30 @@ def hitung_fitur(
     }
     PUSAT_KOTA = Point(789_700, 9_234_200)  # UTM 48S — approx. Alun-alun Bandung
 
+    # -------------------------------------------------------------------------
+    # Spatial join sekali di luar loop — jauh lebih efisien daripada
+    # filter per-baris di dalam loop
+    # -------------------------------------------------------------------------
+
+    # Join POI ke kecamatan (titik DALAM polygon)
+    poi_per_kec = gpd.sjoin(
+        gdf_poi,
+        gdf_kec[["geometry"]].reset_index().rename(columns={"index": "idx_kec"}),
+        how="left",
+        predicate="within",
+    )
+
+    # Join kompetitor ke kecamatan
+    komp_per_kec = gpd.sjoin(
+        gdf_komp,
+        gdf_kec[["geometry"]].reset_index().rename(columns={"index": "idx_kec"}),
+        how="left",
+        predicate="within",
+    )
+
     records = []
 
-    for _, kec in gdf_kec.iterrows():
+    for idx, kec in gdf_kec.iterrows():
         # Deteksi nama kolom kecamatan
         nama = (
             kec.get("nama_kecamatan")
@@ -227,24 +254,30 @@ def hitung_fitur(
             or "—"
         )
         geom     = kec.geometry
-        centroid = geom.centroid
+        centroid = geom.centroid          # UTM 48S
         luas_km2 = geom.area / 1_000_000
 
         # F1: Kepadatan penduduk
-        baris = df_pddk[df_pddk["kecamatan"].str.lower() == nama.lower()]
+        baris       = df_pddk[df_pddk["kecamatan"].str.lower() == nama.lower()]
         jumlah_pddk = float(baris["jumlah_penduduk"].values[0]) if not baris.empty else 0.0
         kepadatan   = jumlah_pddk / luas_km2 if luas_km2 > 0 else 0.0
 
-        # F2: Skor POI terbobot
-        poi_dalam = gdf_poi[gdf_poi.geometry.within(centroid.buffer(RADIUS_POI_M))]
-        skor_poi  = sum(BOBOT_POI.get(r["kategori"], 1.0) for _, r in poi_dalam.iterrows())
+        # F2: Skor POI terbobot — titik DALAM polygon kecamatan ini
+        poi_kec  = poi_per_kec[poi_per_kec["idx_kec"] == idx]
+        skor_poi = sum(BOBOT_POI.get(r["kategori"], 1.0) for _, r in poi_kec.iterrows())
 
-        # F3: Jumlah kompetitor
-        komp_dalam       = gdf_komp[gdf_komp.geometry.within(centroid.buffer(RADIUS_KOMP_M))]
-        jumlah_kompetitor = int(komp_dalam.shape[0])
+        # F3: Jumlah kompetitor — titik DALAM polygon kecamatan ini
+        komp_kec          = komp_per_kec[komp_per_kec["idx_kec"] == idx]
+        jumlah_kompetitor = int(komp_kec.shape[0])
 
-        # F4: Jarak ke pusat kota (meter)
+        # F4: Jarak ke pusat kota (meter) — tetap dari centroid
         jarak_jalan_m = centroid.distance(PUSAT_KOTA)
+
+        # Centroid WGS84 untuk FE React Leaflet
+        centroid_gdf   = gpd.GeoSeries([centroid], crs="EPSG:32748").to_crs("EPSG:4326")
+        centroid_wgs84 = centroid_gdf.iloc[0]
+        centroid_lat   = round(centroid_wgs84.y, 6)
+        centroid_lng   = round(centroid_wgs84.x, 6)
 
         records.append({
             "kecamatan"       : nama,
@@ -254,18 +287,22 @@ def hitung_fitur(
             "F2_skor_poi"     : round(skor_poi, 2),
             "F3_kompetitor"   : jumlah_kompetitor,
             "F4_jarak_jalan_m": round(jarak_jalan_m, 1),
+            "centroid_lat"    : centroid_lat,
+            "centroid_lng"    : centroid_lng,
             "geometry"        : geom,
         })
 
     df = pd.DataFrame(records)
-    print(f"\n[OK] Fitur dihitung untuk {len(df)} kecamatan:")
+    print(f"\n[OK] Fitur dihitung untuk {len(df)} kecamatan (metode: per polygon):")
     print(df[["kecamatan", "F1_kepadatan", "F2_skor_poi",
-              "F3_kompetitor", "F4_jarak_jalan_m"]].to_string(index=False))
+              "F3_kompetitor", "F4_jarak_jalan_m",
+              "centroid_lat", "centroid_lng"]].to_string(index=False))
     return df
 
 
-# LABELING HEURISTIK
-
+# =============================================================================
+# BAGIAN 4: LABELING HEURISTIK
+# =============================================================================
 
 def buat_label_heuristik(df: pd.DataFrame) -> pd.DataFrame:
     """
@@ -280,8 +317,8 @@ def buat_label_heuristik(df: pd.DataFrame) -> pd.DataFrame:
         F4 jarak jalan  15%  (invers — lebih dekat = lebih baik)
 
     Kelas ditentukan berdasarkan kuantil 33 dan 66:
-        Tinggi  : skor komposit ≥ Q66
-        Sedang  : Q33 ≤ skor < Q66
+        Tinggi  : skor komposit >= Q66
+        Sedang  : Q33 <= skor < Q66
         Rendah  : skor < Q33
 
     Catatan skripsi:
@@ -329,12 +366,16 @@ def latih_random_forest(df: pd.DataFrame) -> tuple:
     Melatih Random Forest Classifier.
 
     Konfigurasi model:
-        Algoritma      : Random Forest (Breiman, 2001)
-        n_estimators   : 200 pohon
-        max_depth      : 5 (mencegah overfitting pada data kecil)
+        Algoritma       : Random Forest (Breiman, 2001)
+        n_estimators    : 200 pohon
+        max_depth       : 5 (mencegah overfitting pada data kecil)
         min_samples_leaf: 2
-        class_weight   : balanced (mengatasi ketidakseimbangan kelas)
-        random_state   : 42 (reproduktibilitas)
+        class_weight    : balanced (mengatasi ketidakseimbangan kelas)
+        random_state    : 42 (reproduktibilitas)
+
+    Catatan:
+        centroid_lat dan centroid_lng TIDAK dimasukkan sebagai fitur RF.
+        Keduanya hanya digunakan untuk keperluan visualisasi di FE.
 
     Returns:
         model, le (LabelEncoder), X_test, y_test, fitur_cols
@@ -372,19 +413,33 @@ def latih_random_forest(df: pd.DataFrame) -> tuple:
 
 
 # =============================================================================
-# BAGIAN 6: GENERATE DESKRIPSI NARATIF
+# BAGIAN 6: GENERATE RINGKASAN ANALISIS PER KECAMATAN
 # =============================================================================
 
-def generate_deskripsi(row: pd.Series, model, le, fitur_cols: list) -> str:
+def generate_deskripsi(row: pd.Series, model, le, fitur_cols: list) -> dict:
     """
-    Menghasilkan deskripsi naratif akademik per kecamatan berdasarkan
-    prediksi model Random Forest dan nilai fitur aktual.
+    Menghasilkan ringkasan analisis per kecamatan berdasarkan prediksi
+    model Random Forest.
 
-    Struktur deskripsi (4 paragraf):
-        1. Kondisi umum — kelas peluang dan kepercayaan model
-        2. Analisis pasar — kepadatan penduduk dan skor POI
-        3. Analisis kompetitor — jumlah kompetitor dan interpretasinya
-        4. Rekomendasi strategis — kesimpulan dan saran tindak lanjut
+    Perubahan dari versi sebelumnya (sesuai masukan dosen):
+        - Ditambahkan field 'level_lokasi' sebagai label rekomendasi ringkas:
+              Tinggi -> "Lokasi Utama"
+              Sedang -> "Lokasi Alternatif"
+              Rendah -> "Lokasi Cadangan"
+          Field ini digunakan FE untuk menentukan warna marker peta
+          (hijau = Utama, kuning = Alternatif, merah = Cadangan).
+        - 'kondisi_umum' dan 'analisis_pasar' digabung menjadi
+          'poin_analisis' (list of str) agar tampilan lebih ringkas.
+        - 'rekomendasi' dipersingkat menjadi satu kalimat tindak lanjut.
+        - Ditambahkan 'centroid_lat' dan 'centroid_lng' (WGS84) untuk
+          visualisasi marker centroid di React Leaflet tanpa kalkulasi ulang.
+
+    Returns:
+        dict dengan key:
+            kecamatan, kelas, level_lokasi, kepercayaan_persen,
+            kepadatan_jiwa_km2, skor_poi, jumlah_kompetitor, jarak_jalan_km,
+            poin_analisis (list), analisis_kompetitor (str), rekomendasi (str),
+            centroid_lat (float), centroid_lng (float)
     """
 
     X_row     = np.array([[row["F1_kepadatan"], row["F2_skor_poi"],
@@ -400,118 +455,77 @@ def generate_deskripsi(row: pd.Series, model, le, fitur_cols: list) -> str:
     komp      = int(row["F3_kompetitor"])
     jarak_jl  = round(row["F4_jarak_jalan_m"] / 1000, 1)
 
-    # ── Narasi kelas TINGGI ──────────────────────────────────────────────────
+    # -- Level lokasi berdasarkan kelas ---------------------------------------
+    LEVEL_MAP = {
+        "Tinggi": "Lokasi Utama",
+        "Sedang": "Lokasi Alternatif",
+        "Rendah": "Lokasi Cadangan",
+    }
+    level_lokasi = LEVEL_MAP[kelas]
+
+    # -- Poin analisis --------------------------------------------------------
     if kelas == "Tinggi":
-        kondisi_umum = (
-            f"Kecamatan {nama} menunjukkan peluang usaha yang tinggi "
-            f"untuk pendirian smoothies bar berdasarkan analisis model "
-            f"Random Forest dengan tingkat kepercayaan {conf}%."
-        )
-        analisis_pasar = (
-            f"Wilayah ini memiliki kepadatan penduduk sebesar "
-            f"{kepadatan:,.0f} jiwa/km², yang mengindikasikan ketersediaan "
-            f"basis konsumen yang memadai. Skor kedekatan terhadap pusat "
-            f"keramaian tercatat sebesar {skor_poi:.1f}, mencerminkan "
-            f"aksesibilitas yang baik terhadap titik-titik pembangkit "
-            f"aktivitas seperti mall, kampus, dan sekolah menengah dalam "
-            f"radius 1 km dari centroid wilayah."
-        )
+        poin_analisis = [
+            f"Peluang usaha tinggi — kepercayaan model {conf}%",
+            f"Kepadatan penduduk {kepadatan:,.0f} jiwa/km2, basis konsumen besar",
+            f"Skor POI {skor_poi:.1f}, dekat mall, kampus, dan sekolah menengah",
+            f"Jarak ke jalan arteri utama +-{jarak_jl} km, akses konsumen mudah",
+        ]
         analisis_kompetitor = (
-            f"Teridentifikasi {komp} usaha kompetitor sejenis dalam radius 1 km. "
-        ) + (
-            "Tingkat persaingan ini tergolong wajar dan mengindikasikan "
-            "adanya permintaan pasar yang sudah terbukti di kawasan ini."
+            f"{komp} kompetitor dalam radius 1 km — persaingan wajar, permintaan terbukti."
             if komp <= 3 else
-            "Meskipun persaingan cukup ketat, kepadatan konsumen di wilayah "
-            "ini berpotensi mengakomodasi pemain baru dengan diferensiasi "
-            "produk yang tepat."
+            f"{komp} kompetitor dalam radius 1 km — diferensiasi produk diperlukan."
         )
         rekomendasi = (
-            f"Berdasarkan hasil analisis, Kecamatan {nama} direkomendasikan "
-            f"sebagai prioritas pertama dalam penetapan lokasi usaha. "
-            f"Jarak rata-rata ke jaringan jalan utama sebesar {jarak_jl} km "
-            f"mendukung kemudahan akses bagi konsumen. Strategi yang "
-            f"disarankan mencakup pemilihan lokasi di koridor jalan dengan "
-            f"intensitas pejalan kaki tinggi, serta penguatan identitas "
-            f"merek untuk membedakan diri dari kompetitor yang ada."
+            "Prioritaskan lokasi di koridor pejalan kaki tinggi dan perkuat identitas merek."
         )
 
-    # ── Narasi kelas SEDANG ──────────────────────────────────────────────────
     elif kelas == "Sedang":
-        kondisi_umum = (
-            f"Kecamatan {nama} memiliki peluang usaha yang moderat "
-            f"untuk pendirian smoothies bar berdasarkan model Random Forest "
-            f"dengan tingkat kepercayaan {conf}%."
-        )
-        analisis_pasar = (
-            f"Kepadatan penduduk di wilayah ini sebesar {kepadatan:,.0f} "
-            f"jiwa/km² menunjukkan potensi pasar yang ada, namun belum "
-            f"setinggi kecamatan dengan peringkat tertinggi. Skor POI "
-            f"sebesar {skor_poi:.1f} mengindikasikan kehadiran beberapa "
-            f"titik pembangkit aktivitas yang dapat menjadi sumber lalu "
-            f"lintas konsumen."
-        )
+        poin_analisis = [
+            f"Peluang usaha moderat — kepercayaan model {conf}%",
+            f"Kepadatan penduduk {kepadatan:,.0f} jiwa/km2, potensi pasar cukup",
+            f"Skor POI {skor_poi:.1f}, beberapa titik aktivitas tersedia",
+            f"Jarak ke jalan arteri utama +-{jarak_jl} km, perlu evaluasi lapangan",
+        ]
         analisis_kompetitor = (
-            f"Terdapat {komp} kompetitor dalam radius 1 km dari pusat kecamatan. "
-        ) + (
-            "Ruang pasar masih terbuka karena tingkat persaingan yang belum jenuh."
+            f"{komp} kompetitor dalam radius 1 km — ruang pasar masih terbuka."
             if komp <= 2 else
-            "Pelaku usaha baru perlu mempertimbangkan strategi diferensiasi "
-            "yang kuat agar dapat bersaing secara efektif."
+            f"{komp} kompetitor dalam radius 1 km — butuh strategi diferensiasi kuat."
         )
         rekomendasi = (
-            f"Kecamatan {nama} dapat dipertimbangkan sebagai pilihan alternatif "
-            f"apabila lokasi prioritas pertama tidak tersedia. Aksesibilitas "
-            f"jalan dengan jarak rata-rata {jarak_jl} km ke arteri utama perlu "
-            f"dievaluasi lebih lanjut melalui survei lapangan. Disarankan untuk "
-            f"melakukan studi kelayakan mikro pada subwilayah dengan konsentrasi "
-            f"sekolah menengah atau perguruan tinggi yang lebih tinggi."
+            "Fokus pada subwilayah dengan konsentrasi sekolah menengah atau kampus."
         )
 
-    # ── Narasi kelas RENDAH ──────────────────────────────────────────────────
-    else:
-        kondisi_umum = (
-            f"Berdasarkan model Random Forest, Kecamatan {nama} tergolong "
-            f"memiliki peluang usaha yang rendah untuk pendirian smoothies bar, "
-            f"dengan tingkat kepercayaan prediksi sebesar {conf}%."
-        )
-        analisis_pasar = (
-            f"Kepadatan penduduk sebesar {kepadatan:,.0f} jiwa/km² dan skor "
-            f"kedekatan POI sebesar {skor_poi:.1f} mengindikasikan basis konsumen "
-            f"dan intensitas aktivitas yang relatif terbatas dibandingkan "
-            f"kecamatan lain di Kota Bandung."
-        )
+    else:  # Rendah
+        poin_analisis = [
+            f"Peluang usaha rendah — kepercayaan model {conf}%",
+            f"Kepadatan penduduk {kepadatan:,.0f} jiwa/km2, basis konsumen terbatas",
+            f"Skor POI {skor_poi:.1f}, aktivitas pembangkit konsumen minim",
+            f"Jarak ke jalan arteri utama +-{jarak_jl} km, lalu lintas spontan rendah",
+        ]
         analisis_kompetitor = (
-            f"Ditemukan {komp} kompetitor dalam radius 1 km. "
-        ) + (
-            "Minimnya kompetitor di wilayah ini konsisten dengan rendahnya "
-            "permintaan pasar yang terdeteksi oleh model."
+            f"{komp} kompetitor dalam radius 1 km — konsisten dengan permintaan rendah."
             if komp <= 1 else
-            "Jumlah kompetitor yang ada menunjukkan bahwa pasar di wilayah ini "
-            "sudah terlayani namun dengan volume yang terbatas."
+            f"{komp} kompetitor dalam radius 1 km — pasar terlayani, volume terbatas."
         )
         rekomendasi = (
-            f"Wilayah ini tidak direkomendasikan sebagai lokasi prioritas "
-            f"pembukaan usaha smoothies bar pada tahap awal. Jarak ke jaringan "
-            f"jalan utama sebesar {jarak_jl} km turut mengurangi potensi lalu "
-            f"lintas konsumen spontan. Apabila terdapat pertimbangan khusus "
-            f"(misalnya ketersediaan lahan atau kemitraan strategis), disarankan "
-            f"untuk melengkapi analisis dengan data primer berupa survei konsumen "
-            f"langsung sebelum mengambil keputusan investasi."
+            "Tidak disarankan sebagai prioritas; lengkapi dengan survei primer sebelum investasi."
         )
 
     return {
-        "kecamatan"           : nama,
-        "kelas"               : kelas,
-        "kepercayaan_persen"  : conf,
-        "kepadatan_jiwa_km2"  : kepadatan,
-        "skor_poi"            : skor_poi,
-        "jumlah_kompetitor"   : komp,
-        "jarak_jalan_km"      : jarak_jl,
-        "kondisi_umum"        : kondisi_umum,
-        "analisis_pasar"      : analisis_pasar,
-        "analisis_kompetitor" : analisis_kompetitor,
-        "rekomendasi"         : rekomendasi,
+        "kecamatan"          : nama,
+        "kelas"              : kelas,
+        "level_lokasi"       : level_lokasi,
+        "kepercayaan_persen" : conf,
+        "kepadatan_jiwa_km2" : kepadatan,
+        "skor_poi"           : skor_poi,
+        "jumlah_kompetitor"  : komp,
+        "jarak_jalan_km"     : jarak_jl,
+        "poin_analisis"      : poin_analisis,
+        "analisis_kompetitor": analisis_kompetitor,
+        "rekomendasi"        : rekomendasi,
+        "centroid_lat"       : float(row["centroid_lat"]),  # WGS84 lat untuk FE
+        "centroid_lng"       : float(row["centroid_lng"]),  # WGS84 lng untuk FE
     }
 
 
@@ -524,11 +538,11 @@ def jalankan_pipeline():
     Menjalankan seluruh pipeline:
         1. Muat data penduduk dari MySQL
         2. Muat data spasial dari GeoJSON
-        3. Hitung fitur per kecamatan
+        3. Hitung fitur per kecamatan (+ centroid WGS84)
         4. Buat label heuristik
         5. Latih Random Forest
-        6. Generate deskripsi naratif
-        7. Simpan output .txt dan .csv
+        6. Generate ringkasan analisis
+        7. Simpan output JSON dan CSV
     """
 
     print("=" * 60)
@@ -550,8 +564,8 @@ def jalankan_pipeline():
     # 5. Latih model
     model, le, X_test, y_test, fitur_cols = latih_random_forest(df_labeled)
 
-    # 6. Generate deskripsi — diurutkan dari skor komposit tertinggi
-    print("\n[OK] Membuat deskripsi naratif per kecamatan...")
+    # 6. Generate ringkasan — diurutkan dari skor komposit tertinggi
+    print("\n[OK] Membuat ringkasan analisis per kecamatan...")
     df_sorted = df_labeled.sort_values("skor_komposit", ascending=False)
     hasil_json = [
         generate_deskripsi(row, model, le, fitur_cols)
@@ -562,13 +576,14 @@ def jalankan_pipeline():
     import json
     with open(PATH_OUTPUT_JSON, "w", encoding="utf-8") as f:
         json.dump(hasil_json, f, ensure_ascii=False, indent=2)
-    print(f"[OK] JSON tersimpan      : {PATH_OUTPUT_JSON}")
+    print(f"[OK] JSON tersimpan       : {PATH_OUTPUT_JSON}")
 
     # 7b. Simpan tabel fitur ke .csv (lampiran skripsi)
     cols_csv = [
         "kecamatan", "luas_km2", "jumlah_penduduk",
         "F1_kepadatan", "F2_skor_poi", "F3_kompetitor",
         "F4_jarak_jalan_m", "skor_komposit", "label_peluang",
+        "centroid_lat", "centroid_lng",
     ]
     df_labeled[cols_csv].to_csv(PATH_OUTPUT_CSV, index=False, encoding="utf-8-sig")
     print(f"[OK] Tabel fitur tersimpan: {PATH_OUTPUT_CSV}")
@@ -576,10 +591,14 @@ def jalankan_pipeline():
     # Preview kecamatan peringkat 1
     top1 = hasil_json[0]
     print("\n" + "=" * 60)
-    print(f"PREVIEW — {top1['kecamatan'].upper()} ({top1['kelas']})")
+    print(f"PREVIEW — {top1['kecamatan'].upper()}")
+    print(f"Level   : {top1['level_lokasi']}  |  Kelas: {top1['kelas']}")
+    print(f"Centroid: {top1['centroid_lat']}, {top1['centroid_lng']}")
     print("=" * 60)
-    print(top1["kondisi_umum"])
-    print(top1["rekomendasi"])
+    for poin in top1["poin_analisis"]:
+        print(f"  - {poin}")
+    print(f"  Kompetitor : {top1['analisis_kompetitor']}")
+    print(f"  Rekomendasi: {top1['rekomendasi']}")
 
     return df_labeled, model, le
 

@@ -616,6 +616,90 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
+        "coordinates": [107.662161, -6.937366]
+      },
+      "properties": {
+        "name": "SMK Setia Bhakti",
+        "category": "SMK",
+        "address": "Jl. Kawaluyaan No.12, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.687119, -6.9641933]
+      },
+      "properties": {
+        "name": "SMK Muhammadiyah 3 Bandung",
+        "category": "SMK",
+        "address": "Jl. Gedebage Selatan No.20, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.6624181, -6.9469712]
+      },
+      "properties": {
+        "name": "SMK Bumi Siliwangi",
+        "category": "SMK",
+        "address": "Jl. Rancabolang No.48B, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.659982, -6.9406388]
+      },
+      "properties": {
+        "name": "SMKN 7 Kota Bandung",
+        "category": "SMK",
+        "address": "Jl. Soekarno-Hatta No.596, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.6578942, -6.9642737]
+      },
+      "properties": {
+        "name": "SMKN 10 Bandung",
+        "category": "SMK",
+        "address": "Jl. Cijawura Hilir No.339, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.6054735, -6.861295699999999]
+      },
+      "properties": {
+        "name": "SMK Bakti Mandiri, Bandung",
+        "category": "SMK",
+        "address": "Jl. Ciumbuleuit Atas No.48, Ciumbuleuit, Kec. Cidadap, Kota Bandung, Jawa Barat 40142"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.7047000, -6.9109200]
+      },
+      "properties": {
+        "name": "SMK Gantra",
+        "category": "SMK",
+        "address": "Pasirjati, Ujung Berung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
         "coordinates": [
           107.62858360000001,
           -6.9412489

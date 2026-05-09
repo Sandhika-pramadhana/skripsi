@@ -17,13 +17,13 @@ import {
 interface HasilAnalisis {
   kecamatan: string;
   kelas: "Tinggi" | "Sedang" | "Rendah";
+  level_lokasi: "Lokasi Utama" | "Lokasi Alternatif" | "Lokasi Cadangan";
   kepercayaan_persen: number;
   kepadatan_jiwa_km2: number;
   skor_poi: number;
   jumlah_kompetitor: number;
   jarak_jalan_km: number;
-  kondisi_umum: string;
-  analisis_pasar: string;
+  poin_analisis: string[];
   analisis_kompetitor: string;
   rekomendasi: string;
 }
@@ -36,6 +36,7 @@ const KELAS_CONFIG = {
     text     : "text-emerald-700",
     badge    : "bg-emerald-100 text-emerald-700",
     bar      : "bg-emerald-500",
+    dot      : "bg-emerald-500",
     Icon     : CheckCircle2,
     iconColor: "text-emerald-500",
     ring     : "ring-emerald-200",
@@ -47,6 +48,7 @@ const KELAS_CONFIG = {
     text     : "text-amber-700",
     badge    : "bg-amber-100 text-amber-700",
     bar      : "bg-amber-400",
+    dot      : "bg-amber-400",
     Icon     : AlertCircle,
     iconColor: "text-amber-500",
     ring     : "ring-amber-200",
@@ -58,10 +60,17 @@ const KELAS_CONFIG = {
     text     : "text-red-700",
     badge    : "bg-red-100 text-red-700",
     bar      : "bg-red-400",
+    dot      : "bg-red-400",
     Icon     : XCircle,
     iconColor: "text-red-500",
     ring     : "ring-red-200",
   },
+} as const;
+
+const LEVEL_CONFIG = {
+  "Lokasi Utama"      : "bg-emerald-500",
+  "Lokasi Alternatif" : "bg-amber-400",
+  "Lokasi Cadangan"   : "bg-red-400",
 } as const;
 
 function KartuFitur({
@@ -101,30 +110,6 @@ function KartuFitur({
   );
 }
 
-function KartuNarasi({
-  nomor,
-  label,
-  teks,
-}: {
-  nomor: string;
-  label: string;
-  teks: string;
-}) {
-  return (
-    <div className="flex gap-4">
-      <div className="flex-shrink-0 w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center text-xs font-bold text-gray-400">
-        {nomor}
-      </div>
-      <div className="flex-1 pb-5 border-b border-gray-100 last:border-0 last:pb-0">
-        <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-1.5">
-          {label}
-        </p>
-        <p className="text-sm text-gray-600 leading-relaxed">{teks}</p>
-      </div>
-    </div>
-  );
-}
-
 function ResultContent() {
   const router       = useRouter();
   const searchParams = useSearchParams();
@@ -151,7 +136,6 @@ function ResultContent() {
         );
         if (found) {
           setHasil(found);
-          // Micro-delay supaya browser sempat paint dulu sebelum animasi jalan
           setTimeout(() => setVisible(true), 50);
         } else {
           setError(`Kecamatan "${namaKec}" tidak ditemukan dalam data.`);
@@ -178,11 +162,8 @@ function ResultContent() {
         <div className="text-center max-w-sm">
           <XCircle className="w-10 h-10 text-red-400 mx-auto mb-3" />
           <p className="text-gray-600 text-sm">{error || "Data tidak tersedia."}</p>
-          <button
-            onClick={() => router.back()}
-            className="mt-4 text-sm text-green-600 hover:underline"
-          >
-            ← Kembali
+          <button onClick={() => router.back()} className="mt-4 text-sm text-green-600 hover:underline">
+            &larr; Kembali
           </button>
         </div>
       </div>
@@ -191,10 +172,7 @@ function ResultContent() {
 
   const cfg = KELAS_CONFIG[hasil.kelas];
 
-  // Kalau visible false, sembunyiin semua (sebelum animasi mulai)
-  if (!visible) {
-    return <div className="min-h-screen bg-gray-50" />;
-  }
+  if (!visible) return <div className="min-h-screen bg-gray-50" />;
 
   return (
     <div className="min-h-screen bg-gray-50 py-10 px-4">
@@ -215,7 +193,7 @@ function ResultContent() {
           className={`fade-up bg-gradient-to-br ${cfg.gradient} rounded-2xl shadow-sm p-6`}
           style={{ animationDelay: "80ms" }}
         >
-          <div className="flex items-start justify-between mb-4">
+          <div className="flex items-start justify-between mb-3">
             <div>
               <p className="text-xs font-semibold text-white/60 uppercase tracking-widest mb-1">
                 Hasil Analisis Random Forest
@@ -230,11 +208,14 @@ function ResultContent() {
             </span>
           </div>
 
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/20 text-white mb-5">
-            <cfg.Icon className="w-4 h-4" />
-            Peluang Usaha {hasil.kelas}
+          {/* Level lokasi badge */}
+          <div className="mb-5">
+            <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold bg-white/20 text-white`}>
+              ● {hasil.level_lokasi}
+            </span>
           </div>
 
+          {/* Progress bar kepercayaan */}
           <div>
             <div className="flex justify-between text-xs text-white/60 mb-1.5">
               <span>Kepercayaan Model</span>
@@ -258,63 +239,70 @@ function ResultContent() {
             Data Variabel
           </p>
           <div className="grid grid-cols-2 gap-3">
-            <KartuFitur
-              icon={Users}
-              label="Kepadatan Penduduk"
-              nilai={hasil.kepadatan_jiwa_km2?.toLocaleString("id-ID")}
-              satuan="jiwa/km²"
-              deskripsi="Basis konsumen potensial"
-              delay={200}
-            />
-            <KartuFitur
-              icon={MapPin}
-              label="Skor Keramaian"
-              nilai={hasil.skor_poi}
-              satuan="poin"
-              deskripsi="Mall, kampus, sekolah, perkantoran"
-              delay={240}
-            />
-            <KartuFitur
-              icon={Store}
-              label="Kompetitor"
-              nilai={hasil.jumlah_kompetitor}
-              satuan="usaha"
-              deskripsi="Dalam radius 1 km"
-              delay={280}
-            />
-            <KartuFitur
-              icon={Navigation}
-              label="Jarak Jalan"
-              nilai={hasil.jarak_jalan_km}
-              satuan="km"
-              deskripsi="Ke arteri utama"
-              delay={320}
-            />
+            <KartuFitur icon={Users}     label="Kepadatan Penduduk" nilai={hasil.kepadatan_jiwa_km2?.toLocaleString("id-ID")} satuan="jiwa/km2" deskripsi="Basis konsumen potensial"        delay={200} />
+            <KartuFitur icon={MapPin}    label="Skor Keramaian"     nilai={hasil.skor_poi}          satuan="poin"        deskripsi="Mall, kampus, sekolah, perkantoran" delay={240} />
+            <KartuFitur icon={Store}     label="Kompetitor"          nilai={hasil.jumlah_kompetitor} satuan="usaha"       deskripsi="Dalam radius 1 km"                 delay={280} />
+            <KartuFitur icon={Navigation} label="Jarak Jalan"        nilai={hasil.jarak_jalan_km}   satuan="km"          deskripsi="Ke arteri utama"                   delay={320} />
           </div>
         </section>
 
-        {/* Analisis naratif */}
+        {/* Analisis — poin-poin */}
         <section
           className="fade-up bg-white rounded-2xl border border-gray-100 shadow-sm p-6"
           style={{ animationDelay: "380ms" }}
         >
           <div className="flex items-center gap-2 mb-5">
             <TrendingUp className={`w-4 h-4 ${cfg.iconColor}`} />
-            <p className="font-semibold text-gray-700 text-sm">Analisis Lengkap</p>
+            <p className="font-semibold text-gray-700 text-sm">Analisis</p>
           </div>
-          <div className="space-y-5">
-            <KartuNarasi nomor="1" label="Kondisi Umum"        teks={hasil.kondisi_umum} />
-            <KartuNarasi nomor="2" label="Analisis Pasar"      teks={hasil.analisis_pasar} />
-            <KartuNarasi nomor="3" label="Analisis Kompetitor" teks={hasil.analisis_kompetitor} />
-            <KartuNarasi nomor="4" label="Rekomendasi"         teks={hasil.rekomendasi} />
+
+          <ul className="space-y-3 mb-6">
+            {hasil.poin_analisis.map((poin, i) => (
+              <li key={i} className="flex items-start gap-3">
+                <span className={`mt-1.5 w-2 h-2 rounded-full flex-shrink-0 ${cfg.dot}`} />
+                <span className="text-sm text-gray-600 leading-relaxed">{poin}</span>
+              </li>
+            ))}
+          </ul>
+
+          {/* Divider */}
+          <div className="border-t border-gray-100 pt-5 space-y-5">
+
+            {/* Analisis Kompetitor */}
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center text-xs font-bold text-gray-400">
+                K
+              </div>
+              <div className="flex-1">
+                <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-1.5">
+                  Analisis Kompetitor
+                </p>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  {hasil.analisis_kompetitor}
+                </p>
+              </div>
+            </div>
+
+            {/* Rekomendasi */}
+            <div className={`flex gap-4 rounded-xl ${cfg.softBg} ${cfg.border} border p-4`}>
+              <div className={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white ${LEVEL_CONFIG[hasil.level_lokasi]}`}>
+                R
+              </div>
+              <div className="flex-1">
+                <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-1.5">
+                  Rekomendasi · {hasil.level_lokasi}
+                </p>
+                <p className={`text-sm font-medium leading-relaxed ${cfg.text}`}>
+                  {hasil.rekomendasi}
+                </p>
+              </div>
+            </div>
+
           </div>
         </section>
 
         {/* Tombol aksi */}
-        <div
-          className="fade-up pb-6"
-          style={{ animationDelay: "460ms" }}
-        >
+        <div className="fade-up pb-6" style={{ animationDelay: "460ms" }}>
           <button
             onClick={() => router.push("/dashboard")}
             className="w-full py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-xl text-sm font-medium transition-colors"
