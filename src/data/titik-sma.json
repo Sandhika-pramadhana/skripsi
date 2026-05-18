@@ -259,7 +259,7 @@
       },
       "properties": {
         "osm_id": "4328166911",
-        "name": "TK SD SMP SMA Santa Angela Bandung",
+        "name": " SMA Santa Angela Bandung",
         "barrier": null,
         "highway": null,
         "ref": null,
@@ -869,6 +869,123 @@
         "name": "SMAN 15 Bandung",
         "category": "SMA",
         "address": "Jl. Sarimanis No.1, Sarijadi, Kec. Sukasari, Kota Bandung, Jawa Barat 40151"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.56486160217833, -6.9385418768379425]
+      },
+      "properties": {
+        "name": "SMA BPK Penabur Holis",
+        "category": "SMA",
+        "kecamatan": "Bandung Kulon",
+        "address": "Kecamatan Bandung Kulon, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.57451573062022, -6.9188234134021664]
+      },
+      "properties": {
+        "name": "SMA Citra Cemara",
+        "category": "SMA",
+        "kecamatan": "Bandung Kulon",
+        "address": "Kecamatan Bandung Kulon, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.56945980979538, -6.915670177570909]
+      },
+      "properties": {
+        "name": "SMA Pasundan 4 Bandung",
+        "category": "SMA",
+        "kecamatan": "Bandung Kulon",
+        "address": "Kecamatan Bandung Kulon, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.56535171350326, -6.927189084811888]
+      },
+      "properties": {
+        "name": "SMA YPKKP Bandung",
+        "category": "SMA",
+        "kecamatan": "Bandung Kulon",
+        "address": "Kecamatan Bandung Kulon, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.58277188281284, -6.905471115972408]
+      },
+      "properties": {
+        "name": "SMA Angkasa Husein Sastranegara",
+        "category": "SMA",
+        "kecamatan": "Cicendo",
+        "address": "Kecamatan Cicendo, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.59974531655665, -6.903350892601227]
+      },
+      "properties": {
+        "name": "SMA KRISTEN PAULUS",
+        "category": "SMA",
+        "kecamatan": "Cicendo",
+        "address": "Kecamatan Cicendo, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.58894061164915, -6.897495913496317]
+      },
+      "properties": {
+        "name": "Sekolah Kristen Trimulia",
+        "category": "SMA",
+        "kecamatan": "Cicendo",
+        "address": "Kecamatan Cicendo, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.6044069828248, -6.9107361735489]
+      },
+      "properties": {
+        "name": "SLB Negeri Cicendo",
+        "category": "SLB",
+        "kecamatan": "Cicendo",
+        "address": "Kecamatan Cicendo, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.59423671286866, -6.912232798582498]
+      },
+      "properties": {
+        "name": "Sekolah Kristen Bina Bakti",
+        "category": "SMA",
+        "kecamatan": "Cicendo",
+        "address": "Kecamatan Cicendo, Kota Bandung"
       }
     },
     {

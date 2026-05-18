@@ -467,28 +467,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          107.5998,
-          -6.9325
-        ]
-      },
-      "properties": {
-        "osm_id": null,
-        "name": "NARA Smoothie Bar",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
-        "address": "Jl. Peta No.67, Astanaanyar",
-        "is_in": "Bandung",
-        "place": null,
-        "man_made": null,
-        "other_tags": "\"amenity\"=>\"fast_food\",\"cuisine\"=>\"smoothie_bowl\""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           107.6145,
           -6.9038
         ]
@@ -778,41 +756,6 @@
         "is_in": "Bandung Wetan, Bandung",
         "other_tags": "\"amenity\"=>\"juice_bar\""
       }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          107.62078609329016,
-          -6.917979463717316
-        ]
-      },
-      "properties": {
-        "osm_id": null,
-        "name": "Berasa Smoothies Bandung",
-        "address": "Jl. Baranang Siang, Kebon Pisang, Sumurbandung, Bandung City, West Java 40112",
-        "is_in": "Sumur Bandung, Bandung",
-        "other_tags": "\"amenity\"=>\"juice_bar\",\"cuisine\"=>\"smoothie\""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          107.61527428800991,
-          -6.914078344507933
-        ]
-      },
-      "properties": {
-        "osm_id": null,
-        "name": "Mare Fruit Club",
-        "address": "Jl. Jawa No.34, Merdeka, Kec. Sumur Bandung, Kota Bandung, Jawa Barat 40113",
-        "is_in": "Sumur Bandung, Bandung",
-        "other_tags": "\"amenity\"=>\"juice_bar\",\"cuisine\"=>\"fruit,juice\""
-      },
-      "id": 38
     },
     {
       "type": "Feature",
@@ -1797,6 +1740,183 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          107.60079966040948,
+          -6.928732090607973
+        ]
+      },
+      "properties": {
+        "name": "AA JUICE - Astanaanyar",
+        "category": "Minuman",
+        "kecamatan": "Astana Anyar",
+        "address": "Kecamatan Astana Anyar, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.60045275037311,
+          -6.927819080765241
+        ]
+      },
+      "properties": {
+        "name": "Susu Murni Ikhtiar",
+        "category": "Minuman",
+        "kecamatan": "Astana Anyar",
+        "address": "Kecamatan Astana Anyar, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.59885237063503,
+          -6.9222874403422106
+        ]
+      },
+      "properties": {
+        "name": "Susu Murni Mustika - Astana Anyar",
+        "category": "Minuman",
+        "kecamatan": "Astana Anyar",
+        "address": "Kecamatan Astana Anyar, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.59898792104234,
+          -6.921325928955788
+        ]
+      },
+      "properties": {
+        "name": "My Juice",
+        "category": "Minuman",
+        "kecamatan": "Astana Anyar",
+        "address": "Kecamatan Astana Anyar, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6007560834055,
+          -6.921336414959227
+        ]
+      },
+      "properties": {
+        "name": "Dunia juice",
+        "category": "Minuman",
+        "kecamatan": "Astana Anyar",
+        "address": "Kecamatan Astana Anyar, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.59360088770948,
+          -6.9209669533541724
+        ]
+      },
+      "properties": {
+        "name": "JOOZ BAR",
+        "category": "Minuman",
+        "kecamatan": "Astana Anyar",
+        "address": "Kecamatan Astana Anyar, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.64495745027776,
+          -6.898530230376753
+        ]
+      },
+      "properties": {
+        "name": "Kedai JUS Haus Skali",
+        "category": "Minuman",
+        "kecamatan": "Cibeunying Kidul",
+        "address": "Kecamatan Cibeunying Kidul, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.64453688478125,
+          -6.897239709892543
+        ]
+      },
+      "properties": {
+        "name": "Planet Juice",
+        "category": "Minuman",
+        "kecamatan": "Cibeunying Kidul",
+        "address": "Kecamatan Cibeunying Kidul, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.64438395187344,
+          -6.895911229250736
+        ]
+      },
+      "properties": {
+        "name": "Juice Doeloe x KatSUGHOI",
+        "category": "Minuman",
+        "kecamatan": "Cibeunying Kidul",
+        "address": "Kecamatan Cibeunying Kidul, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.63997672641335,
+          -6.908608494426367
+        ]
+      },
+      "properties": {
+        "name": "Asber 31 Juice & Ice Cream",
+        "category": "Minuman",
+        "kecamatan": "Cibeunying Kidul",
+        "address": "Kecamatan Cibeunying Kidul, Kota Bandung"
+      },
+      "id": 105
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.64383758637149,
+          -6.900298406776493
+        ]
+      },
+      "properties": {
+        "name": "Haus!",
+        "category": "Minuman",
+        "kecamatan": "Cibeunying Kidul",
+        "address": "Kecamatan Cibeunying Kidul, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           107.584432,
           -6.931245
         ]
@@ -1880,7 +2000,7 @@
         "is_in": "Bojongloa Kaler, Bandung",
         "other_tags": "\"amenity\"=>\"cafe\",\"cuisine\"=>\"tea;juice\",\"brand\"=>\"Tianlala\""
       },
-      "id": 68
+      "id": 101
     },
     {
       "type": "Feature",
@@ -2149,6 +2269,7 @@
           -6.9201104
         ]
       },
+      
       "properties": {
         "name": "JUICE PACAR",
         "address": "Jl. Pacar No.6, Samoja",
@@ -2191,20 +2312,459 @@
     },
     {
       "type": "Feature",
+      "properties": {
+        "name": "Nyonya Manis Drinking Club",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Sumur Bandung"
+      },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          107.612845,
-          -6.914562
-        ]
-      },
+        "coordinates": [107.6097669974338, -6.919282382687138]
+      }
+    },
+    {
+      "type": "Feature",
       "properties": {
-        "name": "Mare Fruit Club",
-        "address": "Jl. Jawa No.34, Merdeka",
-        "is_in": "Sumur Bandung, Bandung",
-        "other_tags": "\"amenity\"=>\"juice_bar\",\"cuisine\"=>\"smoothies;healthy_food\",\"concept\"=>\"beach_club\""
+        "name": "Kopi Toko Djawa (Braga)",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Sumur Bandung"
       },
-      "id": 87
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.60915760542129, -6.917339848072873]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Koffie Braga St.",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Sumur Bandung"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.60941500276259, -6.917450187848339]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Feel Matcha - Braga Bandung",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Sumur Bandung"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.60940813741207, -6.917167979369002]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tanatap Coffee Braga",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Sumur Bandung"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.60911627544286, -6.916904223857425]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bottle Avenue Braga Citywalk",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Sumur Bandung"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.60908261296515, -6.91690537618418]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Umbira",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Sumur Bandung"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.60923583527749, -6.916767096953234]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Braga Art Cafe",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Sumur Bandung"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.60938325371436, -6.917067854228804]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Red District",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Sumur Bandung"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.60928099600089, -6.9164224379013275]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "I Am Beer",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Sumur Bandung"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.60879891339825, -6.916334483678182]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Braga Sky 1957",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Sumur Bandung"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.60866340909912, -6.91637328701394]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Freezh by NIION Braga",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Sumur Bandung"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.60954924626283, -6.918043662723285]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mixue Braga",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Sumur Bandung"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.60942776906576, -6.918209885164532]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sweet Cantina",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Sumur Bandung"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.60929467862238, -6.91726892840091]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Milk n Crumbs Braga",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Sumur Bandung"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.60967244325875, -6.918693185030319]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Jurnal Risa Coffee",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Sumur Bandung"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.60952776743902, -6.91865727945437]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tiramisusu by Chocomory, Braga",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Sumur Bandung"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.60993768226156, -6.919359432444524]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Toko Tahilalats",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Sumur Bandung"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.60975377242835, -6.919113067107381]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Oseebo Matcha Nook Saad",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Sumur Bandung"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.61305689392617, -6.9190083860520994]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Jun Matcha Club",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Sumur Bandung"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.61601805273514, -6.915600148997215]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "HomageMakes Coffee & Tea Lounge",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Sumur Bandung"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.6189792115441, -6.9177303000389445]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Noom Ice Cream",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Sumur Bandung"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.62831738228317, -6.912526936695952]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Let's Go Gelato Bengawan",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Bandung Wetan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.63136416171261, -6.911197139532057]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Gelato di Lenno Pasar Cihapit Bandung",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Bandung Wetan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.62326744090718, -6.9080034781146376]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Scoop & Skoops Cihapit",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Bandung Wetan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.62174302827519, -6.908132896884546]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Two Cents",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Bandung Wetan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.6205026427791, -6.907186078061392]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kopi Romantis Cihapit",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Bandung Wetan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.62017430543892, -6.908008724020362]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Toko Kopi Jaya, Jalan Aceh - Bandung",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Bandung Wetan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.6254723205068, -6.91021870914273]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tiramisusu",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Bandung Wetan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.63007394848636, -6.911602219490461]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nekocha Matcha",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Bandung Wetan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.63024924860125, -6.909444289669723]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "kyoji matcha",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Bandung Wetan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.63035442867017, -6.910618970430849]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Caru Matcha Bar",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Bandung Wetan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.62932015799235, -6.910714685030935]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Teapotto",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Bandung Wetan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.6315902944801, -6.911637024729423]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kopi Moyan",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Bandung Wetan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.62788820846428, -6.913445688477736]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cafe de RURU",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Bandung Wetan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.62744826323409, -6.913752476231581]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Greens and Beans",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Bandung Wetan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.61452786486039, -6.904469778316363]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Jus Alpukat AVOTIME, Riau",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Bandung Wetan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.6146710241315, -6.906506097469591]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SEGAR SEHAT, Fresh Pressed Juice",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Bandung Wetan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.61609095506205, -6.907150000915624]
+      }
     },
     {
       "type": "Feature",
@@ -2227,23 +2787,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          107.608754,
-          -6.918923
-        ]
-      },
-      "properties": {
-        "name": "Kemuning Juice",
-        "address": "Kawasan Sumur Bandung",
-        "is_in": "Sumur Bandung, Bandung",
-        "other_tags": "\"amenity\"=>\"juice_bar\",\"cuisine\"=>\"fresh_juice\",\"rating\"=>\"4.8\""
-      },
-      "id": 89
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           107.606412,
           -6.921045
         ]
@@ -2255,57 +2798,6 @@
         "other_tags": "\"amenity\"=>\"juice_bar\",\"cuisine\"=>\"juice;snacks\""
       },
       "id": 90
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          107.610531,
-          -6.917246
-        ]
-      },
-      "properties": {
-        "name": "Toko Tahilalats",
-        "address": "Jl. Braga No.35, Braga",
-        "is_in": "Sumur Bandung, Bandung",
-        "other_tags": "\"amenity\"=>\"ice_cream\",\"cuisine\"=>\"ice_cream;snacks\",\"theme\"=>\"comic_art\""
-      },
-      "id": 92
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          107.61062,
-          -6.917631
-        ]
-      },
-      "properties": {
-        "name": "Feel Matcha - Braga",
-        "address": "Jl. Braga No.64, Braga",
-        "is_in": "Sumur Bandung, Bandung",
-        "other_tags": "\"amenity\"=>\"cafe\",\"cuisine\"=>\"matcha;dessert\",\"specialty\"=>\"japanese_tea\""
-      },
-      "id": 93
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          107.61128,
-          -6.91795
-        ]
-      },
-      "properties": {
-        "name": "Milk n Crumbs",
-        "address": "Jl. Braga No.43, Braga",
-        "is_in": "Sumur Bandung, Bandung",
-        "other_tags": "\"amenity\"=>\"ice_cream\",\"cuisine\"=>\"soft_serve;cereal_ice_cream\""
-      },
-      "id": 94
     },
     {
       "type": "Feature",
@@ -2354,40 +2846,6 @@
         "is_in": "Cicendo, Bandung",
         "other_tags": "\"amenity\"=>\"bubble_tea\",\"cuisine\"=>\"bubble_tea\",\"rating\"=>\"4.2\""
       }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          107.613305,
-          -6.918115
-        ]
-      },
-      "properties": {
-        "name": "Oseebo Matcha Nook",
-        "address": "Jl. Saad No.10, Kebon Pisang",
-        "is_in": "Sumur Bandung, Bandung",
-        "other_tags": "\"amenity\"=>\"cafe\",\"cuisine\"=>\"matcha;tea\",\"rating\"=>\"4.9\""
-      },
-      "id": 97
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          107.60955,
-          -6.9171
-        ]
-      },
-      "properties": {
-        "name": "Tiramisusu by Chocomory",
-        "address": "Jl. Braga No.14, Braga",
-        "is_in": "Sumur Bandung, Bandung",
-        "other_tags": "\"amenity\"=>\"confectionery\",\"cuisine\"=>\"chocolate_milk;tiramisu\""
-      },
-      "id": 99
     },
     {
       "type": "Feature",
@@ -2451,6 +2909,126 @@
         "address": "Jl. Purwakarta No.182",
         "is_in": "Antapani, Bandung",
         "other_tags": "\"amenity\"=>\"cafe\",\"cuisine\"=>\"matcha_latte;smoothies;yogurt\",\"rating\"=>\"4.6\""
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Es Kelapa Muda Sejahtera",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Sukajadi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.60119298414068,
+          -6.891895224261308
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sumber Segar",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Sukajadi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.59832315616546,
+          -6.894024987669502
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Champions Juice",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Sukajadi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5993960397919,
+          -6.892981162558007
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Gumijus - Sukajadi",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Sukajadi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.59870939427098,
+          -6.895963513919122
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SS Super Juice",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Sukajadi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.58963279879133,
+          -6.88991358157958
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Arunika Juices Smoothies & Salad",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Sukajadi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5849246220688,
+          -6.885246821323513
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Fruity Healthy and Delicious Drink, Eureka Foodcourt Maranatha",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Sukajadi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.58074843302329,
+          -6.886602767208352
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Yoju Cold Pressed Juice, Sukajadi",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Sukajadi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.59130396641017,
+          -6.885058981658513
+        ]
       }
     },
     {
@@ -2861,6 +3439,230 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          107.62586411992541,
+          -6.8792049434995866
+        ]
+      },
+      "properties": {
+        "name": "Sega Jus",
+        "category": "Minuman",
+        "kecamatan": "Cibeunying Kaler",
+        "address": "Kecamatan Cibeunying Kaler, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.62410802317207,
+          -6.881116032517282
+        ]
+      },
+      "properties": {
+        "name": "Eunoia Brewery | SEHAT TENTREM CIGADUNG",
+        "category": "Cafe",
+        "kecamatan": "Cibeunying Kaler",
+        "address": "Kecamatan Cibeunying Kaler, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.62804756170551,
+          -6.884776167562864
+        ]
+      },
+      "properties": {
+        "name": "Gajua Teh",
+        "category": "Minuman",
+        "kecamatan": "Cibeunying Kaler",
+        "address": "Kecamatan Cibeunying Kaler, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.63233380159078,
+          -6.89126869838806
+        ]
+      },
+      "properties": {
+        "name": "Roempi Coffee Cikutra",
+        "category": "Cafe",
+        "kecamatan": "Cibeunying Kaler",
+        "address": "Kecamatan Cibeunying Kaler, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.63431257397336,
+          -6.892585335778838
+        ]
+      },
+      "properties": {
+        "name": "Mari Ngopi Bandung",
+        "category": "Cafe",
+        "kecamatan": "Cibeunying Kaler",
+        "address": "Kecamatan Cibeunying Kaler, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6309944054324,
+          -6.897061297953051
+        ]
+      },
+      "properties": {
+        "name": "Markat Coffee and Dessert",
+        "category": "Cafe",
+        "kecamatan": "Cibeunying Kaler",
+        "address": "Kecamatan Cibeunying Kaler, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.63135205573754,
+          -6.894812565628494
+        ]
+      },
+      "properties": {
+        "name": "Senyawa Coffee",
+        "category": "Cafe",
+        "kecamatan": "Cibeunying Kaler",
+        "address": "Kecamatan Cibeunying Kaler, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.63486043492111,
+          -6.896317357613688
+        ]
+      },
+      "properties": {
+        "name": "Beri Kopi Cikutra",
+        "category": "Cafe",
+        "kecamatan": "Cibeunying Kaler",
+        "address": "Kecamatan Cibeunying Kaler, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.63830069015744,
+          -6.893798096391083
+        ]
+      },
+      "properties": {
+        "name": "Halu Halu Coffee",
+        "category": "Cafe",
+        "kecamatan": "Cibeunying Kaler",
+        "address": "Kecamatan Cibeunying Kaler, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.64279686542183,
+          -6.89486328899807
+        ]
+      },
+      "properties": {
+        "name": "Glek Glek Cikutra",
+        "category": "Minuman",
+        "kecamatan": "Cibeunying Kaler",
+        "address": "Kecamatan Cibeunying Kaler, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.63078210643211,
+          -6.895596192330578
+        ]
+      },
+      "properties": {
+        "name": "Jusku",
+        "category": "Minuman",
+        "kecamatan": "Cibeunying Kaler",
+        "address": "Kecamatan Cibeunying Kaler, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.63129936530466,
+          -6.896411722610953
+        ]
+      },
+      "properties": {
+        "name": "Zero Kelvin Fresh Juice",
+        "category": "Minuman",
+        "kecamatan": "Cibeunying Kaler",
+        "address": "Kecamatan Cibeunying Kaler, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.63349497832796,
+          -6.890187046664621
+        ]
+      },
+      "properties": {
+        "name": "Salsa Juice",
+        "category": "Minuman",
+        "kecamatan": "Cibeunying Kaler",
+        "address": "Kecamatan Cibeunying Kaler, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.62832367924852,
+          -6.8883337079413485
+        ]
+      },
+      "properties": {
+        "name": "Run To Juice",
+        "category": "Minuman",
+        "kecamatan": "Cibeunying Kaler",
+        "address": "Kecamatan Cibeunying Kaler, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           107.632235,
           -6.899341
         ]
@@ -2870,7 +3672,8 @@
         "address": "Jl. PH.H. Mustopa No.1, Neglasari",
         "is_in": "Cibeunying Kaler",
         "category": "Juice Bar"
-      }
+      },
+      "id": 186
     },
     {
       "type": "Feature",
@@ -2886,23 +3689,8 @@
         "address": "Jl. Cikutra No.175, Neglasari",
         "is_in": "Cibeunying Kaler",
         "category": "Local Juice"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          107.621534,
-          -6.901123
-        ]
       },
-      "properties": {
-        "name": "Es Kelapa Muda & Jus Kang Ade",
-        "address": "Jl. Cihaur Geulis, Cihaur Geulis",
-        "is_in": "Cibeunying Kaler",
-        "category": "Beverage Stall"
-      }
+      "id": 187
     },
     {
       "type": "Feature",
@@ -3069,22 +3857,6 @@
         "address": "Jl. Cikutra No.127",
         "is_in": "Cibeunying Kidul, Bandung",
         "other_tags": "\"amenity\"=>\"juice_bar\",\"cuisine\"=>\"juice;smoothies\",\"rating\"=>\"4.5\""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          107.643891,
-          -6.908212
-        ]
-      },
-      "properties": {
-        "name": "Boost Up Juice",
-        "address": "Jl. Ahmad Yani (Dekat Cicadas)",
-        "is_in": "Cibeunying Kidul, Bandung",
-        "other_tags": "\"amenity\"=>\"juice_bar\",\"cuisine\"=>\"healthy_juice\",\"rating\"=>\"4.6\""
       }
     },
     {
@@ -3310,7 +4082,8 @@
         "address": "Jl. Peta No.67 (Dekat perbatasan Regol)",
         "is_in": "Regol, Bandung",
         "other_tags": "\"amenity\"=>\"smoothie_bar\",\"cuisine\"=>\"smoothies\",\"rating\"=>\"4.5\""
-      }
+      },
+      "id": 189
     },
     {
       "type": "Feature",
@@ -4715,7 +5488,8 @@
         "address": "Bandung Indah Plaza, GF Floor unit 02B, 03A, 03B, Jl. Merdeka No.56, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115",
         "is_in": "Bandung Wetan, Bandung",
         "other_tags": "\"amenity\"=>\"cafe\",\"brand\"=>\"Fore Coffee\""
-      }
+      },
+      "id": 298
     },
     {
       "type": "Feature",
@@ -5338,7 +6112,8 @@
         "place": null,
         "man_made": null,
         "other_tags": "\"amenity\"=>\"bar\",\"cuisine\"=>\"cold_pressed_juice\""
-      }
+      },
+      "id": 328
     }
   ]
 }

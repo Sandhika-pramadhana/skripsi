@@ -465,7 +465,8 @@
         "place": null,
         "man_made": null,
         "other_tags": "\"amenity\"=>\"school\""
-      }
+      },
+      "id": 20
     },
     {
       "type": "Feature",
@@ -619,28 +620,6 @@
         "place": null,
         "man_made": null,
         "other_tags": "\"amenity\"=>\"school\",\"religion\"=>\"muslim\""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          107.5635768,
-          -6.9242841
-        ]
-      },
-      "properties": {
-        "osm_id": "10006417943",
-        "name": "SMP Negeri 4 Cimahi",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
-        "address": null,
-        "is_in": null,
-        "place": null,
-        "man_made": null,
-        "other_tags": "\"addr:street\"=>\"Jalan Melong Raya\",\"amenity\"=>\"school\",\"grades\"=>\"7-9\""
       }
     },
     {
@@ -913,7 +892,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.6882395, -6.9083097]
+        "coordinates": [
+          107.6882395,
+          -6.9083097
+        ]
       },
       "properties": {
         "name": "SMP Karya Pembangunan 10",
@@ -925,7 +907,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.6971928, -6.9073567]
+        "coordinates": [
+          107.6971928,
+          -6.9073567
+        ]
       },
       "properties": {
         "name": "SMPN 50 Bandung",
@@ -937,7 +922,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.7050944, -6.9160471]
+        "coordinates": [
+          107.7050944,
+          -6.9160471
+        ]
       },
       "properties": {
         "name": "SMP QLP Rabbani Bandung",
@@ -949,7 +937,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.7087155, -6.9124607]
+        "coordinates": [
+          107.7087155,
+          -6.9124607
+        ]
       },
       "properties": {
         "name": "SMP AL-KHULAFA",
@@ -961,7 +952,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.57748459999999, -6.8826784]
+        "coordinates": [
+          107.57748459999999,
+          -6.8826784
+        ]
       },
       "properties": {
         "name": "SMPN 26 Bandung",
@@ -973,7 +967,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.606352, -6.8606696]
+        "coordinates": [
+          107.606352,
+          -6.8606696
+        ]
       },
       "properties": {
         "name": "SMP Negeri 52 Kota Bandung",
@@ -985,7 +982,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.6162016, -6.8788253]
+        "coordinates": [
+          107.6162016,
+          -6.8788253
+        ]
       },
       "properties": {
         "name": "Sekolah Menengah Pertama Darul Hikam",
@@ -997,7 +997,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.7074169, -6.8986138]
+        "coordinates": [
+          107.7074169,
+          -6.8986138
+        ]
       },
       "properties": {
         "name": "SMP-SMA Islam (MTs-MA) YASIPA Kota Bandung",
@@ -1009,7 +1012,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.691684, -6.940792]
+        "coordinates": [
+          107.691684,
+          -6.940792
+        ]
       },
       "properties": {
         "name": "SMP PGRI 9 Gedebage",
@@ -1021,7 +1027,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.7023039, -6.9522206]
+        "coordinates": [
+          107.7023039,
+          -6.9522206
+        ]
       },
       "properties": {
         "name": "Madrasah Tsanawiyah Az-Zahra",
@@ -1033,7 +1042,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.7022175, -6.951894]
+        "coordinates": [
+          107.7022175,
+          -6.951894
+        ]
       },
       "properties": {
         "name": "Rancasagatan",

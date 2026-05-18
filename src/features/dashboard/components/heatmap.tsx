@@ -8,18 +8,12 @@ import {
   GeoJSON,
 } from "react-leaflet";
 import L, { Path } from "leaflet";
+import booleanPointInPolygon from "@turf/boolean-point-in-polygon";
+import { point } from "@turf/helpers";
 import {
   getDataKecamatan,
   type KecamatanData,
 } from "@/actions/getData/getDataPenduduk";
-import {
-  getDataKampus,
-  type KampusData,
-} from "@/actions/getData/getDataKampus";
-import {
-  getDataSekolah,
-  type SekolahData,
-} from "@/actions/getData/getDataSekolah";
 import kecamatanGeoJson from "@/data/bandung-kecamatan.json";
 import sdGeoJson from "@/data/titik-sd.json";
 import smpGeoJson from "@/data/titik-smp.json";
@@ -31,6 +25,7 @@ import kompetitorGeoJson from "@/data/titik-kompetitor.json";
 import kantorGeoJson from "@/data/titik-perkantoran.json";
 import hasilAnalisis from "@/data/hasil_analisis.json";
 
+
 // ================= LIST KECAMATAN =================
 const BANDUNG_KECAMATAN = [
   "Andir","Antapani","Arcamanik","Astanaanyar","Babakan Ciparay",
@@ -41,6 +36,7 @@ const BANDUNG_KECAMATAN = [
   "Panyileukan","Rancasari","Regol","Sukajadi","Sukasari",
   "Sumur Bandung","Ujungberung",
 ];
+
 
 // ================= TYPES =================
 type KecamatanFeature = {
@@ -69,9 +65,11 @@ type HasilRF = {
   centroid_lng?: number;
 };
 
+
 // ================= NORMALISASI NAMA =================
 const normalizeName = (name: string) =>
   name.toLowerCase().replace(/\s+/g, "").trim();
+
 
 // ================= GROUPING GEOJSON =================
 const geoData: GeoJSONType = {
@@ -97,6 +95,35 @@ const geoData: GeoJSONType = {
   ),
 };
 
+
+// ================= PRE-COMPUTE TITIK PER KECAMATAN =================
+function countPointsPerKecamatan(pointGeoJson: any): Map<string, number> {
+  const map = new Map<string, number>();
+  geoData.features.forEach((feature) => {
+    const key = normalizeName(feature.properties.nama_kecamatan);
+    let count = 0;
+    (pointGeoJson.features ?? []).forEach((f: any) => {
+      const coords = f.geometry?.coordinates;
+      if (!coords) return;
+      const pt = point([coords[0], coords[1]]);
+      if (booleanPointInPolygon(pt, feature as any)) count++;
+    });
+    map.set(key, count);
+  });
+  return map;
+}
+
+// Dihitung sekali saat module load
+const sdCountMap         = countPointsPerKecamatan(sdGeoJson);
+const smpCountMap        = countPointsPerKecamatan(smpGeoJson);
+const smaCountMap        = countPointsPerKecamatan(smaGeoJson);
+const smkCountMap        = countPointsPerKecamatan(smkGeoJson);
+const kampusCountMap     = countPointsPerKecamatan(kampusGeoJson);
+const mallCountMap       = countPointsPerKecamatan(mallGeoJson);
+const kantorCountMap     = countPointsPerKecamatan(kantorGeoJson);
+const kompetitorCountMap = countPointsPerKecamatan(kompetitorGeoJson);
+
+
 // ================= HELPER WARNA KELAS =================
 const getKelasColor = (kelas?: string) => {
   if (kelas === "Tinggi") return "#16a34a";
@@ -117,8 +144,9 @@ const getKelasBg = (kelas?: string) => {
   return "#f9fafb";
 };
 
+
 // ================= ICON FACTORY =================
-const createDotIcon = (color: string) =>
+const createDotIcon = (color: string, delayMs: number = 0) =>
   L.divIcon({
     className: "",
     html: `<div style="
@@ -127,12 +155,21 @@ const createDotIcon = (color: string) =>
       border:1.5px solid rgba(255,255,255,0.9);
       border-radius:50%;
       box-shadow:0 0 3px rgba(0,0,0,0.4);
+      animation: dotFadeIn 0.4s cubic-bezier(0.34,1.56,0.64,1) both;
+      animation-delay: ${delayMs}ms;
     "></div>`,
     iconSize: [8, 8],
     iconAnchor: [4, 4],
   });
 
+
+// ================= LAYER CONFIG =================
 const LAYER_CONFIG = {
+  pusatKeramaian: { color: "#F59E0B", label: "Pusat Keramaian", icon: "🏙️" },
+  kompetitor:     { color: "#000000", label: "Kompetitor",      icon: "📍" },
+} as const;
+
+const PUSAT_KERAMAIAN_SUB = {
   sd:          { color: "#3B82F6", label: "SD",          icon: "🏫" },
   smp:         { color: "#10B981", label: "SMP",         icon: "🏫" },
   sma:         { color: "#F59E0B", label: "SMA",         icon: "🏫" },
@@ -140,10 +177,10 @@ const LAYER_CONFIG = {
   kampus:      { color: "#8B5CF6", label: "Kampus",      icon: "🎓" },
   mall:        { color: "#EF4444", label: "Mall",        icon: "🛍️" },
   perkantoran: { color: "#0EA5E9", label: "Perkantoran", icon: "🏢" },
-  kompetitor:  { color: "#000000", label: "Kompetitor",  icon: "📍" },
 } as const;
 
 type LayerKey = keyof typeof LAYER_CONFIG;
+
 
 // ================= AUTO ZOOM =================
 function ZoomController({ selected }: { selected?: string }) {
@@ -165,91 +202,148 @@ function ZoomController({ selected }: { selected?: string }) {
   return null;
 }
 
+
 // ================= LAYER KECAMATAN FILL (CHOROPLETH) =================
 function KecamatanFillLayer({
   selected,
   pendudukMap,
-  kampusMap,
-  sekolahMap,
   hasilMap,
   showHeatmap,
+  onSelect,
 }: {
   selected?: string;
   pendudukMap: Map<string, KecamatanData>;
-  kampusMap: Map<string, KampusData>;
-  sekolahMap: Map<string, SekolahData>;
   hasilMap: Map<string, HasilRF>;
   showHeatmap: boolean;
+  onSelect: (name: string) => void;
 }) {
   const selectedRef    = useRef(selected);
   const pendudukRef    = useRef(pendudukMap);
-  const kampusRef      = useRef(kampusMap);
-  const sekolahRef     = useRef(sekolahMap);
   const hasilRef       = useRef(hasilMap);
   const showHeatmapRef = useRef(showHeatmap);
+  const onSelectRef    = useRef(onSelect);
+
+  const leafletLayersRef = useRef<Map<string, L.Path>>(new Map());
+  const animFrameRef = useRef<number | null>(null);
 
   useEffect(() => { selectedRef.current    = selected; },    [selected]);
   useEffect(() => { pendudukRef.current    = pendudukMap; }, [pendudukMap]);
-  useEffect(() => { kampusRef.current      = kampusMap; },   [kampusMap]);
-  useEffect(() => { sekolahRef.current     = sekolahMap; },  [sekolahMap]);
   useEffect(() => { hasilRef.current       = hasilMap; },    [hasilMap]);
   useEffect(() => { showHeatmapRef.current = showHeatmap; }, [showHeatmap]);
+  useEffect(() => { onSelectRef.current    = onSelect; },    [onSelect]);
 
+  // ── Update style saat selected berubah ──
+  useEffect(() => {
+    const layers = leafletLayersRef.current;
+    if (layers.size === 0) return;
+    layers.forEach((layer, name) => {
+      const key   = normalizeName(name);
+      const hasil = hasilRef.current.get(key);
+      const isSel = name === selected;
+      if (showHeatmapRef.current) {
+        layer.setStyle({
+          fillColor:   getKelasColor(hasil?.kelas),
+          fillOpacity: isSel ? 0.9 : 0.65,
+        });
+      } else {
+        if (!selected) {
+          layer.setStyle({ fillColor: "#ffffff", fillOpacity: 0.15 });
+        } else {
+          layer.setStyle({
+            fillColor:   "#ffffff",
+            fillOpacity: isSel ? 0.5 : 0.08,
+          });
+        }
+      }
+    });
+  }, [selected]);
+
+  // ── Animasi fade heatmap ──
+  useEffect(() => {
+    if (animFrameRef.current) cancelAnimationFrame(animFrameRef.current);
+    const layers = leafletLayersRef.current;
+    if (layers.size === 0) return;
+    const DURATION = 600;
+    const startTime = performance.now();
+
+    if (showHeatmap) {
+      const animate = (now: number) => {
+        const progress = Math.min((now - startTime) / DURATION, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        layers.forEach((layer, name) => {
+          const key      = normalizeName(name);
+          const hasil    = hasilRef.current.get(key);
+          const isSel    = name === selectedRef.current;
+          const targetOp = isSel ? 0.9 : 0.65;
+          layer.setStyle({
+            fillColor:   getKelasColor(hasil?.kelas),
+            fillOpacity: eased * targetOp,
+          });
+        });
+        if (progress < 1) animFrameRef.current = requestAnimationFrame(animate);
+      };
+      animFrameRef.current = requestAnimationFrame(animate);
+    } else {
+      const animate = (now: number) => {
+        const progress = Math.min((now - startTime) / DURATION, 1);
+        const eased    = 1 - Math.pow(1 - progress, 3);
+        layers.forEach((layer, name) => {
+          const isSel  = name === selectedRef.current;
+          const fromOp = isSel ? 0.9 : 0.65;
+          const toOp   = selectedRef.current
+            ? (isSel ? 0.5 : 0.08)
+            : 0.15;
+          layer.setStyle({
+            fillColor:   "#ffffff",
+            fillOpacity: fromOp + (toOp - fromOp) * eased,
+          });
+        });
+        if (progress < 1) animFrameRef.current = requestAnimationFrame(animate);
+      };
+      animFrameRef.current = requestAnimationFrame(animate);
+    }
+
+    return () => {
+      if (animFrameRef.current) cancelAnimationFrame(animFrameRef.current);
+    };
+  }, [showHeatmap]);
 
   return (
     <GeoJSON
-      key={`fill-${selected}-${hasilMap.size}-${showHeatmap}`}
+      key="fill-layer"
       data={geoData as any}
-      style={(feature: any) => {
-        const name       = feature.properties.nama_kecamatan;
-        const key        = normalizeName(name);
-        const hasil      = hasilMap.get(key);
-        const isSelected = name === selected;
-
-        if (!showHeatmap) {
-          if (!selected) {
-            return { stroke: false, fillColor: "#ffffff", fillOpacity: 0.15 };
-          }
-          if (isSelected) {
-            return { stroke: false, fillColor: "#ffffff", fillOpacity: 0.5 };
-          }
-          return { stroke: false, fillColor: "#ffffff", fillOpacity: 0.08 };
-        }
-
-        return {
-          stroke: false,
-          fillColor: getKelasColor(hasil?.kelas),
-          fillOpacity: isSelected ? 0.9 : 0.65,
-        };
-      }}
+      style={() => ({ stroke: false, fillColor: "#ffffff", fillOpacity: 0.15 })}
       onEachFeature={(feature, layer) => {
         const name = feature.properties.nama_kecamatan;
         const l    = layer as Path;
+        leafletLayersRef.current.set(name, l);
 
         const buildTooltip = () => {
           const key      = normalizeName(name);
           const penduduk = pendudukRef.current.get(key);
-          const kampus   = kampusRef.current.get(key);
-          const sekolah  = sekolahRef.current.get(key);
-          const hasil    = hasilRef.current.get(key);
-          const textColor = getKelasTextColor(hasil?.kelas);
-
-          const kelasHtml = hasil ? `
-            <div style="margin-top:6px;padding-top:6px;border-top:1px solid #eee;">
-              <div style="font-size:12px;color:#555;">
-                📊 Peluang: <b style="color:${textColor}">${hasil.kelas}</b>
-                <span style="color:#999;font-size:11px;"> (${hasil.kepercayaan_persen}%)</span>
-              </div>
-              <div style="font-size:12px;color:#555;">🏆 Level: <b>${hasil.level_lokasi}</b></div>
-              <div style="font-size:12px;color:#555;">🏪 Kompetitor: <b>${hasil.jumlah_kompetitor}</b></div>
-            </div>` : "";
-
+          const hasil    = hasilRef.current.get(key);  // ← tambah ini
+        
+          const totalPusatKeramaian =
+            (sdCountMap.get(key) ?? 0) +
+            (smpCountMap.get(key) ?? 0) +
+            (smaCountMap.get(key) ?? 0) +
+            (smkCountMap.get(key) ?? 0) +
+            (kampusCountMap.get(key) ?? 0) +
+            (mallCountMap.get(key) ?? 0) +
+            (kantorCountMap.get(key) ?? 0);
+        
+          const kompetitor = kompetitorCountMap.get(key) ?? 0;
+        
+          const jarakHtml = hasil
+            ? `<div style="font-size:12px;color:#555;">🛣️ Jarak Jalan Utama: <b>${hasil.jarak_jalan_km} km</b></div>`
+            : "";
+        
           return `
             <div style="font-size:13px;font-weight:600;color:#222;">${name}</div>
             <div style="font-size:12px;color:#555;">👥 Penduduk: <b>${penduduk?.jumlah_penduduk?.toLocaleString("id-ID") ?? 0}</b> jiwa</div>
-            <div style="font-size:12px;color:#555;">🎓 Kampus: <b>${kampus?.jumlah_kampus ?? 0}</b></div>
-            <div style="font-size:12px;color:#555;">🏫 Sekolah: <b>${sekolah?.jumlah_sekolah ?? 0}</b></div>
-            ${kelasHtml}
+            <div style="font-size:12px;color:#555;">🏙️ Pusat Keramaian: <b>${totalPusatKeramaian}</b></div>
+            <div style="font-size:12px;color:#555;">🏪 Kompetitor: <b>${kompetitor}</b></div>
+            ${jarakHtml}
           `;
         };
 
@@ -265,7 +359,15 @@ function KecamatanFillLayer({
           },
           mouseout: () => {
             if (name === selectedRef.current) return;
-            l.setStyle({ fillOpacity: showHeatmapRef.current ? 0.65 : 0.08 });
+            l.setStyle({
+              fillOpacity: showHeatmapRef.current
+                ? 0.65
+                : selectedRef.current ? 0.08 : 0.15,
+            });
+          },
+          click: () => {
+            const current = selectedRef.current;
+            onSelectRef.current(current === name ? "" : name);
           },
         });
       }}
@@ -273,17 +375,12 @@ function KecamatanFillLayer({
   );
 }
 
+
 // ================= LAYER KECAMATAN STROKE (BORDER) =================
-function KecamatanStrokeLayer({
-  selected,
-  hasilMap,
-}: {
-  selected?: string;
-  hasilMap: Map<string, HasilRF>;
-}) {
+function KecamatanStrokeLayer({ selected }: { selected?: string }) {
   return (
     <GeoJSON
-      key={`stroke-${selected}-${hasilMap.size}`}
+      key={`stroke-${selected ?? "all"}`}
       data={geoData as any}
       style={(feature: any) => {
         const name       = feature.properties.nama_kecamatan;
@@ -299,11 +396,24 @@ function KecamatanStrokeLayer({
   );
 }
 
+
 // ================= LAYER TITIK =================
 function PointLayer({
-  data, layerKey, visible, nameField,
+  data,
+  layerKey,
+  visible,
+  nameField,
+  colorOverride,
+  labelOverride,
+  iconOverride,
 }: {
-  data: any; layerKey: LayerKey; visible: boolean; nameField?: string;
+  data: any;
+  layerKey: LayerKey;
+  visible: boolean;
+  nameField?: string;
+  colorOverride?: string;
+  labelOverride?: string;
+  iconOverride?: string;
 }) {
   const map = useMap();
   const layerRef = useRef<L.LayerGroup | null>(null);
@@ -316,23 +426,29 @@ function PointLayer({
     }
     if (!visible) return;
 
-    const cfg   = LAYER_CONFIG[layerKey];
-    const icon  = createDotIcon(cfg.color);
-    const group = L.layerGroup();
+    const cfg    = LAYER_CONFIG[layerKey];
+    const color  = colorOverride ?? cfg.color;
+    const label  = labelOverride ?? cfg.label;
+    const icon   = iconOverride  ?? cfg.icon;
+    const group  = L.layerGroup();
+    const features = [...((data as any).features ?? [])];
 
-    (data as any).features?.forEach((f: any) => {
+    features.forEach((f: any, index: number) => {
       const coords = f.geometry?.coordinates;
       if (!coords) return;
       const latlng: L.LatLngExpression = [coords[1], coords[0]];
       const name =
         nameField && f.properties?.[nameField]
           ? f.properties[nameField]
-          : f.properties?.name ?? f.properties?.nama ?? cfg.label;
+          : f.properties?.name ?? f.properties?.nama ?? label;
 
-      L.marker(latlng, { icon })
+      const delay   = Math.min(index * 30, 2000);
+      const dotIcon = createDotIcon(color, delay);
+
+      L.marker(latlng, { icon: dotIcon })
         .bindTooltip(
-          `<div style="font-size:12px;font-weight:600;color:#222;">${cfg.icon} ${name}</div>
-           <div style="font-size:11px;color:#777;">${cfg.label}</div>`,
+          `<div style="font-size:12px;font-weight:600;color:#222;">${icon} ${name}</div>
+           <div style="font-size:11px;color:#777;">${label}</div>`,
           { direction: "top", opacity: 1, className: "kecamatan-tooltip" }
         )
         .addTo(group);
@@ -348,10 +464,11 @@ function PointLayer({
         layerRef.current = null;
       }
     };
-  }, [visible, data, layerKey, map, nameField]);
+  }, [visible, data, layerKey, map, nameField, colorOverride, labelOverride, iconOverride]);
 
   return null;
 }
+
 
 // ================= LAYER CENTROID =================
 function CentroidLayer({
@@ -373,10 +490,12 @@ function CentroidLayer({
     if (!visible) return;
 
     const group = L.layerGroup();
+    let index = 0;
 
     hasilMap.forEach((hasil) => {
       if (hasil.centroid_lat == null || hasil.centroid_lng == null) return;
-
+      const delay = Math.min(index * 40, 1500);
+      index++;
       const icon = L.divIcon({
         className: "",
         html: `<div style="
@@ -385,11 +504,12 @@ function CentroidLayer({
           border:2px solid white;
           border-radius:50%;
           box-shadow:0 0 5px rgba(124,58,237,0.6), 0 0 2px rgba(0,0,0,0.4);
+          animation: dotFadeIn 0.4s cubic-bezier(0.34,1.56,0.64,1) both;
+          animation-delay: ${delay}ms;
         "></div>`,
         iconSize: [10, 10],
         iconAnchor: [5, 5],
       });
-
       L.marker([hasil.centroid_lat, hasil.centroid_lng], { icon })
         .bindTooltip(
           `<div style="font-size:12px;font-weight:600;color:#222;">📍 Centroid Kecamatan</div>
@@ -418,13 +538,12 @@ function CentroidLayer({
   return null;
 }
 
+
 // ================= DETAIL PANEL =================
 function DetailPanel({ hasil }: { hasil: HasilRF | undefined }) {
   if (!hasil) return null;
-
   const kelasColor = getKelasTextColor(hasil.kelas);
   const kelasBg    = getKelasBg(hasil.kelas);
-
   return (
     <div style={{
       marginTop: "12px", background: "#fff",
@@ -441,7 +560,6 @@ function DetailPanel({ hasil }: { hasil: HasilRF | undefined }) {
           {hasil.level_lokasi}
         </span>
       </div>
-
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", marginBottom: "10px" }}>
         {[
           { label: "Peluang",    value: `${hasil.kelas} (${hasil.kepercayaan_persen}%)` },
@@ -455,7 +573,6 @@ function DetailPanel({ hasil }: { hasil: HasilRF | undefined }) {
           </div>
         ))}
       </div>
-
       <div style={{ marginBottom: "8px" }}>
         {hasil.poin_analisis.map((poin, i) => (
           <div key={i} style={{
@@ -466,7 +583,6 @@ function DetailPanel({ hasil }: { hasil: HasilRF | undefined }) {
           </div>
         ))}
       </div>
-
       <div style={{
         background: kelasBg, borderRadius: "8px", padding: "8px 10px",
         color: kelasColor, fontSize: "12px", fontWeight: 500,
@@ -477,16 +593,15 @@ function DetailPanel({ hasil }: { hasil: HasilRF | undefined }) {
   );
 }
 
+
 // ================= MAIN COMPONENT =================
 export default function BandungHeatmapMap() {
   const [kecamatan, setKecamatan]     = useState("");
   const [pendudukMap, setPendudukMap] = useState<Map<string, KecamatanData>>(new Map());
-  const [kampusMap,   setKampusMap]   = useState<Map<string, KampusData>>(new Map());
-  const [sekolahMap,  setSekolahMap]  = useState<Map<string, SekolahData>>(new Map());
 
   const [visibleLayers, setVisibleLayers] = useState<Record<LayerKey, boolean>>({
-    sd: false, smp: false, sma: false, smk: false,
-    kampus: false, mall: false, kompetitor: false, perkantoran: false,
+    pusatKeramaian: false,
+    kompetitor:     false,
   });
 
   const [showCentroid, setShowCentroid] = useState(false);
@@ -503,11 +618,6 @@ export default function BandungHeatmapMap() {
     return map;
   }, []);
 
-  const selectedHasil = useMemo(() => {
-    if (!kecamatan) return undefined;
-    return hasilMap.get(normalizeName(kecamatan));
-  }, [kecamatan, hasilMap]);
-
   const kecamatanList = useMemo(
     () =>
       geoData.features
@@ -518,18 +628,10 @@ export default function BandungHeatmapMap() {
 
   useEffect(() => {
     const loadData = async () => {
-      const [penduduk, kampus, sekolah] = await Promise.all([
-        getDataKecamatan(), getDataKampus(), getDataSekolah(),
-      ]);
+      const penduduk = await getDataKecamatan();
       const pm = new Map<string, KecamatanData>();
       penduduk.forEach((d) => pm.set(normalizeName(d.kecamatan), d));
-      const km = new Map<string, KampusData>();
-      kampus.forEach((d) => km.set(normalizeName(d.kecamatan), d));
-      const sm = new Map<string, SekolahData>();
-      sekolah.forEach((d) => sm.set(normalizeName(d.kecamatan), d));
       setPendudukMap(pm);
-      setKampusMap(km);
-      setSekolahMap(sm);
     };
     loadData();
   }, []);
@@ -537,12 +639,17 @@ export default function BandungHeatmapMap() {
   return (
     <div>
       <style>{`
+        @keyframes dotFadeIn {
+          from { opacity: 0; transform: scale(0) translateY(-6px); }
+          to   { opacity: 1; transform: scale(1) translateY(0); }
+        }
         .kecamatan-tooltip {
           background: white; border: 1px solid #ddd;
           border-radius: 8px; padding: 6px 10px;
           box-shadow: 0 2px 8px rgba(0,0,0,0.15); pointer-events: none;
         }
         .kecamatan-tooltip::before { display: none; }
+        .leaflet-interactive { cursor: pointer; }
       `}</style>
 
       {/* SELECT KECAMATAN */}
@@ -564,9 +671,20 @@ export default function BandungHeatmapMap() {
             </svg>
           </div>
         </div>
+        {kecamatan && (
+          <button
+            onClick={() => setKecamatan("")}
+            className="flex items-center gap-1 px-3 py-2 text-xs font-medium text-gray-500 bg-white border border-gray-300 rounded-xl hover:bg-gray-50 hover:border-gray-400 transition shadow-sm"
+          >
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+              <path d="M6 18L18 6M6 6l12 12" />
+            </svg>
+            Reset
+          </button>
+        )}
       </div>
 
-      {/* TOGGLE LAYER TITIK + CENTROID + HEATMAP */}
+      {/* TOGGLE BUTTONS */}
       <div className="mb-3 flex flex-wrap gap-2">
         {(Object.keys(LAYER_CONFIG) as LayerKey[]).map((key) => {
           const cfg    = LAYER_CONFIG[key];
@@ -638,29 +756,28 @@ export default function BandungHeatmapMap() {
           <KecamatanFillLayer
             selected={kecamatan}
             pendudukMap={pendudukMap}
-            kampusMap={kampusMap}
-            sekolahMap={sekolahMap}
             hasilMap={hasilMap}
             showHeatmap={showHeatmap}
+            onSelect={(name) => setKecamatan(name)}
           />
-          <KecamatanStrokeLayer
-            selected={kecamatan}
-            hasilMap={hasilMap}
-          />
-          <PointLayer data={sdGeoJson}         layerKey="sd"          visible={visibleLayers.sd}          nameField="nama" />
-          <PointLayer data={smpGeoJson}        layerKey="smp"         visible={visibleLayers.smp}         nameField="nama" />
-          <PointLayer data={smaGeoJson}        layerKey="sma"         visible={visibleLayers.sma}         nameField="nama" />
-          <PointLayer data={smkGeoJson}        layerKey="smk"         visible={visibleLayers.smk}         nameField="nama" />
-          <PointLayer data={kampusGeoJson}     layerKey="kampus"      visible={visibleLayers.kampus}      nameField="nama" />
-          <PointLayer data={mallGeoJson}       layerKey="mall"        visible={visibleLayers.mall}        nameField="nama" />
-          <PointLayer data={kompetitorGeoJson} layerKey="kompetitor"  visible={visibleLayers.kompetitor}  nameField="nama" />
-          <PointLayer data={kantorGeoJson}     layerKey="perkantoran" visible={visibleLayers.perkantoran} nameField="nama" />
+          <KecamatanStrokeLayer selected={kecamatan} />
+
+          {/* ── PUSAT KERAMAIAN ── */}
+          <PointLayer data={sdGeoJson}         layerKey="pusatKeramaian" visible={visibleLayers.pusatKeramaian} nameField="nama" colorOverride={PUSAT_KERAMAIAN_SUB.sd.color}          labelOverride={PUSAT_KERAMAIAN_SUB.sd.label}          iconOverride={PUSAT_KERAMAIAN_SUB.sd.icon} />
+          <PointLayer data={smpGeoJson}        layerKey="pusatKeramaian" visible={visibleLayers.pusatKeramaian} nameField="nama" colorOverride={PUSAT_KERAMAIAN_SUB.smp.color}         labelOverride={PUSAT_KERAMAIAN_SUB.smp.label}         iconOverride={PUSAT_KERAMAIAN_SUB.smp.icon} />
+          <PointLayer data={smaGeoJson}        layerKey="pusatKeramaian" visible={visibleLayers.pusatKeramaian} nameField="nama" colorOverride={PUSAT_KERAMAIAN_SUB.sma.color}         labelOverride={PUSAT_KERAMAIAN_SUB.sma.label}         iconOverride={PUSAT_KERAMAIAN_SUB.sma.icon} />
+          <PointLayer data={smkGeoJson}        layerKey="pusatKeramaian" visible={visibleLayers.pusatKeramaian} nameField="nama" colorOverride={PUSAT_KERAMAIAN_SUB.smk.color}         labelOverride={PUSAT_KERAMAIAN_SUB.smk.label}         iconOverride={PUSAT_KERAMAIAN_SUB.smk.icon} />
+          <PointLayer data={kampusGeoJson}     layerKey="pusatKeramaian" visible={visibleLayers.pusatKeramaian} nameField="nama" colorOverride={PUSAT_KERAMAIAN_SUB.kampus.color}      labelOverride={PUSAT_KERAMAIAN_SUB.kampus.label}      iconOverride={PUSAT_KERAMAIAN_SUB.kampus.icon} />
+          <PointLayer data={mallGeoJson}       layerKey="pusatKeramaian" visible={visibleLayers.pusatKeramaian} nameField="nama" colorOverride={PUSAT_KERAMAIAN_SUB.mall.color}        labelOverride={PUSAT_KERAMAIAN_SUB.mall.label}        iconOverride={PUSAT_KERAMAIAN_SUB.mall.icon} />
+          <PointLayer data={kantorGeoJson}     layerKey="pusatKeramaian" visible={visibleLayers.pusatKeramaian} nameField="nama" colorOverride={PUSAT_KERAMAIAN_SUB.perkantoran.color} labelOverride={PUSAT_KERAMAIAN_SUB.perkantoran.label} iconOverride={PUSAT_KERAMAIAN_SUB.perkantoran.icon} />
+
+          {/* ── KOMPETITOR ── */}
+          <PointLayer data={kompetitorGeoJson} layerKey="kompetitor" visible={visibleLayers.kompetitor} nameField="nama" />
+
           <CentroidLayer visible={showCentroid} hasilMap={hasilMap} />
         </MapContainer>
       </div>
-
-      {/* DETAIL PANEL */}
-      {kecamatan && <DetailPanel hasil={selectedHasil} />}
+      
     </div>
   );
 }

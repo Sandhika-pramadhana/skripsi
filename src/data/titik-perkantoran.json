@@ -67,6 +67,90 @@
     },
     {
       "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.63700055340915, -6.95078534666756]
+      },
+      "properties": {
+        "name": "Graha Merah Putih Buah Batu",
+        "category": "Perkantoran",
+        "address": "Kecamatan Bandung Kidul, Kota Bandung, Jawa Barat"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.63798476209884, -6.950953216563411]
+      },
+      "properties": {
+        "name": "PT. Infomedia Nusantara",
+        "category": "Perkantoran",
+        "address": "Kecamatan Bandung Kidul, Kota Bandung, Jawa Barat"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.63671800901173, -6.957941214884127]
+      },
+      "properties": {
+        "name": "Kantor Kecamatan Bandung Kidul",
+        "category": "Kantor Pemerintahan",
+        "address": "Kecamatan Bandung Kidul, Kota Bandung, Jawa Barat"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.62481133227469, -6.93689951701834]
+      },
+      "properties": {
+        "name": "RS Mata Bandung Eye Center",
+        "category": "Rumah Sakit Mata",
+        "address": "Kecamatan Lengkong, Kota Bandung, Jawa Barat"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.62323189714009, -6.933361450637573]
+      },
+      "properties": {
+        "name": "Rumah Sakit Muhammadiyah Bandung",
+        "category": "Rumah Sakit",
+        "address": "Kecamatan Lengkong, Kota Bandung, Jawa Barat"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.61586810792964, -6.9289229542572555]
+      },
+      "properties": {
+        "name": "MutualPlus",
+        "category": "Layanan Kesehatan",
+        "address": "Kecamatan Lengkong, Kota Bandung, Jawa Barat"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.63668205024238, -6.947454422562487]
+      },
+      "properties": {
+        "name": "Mayapada Hospital Bandung (MHBD)",
+        "category": "Rumah Sakit",
+        "address": "Kecamatan Bandung Kidul, Kota Bandung, Jawa Barat"
+      }
+    },
+    {
+      "type": "Feature",
       "properties": {
         "nama": "Kantor Pusat Bank BJB",
         "kecamatan": "Sumur Bandung",

@@ -43,11 +43,11 @@ if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
 # =============================================================================
 
 DB_CONFIG = {
-    "host"    : "mainline.proxy.rlwy.net",
-    "port"    : 43277,
-    "database": "railway",
+    "host"    : "127.0.0.1",
+    "port"    : 3306,
+    "database": "skripsi",
     "user"    : "root",
-    "password": "phsqybAnMApgQDlguPZZhpuKelqRVznf",
+    "password": "",
 }
 
 TABEL_PENDUDUK   = "data_kecamatan"

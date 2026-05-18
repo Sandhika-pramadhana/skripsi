@@ -28,28 +28,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          107.6955657,
-          -6.9136497
-        ]
-      },
-      "properties": {
-        "osm_id": "2477149675",
-        "name": "SDN Andir Kidul",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
-        "address": null,
-        "is_in": null,
-        "place": null,
-        "man_made": null,
-        "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           107.5873389,
           -6.9491201
         ]
@@ -94,50 +72,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          107.6241889,
-          -6.9010136
-        ]
-      },
-      "properties": {
-        "osm_id": "3375793682",
-        "name": "PUSDAI A",
-        "barrier": null,
-        "highway": "bus_stop",
-        "ref": null,
-        "address": null,
-        "is_in": null,
-        "place": null,
-        "man_made": null,
-        "other_tags": "\"bench\"=>\"yes\",\"bin\"=>\"yes\",\"bus\"=>\"yes\",\"lit\"=>\"yes\",\"pole\"=>\"traffic_sign\",\"public_transport\"=>\"platform\",\"route_ref\"=>\"5\",\"shelter\"=>\"yes\""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          107.62417160000001,
-          -6.9012082
-        ]
-      },
-      "properties": {
-        "osm_id": "3377028653",
-        "name": "PUSDAI B",
-        "barrier": null,
-        "highway": "bus_stop",
-        "ref": null,
-        "address": null,
-        "is_in": null,
-        "place": null,
-        "man_made": null,
-        "other_tags": "\"bench\"=>\"no\",\"bin\"=>\"no\",\"bus\"=>\"yes\",\"lit\"=>\"no\",\"pole\"=>\"no\",\"public_transport\"=>\"platform\",\"route_ref\"=>\"5\",\"shelter\"=>\"no\""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           107.69554160000001,
           -6.913719
         ]
@@ -153,7 +87,8 @@
         "place": null,
         "man_made": null,
         "other_tags": "\"bench\"=>\"yes\",\"bin\"=>\"no\",\"bus\"=>\"yes\",\"lit\"=>\"no\",\"pole\"=>\"no\",\"public_transport\"=>\"platform\",\"shelter\"=>\"yes\""
-      }
+      },
+      "id": 3
     },
     {
       "type": "Feature",
@@ -285,7 +220,8 @@
         "place": null,
         "man_made": null,
         "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:street\"=>\"Taman Holis Indah, Blok A\",\"amenity\"=>\"school\""
-      }
+      },
+      "id": 12
     },
     {
       "type": "Feature",
@@ -307,29 +243,8 @@
         "place": null,
         "man_made": null,
         "other_tags": "\"addr:city\"=>\"Bandung, Jawa Barat\",\"addr:housenumber\"=>\"5\",\"addr:street\"=>\"Jalan Rajawali I\",\"amenity\"=>\"school\""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          107.5817875,
-          -6.9182299
-        ]
       },
-      "properties": {
-        "osm_id": "4328133602",
-        "name": "Sekolah Dasar Negeri Raya Barat 1",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
-        "address": null,
-        "is_in": null,
-        "place": null,
-        "man_made": null,
-        "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:housenumber\"=>\"578\",\"addr:street\"=>\"Jl. Jendral Sudirman\",\"amenity\"=>\"school\""
-      }
+      "id": 13
     },
     {
       "type": "Feature",
@@ -342,7 +257,7 @@
       },
       "properties": {
         "osm_id": "4328166911",
-        "name": "TK SD SMP SMA Santa Angela Bandung",
+        "name": "SD Santa Angela Bandung",
         "barrier": null,
         "highway": null,
         "ref": null,
@@ -351,6 +266,135 @@
         "place": null,
         "man_made": null,
         "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:housenumber\"=>\"24\",\"addr:street\"=>\"Jl Merdeka\",\"amenity\"=>\"school\",\"denomination\"=>\"roman_catholic\",\"grades\"=>\"1-12\",\"operator\"=>\"Yayasan Widya Bhakti\",\"operator:type\"=>\"private\",\"religion\"=>\"christian\",\"website\"=>\"https://portal.santa-angela.sch.id/\""
+      },
+      "id": 14
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.61073735212284,
+          -6.913104222266027
+        ]
+      },
+      "properties": {
+        "name": "SDN 113 Banjarsari",
+        "category": "SD",
+        "kecamatan": "Sumur Bandung",
+        "address": "Kecamatan Sumur Bandung, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.62889834233933,
+          -6.915344228204558
+        ]
+      },
+      "properties": {
+        "name": "SDN 035 Soka",
+        "category": "SD",
+        "kecamatan": "Sumur Bandung",
+        "address": "Kecamatan Sumur Bandung, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6218073018657,
+          -6.911708674065055
+        ]
+      },
+      "properties": {
+        "name": "SDN 034 Patrakomala",
+        "category": "SD",
+        "kecamatan": "Sumur Bandung",
+        "address": "Kecamatan Sumur Bandung, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.61542501164932,
+          -6.920746274596636
+        ]
+      },
+      "properties": {
+        "name": "SDN 088 Embong",
+        "category": "SD",
+        "kecamatan": "Sumur Bandung",
+        "address": "Kecamatan Sumur Bandung, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.61123103228141,
+          -6.914688859712598
+        ]
+      },
+      "properties": {
+        "name": "SD Santo Yusup",
+        "category": "SD",
+        "kecamatan": "Sumur Bandung",
+        "address": "Kecamatan Sumur Bandung, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6152541098204,
+          -6.9156150283805005
+        ]
+      },
+      "properties": {
+        "name": "SD Bandung Islamic School (BISc)",
+        "category": "SD",
+        "kecamatan": "Sumur Bandung",
+        "address": "Kecamatan Sumur Bandung, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.61992099903046,
+          -6.912248870868935
+        ]
+      },
+      "properties": {
+        "name": "SD Kartika XIX-1",
+        "category": "SD",
+        "kecamatan": "Sumur Bandung",
+        "address": "Kecamatan Sumur Bandung, Kota Bandung"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.61665615147908,
+          -6.920701997711811
+        ]
+      },
+      "properties": {
+        "name": "SD Advent Naripan",
+        "category": "SD",
+        "kecamatan": "Sumur Bandung",
+        "address": "Kecamatan Sumur Bandung, Kota Bandung"
       }
     },
     {
@@ -417,29 +461,8 @@
         "place": null,
         "man_made": null,
         "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:street\"=>\"Pasir Kaliki, Cicendo\",\"amenity\"=>\"school\",\"wikidata\"=>\"Q112159251\""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          107.6271702,
-          -6.8994872
-        ]
       },
-      "properties": {
-        "osm_id": "5472413211",
-        "name": "PUSDAI Surapati",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
-        "address": null,
-        "is_in": null,
-        "place": null,
-        "man_made": null,
-        "other_tags": "\"junction\"=>\"yes\""
-      }
+      "id": 18
     },
     {
       "type": "Feature",
@@ -571,29 +594,8 @@
         "place": null,
         "man_made": null,
         "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:full\"=>\"Jl Cihampelas\",\"bench\"=>\"yes\",\"bin\"=>\"no\",\"bus\"=>\"yes\",\"pole\"=>\"no\",\"public_transport\"=>\"platform\",\"shelter\"=>\"yes\",\"wheelchair\"=>\"no\""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          107.6252889,
-          -6.8885984
-        ]
       },
-      "properties": {
-        "osm_id": "9761695854",
-        "name": "SD Negeri 189 Neglasari",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
-        "address": null,
-        "is_in": null,
-        "place": null,
-        "man_made": null,
-        "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
-      }
+      "id": 21
     },
     {
       "type": "Feature",
@@ -659,7 +661,8 @@
         "place": null,
         "man_made": null,
         "other_tags": "\"amenity\"=>\"school\""
-      }
+      },
+      "id": 28
     },
     {
       "type": "Feature",
@@ -673,28 +676,6 @@
       "properties": {
         "osm_id": "9813937318",
         "name": "SD Abu Seno Babakan Surabaya",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
-        "address": null,
-        "is_in": null,
-        "place": null,
-        "man_made": null,
-        "other_tags": "\"amenity\"=>\"school\""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          107.5662059,
-          -6.9099588
-        ]
-      },
-      "properties": {
-        "osm_id": "9816219984",
-        "name": "TK Kristen - SD Swasta Makedonia Cibeureum",
         "barrier": null,
         "highway": null,
         "ref": null,
@@ -725,7 +706,8 @@
         "place": null,
         "man_made": null,
         "other_tags": "\"amenity\"=>\"school\""
-      }
+      },
+      "id": 30
     },
     {
       "type": "Feature",
@@ -769,51 +751,8 @@
         "place": null,
         "man_made": null,
         "other_tags": "\"amenity\"=>\"school\""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          107.6000469,
-          -6.906799
-        ]
       },
-      "properties": {
-        "osm_id": "11138593914",
-        "name": "SDN Pajajaran",
-        "barrier": null,
-        "highway": "bus_stop",
-        "ref": null,
-        "address": null,
-        "is_in": null,
-        "place": null,
-        "man_made": null,
-        "other_tags": "\"bench\"=>\"yes\",\"bus\"=>\"yes\",\"departures_board\"=>\"no\",\"mapillary\"=>\"908943157594574\",\"pole\"=>\"no\",\"public_transport\"=>\"platform\",\"route_ref\"=>\"3\",\"shelter\"=>\"yes\""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          107.6000477,
-          -6.9068645
-        ]
-      },
-      "properties": {
-        "osm_id": "11138593915",
-        "name": "SDN Pajajaran",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
-        "address": null,
-        "is_in": null,
-        "place": null,
-        "man_made": null,
-        "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
-      }
+      "id": 36
     },
     {
       "type": "Feature",
@@ -835,50 +774,6 @@
         "place": null,
         "man_made": null,
         "other_tags": "\"addr:city\"=>\"Kabupaten Bandung\",\"addr:postcode\"=>\"40287\",\"addr:street\"=>\"Komplek GBI Jalan alam Asri Blok i-11\",\"amenity\"=>\"school\",\"grades\"=>\"1-6\",\"operator\"=>\"MUHAMMAD ANDRIANSYAH\",\"operator:type\"=>\"public\""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          107.6241682,
-          -6.9011517
-        ]
-      },
-      "properties": {
-        "osm_id": "11707030828",
-        "name": "PUSDAI B",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
-        "address": null,
-        "is_in": null,
-        "place": null,
-        "man_made": null,
-        "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          107.62418760000001,
-          -6.9010661
-        ]
-      },
-      "properties": {
-        "osm_id": "11707030829",
-        "name": "PUSDAI A",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
-        "address": null,
-        "is_in": null,
-        "place": null,
-        "man_made": null,
-        "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
       }
     },
     {
@@ -974,28 +869,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          107.5819762,
-          -6.9182515
-        ]
-      },
-      "properties": {
-        "osm_id": "11954573587",
-        "name": "SDN Raya Barat",
-        "barrier": null,
-        "highway": "bus_stop",
-        "ref": null,
-        "address": null,
-        "is_in": null,
-        "place": null,
-        "man_made": null,
-        "other_tags": "\"bench\"=>\"no\",\"bus\"=>\"yes\",\"lit\"=>\"no\",\"pole\"=>\"no\",\"public_transport\"=>\"platform\",\"shelter\"=>\"no\""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           107.5819763,
           -6.9181852
         ]
@@ -1011,7 +884,8 @@
         "place": null,
         "man_made": null,
         "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
-      }
+      },
+      "id": 41
     },
     {
       "type": "Feature",
@@ -1106,28 +980,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          107.5976849,
-          -6.9081059
-        ]
-      },
-      "properties": {
-        "osm_id": "12806120202",
-        "name": "SDN 013 Pajajaran",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
-        "address": null,
-        "is_in": null,
-        "place": null,
-        "man_made": null,
-        "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           107.6102154,
           -6.9156326
         ]
@@ -1143,51 +995,8 @@
         "place": null,
         "man_made": null,
         "other_tags": "\"bench\"=>\"no\",\"bin\"=>\"no\",\"bus\"=>\"yes\",\"lit\"=>\"no\",\"pole\"=>\"totem\",\"public_transport\"=>\"platform\",\"shelter\"=>\"no\""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          107.610182,
-          -6.915607
-        ]
       },
-      "properties": {
-        "osm_id": "12806120224",
-        "name": "SD Negeri Merdeka",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
-        "address": null,
-        "is_in": null,
-        "place": null,
-        "man_made": null,
-        "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          107.6656526,
-          -6.9040466
-        ]
-      },
-      "properties": {
-        "osm_id": "12806309242",
-        "name": "SDN Cikadut",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
-        "address": null,
-        "is_in": null,
-        "place": null,
-        "man_made": null,
-        "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
-      }
+      "id": 45
     },
     {
       "type": "Feature",
@@ -1209,72 +1018,6 @@
         "place": null,
         "man_made": null,
         "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"platform\",\"shelter\"=>\"yes\""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          107.7137735,
-          -6.9316908
-        ]
-      },
-      "properties": {
-        "osm_id": "12806516356",
-        "name": "SDN Cipadung",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
-        "address": null,
-        "is_in": null,
-        "place": null,
-        "man_made": null,
-        "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          107.7062374,
-          -6.9174054
-        ]
-      },
-      "properties": {
-        "osm_id": "12806516360",
-        "name": "SDN Ciporeat",
-        "barrier": null,
-        "highway": "bus_stop",
-        "ref": null,
-        "address": null,
-        "is_in": null,
-        "place": null,
-        "man_made": null,
-        "other_tags": "\"bus\"=>\"yes\",\"pole\"=>\"no\",\"public_transport\"=>\"platform\",\"shelter\"=>\"yes\""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          107.7061287,
-          -6.9173978
-        ]
-      },
-      "properties": {
-        "osm_id": "12806516361",
-        "name": "SDN Ciporeat",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
-        "address": null,
-        "is_in": null,
-        "place": null,
-        "man_made": null,
-        "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
       }
     },
     {
@@ -1304,28 +1047,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          107.6429612,
-          -6.9334238
-        ]
-      },
-      "properties": {
-        "osm_id": "12806853445",
-        "name": "SDN 38 Kiaracondong",
-        "barrier": null,
-        "highway": "bus_stop",
-        "ref": null,
-        "address": null,
-        "is_in": null,
-        "place": null,
-        "man_made": null,
-        "other_tags": "\"bench\"=>\"no\",\"bus\"=>\"yes\",\"pole\"=>\"totem\",\"public_transport\"=>\"platform\",\"shelter\"=>\"no\""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           107.642917,
           -6.9333993
         ]
@@ -1341,29 +1062,8 @@
         "place": null,
         "man_made": null,
         "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          107.64435940000001,
-          -6.9196188
-        ]
       },
-      "properties": {
-        "osm_id": "12806853453",
-        "name": "SDN 083 Babakan Surabaya Selatan",
-        "barrier": null,
-        "highway": "bus_stop",
-        "ref": null,
-        "address": null,
-        "is_in": null,
-        "place": null,
-        "man_made": null,
-        "other_tags": "\"bus\"=>\"yes\",\"lit\"=>\"no\",\"pole\"=>\"totem\",\"public_transport\"=>\"platform\",\"shelter\"=>\"no\""
-      }
+      "id": 53
     },
     {
       "type": "Feature",
@@ -1385,7 +1085,8 @@
         "place": null,
         "man_made": null,
         "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
-      }
+      },
+      "id": 55
     },
     {
       "type": "Feature",
@@ -1451,29 +1152,8 @@
         "place": null,
         "man_made": null,
         "other_tags": "\"bench\"=>\"no\",\"bus\"=>\"yes\",\"lit\"=>\"no\",\"public_transport\"=>\"platform\",\"shelter\"=>\"no\""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          107.5694988,
-          -6.9214054
-        ]
       },
-      "properties": {
-        "osm_id": "12809314928",
-        "name": "Seberang SDN 093 Tunas Harapan Cijerah",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
-        "address": null,
-        "is_in": null,
-        "place": null,
-        "man_made": null,
-        "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
-      }
+      "id": 62
     },
     {
       "type": "Feature",
@@ -1495,29 +1175,8 @@
         "place": null,
         "man_made": null,
         "other_tags": "\"bench\"=>\"yes\",\"bin\"=>\"yes\",\"bus\"=>\"yes\",\"lit\"=>\"yes\",\"pole\"=>\"traffic_sign\",\"public_transport\"=>\"platform\",\"shelter\"=>\"yes\",\"tactile_paving\"=>\"yes\""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          107.56902280000001,
-          -6.9218246
-        ]
       },
-      "properties": {
-        "osm_id": "12809314930",
-        "name": "SDN 061 Cijerah",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
-        "address": null,
-        "is_in": null,
-        "place": null,
-        "man_made": null,
-        "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
-      }
+      "id": 63
     },
     {
       "type": "Feature",
@@ -1531,28 +1190,6 @@
       "properties": {
         "osm_id": "12809314942",
         "name": "SDN 020 Lengkong Besar",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
-        "address": null,
-        "is_in": null,
-        "place": null,
-        "man_made": null,
-        "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          107.6040408,
-          -6.8869867
-        ]
-      },
-      "properties": {
-        "osm_id": "12811652377",
-        "name": "SDN 065 Cihampelas",
         "barrier": null,
         "highway": null,
         "ref": null,
@@ -1827,72 +1464,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          107.6349339,
-          -6.9314202
-        ]
-      },
-      "properties": {
-        "osm_id": "13255749331",
-        "name": "Seberang SD Negeri 115 Turangga",
-        "barrier": null,
-        "highway": "bus_stop",
-        "ref": null,
-        "address": null,
-        "is_in": null,
-        "place": null,
-        "man_made": null,
-        "other_tags": "\"bench\"=>\"yes\",\"bin\"=>\"yes\",\"bus\"=>\"yes\",\"lit\"=>\"yes\",\"pole\"=>\"traffic_sign\",\"public_transport\"=>\"platform\",\"shelter\"=>\"yes\""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          107.63499770000001,
-          -6.9314343
-        ]
-      },
-      "properties": {
-        "osm_id": "13255749332",
-        "name": "Seberang SD Negeri 115 Turangga",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
-        "address": null,
-        "is_in": null,
-        "place": null,
-        "man_made": null,
-        "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          107.6350599,
-          -6.9313935
-        ]
-      },
-      "properties": {
-        "osm_id": "13255749333",
-        "name": "SD Negeri 115 Turangga",
-        "barrier": null,
-        "highway": "bus_stop",
-        "ref": null,
-        "address": null,
-        "is_in": null,
-        "place": null,
-        "man_made": null,
-        "other_tags": "\"bench\"=>\"no\",\"bin\"=>\"no\",\"bus\"=>\"yes\",\"lit\"=>\"no\",\"pole\"=>\"no\",\"public_transport\"=>\"platform\",\"shelter\"=>\"no\""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           107.6350129,
           -6.931374
         ]
@@ -1908,25 +1479,33 @@
         "place": null,
         "man_made": null,
         "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
-      }
+      },
+      "id": 77
     },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.6907782, -6.9070546]
+        "coordinates": [
+          107.6907782,
+          -6.9070546
+        ]
       },
       "properties": {
         "name": "SD Gemilang Islamic School",
         "category": "SD",
         "address": "Jl. Cijambe Blkg No.39, Pasir Endah, Ujung Berung"
-      }
+      },
+      "id": 74
     },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.7091591, -6.9032327]
+        "coordinates": [
+          107.7091591,
+          -6.9032327
+        ]
       },
       "properties": {
         "name": "SD Islam Al-Junar",
@@ -1938,7 +1517,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.7062818, -6.9172013]
+        "coordinates": [
+          107.7062818,
+          -6.9172013
+        ]
       },
       "properties": {
         "name": "Sekolah Dasar Negeri Ciporeat 021",
@@ -1950,7 +1532,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.7088114, -6.9134005]
+        "coordinates": [
+          107.7088114,
+          -6.9134005
+        ]
       },
       "properties": {
         "name": "MI Abdurrahman Bandung",
@@ -1962,7 +1547,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.7093947, -6.9093587]
+        "coordinates": [
+          107.7093947,
+          -6.9093587
+        ]
       },
       "properties": {
         "name": "SDN 107 Paledang Kota Bandung",
@@ -1974,7 +1562,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.7148422, -6.9080673]
+        "coordinates": [
+          107.7148422,
+          -6.9080673
+        ]
       },
       "properties": {
         "name": "SDN 225 MEKARGALIH",
@@ -1986,19 +1577,26 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.6927797, -6.9089845]
+        "coordinates": [
+          107.6927797,
+          -6.9089845
+        ]
       },
       "properties": {
         "name": "Sekolah Dasar Negeri Aji Tunggal",
         "category": "SD",
         "address": "Jl. Terusan Sukup Baru No.31, Pasir Endah"
-      }
+      },
+      "id": 80
     },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.60593999999999, -6.8657699999999995]
+        "coordinates": [
+          107.60593999999999,
+          -6.8657699999999995
+        ]
       },
       "properties": {
         "name": "SD Al-Hidayah",
@@ -2010,7 +1608,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.5879645, -6.8658316]
+        "coordinates": [
+          107.5879645,
+          -6.8658316
+        ]
       },
       "properties": {
         "name": "Sekolah Dasar Negeri 196 Sukarasa Bandung",
@@ -2022,7 +1623,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.60560249999999, -6.863215299999999]
+        "coordinates": [
+          107.60560249999999,
+          -6.863215299999999
+        ]
       },
       "properties": {
         "name": "Sekolah Dasar Negeri 085 Ciumbuleuit",
@@ -2034,7 +1638,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.6068957, -6.8638216]
+        "coordinates": [
+          107.6068957,
+          -6.8638216
+        ]
       },
       "properties": {
         "name": "Sekolah Dasar Negeri Ciumbuleuit IV",
@@ -2046,7 +1653,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.5791003, -6.8856025999999995]
+        "coordinates": [
+          107.5791003,
+          -6.8856025999999995
+        ]
       },
       "properties": {
         "name": "Sekolah Dasar Negeri 207 Cibogo",
@@ -2058,7 +1668,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.7010696, -6.9123777]
+        "coordinates": [
+          107.7010696,
+          -6.9123777
+        ]
       },
       "properties": {
         "name": "Sdn036",
@@ -2086,7 +1699,8 @@
         "place": null,
         "man_made": null,
         "other_tags": "\"bench\"=>\"yes\",\"bin\"=>\"yes\",\"bus\"=>\"yes\",\"lit\"=>\"yes\",\"pole\"=>\"traffic_sign\",\"public_transport\"=>\"platform\",\"shelter\"=>\"yes\",\"tactile_paving\"=>\"yes\""
-      }
+      },
+      "id": 82
     }
   ]
 }
