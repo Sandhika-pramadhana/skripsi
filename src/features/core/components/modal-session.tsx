@@ -1,5 +1,4 @@
-/* eslint-disable react/display-name */
-import React, { useState, forwardRef, useImperativeHandle } from 'react';
+import React, { useState } from "react";
 import {
   AlertDialog,
   AlertDialogContent,
@@ -7,16 +6,10 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/features/core/components/ui/alert-dialog";
-import { AlertSessionMethods } from '@/types/def';
-import { AlertCircleIcon } from 'lucide-react';
+import { AlertCircleIcon } from "lucide-react";
 
-export const AlertSession = forwardRef<AlertSessionMethods>((props, ref) => {
-  const [open, setOpen] = useState(false);
-
-  useImperativeHandle(ref, () => ({
-    openDialog: () => setOpen(true),
-    closeDialog: () => setOpen(false)
-  }));
+export const AlertSession = () => {
+  const [open] = useState(false);
 
   return (
     <AlertDialog open={open}>
@@ -24,14 +17,16 @@ export const AlertSession = forwardRef<AlertSessionMethods>((props, ref) => {
         <AlertDialogHeader>
           <AlertDialogTitle>
             <div className="flex gap-2 items-center">
-              <AlertCircleIcon/> Session Habis
+              <AlertCircleIcon /> Session Habis
             </div>
           </AlertDialogTitle>
+
           <AlertDialogDescription className="text-base">
-            Session Anda habis, silahkan masuk kembali untuk mengakses halaman ini.
+            Session Anda habis, silahkan masuk kembali untuk mengakses halaman
+            ini.
           </AlertDialogDescription>
         </AlertDialogHeader>
       </AlertDialogContent>
     </AlertDialog>
   );
-});
+};
