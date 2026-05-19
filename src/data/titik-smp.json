@@ -359,6 +359,66 @@
     },
     {
       "type": "Feature",
+      "properties": {
+        "name": "SMP Negeri 49 Kota Bandung",
+        "category": "smp",
+        "kecamatan": "Antapani"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.65971610760546, -6.9065472046977]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "MTsN 2 Kota Bandung",
+        "category": "smp",
+        "kecamatan": "Antapani"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.65795911467079, -6.9097175521806555]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PKBM Baitul Muttaqin Gedung 1",
+        "category": "smp",
+        "kecamatan": "Antapani"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.65762738563812, -6.909299569355461]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SMP NUSANTARA RAYA",
+        "category": "smp",
+        "kecamatan": "Antapani"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.65850949975557, -6.9022651364952505]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SMPN 45 Bandung",
+        "category": "smp",
+        "kecamatan": "Antapani"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.66145739565629, -6.921403117084706]
+      }
+    },
+    {
+      "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [

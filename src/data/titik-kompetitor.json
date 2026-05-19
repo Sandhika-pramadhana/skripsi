@@ -11,15 +11,9 @@
         ]
       },
       "properties": {
-        "osm_id": "3809369309",
         "name": "Campions Juice",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"shop\"=>\"kiosk\""
       },
       "id": 0
@@ -34,15 +28,9 @@
         ]
       },
       "properties": {
-        "osm_id": "5119336933",
         "name": "Just Wax",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"leisure\"=>\"fitness_centre\""
       }
     },
@@ -56,15 +44,9 @@
         ]
       },
       "properties": {
-        "osm_id": "5119357422",
         "name": "Day's & Smoothie",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"shop\"=>\"gift\""
       }
     },
@@ -78,15 +60,9 @@
         ]
       },
       "properties": {
-        "osm_id": "7076331269",
         "name": "Juice Bar",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": null
       }
     },
@@ -100,15 +76,9 @@
         ]
       },
       "properties": {
-        "osm_id": "11538747849",
         "name": "MM Juice",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:country\"=>\"ID\",\"addr:place\"=>\"Summarecon Mall Bandung\",\"addr:province\"=>\"Jawa Barat\",\"addr:subdistrict\"=>\"Gedebage\",\"level\"=>\"1\",\"shop\"=>\"beverages\""
       }
     },
@@ -122,7 +92,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Tianlala Sarijadi",
         "address": "Jl. Perintis No.41, Sarijadi, Kec. Sukasari, Kota Bandung, Jawa Barat 40151",
         "is_in": "Sukasari, Bandung",
@@ -139,7 +108,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Gumijus - Gegerkalong",
         "address": "Jl. Gegerkalong Hilir No.106, Sukarasa, Kec. Sukasari, Kota Bandung, Jawa Barat 40153",
         "is_in": "Sukasari, Bandung",
@@ -156,7 +124,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Tea Storm UPI Gerlong",
         "address": "Jl. Gegerkalong Girang No.27B, Gegerkalong, Kec. Sukasari, Kota Bandung, Jawa Barat 40153",
         "is_in": "Sukasari, Bandung",
@@ -173,7 +140,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Momoyo Summarecon Bdg",
         "address": "Jalan Magna Commercial MC17, Jl. Magna Timur No.15, Summarecon, Rancabolang, Gedebage, Bandung City, West Java 40295",
         "is_in": "Gedebage, Bandung",
@@ -190,7 +156,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Xiboba Summarecon Bandung",
         "address": "Jl. Bulevar Selatan Ruko Shappire No.17, Rancabolang, Kec. Gedebage, Kota Bandung, Jawa Barat 40295",
         "is_in": "Gedebage, Bandung",
@@ -207,7 +172,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Boost Juice @ Summarecon Mall Bandung",
         "address": "Jl. Grand Bulevar No.1, Cisaranten Kidul, Kec. Gedebage, Kota Bandung, Jawa Barat 40295",
         "is_in": "Gedebage, Bandung",
@@ -224,7 +188,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Fore Coffee - Summarecon Mall Bandung",
         "address": "Jl. Grand Bulevar No.1, Cisaranten Kidul, Kec. Gedebage, Kota Bandung, Jawa Barat 40295",
         "is_in": "Gedebage, Bandung",
@@ -241,7 +204,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Chatime - Summarecon Mall Bandung",
         "address": "Jl. Bulevar Raya Barat No.75-89, Summarecon Bandung, Kec. Gedebage, Kota Bandung, Jawa Barat 40294",
         "is_in": "Gedebage, Bandung",
@@ -258,7 +220,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Sour Sally • Summarecon Mall Bandung",
         "address": "Summarecon Mall, Cisaranten Kidul, Kec. Gedebage, Kota Bandung, Jawa Barat 40295",
         "is_in": "Gedebage, Bandung",
@@ -275,7 +236,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Kenangan Signature - Summarecon Mall Bandung",
         "address": "Jl Boulevard Utama, Cisaranten Kidul, Kec. Gedebage, Kota Bandung, Jawa Barat 40295",
         "is_in": "Gedebage, Bandung",
@@ -292,7 +252,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "TIANLALA SUMMARECON BANDUNG",
         "address": "Summarecon Commerce No.76, Rancabolang, Gedebage, Bandung City, West Java 40295",
         "is_in": "Gedebage, Bandung",
@@ -405,15 +364,9 @@
         ]
       },
       "properties": {
-        "osm_id": "12482391291",
         "name": "Juice For You",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"fast_food\",\"cuisine\"=>\"juice\""
       },
       "id": 22
@@ -428,15 +381,9 @@
         ]
       },
       "properties": {
-        "osm_id": "13067825597",
         "name": "Shary Juice",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"fast_food\",\"cuisine\"=>\"juice\""
       }
     },
@@ -450,15 +397,9 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "The Smoothie Club",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Holis Regency, Babakan Ciparay",
         "is_in": "Bandung",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"cafe\",\"cuisine\"=>\"smoothies\""
       }
     },
@@ -472,15 +413,9 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "LOS Tropis",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Gempol Kulon No.20, Citarum",
         "is_in": "Bandung",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"shop\"=>\"beverages\",\"cuisine\"=>\"fresh_juice\""
       }
     },
@@ -494,15 +429,9 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Fit Fuel",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Maulana Yusuf No.2, Citarum",
         "is_in": "Bandung",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"restaurant\",\"cuisine\"=>\"healthy_food_smoothies\""
       }
     },
@@ -516,15 +445,9 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "GG Juicy 'n Fruity",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Gegerkalong Girang No.23",
         "is_in": "Sukasari, Bandung",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"cafe\",\"cuisine\"=>\"juice;dessert\",\"specialty\"=>\"thick_juice\""
       }
     },
@@ -538,15 +461,9 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Jus Egan 71",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Gegerkalong Girang No.71",
         "is_in": "Sukasari, Bandung",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"fast_food\",\"cuisine\"=>\"juice\",\"price_range\"=>\"budget\""
       }
     },
@@ -560,15 +477,9 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Juice Kidding Gegerkalong",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Gegerkalong Tengah No.66",
         "is_in": "Sukasari, Bandung",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"cafe\",\"cuisine\"=>\"juice;smoothies\",\"service\"=>\"dine_in;delivery\""
       }
     },
@@ -582,15 +493,9 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Tianlala UPI Gerlong",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Gegerkalong Girang, Gegerkalong",
         "is_in": "Sukasari, Bandung",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"cafe\",\"cuisine\"=>\"tea;juice;ice_cream\",\"brand\"=>\"Tianlala\""
       }
     },
@@ -604,15 +509,9 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Wedrink Gerlong Girang",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Gegerkalong Girang No.65a",
         "is_in": "Sukasari, Bandung",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"cafe\",\"cuisine\"=>\"tea;coffee;fruit_drink\",\"brand\"=>\"We Drink\""
       }
     },
@@ -626,15 +525,9 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "SMOOLY JUICE KPAD",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Gegerkalong Hilir, KPAD",
         "is_in": "Sukasari, Bandung",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"cafe\",\"cuisine\"=>\"juice;smoothies\",\"location\"=>\"KPAD\""
       }
     },
@@ -648,15 +541,9 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "ASTHA JUS MILKSHAKE & BOBA",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Bukit Raya Atas",
         "is_in": "Cidadap, Bandung",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"cafe\",\"cuisine\"=>\"juice;milkshake;boba\",\"opening_hours\"=>\"late_night\""
       }
     },
@@ -670,15 +557,9 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "JUS CiDEE Yogya Ciumbuleuit",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Yogya Ciumbuleuit, Jl. Ciumbuleuit",
         "is_in": "Cidadap, Bandung",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"juice_bar\",\"location\"=>\"supermarket\",\"rating\"=>\"4.8\""
       },
       "id": 35
@@ -693,15 +574,9 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Fruity Healthy and Delicious Drink",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Ciumbuleuit No.94 (Area UNPAR)",
         "is_in": "Cidadap, Bandung",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"kiosk\",\"cuisine\"=>\"juice\",\"target\"=>\"students\""
       },
       "id": 36
@@ -716,7 +591,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Juicide Juice Bar",
         "address": "Jl. Ambon No.21, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115",
         "is_in": "Bandung Wetan, Bandung",
@@ -733,7 +607,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Franc",
         "address": "Jl. Ir. H. Juanda No.10a, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40132",
         "is_in": "Bandung Wetan, Bandung",
@@ -750,7 +623,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Juice For You Sawunggaling",
         "address": "Jl. Sawunggaling No.2, Tamansari, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40116",
         "is_in": "Bandung Wetan, Bandung",
@@ -767,7 +639,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Smoothies Today Bengawan",
         "address": "Jl. Bengawan No.7, Cihapit, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40114",
         "is_in": "Bandung Wetan, Bandung",
@@ -784,7 +655,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Misca Smoothies Fresh & Healthy",
         "address": "Jl. Ir. H. Juanda No.91, Dago, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
         "is_in": "Coblong, Bandung",
@@ -801,7 +671,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Serasa Salad Bar Bandung",
         "address": "Jl. Imam Bonjol No.48, Lebakgede, Kecamatan Coblong, Kota Bandung, Jawa Barat 40132",
         "is_in": "Coblong, Bandung",
@@ -818,15 +687,9 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Boost Juice - 23 Paskal",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "23 Paskal Shopping Center, Kebon Jeruk",
         "is_in": "Andir, Bandung",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"cafe\",\"cuisine\"=>\"juice;smoothies\",\"brand\"=>\"Boost\",\"location\"=>\"mall\""
       }
     },
@@ -840,15 +703,9 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Bar Juice Dua Saudara",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Babakan Cianjur No.51, Campaka",
         "is_in": "Andir, Bandung",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"fast_food\",\"cuisine\"=>\"juice\",\"price_range\"=>\"budget\""
       }
     },
@@ -862,15 +719,9 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Fifara Jus",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Pelita Karya I No.4, Maleber",
         "is_in": "Andir, Bandung",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"fast_food\",\"cuisine\"=>\"juice\",\"service\"=>\"takeaway\""
       }
     },
@@ -884,7 +735,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Bagi Kopi Buah Batu",
         "address": "Jl. Guntursari Wetan No.22, Turangga, Kec. Lengkong, Kota Bandung, Jawa Barat 40262",
         "is_in": "Lengkong, Bandung",
@@ -901,7 +751,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Kiara Kopi",
         "address": "Jl. Buah Batu No.271, Turangga, Kec. Lengkong, Kota Bandung, Jawa Barat 40264",
         "is_in": "Lengkong, Bandung",
@@ -918,7 +767,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "TOMORO COFFEE - Buah Batu",
         "address": "Jl. Buah Batu Jl. Situsari Wetan No.282, Cijagra, Kec. Lengkong, Kota Bandung, Jawa Barat 40265",
         "is_in": "Lengkong, Bandung",
@@ -935,7 +783,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Rich Coffee & Donut, Buah Batu",
         "address": "Jl. Buah Batu No.243, Turangga, Kec. Lengkong, Kota Bandung, Jawa Barat 40264",
         "is_in": "Lengkong, Bandung",
@@ -952,7 +799,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "911 Coffee Buah Batu",
         "address": "Turangga, Kec. Buahbatu, Kota Bandung, Jawa Barat 40264",
         "is_in": "Buahbatu, Bandung",
@@ -969,7 +815,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "On The House - Coffee & Listening Experience",
         "address": "Jl. Cijagra I Komplek Pengairan No.4, Cijagra, Kec. Lengkong, Kota Bandung, Jawa Barat 40265",
         "is_in": "Lengkong, Bandung",
@@ -986,7 +831,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Eskalasi Space",
         "address": "Jl. Cijagra IB No.8, Cijagra, Kec. Lengkong, Kota Bandung, Jawa Barat 40265",
         "is_in": "Lengkong, Bandung",
@@ -1003,7 +847,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Kopi Toko Djawa (Buah Batu)",
         "address": "Jl. Buah Batu No.209, Turangga, Kec. Lengkong, Kota Bandung, Jawa Barat 40265",
         "is_in": "Lengkong, Bandung",
@@ -1020,7 +863,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Tianlala Buah Batu",
         "address": "Jl. Buah Batu No.195, Turangga, Kec. Lengkong, Kota Bandung, Jawa Barat 40265",
         "is_in": "Lengkong, Bandung",
@@ -1037,7 +879,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Janji Jiwa Culture, Buah Batu Bandung",
         "address": "Jl. Buah Batu No.163, Turangga, Kec. Lengkong, Kota Bandung, Jawa Barat 40265",
         "is_in": "Lengkong, Bandung",
@@ -1054,7 +895,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Fore Coffee - Griya Buah Batu, Bandung",
         "address": "Jl. Buah Batu No.183-185, Turangga, Kec. Lengkong, Kota Bandung, Jawa Barat 40264",
         "is_in": "Lengkong, Bandung",
@@ -1071,7 +911,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Kopi Mandja, Buahbatu",
         "address": "Jl. Buah Batu Dalam V No.105/105, Cijagra, Kec. Lengkong, Kota Bandung, Jawa Barat 40265",
         "is_in": "Lengkong, Bandung",
@@ -1088,7 +927,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Yumaju Coffee 3.0 Jln Buah Batu",
         "address": "Jl. Buah Batu No.140, Cijagra, Kec. Lengkong, Kota Bandung, Jawa Barat 40287",
         "is_in": "Lengkong, Bandung",
@@ -1105,7 +943,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Ssst Coffee, Buah Batu",
         "address": "Jl. Kliningan II No.1, Turangga, Kec. Lengkong, Kota Bandung, Jawa Barat 40264",
         "is_in": "Lengkong, Bandung",
@@ -1122,7 +959,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "ManA Social Cafe",
         "address": "Jl. Buah Batu No.127, Cijagra, Kec. Lengkong, Kota Bandung, Jawa Barat 40265",
         "is_in": "Lengkong, Bandung",
@@ -1139,7 +975,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Gumijus - Buah Batu",
         "address": "Jl. Buah Batu No.79, Malabar, Kec. Lengkong, Kota Bandung, Jawa Barat 40262",
         "is_in": "Lengkong, Bandung",
@@ -1156,7 +991,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "KOFU COFFEE",
         "address": "Jl. Buah Batu No.70, Burangrang, Kec. Lengkong, Kota Bandung, Jawa Barat 40262",
         "is_in": "Lengkong, Bandung",
@@ -1173,7 +1007,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Kinokimi Coffee",
         "address": "Jl. Buah Batu No.28, Burangrang, Kec. Lengkong, Kota Bandung, Jawa Barat 40262",
         "is_in": "Lengkong, Bandung",
@@ -1190,7 +1023,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Tianlala Ciwalk",
         "address": "Cihampelas Walk, Jl. Cihampelas No.160 Unit K-16 Lt.1, Cipaganti, Kecamatan Coblong, Kota Bandung, Jawa Barat 40131",
         "is_in": "Coblong, Bandung",
@@ -1207,7 +1039,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Boost Juice Ciwalk",
         "address": "Ciwalk Mall, Jl. Cihampelas, Cipaganti, Kecamatan Coblong, Kota Bandung, Jawa Barat 40131",
         "is_in": "Coblong, Bandung",
@@ -1224,7 +1055,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Sour Sally Mini Ciwalk",
         "address": "Cihampelas Walk, Jl. Kebun Binatang No.160, Cipaganti, Kecamatan Coblong, Kota Bandung, Jawa Barat 40131",
         "is_in": "Coblong, Bandung",
@@ -1241,7 +1071,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Starbucks Coffee - Ciwalk Bandung",
         "address": "Cihampelas Walk Parking Lot, Jl. Cihampelas No.160 Lantai Ground, Cipaganti, Kecamatan Coblong, Kota Bandung, Jawa Barat 40131",
         "is_in": "Coblong, Bandung",
@@ -1258,7 +1087,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Kenzu Japanese Cheese Drink Ciwalk",
         "address": "Jl. Cihampelas Walk, Cipaganti, Kecamatan Coblong, Kota Bandung, Jawa Barat 40131",
         "is_in": "Coblong, Bandung",
@@ -1275,7 +1103,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Fruity Healthy And Delicious Drink – Cihampelas Walk",
         "address": "Cihampelas Walk, Jl. Cihampelas No.160, Cipaganti, Kecamatan Coblong, Kota Bandung, Jawa Barat 40131",
         "is_in": "Coblong, Bandung",
@@ -1292,7 +1119,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "TREAT A CUP D’BOTANICA",
         "address": "Jl. Dr. Djunjunan No.143-149, D’Botanica Mall Bandung Lt. LG, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
         "is_in": "Cicendo, Bandung",
@@ -1309,7 +1135,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "SMUKY D'Botanica Mall",
         "address": "BTC Fashion Mall, Jl. Dr. Djunjunan, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
         "is_in": "Cicendo, Bandung",
@@ -1326,7 +1151,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Jabarano Coffee",
         "address": "D'Botanica Bandung Mall, Jl. DR. Djunjunan Dalam No.1 143-149, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
         "is_in": "Cicendo, Bandung",
@@ -1343,7 +1167,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Yo! Coffee",
         "address": "Jl. Dr. Djunjunan No.143, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
         "is_in": "Cicendo, Bandung",
@@ -1360,7 +1183,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Poyoyo D'Botanica",
         "address": "BTC Fashion Mall Lantai FF Blok ISL A5, Jl. Dr. Djunjunan No.143, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
         "is_in": "Cicendo, Bandung",
@@ -1377,7 +1199,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Matchaboy-BTC d'botanica Pujasera",
         "address": "Kios pujasera belakang BTC, Jl. Sukawarna No.10, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
         "is_in": "Cicendo, Bandung",
@@ -1394,7 +1215,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Fore Coffee - D'Botanica Bandung Mall",
         "address": "BTC Fashion Mall, Jl. Dr. Djunjunan, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
         "is_in": "Cicendo, Bandung",
@@ -1411,7 +1231,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Fore Coffee - D'Botanica Bandung Mall",
         "address": "BTC Fashion Mall, Jl. Dr. Djunjunan, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
         "is_in": "Cicendo, Bandung",
@@ -1428,7 +1247,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Tianlala d'Botanica",
         "address": "Jl. Dr. Djunjunan No.143-149, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
         "is_in": "Cicendo, Bandung",
@@ -1445,15 +1263,9 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Fortune Juice",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Ciroyom, Dungus Cariang",
         "is_in": "Andir, Bandung",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"fast_food\",\"cuisine\"=>\"juice\",\"opening_hours\"=>\"late_night\""
       }
     },
@@ -1467,15 +1279,9 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Arisa 1 Juice",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Garuda, Kec. Andir",
         "is_in": "Andir, Bandung",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"fast_food\",\"cuisine\"=>\"juice\",\"rating\"=>\"high\""
       }
     },
@@ -1489,15 +1295,9 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Tianlala Ciumbuleuit",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Ciumbuleuit No.42A",
         "is_in": "Cidadap, Bandung",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"cafe\",\"cuisine\"=>\"tea;juice;ice_cream\",\"brand\"=>\"Tianlala\""
       },
       "id": 84
@@ -1512,15 +1312,9 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Mixue Ciumbuleuit",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Ciumbuleuit No.105",
         "is_in": "Cidadap, Bandung",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"cafe\",\"cuisine\"=>\"ice_cream;tea;fruit_tea\",\"brand\"=>\"Mixue\""
       },
       "id": 85
@@ -1535,15 +1329,9 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "JUICE BOSS CAB. BUAH BATU",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Taman Saturnus II, Margahayu Raya",
         "is_in": "Rancasari, Bandung",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"fast_food\",\"cuisine\"=>\"juice\",\"specialty\"=>\"Mix Juice\""
       }
     },
@@ -1557,15 +1345,9 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Lussy juice rancabolang",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Rancabolang No.120, Sekejati",
         "is_in": "Buahbatu, Bandung",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"fast_food\",\"cuisine\"=>\"juice\",\"price_range\"=>\"budget\""
       }
     },
@@ -1579,15 +1361,9 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Dunia Buah Margacinta",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Margacinta No.116 (Samping Borma)",
         "is_in": "Buahbatu, Bandung",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"shop;juice_bar\",\"shop\"=>\"fruit\",\"service\"=>\"freshly_squeezed\""
       }
     },
@@ -1653,22 +1429,6 @@
         "address": "Jl. Raya Cijerah No.189",
         "is_in": "Bandung Kulon, Bandung",
         "other_tags": "\"amenity\"=>\"juice_bar\",\"cuisine\"=>\"juice\""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          107.561189,
-          -6.926956
-        ]
-      },
-      "properties": {
-        "name": "Al Fatih Juice",
-        "address": "Gg. Bungur Raya No.155, Melong",
-        "is_in": "Bandung Kulon, Bandung",
-        "other_tags": "\"amenity\"=>\"kiosk\",\"cuisine\"=>\"juice\",\"rating\"=>\"5.0\""
       }
     },
     {
@@ -1922,15 +1682,9 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Kedai juice annafiu",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Babakan Ciparay No.66, Suka Asih",
         "is_in": "Babakan Ciparay, Bandung",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"fast_food\",\"cuisine\"=>\"juice;dessert\",\"specialty\"=>\"sop_buah\""
       },
       "id": 64
@@ -2114,7 +1868,8 @@
         "address": "Jl. AH. Nasution No.247, Karang Pamulang",
         "is_in": "Arcamanik, Bandung",
         "other_tags": "\"amenity\"=>\"cafe\",\"cuisine\"=>\"ice_cream;fruit_tea\",\"brand\"=>\"Momoyo\""
-      }
+      },
+      "id": 116
     },
     {
       "type": "Feature",
@@ -2269,7 +2024,6 @@
           -6.9201104
         ]
       },
-      
       "properties": {
         "name": "JUICE PACAR",
         "address": "Jl. Pacar No.6, Samoja",
@@ -2319,7 +2073,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.6097669974338, -6.919282382687138]
+        "coordinates": [
+          107.6097669974338,
+          -6.919282382687138
+        ]
       }
     },
     {
@@ -2331,7 +2088,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.60915760542129, -6.917339848072873]
+        "coordinates": [
+          107.60915760542129,
+          -6.917339848072873
+        ]
       }
     },
     {
@@ -2343,7 +2103,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.60941500276259, -6.917450187848339]
+        "coordinates": [
+          107.60941500276259,
+          -6.917450187848339
+        ]
       }
     },
     {
@@ -2355,7 +2118,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.60940813741207, -6.917167979369002]
+        "coordinates": [
+          107.60940813741207,
+          -6.917167979369002
+        ]
       }
     },
     {
@@ -2367,7 +2133,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.60911627544286, -6.916904223857425]
+        "coordinates": [
+          107.60911627544286,
+          -6.916904223857425
+        ]
       }
     },
     {
@@ -2379,7 +2148,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.60908261296515, -6.91690537618418]
+        "coordinates": [
+          107.60908261296515,
+          -6.91690537618418
+        ]
       }
     },
     {
@@ -2391,7 +2163,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.60923583527749, -6.916767096953234]
+        "coordinates": [
+          107.60923583527749,
+          -6.916767096953234
+        ]
       }
     },
     {
@@ -2403,7 +2178,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.60938325371436, -6.917067854228804]
+        "coordinates": [
+          107.60938325371436,
+          -6.917067854228804
+        ]
       }
     },
     {
@@ -2415,7 +2193,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.60928099600089, -6.9164224379013275]
+        "coordinates": [
+          107.60928099600089,
+          -6.9164224379013275
+        ]
       }
     },
     {
@@ -2427,7 +2208,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.60879891339825, -6.916334483678182]
+        "coordinates": [
+          107.60879891339825,
+          -6.916334483678182
+        ]
       }
     },
     {
@@ -2439,7 +2223,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.60866340909912, -6.91637328701394]
+        "coordinates": [
+          107.60866340909912,
+          -6.91637328701394
+        ]
       }
     },
     {
@@ -2451,7 +2238,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.60954924626283, -6.918043662723285]
+        "coordinates": [
+          107.60954924626283,
+          -6.918043662723285
+        ]
       }
     },
     {
@@ -2463,7 +2253,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.60942776906576, -6.918209885164532]
+        "coordinates": [
+          107.60942776906576,
+          -6.918209885164532
+        ]
       }
     },
     {
@@ -2475,7 +2268,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.60929467862238, -6.91726892840091]
+        "coordinates": [
+          107.60929467862238,
+          -6.91726892840091
+        ]
       }
     },
     {
@@ -2487,7 +2283,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.60967244325875, -6.918693185030319]
+        "coordinates": [
+          107.60967244325875,
+          -6.918693185030319
+        ]
       }
     },
     {
@@ -2499,7 +2298,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.60952776743902, -6.91865727945437]
+        "coordinates": [
+          107.60952776743902,
+          -6.91865727945437
+        ]
       }
     },
     {
@@ -2511,7 +2313,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.60993768226156, -6.919359432444524]
+        "coordinates": [
+          107.60993768226156,
+          -6.919359432444524
+        ]
       }
     },
     {
@@ -2523,7 +2328,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.60975377242835, -6.919113067107381]
+        "coordinates": [
+          107.60975377242835,
+          -6.919113067107381
+        ]
       }
     },
     {
@@ -2535,7 +2343,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.61305689392617, -6.9190083860520994]
+        "coordinates": [
+          107.61305689392617,
+          -6.9190083860520994
+        ]
       }
     },
     {
@@ -2547,7 +2358,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.61601805273514, -6.915600148997215]
+        "coordinates": [
+          107.61601805273514,
+          -6.915600148997215
+        ]
       }
     },
     {
@@ -2559,7 +2373,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.6189792115441, -6.9177303000389445]
+        "coordinates": [
+          107.6189792115441,
+          -6.9177303000389445
+        ]
       }
     },
     {
@@ -2571,7 +2388,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.62831738228317, -6.912526936695952]
+        "coordinates": [
+          107.62831738228317,
+          -6.912526936695952
+        ]
       }
     },
     {
@@ -2583,7 +2403,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.63136416171261, -6.911197139532057]
+        "coordinates": [
+          107.63136416171261,
+          -6.911197139532057
+        ]
       }
     },
     {
@@ -2595,7 +2418,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.62326744090718, -6.9080034781146376]
+        "coordinates": [
+          107.62326744090718,
+          -6.9080034781146376
+        ]
       }
     },
     {
@@ -2607,7 +2433,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.62174302827519, -6.908132896884546]
+        "coordinates": [
+          107.62174302827519,
+          -6.908132896884546
+        ]
       }
     },
     {
@@ -2619,7 +2448,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.6205026427791, -6.907186078061392]
+        "coordinates": [
+          107.6205026427791,
+          -6.907186078061392
+        ]
       }
     },
     {
@@ -2631,7 +2463,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.62017430543892, -6.908008724020362]
+        "coordinates": [
+          107.62017430543892,
+          -6.908008724020362
+        ]
       }
     },
     {
@@ -2643,7 +2478,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.6254723205068, -6.91021870914273]
+        "coordinates": [
+          107.6254723205068,
+          -6.91021870914273
+        ]
       }
     },
     {
@@ -2655,7 +2493,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.63007394848636, -6.911602219490461]
+        "coordinates": [
+          107.63007394848636,
+          -6.911602219490461
+        ]
       }
     },
     {
@@ -2667,7 +2508,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.63024924860125, -6.909444289669723]
+        "coordinates": [
+          107.63024924860125,
+          -6.909444289669723
+        ]
       }
     },
     {
@@ -2679,7 +2523,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.63035442867017, -6.910618970430849]
+        "coordinates": [
+          107.63035442867017,
+          -6.910618970430849
+        ]
       }
     },
     {
@@ -2691,7 +2538,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.62932015799235, -6.910714685030935]
+        "coordinates": [
+          107.62932015799235,
+          -6.910714685030935
+        ]
       }
     },
     {
@@ -2703,7 +2553,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.6315902944801, -6.911637024729423]
+        "coordinates": [
+          107.6315902944801,
+          -6.911637024729423
+        ]
       }
     },
     {
@@ -2715,7 +2568,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.62788820846428, -6.913445688477736]
+        "coordinates": [
+          107.62788820846428,
+          -6.913445688477736
+        ]
       }
     },
     {
@@ -2727,7 +2583,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.62744826323409, -6.913752476231581]
+        "coordinates": [
+          107.62744826323409,
+          -6.913752476231581
+        ]
       }
     },
     {
@@ -2739,7 +2598,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.61452786486039, -6.904469778316363]
+        "coordinates": [
+          107.61452786486039,
+          -6.904469778316363
+        ]
       }
     },
     {
@@ -2751,7 +2613,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.6146710241315, -6.906506097469591]
+        "coordinates": [
+          107.6146710241315,
+          -6.906506097469591
+        ]
       }
     },
     {
@@ -2763,7 +2628,235 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [107.61609095506205, -6.907150000915624]
+        "coordinates": [
+          107.61609095506205,
+          -6.907150000915624
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BINGXUE BABAKAN SARI",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Kiaracondong"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.65367755341688,
+          -6.922904530422868
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "OMANGO THAI",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Kiaracondong"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.64913800031053,
+          -6.922021821777258
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nyojus!",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Kiaracondong"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.64607871176693,
+          -6.911297236739274
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Terminal Juice & Sop Buah Denok",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Kiaracondong"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.64625617681321,
+          -6.91929231994136
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Fardana Juice",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Kiaracondong"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6550772478981,
+          -6.924689949053326
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Jayanka Fresh Juice",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Kiaracondong"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6522149842656,
+          -6.9284043958202215
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Joyful juice",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Kiaracondong"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.64575665099821,
+          -6.929681982773535
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Fruity Juice Gatsu",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Kiaracondong"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.64601404833951,
+          -6.9327714059105725
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sparkle Coffee",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Batununggal"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6436663961963,
+          -6.911801276363485
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mokopi Cafè",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Batununggal"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.64414431153322,
+          -6.912807092556503
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kopi Siloka - Kiara Arta Park Bandung",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Batununggal"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.64343008451073,
+          -6.916279477965548
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nomora Cafe",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Batununggal"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.64352857953538,
+          -6.916422886101086
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Monday Co Kiara Artha Park",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Batununggal"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.64214964919016,
+          -6.916742294973771
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nutiluan Coffee",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Batununggal"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.64199395196906,
+          -6.918237614521792
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bagi Kopi Kiara Artha",
+        "category": "kompetitor_minuman",
+        "kecamatan": "Batununggal"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.64110190839617,
+          -6.914751093508395
+        ]
       }
     },
     {
@@ -3798,15 +3891,9 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Tianlala Sumber Sari",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Sumber Mekar No.37, Babakan",
         "is_in": "Babakan Ciparay, Bandung",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"cafe\",\"cuisine\"=>\"tea;juice;ice_cream\",\"brand\"=>\"Tianlala\""
       },
       "id": 138
@@ -3889,7 +3976,8 @@
         "address": "Jl. Cikadut No.49, Karang Pamulang",
         "is_in": "Mandalajati, Bandung",
         "other_tags": "\"amenity\"=>\"juice_bar\",\"cuisine\"=>\"fresh_juice\",\"rating\"=>\"3.7\""
-      }
+      },
+      "id": 251
     },
     {
       "type": "Feature",
@@ -3905,7 +3993,8 @@
         "address": "Jl. Jatihandap No.252",
         "is_in": "Mandalajati, Bandung",
         "other_tags": "\"amenity\"=>\"juice_bar\",\"cuisine\"=>\"juice;smoothies\",\"rating\"=>\"4.3\""
-      }
+      },
+      "id": 252
     },
     {
       "type": "Feature",
@@ -4095,15 +4184,9 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "MIXUE Caringin",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Caringin No.191",
         "is_in": "Babakan Ciparay, Bandung",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"cafe\",\"cuisine\"=>\"ice_cream;fruit_tea\",\"brand\"=>\"Mixue\""
       },
       "id": 157
@@ -4118,15 +4201,9 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Chatime - Sumbersari Junction",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Sumbersari Junction, Jl. Sumber Sari Indah No.4",
         "is_in": "Babakan Ciparay, Bandung",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"cafe\",\"cuisine\"=>\"bubble_tea;fruit_tea\",\"brand\"=>\"Chatime\",\"location\"=>\"mall\""
       },
       "id": 158
@@ -4141,7 +4218,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Gong Cha Paris Van Java",
         "address": "Paris Van Java, Concourse Level, No. CL-A-08.B, Cipedes, Kec. Sukajadi, Kota Bandung, Jawa Barat 40162",
         "is_in": "Sukajadi, Bandung",
@@ -4158,7 +4234,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "U-berkopi",
         "address": "Jl. Nagrog No.815, Pasirwangi, Ujung Berung, Kota Bandung, Jawa Barat 40618",
         "is_in": "Ujung Berung, Bandung",
@@ -4175,7 +4250,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Kedai Idari Ujung Berung",
         "address": "Jl. Rumah Sakit No.94, Sukamulya, Kota Bandung, Jawa Barat 45474",
         "is_in": "Ujung Berung, Bandung",
@@ -4192,7 +4266,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Kopi kataji - ujungberung",
         "address": "Jl. AH. Nasution No.45B, Cigending, Ujung Berung, Kota Bandung, Jawa Barat 40611",
         "is_in": "Ujung Berung, Bandung",
@@ -4209,7 +4282,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Koffie Kawan",
         "address": "Jl. Cigending, Cigending, Ujung Berung, Bandung, Jawa Barat 40618",
         "is_in": "Ujung Berung, Bandung",
@@ -4226,7 +4298,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Kohiku bandung",
         "address": "Jl. Walagri Mulya No.41, Pasanggrahan, Ujung Berung, Kota Bandung",
         "is_in": "Ujung Berung, Bandung",
@@ -4243,7 +4314,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "TEGUK - Cijambe",
         "address": "Jl. Cijambe No.39, Pasir Endah, Ujung Berung, Kota Bandung",
         "is_in": "Ujung Berung, Bandung",
@@ -4260,7 +4330,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Nuettadrinks",
         "address": "Grand Ujungberung Residence, Cipadung Kulon, Kota Bandung",
         "is_in": "Ujung Berung, Bandung",
@@ -4277,7 +4346,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Es Teler Sultan Exodrinks - Cigending",
         "address": "Jl. Cigending No.46, Cigending, Ujung Berung, Kota Bandung",
         "is_in": "Ujung Berung, Bandung",
@@ -4294,7 +4362,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Es Teler Sultan Exodrinks - Cijambe",
         "address": "Jl. Cijambe No.42, Pasir Endah, Ujung Berung, Kota Bandung",
         "is_in": "Ujung Berung, Bandung",
@@ -4311,7 +4378,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "MINUMULU",
         "address": "Jl. Haruman 5, Cigending, Ujung Berung, Kota Bandung",
         "is_in": "Ujung Berung, Bandung",
@@ -4328,7 +4394,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Kopi Lain hati ujung berung",
         "address": "Jl. AH. Nasution No.184, Sukamulya, Ujung Berung, Kota Bandung",
         "is_in": "Ujung Berung, Bandung",
@@ -4345,7 +4410,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Janji Jiwa & Jiwa Toast Ruko Ujung Berung",
         "address": "Jl. AH. Nasution No.143, Sukamulya, Kota Bandung",
         "is_in": "Ujung Berung, Bandung",
@@ -4362,7 +4426,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Hitam Putih Coffee",
         "address": "Jl. Ujungberung Indah Raya, Cigending, Ujung Berung",
         "is_in": "Ujung Berung, Bandung",
@@ -4379,7 +4442,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Hilari Coffee",
         "address": "Jalan Mayang Asih No.2, Pasir Endah, Ujung Berung",
         "is_in": "Ujung Berung, Bandung",
@@ -4396,7 +4458,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Toko Kopi Manglayang",
         "address": "Jl. Palintang No.123, Pasirwangi, Ujung Berung",
         "is_in": "Ujung Berung, Bandung",
@@ -4413,7 +4474,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Sugar cijambe",
         "address": "Jl. Cijambe No.34, Pasir Endah, Ujung Berung",
         "is_in": "Ujung Berung, Bandung",
@@ -4430,7 +4490,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Keeura Drink",
         "address": "Jl. Giri Pratama No.4, Pasir Endah, Ujung Berung",
         "is_in": "Ujung Berung, Bandung",
@@ -4447,7 +4506,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "STENG! Fresh Milk",
         "address": "Jl. Nagrog No.2, Pasirjati, Ujung Berung",
         "is_in": "Ujung Berung, Bandung",
@@ -4464,7 +4522,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Yuanr_fy Drinks",
         "address": "Cigending, Ujung Berung, Kota Bandung",
         "is_in": "Ujung Berung, Bandung",
@@ -4481,7 +4538,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Kopiwa",
         "address": "Jl. Nagrog, Pasirjati, Ujung Berung",
         "is_in": "Ujung Berung, Bandung",
@@ -4498,7 +4554,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Warung kelapa aa bar-bar",
         "address": "Cisurupan, Ujung Berung, Kota Bandung",
         "is_in": "Ujung Berung, Bandung",
@@ -4699,7 +4754,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Segar Gembira Drikns",
         "address": "Andir Tengah No.39, Pasanggrahan, Ujung Berung",
         "is_in": "Ujung Berung, Bandung",
@@ -4716,7 +4770,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Madame Yo Paris Van Java",
         "address": "Jl. Sukajadi No.131-139, Cipedes, Kec. Sukajadi, Kota Bandung, Jawa Barat 40162",
         "is_in": "Sukajadi, Bandung",
@@ -4733,7 +4786,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Drink Ayang",
         "address": "Andir Kidul No. 103, RT.05/RW.03, Pakemitan, Kec. Cinambo, Kota Bandung, Jawa Barat 40612",
         "is_in": "Cinambo, Bandung",
@@ -4751,7 +4803,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Kelapa Mangbru",
         "address": "Sukamulya, Cinambo, Bandung City, West Java 45474",
         "is_in": "Cinambo, Bandung",
@@ -4769,7 +4820,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "By Djie Coffee",
         "address": "Jl. Rumah Sakit No.95 c, Sukamulya, Kec. Cinambo, Kota Bandung, Jawa Barat 45474",
         "is_in": "Cinambo, Bandung",
@@ -4787,7 +4837,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Kedai Teh Poci Ujungberung",
         "address": "Jl. AH. Nasution No.34, Pakemitan, Kec. Cinambo, Kota Bandung, Jawa Barat 40612",
         "is_in": "Cinambo, Bandung",
@@ -4804,7 +4853,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Hay Drink's",
         "address": "Jl. AH. Nasution No.46, Pakemitan, Kec. Cinambo, Kota Bandung, Jawa Barat 40612",
         "is_in": "Cinambo, Bandung",
@@ -4821,7 +4869,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Point Coffee",
         "address": "Jl. Rumah Sakit No.23, Sukamulya, Kec. Cinambo, Kota Bandung, Jawa Barat 45474",
         "is_in": "Cinambo, Bandung",
@@ -4839,7 +4886,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Coffee Jow",
         "address": "Jl. Rumah Sakit No.50 B, Pakemitan, Kec. Cinambo, Kota Bandung, Jawa Barat 40296",
         "is_in": "Cinambo, Bandung",
@@ -4857,7 +4903,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "The Warung Kopi By MG",
         "address": "Jl. AH. Nasution No.46A, Pakemitan, Kec. Cinambo, Kota Bandung, Jawa Barat 40294",
         "is_in": "Cinambo, Bandung",
@@ -4875,7 +4920,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Boyang Boba Milk Tea",
         "address": "Jl. Cinambo No.3, Pakemitan, Kec. Cinambo, Kota Bandung, Jawa Barat 40293",
         "is_in": "Cinambo, Bandung",
@@ -4893,7 +4937,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Praja Bubble Tea",
         "address": "Gg. Andir Kidul II, Pakemitan, Kec. Cinambo, Kota Bandung, Jawa Barat 45474",
         "is_in": "Cinambo, Bandung",
@@ -4911,7 +4954,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "More Coffee Uber",
         "address": "Jl. AH. Nasution No.48, Pakemitan, Kec. Cinambo, Kota Bandung, Jawa Barat 40614",
         "is_in": "Cinambo, Bandung",
@@ -4928,7 +4970,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Darbundar",
         "address": "Cisaranten Wetan, Kec. Cinambo, Kota Bandung, Jawa Barat 40293",
         "is_in": "Cinambo, Bandung",
@@ -4946,7 +4987,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "The Kopi Tubruk - Saung Coffee",
         "address": "Jl. Cisaranten Wetan III No.41, Cisaranten Wetan, Cinambo, Bandung City, West Java 40293",
         "is_in": "Cinambo, Bandung",
@@ -4964,7 +5004,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Rempang Heritage Mixology Minuman Segar dan Sehat",
         "address": "Jl. Raya Ujung Berung No.24 B 15, Cigending, Kec. Cinambo, Kota Bandung, Jawa Barat 45474",
         "is_in": "Cinambo, Bandung",
@@ -4982,7 +5021,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Teh Poci SPBU Cinambo",
         "address": "Sukamulya, Kec. Cinambo, Kota Bandung, Jawa Barat 45474",
         "is_in": "Cinambo, Bandung",
@@ -5000,7 +5038,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Kedai Kopi KPK",
         "address": "Jl. Golf Raya No.01 Rt02, Cisaranten Wetan, Kec. Cinambo, Kota Bandung, Jawa Barat 40293",
         "is_in": "Cinambo, Bandung",
@@ -5018,7 +5055,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "HMU Coffee",
         "address": "Jl. Bebedahan, Babakan Penghulu, Kec. Cinambo, Kota Bandung, Jawa Barat 40295",
         "is_in": "Cinambo, Bandung",
@@ -5035,7 +5071,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "PirasatKopi",
         "address": "Jl. Cirengot No.3, Sukamulya, Kec. Cinambo, Kota Bandung, Jawa Barat 45474",
         "is_in": "Cinambo, Bandung",
@@ -5053,7 +5088,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Tamara Juice",
         "address": "Jl. Cisaranten Wetan No.165, Babakan Penghulu, Kec. Cinambo, Kota Bandung, Jawa Barat 40294",
         "is_in": "Cinambo, Bandung",
@@ -5071,7 +5105,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Harumanis Juice",
         "address": "Jl. Cisaranten Wetan No.8, Babakan Penghulu, Kec. Cinambo, Kota Bandung, Jawa Barat 40293",
         "is_in": "Cinambo, Bandung",
@@ -5088,7 +5121,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Family Juice",
         "address": "Babakan Penghulu, Kec. Cinambo, Kota Bandung, Jawa Barat 40293",
         "is_in": "Cinambo, Bandung",
@@ -5105,7 +5137,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Nayang Jus",
         "address": "Jl. Rumah Sakit No.204, Sukamulya, Kec. Cinambo, Kota Bandung, Jawa Barat 45474",
         "is_in": "Cinambo, Bandung",
@@ -5123,7 +5154,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Warung Jus Rizki",
         "address": "Babakan Gaya Kidul, RT.03/RW.06, Sukamulya, Kec. Cinambo, Kota Bandung, Jawa Barat 45474",
         "is_in": "Cinambo, Bandung",
@@ -5141,7 +5171,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Es Kelapa Muda Arek Wetan",
         "address": "Jl. Cisaranten Wetan No.24, Babakan Penghulu, Kec. Cinambo, Kota Bandung, Jawa Barat 40294",
         "is_in": "Cinambo, Bandung",
@@ -5159,7 +5188,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Trend Juice Rancameong",
         "address": "Jl. Rancameong No.5, Babakan Penghulu, Kec. Cinambo, Kota Bandung, Jawa Barat 40295",
         "is_in": "Cinambo, Bandung",
@@ -5176,7 +5204,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Syifa Jus+Mie Kocok",
         "address": "Jl. Rumah Sakit No.152, Babakan Penghulu, Kec. Cinambo, Kota Bandung, Jawa Barat 40293",
         "is_in": "Cinambo, Bandung",
@@ -5193,7 +5220,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "J.co Donuts & Coffee",
         "address": "Jl. AH. Nasution No.46A, Pakemitan, Kec. Cinambo, Kota Bandung, Jawa Barat 40294",
         "is_in": "Cinambo, Bandung",
@@ -5211,7 +5237,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Juice Teh Putrie",
         "address": "Babakan Penghulu, Kec. Cinambo, Kota Bandung, Jawa Barat 40295",
         "is_in": "Cinambo, Bandung",
@@ -5228,7 +5253,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Starbucks PVJ",
         "address": "Paris Van Java, Unit 16B, Jl. Sukajadi No.131-139, Cipedes, Kec. Sukajadi, Kota Bandung, Jawa Barat 40162",
         "is_in": "Sukajadi, Bandung",
@@ -5245,7 +5269,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Mixue, Paris Van Java",
         "address": "PVJ Mall, Jl. Sukajadi 131-139, Unit CL-A-09B, Cipedes, Kec. Sukajadi, Kota Bandung, Jawa Barat 40152",
         "is_in": "Sukajadi, Bandung",
@@ -5262,7 +5285,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Fore Coffee - Paris Van Java, Bandung",
         "address": "Paris Van Java, Jl. Sukajadi No.131-139 lantai dasar unit RC-L-21, Cipedes, Kec. Sukajadi, Kota Bandung, Jawa Barat 40162",
         "is_in": "Sukajadi, Bandung",
@@ -5279,7 +5301,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Chia-Yo",
         "address": "Paris Van Java Mall, Lantai RL 10, Jl. Sukajadi No.131-139, Cipedes, Kec. Sukajadi, Kota Bandung, Jawa Barat 40162",
         "is_in": "Sukajadi, Bandung",
@@ -5296,7 +5317,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Atelier Coffee PVJ",
         "address": "Paris Van Java, Jl. Sukajadi No.131-139, Lt. 2 Lt. P7, Cipedes, Sukajadi, Bandung City, West Java 40162",
         "is_in": "Sukajadi, Bandung",
@@ -5313,7 +5333,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Street Boba PVJ Bandung",
         "address": "Paris Van Java Resort Lifestyle Place, Bandung Sky Level (P5) SL-09G, Jl. Sukajadi No.131-139, Cipedes, Kec. Sukajadi, Kota Bandung, Jawa Barat 40162",
         "is_in": "Sukajadi, Bandung",
@@ -5330,7 +5349,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Tianlala Kings",
         "address": "Kings Shopping Center, Lt.G, Balonggede, Kec. Regol, Kota Bandung, Jawa Barat 40251",
         "is_in": "Regol, Bandung",
@@ -5347,7 +5365,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Gulu-Gulu Kings Shopping Centre",
         "address": "The Kings Shopping Centre, Jl. Kepatihan No.11-17, Alun Alun, Kec. Regol, Kota Bandung, Jawa Barat 40162",
         "is_in": "Regol, Bandung",
@@ -5364,7 +5381,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Chatime - Kings Shopping Center Bandung",
         "address": "Jalan Kepatihan No.11-17 dan Jl. Dalem Kaum No.40, Kota Bandung, Jawa Barat",
         "is_in": "Regol, Bandung",
@@ -5381,7 +5397,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Fore Coffee - Kings Shopping Centre",
         "address": "The Kings Shopping Centre, Ground Floor GF10, Jl. Kepatihan No.11-17, Balonggede, Kec. Regol, Kota Bandung, Jawa Barat 40251",
         "is_in": "Regol, Bandung",
@@ -5398,7 +5413,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Kopi Kenangan - Yogya Grand Kepatihan",
         "address": "Yogya Grand Kepatihan, Jl. Kepatihan No.18 Lantai 1, Balonggede, Kec. Regol, Kota Bandung, Jawa Barat 40251",
         "is_in": "Regol, Bandung",
@@ -5415,7 +5429,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Chatime - Yogya Kepatihan Bandung",
         "address": "Jl. Dewi Sartika No.16, Balonggede, Kec. Regol, Kota Bandung, Jawa Barat 40251",
         "is_in": "Regol, Bandung",
@@ -5432,7 +5445,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Chatime - Bandung Indah Plaza",
         "address": "Jl. Merdeka No.56 Unit #B5, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115",
         "is_in": "Bandung Wetan, Bandung",
@@ -5449,7 +5461,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "SANCHA - Bandung Indah Plaza (BIP)",
         "address": "Jl. Merdeka No.56, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115",
         "is_in": "Bandung Wetan, Bandung",
@@ -5466,7 +5477,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "TOMORO COFFEE - Bandung Indah Plaza",
         "address": "Jl. Merdeka No.56, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115",
         "is_in": "Bandung Wetan, Bandung",
@@ -5483,7 +5493,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Fore Coffee - Bandung Indah Plaza",
         "address": "Bandung Indah Plaza, GF Floor unit 02B, 03A, 03B, Jl. Merdeka No.56, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115",
         "is_in": "Bandung Wetan, Bandung",
@@ -5501,7 +5510,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Tomoro Coffee BEC",
         "address": "Babakan Ciamis, Kec. Sumur Bandung, Kota Bandung, Jawa Barat 40117",
         "is_in": "Sumur Bandung, Bandung",
@@ -5518,7 +5526,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Chatime BEC",
         "address": "Bandung Electronic Center Level, Jl. Purnawarman No.11, Babakan Ciamis, Kec. Sumur Bandung, Kota Bandung, Jawa Barat 40117",
         "is_in": "Sumur Bandung, Bandung",
@@ -5535,7 +5542,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Tianlala BEC",
         "address": "Istana BEC Mall, Jl. Purnawarman No.13-15 Lantai US, Babakan Ciamis, Kec. Sumur Bandung, Kota Bandung, Jawa Barat 40117",
         "is_in": "Sumur Bandung, Bandung",
@@ -5552,7 +5558,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Coffee ON",
         "address": "Jl. Terusan Buah Batu No.181, Kujangsari, Kec. Bandung Kidul, Kota Bandung, Jawa Barat 40287",
         "is_in": "Buahbatu, Bandung",
@@ -5569,7 +5574,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Dum Dum Thai Drink Express Metro Indah Mall",
         "address": "Metro Indah Mall Blok C No. 12, Sekejati, Kec. Buahbatu, Kota Bandung, Jawa Barat 40286",
         "is_in": "Buahbatu, Bandung",
@@ -5586,7 +5590,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "BANYU Minuman Rancabolang",
         "address": "Jl. Rancabolang, Sekejati, Buahbatu, Bandung City, West Java 40286",
         "is_in": "Buahbatu, Bandung",
@@ -5603,7 +5606,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Mamamatcha Buah Batu",
         "address": "Jl. Karawitan, Turangga, Kec. Lengkong, Kota Bandung, Jawa Barat 40264",
         "is_in": "Buahbatu, Bandung",
@@ -5620,7 +5622,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Susu Murni Combi",
         "address": "Jl. Buah Batu No.241-243, Cijagra, Lengkong, Bandung City, West Java 40265",
         "is_in": "Buahbatu, Bandung",
@@ -5637,7 +5638,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Xi Black Boba - Buah Batu Bandung",
         "address": "Jl. Buah Batu No.269, Turangga, Lengkong, Bandung City, West Java 40265",
         "is_in": "Buahbatu, Bandung",
@@ -5654,7 +5654,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "San.Da.Ran Coffee",
         "address": "Jl. Karawitan No.3, Turangga, Lengkong, Bandung City, West Java 40264",
         "is_in": "Buahbatu, Bandung",
@@ -5671,7 +5670,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Minuman Rempah Dan STMJ Anti Rungkad",
         "address": "Jl. Margacinta No.118, Cijaura, Kec. Buahbatu, Kota Bandung, Jawa Barat 40287",
         "is_in": "Buahbatu, Bandung",
@@ -5688,7 +5686,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Armenti Coffee House",
         "address": "Jl. Reog No.6A, Turangga, Kec. Lengkong, Kota Bandung, Jawa Barat 40264",
         "is_in": "Buahbatu, Bandung",
@@ -5705,7 +5702,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Sticky Milk Macha Buah Batu",
         "address": "Jl. Terusan Kiaracondong No.100a, Cijaura, Kec. Buahbatu, Kota Bandung, Jawa Barat 40287",
         "is_in": "Buahbatu, Bandung",
@@ -5722,7 +5718,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Araya",
         "address": "Jl. Buah Batu No.277, Turangga, Kec. Lengkong, Kota Bandung, Jawa Barat 40265",
         "is_in": "Buahbatu, Bandung",
@@ -5739,7 +5734,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Es Teh Nusantara MHR",
         "address": "Jl. Margacinta, Margasari, Buahbatu, Bandung City, West Java 40287",
         "is_in": "Buahbatu, Bandung",
@@ -5756,7 +5750,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Worden Coffee",
         "address": "Margasari, Buahbatu, Bandung City, West Java 40286",
         "is_in": "Buahbatu, Bandung",
@@ -5773,7 +5766,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "MAR'S FARM COFFEE SHOP",
         "address": "Jl. Margasari No.185, Cijaura, Buahbatu, Bandung City, West Java 40286",
         "is_in": "Buahbatu, Bandung",
@@ -5790,7 +5782,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "SO SWEET ES COKLAT & KEJU",
         "address": "Jl. Margacinta No.12, Cijaura, Kec. Buahbatu, Kota Bandung, Jawa Barat 40286",
         "is_in": "Buahbatu, Bandung",
@@ -5807,7 +5798,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Nyusuin Aja",
         "address": "Margasari, Kec. Buahbatu, Kota Bandung, Jawa Barat 40286",
         "is_in": "Buahbatu, Bandung",
@@ -5824,7 +5814,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Relasi Coffee 1.1",
         "address": "Jl. Cijawura Girang II/3 No.2, Sekejati, Buahbatu, Bandung City, West Java 40286",
         "is_in": "Buahbatu, Bandung",
@@ -5841,7 +5830,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Kedai Ingin Kopi Bandung",
         "address": "Jl. Cipagalo Girang No.4, RT.01/RW.06, Margasari, Kec. Buahbatu, Kota Bandung, Jawa Barat 40286",
         "is_in": "Buahbatu, Bandung",
@@ -5858,7 +5846,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Minum Es",
         "address": "Margasari, Buahbatu, Bandung City, West Java 40286",
         "is_in": "Buahbatu, Bandung",
@@ -5875,7 +5862,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Paket Usaha Minuman",
         "address": "Jl. Cijawura Hilir No.62, RT.004/RW.11, Cijaura, Buahbatu, Bandung City, West Java 40287",
         "is_in": "Buahbatu, Bandung",
@@ -5892,7 +5878,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "JUICE BOSS CAB. BUAH BATU",
         "address": "Jl. Taman Saturnus II Komp. Margahayu Raya No.17 Blok L.45, Manjahlega, Kec. Rancasari, Kota Bandung, Jawa Barat 40286",
         "is_in": "Buahbatu, Bandung",
@@ -5909,7 +5894,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Es Teh Tali Pinggir Buah Batu",
         "address": "Jl. Karawitan No.62, Turangga, Lengkong, Bandung City, West Java 40264",
         "is_in": "Buahbatu, Bandung",
@@ -5926,7 +5910,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Pippu Pippu (thaitea nyoklat milkshake)",
         "address": "Jl. Margacinta No.192, Cijaura, Kec. Buahbatu, Kota Bandung, Jawa Barat 40287",
         "is_in": "Buahbatu, Bandung",
@@ -5943,7 +5926,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Susu Murni Sunade",
         "address": "Jl. Buah Batu No.110, Cijagra, Kec. Lengkong, Kota Bandung, Jawa Barat 40265",
         "is_in": "Buahbatu, Bandung",
@@ -5960,7 +5942,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Es Teh Tali Pinggir Margacinta",
         "address": "Jl. Margacinta No.424, Cijaura, Buahbatu, Bandung City, West Java 40287",
         "is_in": "Buahbatu, Bandung",
@@ -5977,7 +5958,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Dhi Thai Tea",
         "address": "Jl. Cijawura Hilir No.6, Cijaura, Kec. Buahbatu, Kota Bandung, Jawa Barat 40287",
         "is_in": "Buahbatu, Bandung",
@@ -5994,7 +5974,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Barokah Juice Bandung",
         "address": "Margasari, Kec. Buahbatu, Kota Bandung, Jawa Barat 40286",
         "is_in": "Buahbatu, Bandung",
@@ -6011,7 +5990,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "AKA SPACE",
         "address": "Jl. Neptunus Raya No.16 Blok A16, Sekejati, Kec. Buahbatu, Kota Bandung, Jawa Barat 40286",
         "is_in": "Buahbatu, Bandung",
@@ -6028,7 +6006,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Thai Tea Nyoklat Milk Shake Lala",
         "address": "Jl. Terusan Logam No.282, Kujangsari, Kec. Bandung Kidul, Kota Bandung, Jawa Barat 40287",
         "is_in": "Buahbatu, Bandung",
@@ -6045,7 +6022,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Umar Corner",
         "address": "Jl. Andromeda Tengah III, Sekejati, Kec. Buahbatu, Kota Bandung, Jawa Barat 40286",
         "is_in": "Buahbatu, Bandung",
@@ -6062,7 +6038,6 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Kopi Kenangan - Bandung Electronic Center",
         "address": "Bandung Electronic Center, Unit LU S-07, Jl. Purnawarman No.13-15, Babakan Ciamis, Kec. Sumur Bandung, Kota Bandung, Jawa Barat 40117",
         "is_in": "Sumur Bandung, Bandung",
@@ -6079,15 +6054,9 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Momoyo Babakan Ciparay",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Babakan Ciparay No.157",
         "is_in": "Babakan Ciparay, Bandung",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"cafe\",\"cuisine\"=>\"ice_cream;fruit_tea\",\"brand\"=>\"Momoyo\""
       },
       "id": 159
@@ -6102,15 +6071,9 @@
         ]
       },
       "properties": {
-        "osm_id": null,
         "name": "Juicide Juice Bar",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Ambon No.21, Citarum",
         "is_in": "Bandung",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"bar\",\"cuisine\"=>\"cold_pressed_juice\""
       },
       "id": 328

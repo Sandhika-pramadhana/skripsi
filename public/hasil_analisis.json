@@ -1,35 +1,15 @@
 [
   {
-    "kecamatan": "Batununggal",
-    "kelas": "Tinggi",
-    "level_lokasi": "Lokasi Utama",
-    "kepercayaan_persen": 84.7,
-    "kepadatan_jiwa_km2": 25788.5,
-    "skor_poi": 21.5,
-    "jumlah_kompetitor": 6,
-    "jarak_jalan_km": 1.8,
-    "poin_analisis": [
-      "Peluang usaha tinggi — kepercayaan model 84.7%",
-      "Kepadatan penduduk 25,788 jiwa/km2, basis konsumen besar",
-      "Skor POI 21.5, dekat mall, kampus, dan sekolah menengah",
-      "Jarak ke jalan arteri utama +-1.8 km, akses konsumen mudah"
-    ],
-    "analisis_kompetitor": "6 kompetitor dalam radius 1 km — diferensiasi produk diperlukan.",
-    "rekomendasi": "Prioritaskan lokasi di koridor pejalan kaki tinggi dan perkuat identitas merek.",
-    "centroid_lat": -6.925949,
-    "centroid_lng": 107.637143
-  },
-  {
     "kecamatan": "Bojongloa Kaler",
     "kelas": "Tinggi",
     "level_lokasi": "Lokasi Utama",
-    "kepercayaan_persen": 79.7,
+    "kepercayaan_persen": 81.4,
     "kepadatan_jiwa_km2": 41285.3,
     "skor_poi": 1.5,
     "jumlah_kompetitor": 7,
     "jarak_jalan_km": 3.8,
     "poin_analisis": [
-      "Peluang usaha tinggi — kepercayaan model 79.7%",
+      "Peluang usaha tinggi — kepercayaan model 81.4%",
       "Kepadatan penduduk 41,285 jiwa/km2, basis konsumen besar",
       "Skor POI 1.5, dekat mall, kampus, dan sekolah menengah",
       "Jarak ke jalan arteri utama +-3.8 km, akses konsumen mudah"
@@ -43,13 +23,13 @@
     "kecamatan": "Sumur Bandung",
     "kelas": "Tinggi",
     "level_lokasi": "Lokasi Utama",
-    "kepercayaan_persen": 48.4,
+    "kepercayaan_persen": 71.1,
     "kepadatan_jiwa_km2": 11833.6,
     "skor_poi": 77.0,
     "jumlah_kompetitor": 30,
     "jarak_jalan_km": 1.0,
     "poin_analisis": [
-      "Peluang usaha tinggi — kepercayaan model 48.4%",
+      "Peluang usaha tinggi — kepercayaan model 71.1%",
       "Kepadatan penduduk 11,834 jiwa/km2, basis konsumen besar",
       "Skor POI 77.0, dekat mall, kampus, dan sekolah menengah",
       "Jarak ke jalan arteri utama +-1.0 km, akses konsumen mudah"
@@ -63,13 +43,13 @@
     "kecamatan": "Coblong",
     "kelas": "Tinggi",
     "level_lokasi": "Lokasi Utama",
-    "kepercayaan_persen": 63.1,
+    "kepercayaan_persen": 63.5,
     "kepadatan_jiwa_km2": 16446.2,
     "skor_poi": 47.0,
     "jumlah_kompetitor": 11,
     "jarak_jalan_km": 4.1,
     "poin_analisis": [
-      "Peluang usaha tinggi — kepercayaan model 63.1%",
+      "Peluang usaha tinggi — kepercayaan model 63.5%",
       "Kepadatan penduduk 16,446 jiwa/km2, basis konsumen besar",
       "Skor POI 47.0, dekat mall, kampus, dan sekolah menengah",
       "Jarak ke jalan arteri utama +-4.1 km, akses konsumen mudah"
@@ -83,13 +63,13 @@
     "kecamatan": "Cibeunying Kidul",
     "kelas": "Tinggi",
     "level_lokasi": "Lokasi Utama",
-    "kepercayaan_persen": 90.0,
+    "kepercayaan_persen": 75.5,
     "kepadatan_jiwa_km2": 28167.5,
     "skor_poi": 17.0,
     "jumlah_kompetitor": 7,
     "jarak_jalan_km": 3.5,
     "poin_analisis": [
-      "Peluang usaha tinggi — kepercayaan model 90.0%",
+      "Peluang usaha tinggi — kepercayaan model 75.5%",
       "Kepadatan penduduk 28,168 jiwa/km2, basis konsumen besar",
       "Skor POI 17.0, dekat mall, kampus, dan sekolah menengah",
       "Jarak ke jalan arteri utama +-3.5 km, akses konsumen mudah"
@@ -100,16 +80,36 @@
     "centroid_lng": 107.645364
   },
   {
+    "kecamatan": "Batununggal",
+    "kelas": "Tinggi",
+    "level_lokasi": "Lokasi Utama",
+    "kepercayaan_persen": 71.6,
+    "kepadatan_jiwa_km2": 25788.5,
+    "skor_poi": 21.5,
+    "jumlah_kompetitor": 11,
+    "jarak_jalan_km": 1.8,
+    "poin_analisis": [
+      "Peluang usaha tinggi — kepercayaan model 71.6%",
+      "Kepadatan penduduk 25,788 jiwa/km2, basis konsumen besar",
+      "Skor POI 21.5, dekat mall, kampus, dan sekolah menengah",
+      "Jarak ke jalan arteri utama +-1.8 km, akses konsumen mudah"
+    ],
+    "analisis_kompetitor": "11 kompetitor dalam radius 1 km — diferensiasi produk diperlukan.",
+    "rekomendasi": "Prioritaskan lokasi di koridor pejalan kaki tinggi dan perkuat identitas merek.",
+    "centroid_lat": -6.925949,
+    "centroid_lng": 107.637143
+  },
+  {
     "kecamatan": "Andir",
     "kelas": "Tinggi",
     "level_lokasi": "Lokasi Utama",
-    "kepercayaan_persen": 75.6,
+    "kepercayaan_persen": 70.1,
     "kepadatan_jiwa_km2": 21899.7,
     "skor_poi": 36.5,
     "jumlah_kompetitor": 11,
     "jarak_jalan_km": 4.8,
     "poin_analisis": [
-      "Peluang usaha tinggi — kepercayaan model 75.6%",
+      "Peluang usaha tinggi — kepercayaan model 70.1%",
       "Kepadatan penduduk 21,900 jiwa/km2, basis konsumen besar",
       "Skor POI 36.5, dekat mall, kampus, dan sekolah menengah",
       "Jarak ke jalan arteri utama +-4.8 km, akses konsumen mudah"
@@ -120,36 +120,16 @@
     "centroid_lng": 107.579314
   },
   {
-    "kecamatan": "Kiaracondong",
-    "kelas": "Tinggi",
-    "level_lokasi": "Lokasi Utama",
-    "kepercayaan_persen": 83.9,
-    "kepadatan_jiwa_km2": 23455.3,
-    "skor_poi": 17.5,
-    "jumlah_kompetitor": 5,
-    "jarak_jalan_km": 3.2,
-    "poin_analisis": [
-      "Peluang usaha tinggi — kepercayaan model 83.9%",
-      "Kepadatan penduduk 23,455 jiwa/km2, basis konsumen besar",
-      "Skor POI 17.5, dekat mall, kampus, dan sekolah menengah",
-      "Jarak ke jalan arteri utama +-3.2 km, akses konsumen mudah"
-    ],
-    "analisis_kompetitor": "5 kompetitor dalam radius 1 km — diferensiasi produk diperlukan.",
-    "rekomendasi": "Prioritaskan lokasi di koridor pejalan kaki tinggi dan perkuat identitas merek.",
-    "centroid_lat": -6.924988,
-    "centroid_lng": 107.650037
-  },
-  {
     "kecamatan": "Sukajadi",
     "kelas": "Tinggi",
     "level_lokasi": "Lokasi Utama",
-    "kepercayaan_persen": 66.7,
+    "kepercayaan_persen": 63.6,
     "kepadatan_jiwa_km2": 20145.6,
     "skor_poi": 49.5,
     "jumlah_kompetitor": 18,
     "jarak_jalan_km": 5.0,
     "poin_analisis": [
-      "Peluang usaha tinggi — kepercayaan model 66.7%",
+      "Peluang usaha tinggi — kepercayaan model 63.6%",
       "Kepadatan penduduk 20,146 jiwa/km2, basis konsumen besar",
       "Skor POI 49.5, dekat mall, kampus, dan sekolah menengah",
       "Jarak ke jalan arteri utama +-5.0 km, akses konsumen mudah"
@@ -163,13 +143,13 @@
     "kecamatan": "Bandung Wetan",
     "kelas": "Tinggi",
     "level_lokasi": "Lokasi Utama",
-    "kepercayaan_persen": 48.4,
+    "kepercayaan_persen": 69.1,
     "kepadatan_jiwa_km2": 8659.9,
     "skor_poi": 72.0,
     "jumlah_kompetitor": 26,
     "jarak_jalan_km": 1.8,
     "poin_analisis": [
-      "Peluang usaha tinggi — kepercayaan model 48.4%",
+      "Peluang usaha tinggi — kepercayaan model 69.1%",
       "Kepadatan penduduk 8,660 jiwa/km2, basis konsumen besar",
       "Skor POI 72.0, dekat mall, kampus, dan sekolah menengah",
       "Jarak ke jalan arteri utama +-1.8 km, akses konsumen mudah"
@@ -180,16 +160,36 @@
     "centroid_lng": 107.617049
   },
   {
+    "kecamatan": "Antapani",
+    "kelas": "Sedang",
+    "level_lokasi": "Lokasi Alternatif",
+    "kepercayaan_persen": 69.5,
+    "kepadatan_jiwa_km2": 19517.4,
+    "skor_poi": 25.5,
+    "jumlah_kompetitor": 6,
+    "jarak_jalan_km": 4.4,
+    "poin_analisis": [
+      "Peluang usaha moderat — kepercayaan model 69.5%",
+      "Kepadatan penduduk 19,517 jiwa/km2, potensi pasar cukup",
+      "Skor POI 25.5, beberapa titik aktivitas tersedia",
+      "Jarak ke jalan arteri utama +-4.4 km, perlu evaluasi lapangan"
+    ],
+    "analisis_kompetitor": "6 kompetitor dalam radius 1 km — butuh strategi diferensiasi kuat.",
+    "rekomendasi": "Fokus pada subwilayah dengan konsentrasi sekolah menengah atau kampus.",
+    "centroid_lat": -6.916882,
+    "centroid_lng": 107.661176
+  },
+  {
     "kecamatan": "Astanaanyar",
     "kelas": "Tinggi",
     "level_lokasi": "Lokasi Utama",
-    "kepercayaan_persen": 78.1,
+    "kepercayaan_persen": 80.4,
     "kepadatan_jiwa_km2": 27953.9,
     "skor_poi": 1.5,
     "jumlah_kompetitor": 7,
     "jarak_jalan_km": 2.6,
     "poin_analisis": [
-      "Peluang usaha tinggi — kepercayaan model 78.1%",
+      "Peluang usaha tinggi — kepercayaan model 80.4%",
       "Kepadatan penduduk 27,954 jiwa/km2, basis konsumen besar",
       "Skor POI 1.5, dekat mall, kampus, dan sekolah menengah",
       "Jarak ke jalan arteri utama +-2.6 km, akses konsumen mudah"
@@ -201,21 +201,21 @@
   },
   {
     "kecamatan": "Cicendo",
-    "kelas": "Tinggi",
-    "level_lokasi": "Lokasi Utama",
-    "kepercayaan_persen": 42.0,
+    "kelas": "Sedang",
+    "level_lokasi": "Lokasi Alternatif",
+    "kepercayaan_persen": 55.6,
     "kepadatan_jiwa_km2": 13491.8,
     "skor_poi": 51.5,
     "jumlah_kompetitor": 19,
     "jarak_jalan_km": 4.6,
     "poin_analisis": [
-      "Peluang usaha tinggi — kepercayaan model 42.0%",
-      "Kepadatan penduduk 13,492 jiwa/km2, basis konsumen besar",
-      "Skor POI 51.5, dekat mall, kampus, dan sekolah menengah",
-      "Jarak ke jalan arteri utama +-4.6 km, akses konsumen mudah"
+      "Peluang usaha moderat — kepercayaan model 55.6%",
+      "Kepadatan penduduk 13,492 jiwa/km2, potensi pasar cukup",
+      "Skor POI 51.5, beberapa titik aktivitas tersedia",
+      "Jarak ke jalan arteri utama +-4.6 km, perlu evaluasi lapangan"
     ],
-    "analisis_kompetitor": "19 kompetitor dalam radius 1 km — diferensiasi produk diperlukan.",
-    "rekomendasi": "Prioritaskan lokasi di koridor pejalan kaki tinggi dan perkuat identitas merek.",
+    "analisis_kompetitor": "19 kompetitor dalam radius 1 km — butuh strategi diferensiasi kuat.",
+    "rekomendasi": "Fokus pada subwilayah dengan konsentrasi sekolah menengah atau kampus.",
     "centroid_lat": -6.901767,
     "centroid_lng": 107.584471
   },
@@ -223,13 +223,13 @@
     "kecamatan": "Regol",
     "kelas": "Sedang",
     "level_lokasi": "Lokasi Alternatif",
-    "kepercayaan_persen": 69.7,
+    "kepercayaan_persen": 67.3,
     "kepadatan_jiwa_km2": 17207.0,
     "skor_poi": 18.0,
     "jumlah_kompetitor": 9,
     "jarak_jalan_km": 2.3,
     "poin_analisis": [
-      "Peluang usaha moderat — kepercayaan model 69.7%",
+      "Peluang usaha moderat — kepercayaan model 67.3%",
       "Kepadatan penduduk 17,207 jiwa/km2, potensi pasar cukup",
       "Skor POI 18.0, beberapa titik aktivitas tersedia",
       "Jarak ke jalan arteri utama +-2.3 km, perlu evaluasi lapangan"
@@ -240,22 +240,42 @@
     "centroid_lng": 107.612613
   },
   {
+    "kecamatan": "Kiaracondong",
+    "kelas": "Tinggi",
+    "level_lokasi": "Lokasi Utama",
+    "kepercayaan_persen": 67.7,
+    "kepadatan_jiwa_km2": 23455.3,
+    "skor_poi": 18.5,
+    "jumlah_kompetitor": 15,
+    "jarak_jalan_km": 3.2,
+    "poin_analisis": [
+      "Peluang usaha tinggi — kepercayaan model 67.7%",
+      "Kepadatan penduduk 23,455 jiwa/km2, basis konsumen besar",
+      "Skor POI 18.5, dekat mall, kampus, dan sekolah menengah",
+      "Jarak ke jalan arteri utama +-3.2 km, akses konsumen mudah"
+    ],
+    "analisis_kompetitor": "15 kompetitor dalam radius 1 km — diferensiasi produk diperlukan.",
+    "rekomendasi": "Prioritaskan lokasi di koridor pejalan kaki tinggi dan perkuat identitas merek.",
+    "centroid_lat": -6.924988,
+    "centroid_lng": 107.650037
+  },
+  {
     "kecamatan": "Bandung Kulon",
-    "kelas": "Sedang",
-    "level_lokasi": "Lokasi Alternatif",
-    "kepercayaan_persen": 66.3,
+    "kelas": "Rendah",
+    "level_lokasi": "Lokasi Cadangan",
+    "kepercayaan_persen": 44.7,
     "kepadatan_jiwa_km2": 19651.4,
     "skor_poi": 24.0,
     "jumlah_kompetitor": 8,
     "jarak_jalan_km": 6.4,
     "poin_analisis": [
-      "Peluang usaha moderat — kepercayaan model 66.3%",
-      "Kepadatan penduduk 19,651 jiwa/km2, potensi pasar cukup",
-      "Skor POI 24.0, beberapa titik aktivitas tersedia",
-      "Jarak ke jalan arteri utama +-6.4 km, perlu evaluasi lapangan"
+      "Peluang usaha rendah — kepercayaan model 44.7%",
+      "Kepadatan penduduk 19,651 jiwa/km2, basis konsumen terbatas",
+      "Skor POI 24.0, aktivitas pembangkit konsumen minim",
+      "Jarak ke jalan arteri utama +-6.4 km, lalu lintas spontan rendah"
     ],
-    "analisis_kompetitor": "8 kompetitor dalam radius 1 km — butuh strategi diferensiasi kuat.",
-    "rekomendasi": "Fokus pada subwilayah dengan konsentrasi sekolah menengah atau kampus.",
+    "analisis_kompetitor": "8 kompetitor dalam radius 1 km — pasar terlayani, volume terbatas.",
+    "rekomendasi": "Tidak disarankan sebagai prioritas; lengkapi dengan survei primer sebelum investasi.",
     "centroid_lat": -6.931351,
     "centroid_lng": 107.56488
   },
@@ -263,13 +283,13 @@
     "kecamatan": "Bojongloa Kidul",
     "kelas": "Sedang",
     "level_lokasi": "Lokasi Alternatif",
-    "kepercayaan_persen": 83.6,
+    "kepercayaan_persen": 79.9,
     "kepadatan_jiwa_km2": 18456.5,
     "skor_poi": 12.5,
     "jumlah_kompetitor": 5,
     "jarak_jalan_km": 4.2,
     "poin_analisis": [
-      "Peluang usaha moderat — kepercayaan model 83.6%",
+      "Peluang usaha moderat — kepercayaan model 79.9%",
       "Kepadatan penduduk 18,456 jiwa/km2, potensi pasar cukup",
       "Skor POI 12.5, beberapa titik aktivitas tersedia",
       "Jarak ke jalan arteri utama +-4.2 km, perlu evaluasi lapangan"
@@ -283,13 +303,13 @@
     "kecamatan": "Bandung Kidul",
     "kelas": "Sedang",
     "level_lokasi": "Lokasi Alternatif",
-    "kepercayaan_persen": 53.8,
+    "kepercayaan_persen": 78.4,
     "kepadatan_jiwa_km2": 12074.7,
     "skor_poi": 21.5,
     "jumlah_kompetitor": 5,
     "jarak_jalan_km": 4.2,
     "poin_analisis": [
-      "Peluang usaha moderat — kepercayaan model 53.8%",
+      "Peluang usaha moderat — kepercayaan model 78.4%",
       "Kepadatan penduduk 12,075 jiwa/km2, potensi pasar cukup",
       "Skor POI 21.5, beberapa titik aktivitas tersedia",
       "Jarak ke jalan arteri utama +-4.2 km, perlu evaluasi lapangan"
@@ -303,13 +323,13 @@
     "kecamatan": "Babakan Ciparay",
     "kelas": "Sedang",
     "level_lokasi": "Lokasi Alternatif",
-    "kepercayaan_persen": 60.1,
+    "kepercayaan_persen": 54.4,
     "kepadatan_jiwa_km2": 21120.6,
     "skor_poi": 8.5,
     "jumlah_kompetitor": 5,
     "jarak_jalan_km": 5.4,
     "poin_analisis": [
-      "Peluang usaha moderat — kepercayaan model 60.1%",
+      "Peluang usaha moderat — kepercayaan model 54.4%",
       "Kepadatan penduduk 21,121 jiwa/km2, potensi pasar cukup",
       "Skor POI 8.5, beberapa titik aktivitas tersedia",
       "Jarak ke jalan arteri utama +-5.4 km, perlu evaluasi lapangan"
@@ -323,13 +343,13 @@
     "kecamatan": "Cibeunying Kaler",
     "kelas": "Sedang",
     "level_lokasi": "Lokasi Alternatif",
-    "kepercayaan_persen": 62.4,
+    "kepercayaan_persen": 73.6,
     "kepadatan_jiwa_km2": 15773.0,
     "skor_poi": 29.5,
     "jumlah_kompetitor": 18,
     "jarak_jalan_km": 3.8,
     "poin_analisis": [
-      "Peluang usaha moderat — kepercayaan model 62.4%",
+      "Peluang usaha moderat — kepercayaan model 73.6%",
       "Kepadatan penduduk 15,773 jiwa/km2, potensi pasar cukup",
       "Skor POI 29.5, beberapa titik aktivitas tersedia",
       "Jarak ke jalan arteri utama +-3.8 km, perlu evaluasi lapangan"
@@ -343,13 +363,13 @@
     "kecamatan": "Lengkong",
     "kelas": "Sedang",
     "level_lokasi": "Lokasi Alternatif",
-    "kepercayaan_persen": 51.0,
+    "kepercayaan_persen": 56.7,
     "kepadatan_jiwa_km2": 12440.3,
     "skor_poi": 42.5,
     "jumlah_kompetitor": 27,
     "jarak_jalan_km": 1.5,
     "poin_analisis": [
-      "Peluang usaha moderat — kepercayaan model 51.0%",
+      "Peluang usaha moderat — kepercayaan model 56.7%",
       "Kepadatan penduduk 12,440 jiwa/km2, potensi pasar cukup",
       "Skor POI 42.5, beberapa titik aktivitas tersedia",
       "Jarak ke jalan arteri utama +-1.5 km, perlu evaluasi lapangan"
@@ -361,97 +381,57 @@
   },
   {
     "kecamatan": "Sukasari",
-    "kelas": "Sedang",
-    "level_lokasi": "Lokasi Alternatif",
-    "kepercayaan_persen": 50.5,
+    "kelas": "Rendah",
+    "level_lokasi": "Lokasi Cadangan",
+    "kepercayaan_persen": 53.3,
     "kepadatan_jiwa_km2": 12593.5,
     "skor_poi": 32.0,
     "jumlah_kompetitor": 11,
     "jarak_jalan_km": 7.1,
     "poin_analisis": [
-      "Peluang usaha moderat — kepercayaan model 50.5%",
-      "Kepadatan penduduk 12,594 jiwa/km2, potensi pasar cukup",
-      "Skor POI 32.0, beberapa titik aktivitas tersedia",
-      "Jarak ke jalan arteri utama +-7.1 km, perlu evaluasi lapangan"
+      "Peluang usaha rendah — kepercayaan model 53.3%",
+      "Kepadatan penduduk 12,594 jiwa/km2, basis konsumen terbatas",
+      "Skor POI 32.0, aktivitas pembangkit konsumen minim",
+      "Jarak ke jalan arteri utama +-7.1 km, lalu lintas spontan rendah"
     ],
-    "analisis_kompetitor": "11 kompetitor dalam radius 1 km — butuh strategi diferensiasi kuat.",
-    "rekomendasi": "Fokus pada subwilayah dengan konsentrasi sekolah menengah atau kampus.",
+    "analisis_kompetitor": "11 kompetitor dalam radius 1 km — pasar terlayani, volume terbatas.",
+    "rekomendasi": "Tidak disarankan sebagai prioritas; lengkapi dengan survei primer sebelum investasi.",
     "centroid_lat": -6.866659,
     "centroid_lng": 107.587016
   },
   {
-    "kecamatan": "Antapani",
+    "kecamatan": "Buahbatu",
     "kelas": "Sedang",
     "level_lokasi": "Lokasi Alternatif",
-    "kepercayaan_persen": 79.3,
-    "kepadatan_jiwa_km2": 19517.4,
-    "skor_poi": 1.5,
-    "jumlah_kompetitor": 6,
-    "jarak_jalan_km": 4.4,
-    "poin_analisis": [
-      "Peluang usaha moderat — kepercayaan model 79.3%",
-      "Kepadatan penduduk 19,517 jiwa/km2, potensi pasar cukup",
-      "Skor POI 1.5, beberapa titik aktivitas tersedia",
-      "Jarak ke jalan arteri utama +-4.4 km, perlu evaluasi lapangan"
-    ],
-    "analisis_kompetitor": "6 kompetitor dalam radius 1 km — butuh strategi diferensiasi kuat.",
-    "rekomendasi": "Fokus pada subwilayah dengan konsentrasi sekolah menengah atau kampus.",
-    "centroid_lat": -6.916882,
-    "centroid_lng": 107.661176
-  },
-  {
-    "kecamatan": "Buahbatu",
-    "kelas": "Rendah",
-    "level_lokasi": "Lokasi Cadangan",
-    "kepercayaan_persen": 43.6,
+    "kepercayaan_persen": 46.4,
     "kepadatan_jiwa_km2": 14688.1,
     "skor_poi": 35.0,
     "jumlah_kompetitor": 22,
     "jarak_jalan_km": 5.0,
     "poin_analisis": [
-      "Peluang usaha rendah — kepercayaan model 43.6%",
-      "Kepadatan penduduk 14,688 jiwa/km2, basis konsumen terbatas",
-      "Skor POI 35.0, aktivitas pembangkit konsumen minim",
-      "Jarak ke jalan arteri utama +-5.0 km, lalu lintas spontan rendah"
+      "Peluang usaha moderat — kepercayaan model 46.4%",
+      "Kepadatan penduduk 14,688 jiwa/km2, potensi pasar cukup",
+      "Skor POI 35.0, beberapa titik aktivitas tersedia",
+      "Jarak ke jalan arteri utama +-5.0 km, perlu evaluasi lapangan"
     ],
-    "analisis_kompetitor": "22 kompetitor dalam radius 1 km — pasar terlayani, volume terbatas.",
-    "rekomendasi": "Tidak disarankan sebagai prioritas; lengkapi dengan survei primer sebelum investasi.",
+    "analisis_kompetitor": "22 kompetitor dalam radius 1 km — butuh strategi diferensiasi kuat.",
+    "rekomendasi": "Fokus pada subwilayah dengan konsentrasi sekolah menengah atau kampus.",
     "centroid_lat": -6.950173,
     "centroid_lng": 107.655856
-  },
-  {
-    "kecamatan": "Arcamanik",
-    "kelas": "Rendah",
-    "level_lokasi": "Lokasi Cadangan",
-    "kepercayaan_persen": 84.9,
-    "kepadatan_jiwa_km2": 11486.1,
-    "skor_poi": 16.0,
-    "jumlah_kompetitor": 8,
-    "jarak_jalan_km": 6.1,
-    "poin_analisis": [
-      "Peluang usaha rendah — kepercayaan model 84.9%",
-      "Kepadatan penduduk 11,486 jiwa/km2, basis konsumen terbatas",
-      "Skor POI 16.0, aktivitas pembangkit konsumen minim",
-      "Jarak ke jalan arteri utama +-6.1 km, lalu lintas spontan rendah"
-    ],
-    "analisis_kompetitor": "8 kompetitor dalam radius 1 km — pasar terlayani, volume terbatas.",
-    "rekomendasi": "Tidak disarankan sebagai prioritas; lengkapi dengan survei primer sebelum investasi.",
-    "centroid_lat": -6.920316,
-    "centroid_lng": 107.677011
   },
   {
     "kecamatan": "Mandalajati",
     "kelas": "Rendah",
     "level_lokasi": "Lokasi Cadangan",
-    "kepercayaan_persen": 74.7,
+    "kepercayaan_persen": 77.7,
     "kepadatan_jiwa_km2": 16319.8,
-    "skor_poi": 1.0,
+    "skor_poi": 5.5,
     "jumlah_kompetitor": 5,
     "jarak_jalan_km": 6.2,
     "poin_analisis": [
-      "Peluang usaha rendah — kepercayaan model 74.7%",
+      "Peluang usaha rendah — kepercayaan model 77.7%",
       "Kepadatan penduduk 16,320 jiwa/km2, basis konsumen terbatas",
-      "Skor POI 1.0, aktivitas pembangkit konsumen minim",
+      "Skor POI 5.5, aktivitas pembangkit konsumen minim",
       "Jarak ke jalan arteri utama +-6.2 km, lalu lintas spontan rendah"
     ],
     "analisis_kompetitor": "5 kompetitor dalam radius 1 km — pasar terlayani, volume terbatas.",
@@ -460,16 +440,36 @@
     "centroid_lng": 107.67223
   },
   {
+    "kecamatan": "Arcamanik",
+    "kelas": "Rendah",
+    "level_lokasi": "Lokasi Cadangan",
+    "kepercayaan_persen": 84.1,
+    "kepadatan_jiwa_km2": 11486.1,
+    "skor_poi": 17.0,
+    "jumlah_kompetitor": 8,
+    "jarak_jalan_km": 6.1,
+    "poin_analisis": [
+      "Peluang usaha rendah — kepercayaan model 84.1%",
+      "Kepadatan penduduk 11,486 jiwa/km2, basis konsumen terbatas",
+      "Skor POI 17.0, aktivitas pembangkit konsumen minim",
+      "Jarak ke jalan arteri utama +-6.1 km, lalu lintas spontan rendah"
+    ],
+    "analisis_kompetitor": "8 kompetitor dalam radius 1 km — pasar terlayani, volume terbatas.",
+    "rekomendasi": "Tidak disarankan sebagai prioritas; lengkapi dengan survei primer sebelum investasi.",
+    "centroid_lat": -6.920316,
+    "centroid_lng": 107.677011
+  },
+  {
     "kecamatan": "Rancasari",
     "kelas": "Rendah",
     "level_lokasi": "Lokasi Cadangan",
-    "kepercayaan_persen": 88.6,
+    "kepercayaan_persen": 85.8,
     "kepadatan_jiwa_km2": 13013.1,
     "skor_poi": 7.0,
     "jumlah_kompetitor": 6,
     "jarak_jalan_km": 6.9,
     "poin_analisis": [
-      "Peluang usaha rendah — kepercayaan model 88.6%",
+      "Peluang usaha rendah — kepercayaan model 85.8%",
       "Kepadatan penduduk 13,013 jiwa/km2, basis konsumen terbatas",
       "Skor POI 7.0, aktivitas pembangkit konsumen minim",
       "Jarak ke jalan arteri utama +-6.9 km, lalu lintas spontan rendah"
@@ -483,13 +483,13 @@
     "kecamatan": "Ujungberung",
     "kelas": "Rendah",
     "level_lokasi": "Lokasi Cadangan",
-    "kepercayaan_persen": 79.5,
+    "kepercayaan_persen": 79.9,
     "kepadatan_jiwa_km2": 15515.9,
     "skor_poi": 19.0,
     "jumlah_kompetitor": 18,
     "jarak_jalan_km": 9.5,
     "poin_analisis": [
-      "Peluang usaha rendah — kepercayaan model 79.5%",
+      "Peluang usaha rendah — kepercayaan model 79.9%",
       "Kepadatan penduduk 15,516 jiwa/km2, basis konsumen terbatas",
       "Skor POI 19.0, aktivitas pembangkit konsumen minim",
       "Jarak ke jalan arteri utama +-9.5 km, lalu lintas spontan rendah"
@@ -503,13 +503,13 @@
     "kecamatan": "Panyileukan",
     "kelas": "Rendah",
     "level_lokasi": "Lokasi Cadangan",
-    "kepercayaan_persen": 92.4,
+    "kepercayaan_persen": 90.6,
     "kepadatan_jiwa_km2": 8138.0,
     "skor_poi": 9.5,
     "jumlah_kompetitor": 4,
     "jarak_jalan_km": 9.5,
     "poin_analisis": [
-      "Peluang usaha rendah — kepercayaan model 92.4%",
+      "Peluang usaha rendah — kepercayaan model 90.6%",
       "Kepadatan penduduk 8,138 jiwa/km2, basis konsumen terbatas",
       "Skor POI 9.5, aktivitas pembangkit konsumen minim",
       "Jarak ke jalan arteri utama +-9.5 km, lalu lintas spontan rendah"
@@ -523,13 +523,13 @@
     "kecamatan": "Cidadap",
     "kelas": "Rendah",
     "level_lokasi": "Lokasi Cadangan",
-    "kepercayaan_persen": 88.6,
+    "kepercayaan_persen": 90.9,
     "kepadatan_jiwa_km2": 7321.9,
     "skor_poi": 15.5,
     "jumlah_kompetitor": 14,
     "jarak_jalan_km": 6.6,
     "poin_analisis": [
-      "Peluang usaha rendah — kepercayaan model 88.6%",
+      "Peluang usaha rendah — kepercayaan model 90.9%",
       "Kepadatan penduduk 7,322 jiwa/km2, basis konsumen terbatas",
       "Skor POI 15.5, aktivitas pembangkit konsumen minim",
       "Jarak ke jalan arteri utama +-6.6 km, lalu lintas spontan rendah"
@@ -543,13 +543,13 @@
     "kecamatan": "Gedebage",
     "kelas": "Rendah",
     "level_lokasi": "Lokasi Cadangan",
-    "kepercayaan_persen": 89.4,
+    "kepercayaan_persen": 90.6,
     "kepadatan_jiwa_km2": 4501.2,
     "skor_poi": 14.5,
     "jumlah_kompetitor": 9,
     "jarak_jalan_km": 9.1,
     "poin_analisis": [
-      "Peluang usaha rendah — kepercayaan model 89.4%",
+      "Peluang usaha rendah — kepercayaan model 90.6%",
       "Kepadatan penduduk 4,501 jiwa/km2, basis konsumen terbatas",
       "Skor POI 14.5, aktivitas pembangkit konsumen minim",
       "Jarak ke jalan arteri utama +-9.1 km, lalu lintas spontan rendah"
@@ -563,13 +563,13 @@
     "kecamatan": "Cibiru",
     "kelas": "Rendah",
     "level_lokasi": "Lokasi Cadangan",
-    "kepercayaan_persen": 90.6,
+    "kepercayaan_persen": 84.9,
     "kepadatan_jiwa_km2": 11978.4,
     "skor_poi": 3.0,
     "jumlah_kompetitor": 6,
     "jarak_jalan_km": 11.2,
     "poin_analisis": [
-      "Peluang usaha rendah — kepercayaan model 90.6%",
+      "Peluang usaha rendah — kepercayaan model 84.9%",
       "Kepadatan penduduk 11,978 jiwa/km2, basis konsumen terbatas",
       "Skor POI 3.0, aktivitas pembangkit konsumen minim",
       "Jarak ke jalan arteri utama +-11.2 km, lalu lintas spontan rendah"
@@ -583,13 +583,13 @@
     "kecamatan": "Cinambo",
     "kelas": "Rendah",
     "level_lokasi": "Lokasi Cadangan",
-    "kepercayaan_persen": 92.9,
+    "kepercayaan_persen": 93.0,
     "kepadatan_jiwa_km2": 6221.7,
     "skor_poi": 5.0,
     "jumlah_kompetitor": 31,
     "jarak_jalan_km": 7.8,
     "poin_analisis": [
-      "Peluang usaha rendah — kepercayaan model 92.9%",
+      "Peluang usaha rendah — kepercayaan model 93.0%",
       "Kepadatan penduduk 6,222 jiwa/km2, basis konsumen terbatas",
       "Skor POI 5.0, aktivitas pembangkit konsumen minim",
       "Jarak ke jalan arteri utama +-7.8 km, lalu lintas spontan rendah"

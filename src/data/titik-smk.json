@@ -13,13 +13,8 @@
       "properties": {
         "osm_id": "1919646265",
         "name": "SMK Pasundan 1 Kota Bandung",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"school\""
       },
       "id": 0
@@ -36,13 +31,8 @@
       "properties": {
         "osm_id": "1966161303",
         "name": "Lapang Olah Raga SMK PGRI 4",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"leisure\"=>\"stadium\""
       }
     },
@@ -58,13 +48,8 @@
       "properties": {
         "osm_id": "1982390333",
         "name": "SMK Medina",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
       }
     },
@@ -80,13 +65,8 @@
       "properties": {
         "osm_id": "3229398928",
         "name": "Kitchen SMKK BPP",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"school\""
       },
       "id": 3
@@ -103,13 +83,8 @@
       "properties": {
         "osm_id": "4116951666",
         "name": "SMK 11.10",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"school\""
       }
     },
@@ -125,13 +100,8 @@
       "properties": {
         "osm_id": "4143046989",
         "name": "SMKN 7 BANDUNG",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"addr:street\"=>\"Jalan Soekarno-Hatta\",\"amenity\"=>\"school\",\"name:en\"=>\"Smkn 7\""
       }
     },
@@ -147,13 +117,8 @@
       "properties": {
         "osm_id": "4328152441",
         "name": "Sekolah Menengah Kejuruan Prakarya Internasional SMK Prakarya Internasional",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:street\"=>\"Jl. Inhoftank\",\"amenity\"=>\"school\""
       },
       "id": 6
@@ -170,13 +135,8 @@
       "properties": {
         "osm_id": "4329450678",
         "name": "SMK Merdeka",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:street\"=>\"Neglasari, Cibeunying Kaler\",\"amenity\"=>\"school\""
       }
     },
@@ -192,13 +152,8 @@
       "properties": {
         "osm_id": "4329458589",
         "name": "SMK Taruna Ganesha",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:housenumber\"=>\"67\",\"addr:street\"=>\"Jl. Pahlawan , Sukaluyu, Cibeunying Kaler\",\"amenity\"=>\"school\""
       }
     },
@@ -214,13 +169,8 @@
       "properties": {
         "osm_id": "9743382699",
         "name": "Pos Satpam SMK N 2 Bandung",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:full\"=>\"Jl. Ciliwung No.4, Cihapit, Bandung Wetan\",\"office\"=>\"security\""
       }
     },
@@ -236,13 +186,8 @@
       "properties": {
         "osm_id": "9805665836",
         "name": "SMK Negeri 1 Bandung",
-        "barrier": null,
-        "highway": "bus_stop",
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"alt_name\"=>\"Balai Kota\",\"bench\"=>\"yes\",\"bin\"=>\"no\",\"bus\"=>\"yes\",\"image\"=>\"https://commons.wikimedia.org/wiki/File:Halte_Balai_Kota.jpg\",\"lit\"=>\"yes\",\"pole\"=>\"totem;traffic_sign\",\"public_transport\"=>\"platform\",\"ramp\"=>\"no\",\"route_ref\"=>\"4\",\"shelter\"=>\"yes\",\"tactile_paving\"=>\"yes\",\"wheelchair\"=>\"no\""
       },
       "id": 11
@@ -259,13 +204,8 @@
       "properties": {
         "osm_id": "9957134520",
         "name": "SMK Telkom Bandung",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:postcode\"=>\"40257\",\"addr:street\"=>\"Jalan Radio Palasari\",\"capacity\"=>\"1000\",\"email\"=>\"primaseru@smktelkom-bdg.sch.id\",\"grades\"=>\"10-12\",\"image\"=>\"https://www.google.com/maps/uv?pb=!1s0x2e68e9abfaadb37f%3A0x7245c560108cfac8!3m1!7e115!4shttps%3A%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMCk32qPSI9RkWPgQErY49_J5iuhE7_R9PHVoQi%3Dw355-h200-k-no!5ssmk%20telkom%20bandung%20-%20Google%20Search!15sCgIgAQ&i\",\"internet_access\"=>\"wlan\",\"office\"=>\"educational_institution\",\"operator\"=>\"SMK Telkom Bandung\",\"operator:type\"=>\"private\",\"phone\"=>\"+62 2288884848\",\"website\"=>\"https://smktelkom-bdg.sch.id/\""
       }
     },
@@ -281,13 +221,8 @@
       "properties": {
         "osm_id": "10814957476",
         "name": "SMKN 9 Bandung",
-        "barrier": null,
-        "highway": "bus_stop",
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"bus\"=>\"yes\",\"pole\"=>\"no\",\"public_transport\"=>\"platform\",\"shelter\"=>\"yes\",\"wheelchair\"=>\"no\""
       }
     },
@@ -303,13 +238,8 @@
       "properties": {
         "osm_id": "10815563379",
         "name": "SMK Negeri 12 Bandung",
-        "barrier": null,
-        "highway": "bus_stop",
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"bench\"=>\"yes\",\"bin\"=>\"no\",\"bus\"=>\"yes\",\"departures_board\"=>\"no\",\"lit\"=>\"no\",\"pole\"=>\"traffic_sign\",\"public_transport\"=>\"platform\",\"shelter\"=>\"yes\",\"wheelchair\"=>\"no\""
       }
     },
@@ -325,13 +255,8 @@
       "properties": {
         "osm_id": "12806120220",
         "name": "SMK Medina",
-        "barrier": null,
-        "highway": "bus_stop",
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"bus\"=>\"yes\",\"pole\"=>\"no\",\"public_transport\"=>\"platform\",\"shelter\"=>\"yes\""
       }
     },
@@ -347,13 +272,8 @@
       "properties": {
         "osm_id": "12806851390",
         "name": "SMK Medika Com",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
       },
       "id": 20
@@ -370,13 +290,8 @@
       "properties": {
         "osm_id": "12814754636",
         "name": "SMK YPF",
-        "barrier": null,
-        "highway": "bus_stop",
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"bus\"=>\"yes\",\"pole\"=>\"totem\",\"public_transport\"=>\"platform\",\"shelter\"=>\"no\""
       }
     },
@@ -392,13 +307,8 @@
       "properties": {
         "osm_id": "12814754637",
         "name": "SMK YPF",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
       }
     },
@@ -601,13 +511,8 @@
       "properties": {
         "osm_id": "12986828684",
         "name": "SMK Negeri 8 Bandung",
-        "barrier": null,
-        "highway": "bus_stop",
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"bench\"=>\"yes\",\"bin\"=>\"yes\",\"bus\"=>\"yes\",\"lit\"=>\"yes\",\"pole\"=>\"traffic_sign;flag\",\"public_transport\"=>\"platform\",\"shelter\"=>\"yes\",\"tactile_paving\"=>\"yes\""
       },
       "id": 25
@@ -616,7 +521,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.662161, -6.937366]
+        "coordinates": [
+          107.662161,
+          -6.937366
+        ]
       },
       "properties": {
         "name": "SMK Setia Bhakti",
@@ -628,7 +536,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.687119, -6.9641933]
+        "coordinates": [
+          107.687119,
+          -6.9641933
+        ]
       },
       "properties": {
         "name": "SMK Muhammadiyah 3 Bandung",
@@ -640,7 +551,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.6624181, -6.9469712]
+        "coordinates": [
+          107.6624181,
+          -6.9469712
+        ]
       },
       "properties": {
         "name": "SMK Bumi Siliwangi",
@@ -652,7 +566,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.659982, -6.9406388]
+        "coordinates": [
+          107.659982,
+          -6.9406388
+        ]
       },
       "properties": {
         "name": "SMKN 7 Kota Bandung",
@@ -664,7 +581,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.6578942, -6.9642737]
+        "coordinates": [
+          107.6578942,
+          -6.9642737
+        ]
       },
       "properties": {
         "name": "SMKN 10 Bandung",
@@ -676,7 +596,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.6054735, -6.861295699999999]
+        "coordinates": [
+          107.6054735,
+          -6.861295699999999
+        ]
       },
       "properties": {
         "name": "SMK Bakti Mandiri, Bandung",
@@ -688,7 +611,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.7047000, -6.9109200]
+        "coordinates": [
+          107.7047,
+          -6.91092
+        ]
       },
       "properties": {
         "name": "SMK Gantra",
@@ -708,13 +634,8 @@
       "properties": {
         "osm_id": "12986851582",
         "name": "SMK Negeri 4 Bandung",
-        "barrier": null,
-        "highway": "bus_stop",
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"bench\"=>\"yes\",\"bin\"=>\"yes\",\"bus\"=>\"yes\",\"lit\"=>\"yes\",\"pole\"=>\"traffic_sign;flag\",\"public_transport\"=>\"platform\",\"shelter\"=>\"yes\",\"tactile_paving\"=>\"yes\""
       },
       "id": 26
@@ -731,13 +652,8 @@
       "properties": {
         "osm_id": "13178984125",
         "name": "Seberang SMK Negeri 15 Bandung",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
       },
       "id": 27

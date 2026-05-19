@@ -13,14 +13,10 @@
       "properties": {
         "osm_id": "1107777609",
         "name": "SMP SMA Yahya YPK Yahya",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
-        "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:housenumber\"=>\"71A - 73\",\"addr:street\"=>\"Jl. LLRE Martadinata\",\"amenity\"=>\"school\""
+        "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:housenumber\"=>\"71A - 73\",\"addr:street\"=>\"Jl. LLRE Martadinata\",\"amenity\"=>\"school\"",
+        "category": "SMA"
       }
     },
     {
@@ -35,13 +31,8 @@
       "properties": {
         "osm_id": "1342017899",
         "name": "SMAK DAGO",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"school\",\"name:en\"=>\"Smak\""
       },
       "id": 1
@@ -58,14 +49,10 @@
       "properties": {
         "osm_id": "1388221862",
         "name": "SMP/ SMA Nasional",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
-        "other_tags": "\"amenity\"=>\"school\""
+        "other_tags": "\"amenity\"=>\"school\"",
+        "category": ""
       }
     },
     {
@@ -80,13 +67,8 @@
       "properties": {
         "osm_id": "1388222371",
         "name": "SMP / SMA Kemah Indonesia",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"school\""
       }
     },
@@ -102,13 +84,8 @@
       "properties": {
         "osm_id": "1896152880",
         "name": "SMA Pasundan 2",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"addr:postcode\"=>\"40131\",\"addr:street\"=>\"Jalan Cihampelas\",\"amenity\"=>\"school\""
       },
       "id": 4
@@ -125,13 +102,8 @@
       "properties": {
         "osm_id": "1896152886",
         "name": "SMA Pasundan 8",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"addr:postcode\"=>\"40131\",\"addr:street\"=>\"Jalan Cihampelas\",\"amenity\"=>\"school\""
       },
       "id": 5
@@ -148,13 +120,8 @@
       "properties": {
         "osm_id": "3148868114",
         "name": "SMAN 1 Dayeuhkolot",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"building\"=>\"school\""
       }
     },
@@ -170,13 +137,8 @@
       "properties": {
         "osm_id": "3374033495",
         "name": "SMA Negeri 3 dan 5 Bandung",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
       }
     },
@@ -192,13 +154,8 @@
       "properties": {
         "osm_id": "3376430782",
         "name": "SMA Kartika",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
       }
     },
@@ -214,13 +171,8 @@
       "properties": {
         "osm_id": "4327993104",
         "name": "SMAK 1 BPK Penabur",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"addr:city\"=>\"Bandung, Jawa Barat\",\"addr:housenumber\"=>\"2-6\",\"addr:street\"=>\"Jl. Dursasana , Pamoyanan, Cicendo\",\"amenity\"=>\"school\""
       },
       "id": 9
@@ -237,13 +189,8 @@
       "properties": {
         "osm_id": "4327995771",
         "name": "SMAK 2 BPK Penabur",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"addr:city\"=>\"Bandung, Jawa Barat\",\"addr:housenumber\"=>\"8\",\"addr:street\"=>\"Jl. Dursasana , Pamoyanan, Cicendo\",\"amenity\"=>\"school\""
       },
       "id": 10
@@ -260,14 +207,24 @@
       "properties": {
         "osm_id": "4328166911",
         "name": " SMA Santa Angela Bandung",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:housenumber\"=>\"24\",\"addr:street\"=>\"Jl Merdeka\",\"amenity\"=>\"school\",\"denomination\"=>\"roman_catholic\",\"grades\"=>\"1-12\",\"operator\"=>\"Yayasan Widya Bhakti\",\"operator:type\"=>\"private\",\"religion\"=>\"christian\",\"website\"=>\"https://portal.santa-angela.sch.id/\""
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SMAN 23 Bandung",
+        "category": "sma",
+        "kecamatan": "Antapani"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.66516075822301,
+          -6.911858597597265
+        ]
       }
     },
     {
@@ -282,14 +239,54 @@
       "properties": {
         "osm_id": "314486518",
         "name": "SD,SMP,SMA Taruna Bakti",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:full\"=>\"Jl. L.L.R.E. Martadinata No.52, Citarum, Kec. Bandung Wetan\",\"addr:postcode\"=>\"40115\",\"amenity\"=>\"school\",\"operator\"=>\"Yayasan Taruna Bakti\""
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SMA Tunas Unggul",
+        "category": "sma",
+        "kecamatan": "Antapani"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.67703400392485,
+          -6.898584419682462
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sekolah Islam Bandung Miftahul Huda",
+        "category": "sma",
+        "kecamatan": "Antapani"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6701622394214,
+          -6.8962872050479085
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SMA AL HADI KOTA BANDUNG",
+        "category": "sma",
+        "kecamatan": "Antapani"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.66827091328454,
+          -6.903723346685299
+        ]
       }
     },
     {
@@ -304,13 +301,8 @@
       "properties": {
         "osm_id": "4329685535",
         "name": "SMAK 3 BPK PENABUR Bandung",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:housenumber\"=>\"92\",\"addr:street\"=>\"Jl. Raya Cimindi\",\"amenity\"=>\"school\""
       }
     },
@@ -326,13 +318,8 @@
       "properties": {
         "osm_id": "4373631645",
         "name": "SMAN 15 Bandung",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:housenumber\"=>\"1\",\"addr:postcode\"=>\"40515\",\"addr:street\"=>\"Jalan Sarimanis 1\""
       }
     },
@@ -348,13 +335,8 @@
       "properties": {
         "osm_id": "5155499913",
         "name": "SMA Katolik Santa Maria 2",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"addr:street\"=>\"Jl. Sulaksana Baru I no.18\",\"amenity\"=>\"school\""
       }
     },
@@ -370,13 +352,8 @@
       "properties": {
         "osm_id": "7254038678",
         "name": "Masjid SMA Pasundan",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:postcode\"=>\"40251\",\"addr:street\"=>\"Jalan Balong Gede\",\"amenity\"=>\"place_of_worship\",\"religion\"=>\"muslim\""
       }
     },
@@ -392,13 +369,8 @@
       "properties": {
         "osm_id": "9740431470",
         "name": "SMAN 1 Bandung",
-        "barrier": null,
-        "highway": "bus_stop",
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:full\"=>\"Jalan Ir. H. Juanda\",\"bench\"=>\"yes\",\"bin\"=>\"no\",\"bus\"=>\"yes\",\"lit\"=>\"yes\",\"pole\"=>\"totem;traffic_sign\",\"public_transport\"=>\"platform\",\"shelter\"=>\"no\",\"wheelchair\"=>\"yes\""
       },
       "id": 17
@@ -415,13 +387,8 @@
       "properties": {
         "osm_id": "9757282084",
         "name": "BE SMART BIMBEL PRIVATE AND GROUP",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"addr:city\"=>\"Bandung\",\"addr:full\"=>\"Jalan Ir. H. Djuanda Gg Dago Jati I No. 7\",\"amenity\"=>\"training\",\"opening_hours\"=>\"Mo-Fr 08:00-16:00\",\"training\"=>\"English, Math,dan Calistung\",\"wheelchair\"=>\"limited\""
       }
     },
@@ -437,13 +404,8 @@
       "properties": {
         "osm_id": "9805978343",
         "name": "SMA SMP Edu Global Bandung - Sekolah Bilingual Integrated Cambridge",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"addr:city\"=>\"Kota Bandung\",\"addr:district\"=>\"Lengkong\",\"addr:housename\"=>\"SMA Edu Global Bandung\",\"addr:housenumber\"=>\"38\",\"addr:postcode\"=>\"40262\",\"addr:province\"=>\"Jawa Barat\",\"addr:street\"=>\"Jalan Jenderal Gatot Subroto\",\"addr:subdistrict\"=>\"Malabar\",\"amenity\"=>\"school\",\"brand\"=>\"Edu Global School\",\"education\"=>\"school\",\"email\"=>\"ict@egs.sch.id\",\"internet_access\"=>\"yes\",\"phone\"=>\"+6282112113574\",\"website\"=>\"https://www.eduglobal.sch.id/\""
       }
     },
@@ -459,13 +421,8 @@
       "properties": {
         "osm_id": "9814017689",
         "name": "SMAN 21 Bandung",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"school\""
       }
     },
@@ -481,13 +438,8 @@
       "properties": {
         "osm_id": "9814551684",
         "name": "SMP - SMA Mutiara Bunda Bandung",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"school\""
       }
     },
@@ -503,13 +455,8 @@
       "properties": {
         "osm_id": "10006666952",
         "name": "SMA Negeri 4 Bandung",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"addr:street\"=>\"Jalan Gardujati\",\"amenity\"=>\"school\",\"grades\"=>\"10-12\""
       }
     },
@@ -525,13 +472,8 @@
       "properties": {
         "osm_id": "10153293061",
         "name": "OMBUDSMAN REPUBLIK INDONESIA PERWAKILAN JAWA BARAT",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"addr:city\"=>\"Kota Bandung\",\"addr:housenumber\"=>\"1\",\"addr:postcode\"=>\"40271\",\"addr:street\"=>\"Jalan Kebon Waru Utara\",\"office\"=>\"government\""
       }
     },
@@ -547,13 +489,8 @@
       "properties": {
         "osm_id": "10680256979",
         "name": "SMAN 13 Bandung A",
-        "barrier": null,
-        "highway": "bus_stop",
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"bench\"=>\"yes\",\"bin\"=>\"no\",\"bus\"=>\"yes\",\"departures_board\"=>\"no\",\"lit\"=>\"no\",\"pole\"=>\"no\",\"public_transport\"=>\"platform\",\"route_ref\"=>\"2\",\"shelter\"=>\"yes\""
       }
     },
@@ -569,13 +506,8 @@
       "properties": {
         "osm_id": "11735239267",
         "name": "SMA Trinitas",
-        "barrier": null,
-        "highway": "bus_stop",
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"bench\"=>\"no\",\"bin\"=>\"no\",\"bus\"=>\"yes\",\"lit\"=>\"no\",\"pole\"=>\"no\",\"public_transport\"=>\"platform\",\"route_ref\"=>\"2\",\"shelter\"=>\"no\""
       }
     },
@@ -591,13 +523,8 @@
       "properties": {
         "osm_id": "11735239268",
         "name": "SMA Trinitas",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
       },
       "id": 28
@@ -614,13 +541,8 @@
       "properties": {
         "osm_id": "11735248673",
         "name": "SMA Pasundan",
-        "barrier": null,
-        "highway": "bus_stop",
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"bench\"=>\"no\",\"bin\"=>\"no\",\"bus\"=>\"yes\",\"lit\"=>\"no\",\"pole\"=>\"traffic_sign\",\"public_transport\"=>\"platform\",\"route_ref\"=>\"2\",\"shelter\"=>\"no\""
       }
     },
@@ -636,13 +558,8 @@
       "properties": {
         "osm_id": "11735248674",
         "name": "SMA Pasundan",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
       }
     },
@@ -658,13 +575,8 @@
       "properties": {
         "osm_id": "11739021628",
         "name": "SMAN 6 Bandung",
-        "barrier": null,
-        "highway": "bus_stop",
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"bench\"=>\"no\",\"bin\"=>\"no\",\"bus\"=>\"yes\",\"lit\"=>\"no\",\"pole\"=>\"traffic_sign\",\"public_transport\"=>\"platform\",\"route_ref\"=>\"3\",\"shelter\"=>\"no\""
       },
       "id": 31
@@ -681,13 +593,8 @@
       "properties": {
         "osm_id": "12624763934",
         "name": "Taman SD dan SMA 14",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"access\"=>\"yes\",\"addr:city\"=>\"Bandung\",\"addr:district\"=>\"Cicadas\",\"addr:province\"=>\"Jawa Barat\",\"addr:street\"=>\"Jalan Pramukha XIII\",\"leisure\"=>\"park\""
       }
     },
@@ -703,13 +610,8 @@
       "properties": {
         "osm_id": "12997502200",
         "name": "SMA Negeri 17 Bandung",
-        "barrier": null,
-        "highway": "bus_stop",
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"bench\"=>\"yes\",\"bin\"=>\"yes\",\"bus\"=>\"yes\",\"lit\"=>\"yes\",\"pole\"=>\"traffic_sign\",\"public_transport\"=>\"platform\",\"shelter\"=>\"yes\",\"tactile_paving\"=>\"yes\""
       }
     },
@@ -725,13 +627,8 @@
       "properties": {
         "osm_id": "12997543201",
         "name": "SMA Negeri 17 Bandung",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
       }
     },
@@ -747,13 +644,8 @@
       "properties": {
         "osm_id": "13118705964",
         "name": "SMA Negeri 24 Bandung",
-        "barrier": null,
-        "highway": "bus_stop",
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"bench\"=>\"no\",\"bin\"=>\"no\",\"bus\"=>\"yes\",\"pole\"=>\"flag\",\"public_transport\"=>\"platform\",\"shelter\"=>\"no\""
       }
     },
@@ -769,13 +661,8 @@
       "properties": {
         "osm_id": "13118738305",
         "name": "SMA Negeri 24 Bandung",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
       }
     },
@@ -791,13 +678,8 @@
       "properties": {
         "osm_id": null,
         "name": "SMA Negeri 9 Bandung",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Suparmin No.1A, Pajajaran, Kec. Cicendo, Kota Bandung, Jawa Barat 40173",
         "is_in": "Cicendo, Bandung",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"school\",\"school\"=>\"senior_high\""
       }
     },
@@ -813,13 +695,8 @@
       "properties": {
         "osm_id": null,
         "name": "SMA YWKA Bandung",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Elang II No.3, Garuda, Kec. Andir, Kota Bandung, Jawa Barat 40184",
         "is_in": "Andir, Bandung",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"school\",\"school\"=>\"senior_high\""
       }
     },
@@ -827,7 +704,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.6716885, -6.9573945]
+        "coordinates": [
+          107.6716885,
+          -6.9573945
+        ]
       },
       "properties": {
         "name": "SMA Negeri 21 Bandung",
@@ -839,7 +719,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.6654954, -6.9661695]
+        "coordinates": [
+          107.6654954,
+          -6.9661695
+        ]
       },
       "properties": {
         "name": "SMA Negeri 25 Kota Bandung",
@@ -851,7 +734,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.7158780, -6.9026901]
+        "coordinates": [
+          107.715878,
+          -6.9026901
+        ]
       },
       "properties": {
         "name": "Sekolah Menengah Atas Daarul Qur'an Bandung",
@@ -863,19 +749,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.57406379999999, -6.878063]
-      },
-      "properties": {
-        "name": "SMAN 15 Bandung",
-        "category": "SMA",
-        "address": "Jl. Sarimanis No.1, Sarijadi, Kec. Sukasari, Kota Bandung, Jawa Barat 40151"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [107.56486160217833, -6.9385418768379425]
+        "coordinates": [
+          107.56486160217833,
+          -6.9385418768379425
+        ]
       },
       "properties": {
         "name": "SMA BPK Penabur Holis",
@@ -888,7 +765,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.57451573062022, -6.9188234134021664]
+        "coordinates": [
+          107.57451573062022,
+          -6.9188234134021664
+        ]
       },
       "properties": {
         "name": "SMA Citra Cemara",
@@ -901,7 +781,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.56945980979538, -6.915670177570909]
+        "coordinates": [
+          107.56945980979538,
+          -6.915670177570909
+        ]
       },
       "properties": {
         "name": "SMA Pasundan 4 Bandung",
@@ -914,7 +797,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.56535171350326, -6.927189084811888]
+        "coordinates": [
+          107.56535171350326,
+          -6.927189084811888
+        ]
       },
       "properties": {
         "name": "SMA YPKKP Bandung",
@@ -927,7 +813,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.58277188281284, -6.905471115972408]
+        "coordinates": [
+          107.58277188281284,
+          -6.905471115972408
+        ]
       },
       "properties": {
         "name": "SMA Angkasa Husein Sastranegara",
@@ -940,7 +829,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.59974531655665, -6.903350892601227]
+        "coordinates": [
+          107.59974531655665,
+          -6.903350892601227
+        ]
       },
       "properties": {
         "name": "SMA KRISTEN PAULUS",
@@ -953,20 +845,27 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.58894061164915, -6.897495913496317]
+        "coordinates": [
+          107.58894061164915,
+          -6.897495913496317
+        ]
       },
       "properties": {
         "name": "Sekolah Kristen Trimulia",
         "category": "SMA",
         "kecamatan": "Cicendo",
         "address": "Kecamatan Cicendo, Kota Bandung"
-      }
+      },
+      "id": 50
     },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.6044069828248, -6.9107361735489]
+        "coordinates": [
+          107.6044069828248,
+          -6.9107361735489
+        ]
       },
       "properties": {
         "name": "SLB Negeri Cicendo",
@@ -979,7 +878,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.59423671286866, -6.912232798582498]
+        "coordinates": [
+          107.59423671286866,
+          -6.912232798582498
+        ]
       },
       "properties": {
         "name": "Sekolah Kristen Bina Bakti",
@@ -992,7 +894,10 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.7074614, -6.8985836]
+        "coordinates": [
+          107.7074614,
+          -6.8985836
+        ]
       },
       "properties": {
         "name": "Sekolah Karakter YASIPA",
@@ -1012,13 +917,8 @@
       "properties": {
         "osm_id": null,
         "name": "SMA Negeri 5 Bandung",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Belitung No.8, Merdeka, Kec. Sumur Bandung, Kota Bandung, Jawa Barat 40113",
         "is_in": "Sumur Bandung, Bandung",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"school\",\"school\"=>\"senior_high\""
       }
     },
@@ -1026,20 +926,19 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [107.60386243830848, -6.889230066783486]
+        "coordinates": [
+          107.60386243830848,
+          -6.889230066783486
+        ]
       },
       "properties": {
         "osm_id": null,
         "name": "SMA Negeri 2 Bandung",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Cihampelas No.173, Cipaganti, Kecamatan Coblong, Kota Bandung, Jawa Barat 40131",
         "is_in": "Coblong, Bandung",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"school\",\"school\"=>\"senior_high\""
-      }
+      },
+      "id": 55
     },
     {
       "type": "Feature",
@@ -1053,13 +952,8 @@
       "properties": {
         "osm_id": "13334663516",
         "name": "SMA Negeri 20 Bandung",
-        "barrier": null,
-        "highway": "bus_stop",
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"bench\"=>\"yes\",\"bin\"=>\"yes\",\"bus\"=>\"yes\",\"lit\"=>\"yes\",\"public_transport\"=>\"platform\",\"shelter\"=>\"yes\",\"tactile_paving\"=>\"yes\""
       }
     },
@@ -1075,13 +969,8 @@
       "properties": {
         "osm_id": "13666083606",
         "name": "SMA Guna Dharma",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"school\",\"isced:level\"=>\"3\",\"official_name\"=>\"Sekolah Menengah Atas Guna Dharma\""
       }
     }

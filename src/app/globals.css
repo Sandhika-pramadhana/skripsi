@@ -16,7 +16,6 @@ body {
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
-    
     --radius: 0.5rem;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -32,11 +31,10 @@ body {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
   }
-  
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
-    
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -59,19 +57,13 @@ body {
 }
 
 @keyframes scroll {
-  0% { transform: translateX(0); }
+  0%   { transform: translateX(0); }
   100% { transform: translateX(-33.333%); }
 }
-/* Animasi dasar */
+
 @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeIn {
@@ -79,11 +71,21 @@ body {
   to   { opacity: 1; }
 }
 
-/* Utility classes buat dipakai di komponen */
+/* ✅ TAMBAHAN BARU */
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@keyframes fadeDown {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(14px); }
+}
+
 @layer utilities {
   .animate-fade-up {
     animation: fadeUp 0.6s ease forwards;
-    opacity: 0; /* start hidden */
+    opacity: 0;
   }
 
   .animate-fade-in {
@@ -91,25 +93,45 @@ body {
     opacity: 0;
   }
 
-  /* Delay helpers */
+  /* ✅ TAMBAHAN BARU */
+  .animate-fade-out {
+    animation: fadeOut 0.5s ease forwards;
+  }
+
+  .animate-fade-down {
+    animation: fadeDown 0.6s ease forwards;
+  }
+
   .delay-100 { animation-delay: 100ms; }
   .delay-200 { animation-delay: 200ms; }
   .delay-300 { animation-delay: 300ms; }
   .delay-400 { animation-delay: 400ms; }
   .delay-500 { animation-delay: 500ms; }
 }
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 .fade-up {
   opacity: 0;
   animation: fadeUp 0.85s ease forwards;
+}
+
+@keyframes dotFadeIn {
+  from { opacity: 0; transform: scale(0) translateY(-6px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.kecamatan-tooltip {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 6px 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+}
+
+.kecamatan-tooltip::before {
+  display: none;
+}
+
+.leaflet-interactive {
+  cursor: pointer;
 }

@@ -13,13 +13,8 @@
       "properties": {
         "osm_id": "29391283",
         "name": "Setrasari Mall",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"shop\"=>\"mall\""
       }
     },
@@ -35,13 +30,8 @@
       "properties": {
         "osm_id": "2958261154",
         "name": "Mall d'Botanica",
-        "barrier": null,
-        "highway": "bus_stop",
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"bench\"=>\"no\",\"bus\"=>\"yes\",\"covered\"=>\"no\",\"pole\"=>\"traffic_sign\",\"public_transport\"=>\"platform\",\"shelter\"=>\"no\""
       }
     },
@@ -57,13 +47,8 @@
       "properties": {
         "osm_id": "5825155308",
         "name": "Ubertos Mall",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"shop\"=>\"mall\""
       }
     },
@@ -79,13 +64,8 @@
       "properties": {
         "osm_id": "10793604336",
         "name": "Kings Mall",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"amenity\"=>\"atm\""
       },
       "id": 4
@@ -102,13 +82,8 @@
       "properties": {
         "osm_id": "27357418",
         "name": "Bandung Indah Plaza",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Merdeka No.56",
         "is_in": "Sumur Bandung",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"shop\"=>\"mall\",\"operator\"=>\"Lippo Malls\""
       },
       "id": 5
@@ -125,13 +100,8 @@
       "properties": {
         "osm_id": "31462847",
         "name": "Paris Van Java",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Sukajadi No.131",
         "is_in": "Sukajadi",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"shop\"=>\"mall\",\"type\"=>\"resort_lifestyle_place\""
       },
       "id": 6
@@ -148,13 +118,8 @@
       "properties": {
         "osm_id": "42857193",
         "name": "Cihampelas Walk",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Cihampelas No.160",
         "is_in": "Coblong",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"shop\"=>\"mall\",\"opening_hours\"=>\"10:00-22:00\""
       },
       "id": 7
@@ -171,13 +136,8 @@
       "properties": {
         "osm_id": "539102847",
         "name": "23 Paskal Shopping Center",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Pasir Kaliki No.25",
         "is_in": "Andir",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"shop\"=>\"mall\",\"wheelchair\"=>\"yes\""
       },
       "id": 8
@@ -194,13 +154,8 @@
       "properties": {
         "osm_id": "28471920",
         "name": "Istana Plaza",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Pasir Kaliki No.121",
         "is_in": "Cicendo",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"shop\"=>\"mall\""
       },
       "id": 9
@@ -217,13 +172,8 @@
       "properties": {
         "osm_id": "84729103",
         "name": "Istana BEC",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Purnawarman No.13",
         "is_in": "Sumur Bandung",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"shop\"=>\"electronics\",\"amenity\"=>\"mall\""
       },
       "id": 10
@@ -240,13 +190,8 @@
       "properties": {
         "osm_id": "19283746",
         "name": "Balubur Town Square",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": "Jl. Tamansari No.P-1",
         "is_in": "Bandung Wetan",
-        "place": null,
-        "man_made": null,
         "other_tags": "\"shop\"=>\"mall\",\"short_name\"=>\"Baltos\""
       }
     },
@@ -262,13 +207,8 @@
       "properties": {
         "osm_id": "112837465",
         "name": "Pasar Baru Trade Center",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"shop\"=>\"mall\""
       },
       "id": 12
@@ -285,13 +225,8 @@
       "properties": {
         "osm_id": "1192837465",
         "name": "Yogya Sumbersari Junction",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"shop\"=>\"mall\""
       },
       "id": 13
@@ -308,13 +243,8 @@
       "properties": {
         "osm_id": "428371920",
         "name": "Yogya Grand Kepatihan",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"shop\"=>\"mall\""
       },
       "id": 14
@@ -331,13 +261,8 @@
       "properties": {
         "osm_id": "11730486996",
         "name": "Summarecon Mall Bandung",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
       }
     },
@@ -353,13 +278,8 @@
       "properties": {
         "osm_id": "12013144935",
         "name": "Mall d'Botanica",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
       }
     },
@@ -375,36 +295,29 @@
       "properties": {
         "osm_id": "12806868630",
         "name": "Metro Indah Mall",
-        "barrier": null,
-        "highway": "bus_stop",
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"bench\"=>\"yes\",\"bus\"=>\"yes\",\"lit\"=>\"no\",\"pole\"=>\"no\",\"public_transport\"=>\"platform\",\"shelter\"=>\"yes\""
       },
       "id": 17
     },
     {
-  "type": "Feature",
-  "geometry": {
-    "type": "Point",
-    "coordinates": [107.641031767373, -6.946227841765735]
-  },
-  "properties": {
-    "osm_id": null,
-    "name": "Tenth Avenue Mall",
-    "barrier": null,
-    "highway": null,
-    "ref": null,
-    "address": "Jl. Soekarno-Hatta No.526, Cijaura, Kec. Buahbatu, Kota Bandung, Jawa Barat 40286",
-    "is_in": "Buahbatu, Bandung",
-    "place": null,
-    "man_made": null,
-    "other_tags": "\"shop\"=>\"mall\",\"amenity\"=>\"shopping_centre\""
-  }
-},
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.641031767373,
+          -6.946227841765735
+        ]
+      },
+      "properties": {
+        "osm_id": null,
+        "name": "Tenth Avenue Mall",
+        "address": "Jl. Soekarno-Hatta No.526, Cijaura, Kec. Buahbatu, Kota Bandung, Jawa Barat 40286",
+        "is_in": "Buahbatu, Bandung",
+        "other_tags": "\"shop\"=>\"mall\",\"amenity\"=>\"shopping_centre\""
+      }
+    },
     {
       "type": "Feature",
       "geometry": {
@@ -417,13 +330,8 @@
       "properties": {
         "osm_id": "13254056449",
         "name": "Trans Studio Mall",
-        "barrier": null,
-        "highway": null,
-        "ref": null,
         "address": null,
         "is_in": null,
-        "place": null,
-        "man_made": null,
         "other_tags": "\"bus\"=>\"yes\",\"public_transport\"=>\"stop_position\""
       },
       "id": 19

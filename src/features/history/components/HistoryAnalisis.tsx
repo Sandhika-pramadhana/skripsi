@@ -10,7 +10,7 @@ import {
   ChevronDown,
   Search,
 } from "lucide-react";
-import DeleteAlert from "@/features/core/components/ui/deleteAlert"; // ← sesuaikan path
+import DeleteAlert from "@/features/core/components/ui/deleteAlert";
 
 interface HistoryItem {
   id: number;
@@ -36,6 +36,8 @@ const KELAS_CONFIG = {
   Rendah: { badge: "bg-red-100 text-red-800",         dot: "bg-red-400"     },
 } as const;
 
+const PER_HALAMAN = 10;
+
 function formatTanggal(iso: string) {
   const d = new Date(iso);
   return d.toLocaleDateString("id-ID", {
@@ -48,15 +50,16 @@ function formatTanggal(iso: string) {
 export default function HistoryAnalisis() {
   const router = useRouter();
 
-  const [data, setData]               = useState<HistoryItem[]>([]);
-  const [loading, setLoading]         = useState(true);
-  const [deleting, setDeleting]       = useState<number | null>(null);
-  const [deleteTarget, setDeleteTarget] = useState<HistoryItem | null>(null); // ← ganti konfirmId
-  const [cari, setCari]               = useState("");
-  const [filterKelas, setFilterKelas] = useState<string>("Semua");
-  const [sortKey, setSortKey]         = useState<SortKey>("created_at");
-  const [sortAsc, setSortAsc]         = useState(false);
-  const [visible, setVisible]         = useState(false);
+  const [data, setData]                 = useState<HistoryItem[]>([]);
+  const [loading, setLoading]           = useState(true);
+  const [deleting, setDeleting]         = useState<number | null>(null);
+  const [deleteTarget, setDeleteTarget] = useState<HistoryItem | null>(null);
+  const [cari, setCari]                 = useState("");
+  const [filterKelas, setFilterKelas]   = useState<string>("Semua");
+  const [sortKey, setSortKey]           = useState<SortKey>("created_at");
+  const [sortAsc, setSortAsc]           = useState(false);
+  const [visible, setVisible]           = useState(false);
+  const [halaman, setHalaman]           = useState(1);
 
   const fetchHistory = useCallback(async () => {
     setLoading(true);
@@ -75,6 +78,9 @@ export default function HistoryAnalisis() {
   }, []);
 
   useEffect(() => { fetchHistory(); }, [fetchHistory]);
+
+  // reset halaman saat filter berubah
+  useEffect(() => { setHalaman(1); }, [cari, filterKelas]);
 
   async function hapus(id: number) {
     setDeleting(id);
@@ -106,6 +112,12 @@ export default function HistoryAnalisis() {
       return sortAsc ? cmp : -cmp;
     });
 
+  const totalHalaman  = Math.ceil(tampil.length / PER_HALAMAN);
+  const tampilHalaman = tampil.slice(
+    (halaman - 1) * PER_HALAMAN,
+    halaman * PER_HALAMAN
+  );
+
   const ringkasan = {
     Tinggi: data.filter((d) => d.kelas === "Tinggi").length,
     Sedang: data.filter((d) => d.kelas === "Sedang").length,
@@ -135,7 +147,6 @@ export default function HistoryAnalisis() {
 
   return (
     <>
-      {/* ── Delete Alert Modal ── */}
       <DeleteAlert
         open={!!deleteTarget}
         namaKecamatan={deleteTarget?.kecamatan ?? ""}
@@ -146,7 +157,7 @@ export default function HistoryAnalisis() {
 
       <div className="space-y-6">
 
-        {/* ── Ringkasan ─────────────────────────────────────────────────────── */}
+        {/* ── Ringkasan ── */}
         <div className="grid grid-cols-3 gap-4">
           {(["Tinggi", "Sedang", "Rendah"] as const).map((k, i) => {
             const c = KELAS_CONFIG[k];
@@ -169,11 +180,8 @@ export default function HistoryAnalisis() {
           })}
         </div>
 
-        {/* ── Toolbar ───────────────────────────────────────────────────────── */}
-        <div
-          className="fade-up flex items-center gap-3"
-          style={{ animationDelay: "200ms" }}
-        >
+        {/* ── Toolbar ── */}
+        <div className="fade-up flex items-center gap-3" style={{ animationDelay: "200ms" }}>
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-300" />
             <input
@@ -209,7 +217,7 @@ export default function HistoryAnalisis() {
           </button>
         </div>
 
-        {/* ── Tabel ─────────────────────────────────────────────────────────── */}
+        {/* ── Tabel ── */}
         <div
           className="fade-up bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden"
           style={{ animationDelay: "280ms" }}
@@ -230,22 +238,22 @@ export default function HistoryAnalisis() {
               <table className="w-full">
                 <thead className="bg-gray-50 border-b border-gray-100">
                   <tr>
-                    <ThSort label="Kecamatan"   k="kecamatan"  />
-                    <ThSort label="Kelas"        k="kelas"      />
-                    <ThSort label="Kepercayaan"  k="kepercayaan"/>
-                    <ThSort label="Kepadatan"    k="kepadatan"  />
-                    <ThSort label="Skor POI"     k="skor_poi"   />
-                    <ThSort label="Kompetitor"   k="kompetitor" />
-                    <ThSort label="Jarak (km)"   k="jarak_jalan"/>
-                    <ThSort label="Waktu"        k="created_at" />
+                    <ThSort label="Kecamatan"  k="kecamatan"   />
+                    <ThSort label="Kelas"       k="kelas"       />
+                    <ThSort label="Kepercayaan" k="kepercayaan" />
+                    <ThSort label="Kepadatan"   k="kepadatan"   />
+                    <ThSort label="Skor POI"    k="skor_poi"    />
+                    <ThSort label="Kompetitor"  k="kompetitor"  />
+                    <ThSort label="Jarak (km)"  k="jarak_jalan" />
+                    <ThSort label="Waktu"       k="created_at"  />
                     <th className="px-4 py-3 text-right text-xs font-semibold text-gray-500 uppercase tracking-wider">
                       Aksi
                     </th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-50">
-                  {tampil.map((item, idx) => {
-                    const c = KELAS_CONFIG[item.kelas] ?? KELAS_CONFIG["Sedang"];
+                  {tampilHalaman.map((item, idx) => {
+                    const c          = KELAS_CONFIG[item.kelas] ?? KELAS_CONFIG["Sedang"];
                     const isDeleting = deleting === item.id;
                     return (
                       <tr
@@ -288,7 +296,6 @@ export default function HistoryAnalisis() {
                         </td>
                         <td className="px-4 py-3">
                           <div className="flex items-center justify-end gap-1.5">
-                            {/* Lihat detail */}
                             <button
                               onClick={() =>
                                 router.push(
@@ -300,8 +307,6 @@ export default function HistoryAnalisis() {
                             >
                               <Eye className="w-4 h-4" />
                             </button>
-
-                            {/* Hapus — buka modal */}
                             <button
                               onClick={() => setDeleteTarget(item)}
                               className="p-1.5 rounded-lg hover:bg-red-50 text-gray-400 hover:text-red-500 transition-colors"
@@ -319,9 +324,52 @@ export default function HistoryAnalisis() {
             </div>
           )}
 
+          {/* ── Pagination ── */}
           {!loading && tampil.length > 0 && (
-            <div className="px-4 py-3 border-t border-gray-50 text-xs text-gray-400">
-              Menampilkan {tampil.length} dari {data.length} data
+            <div className="px-4 py-3 border-t border-gray-50 flex items-center justify-between">
+              <span className="text-xs text-gray-400">
+                Menampilkan {(halaman - 1) * PER_HALAMAN + 1}–{Math.min(halaman * PER_HALAMAN, tampil.length)} dari {tampil.length} data
+              </span>
+              <div className="flex items-center gap-1">
+                <button
+                  onClick={() => setHalaman((h) => Math.max(1, h - 1))}
+                  disabled={halaman === 1}
+                  className="px-3 py-1.5 text-xs rounded-lg border border-gray-200 text-gray-500 hover:bg-gray-50 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                >
+                  ← Prev
+                </button>
+                {Array.from({ length: totalHalaman }, (_, i) => i + 1)
+                  .filter((p) => p === 1 || p === totalHalaman || Math.abs(p - halaman) <= 1)
+                  .reduce<(number | "...")[]>((acc, p, i, arr) => {
+                    if (i > 0 && p - (arr[i - 1] as number) > 1) acc.push("...");
+                    acc.push(p);
+                    return acc;
+                  }, [])
+                  .map((p, i) =>
+                    p === "..." ? (
+                      <span key={`ellipsis-${i}`} className="px-2 text-xs text-gray-400">...</span>
+                    ) : (
+                      <button
+                        key={p}
+                        onClick={() => setHalaman(p as number)}
+                        className={`w-8 h-8 text-xs rounded-lg border transition-colors ${
+                          halaman === p
+                            ? "bg-gray-800 text-white border-gray-800"
+                            : "border-gray-200 text-gray-500 hover:bg-gray-50"
+                        }`}
+                      >
+                        {p}
+                      </button>
+                    )
+                  )}
+                <button
+                  onClick={() => setHalaman((h) => Math.min(totalHalaman, h + 1))}
+                  disabled={halaman === totalHalaman}
+                  className="px-3 py-1.5 text-xs rounded-lg border border-gray-200 text-gray-500 hover:bg-gray-50 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                >
+                  Next →
+                </button>
+              </div>
             </div>
           )}
         </div>

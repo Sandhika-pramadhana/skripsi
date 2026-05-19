@@ -152,6 +152,90 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Kantor Kelurahan Antapani Tengah",
+        "category": "perkantoran",
+        "kecamatan": "Antapani"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.66265746111786, -6.914333194692437]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kantor Kelurahan Antapani Kidul",
+        "category": "perkantoran",
+        "kecamatan": "Antapani"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.66045905056804, -6.9170469812000395]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Gedung Ikatan Persaudaraan Haji Indonesia (IPHI Antapani)",
+        "category": "perkantoran",
+        "kecamatan": "Antapani"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.66187367996532, -6.916838228945301]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "LAW OFFICE YQ & PARTNERS",
+        "category": "perkantoran",
+        "kecamatan": "Antapani"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.65708556095699, -6.911806459672471]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PT. MULIA SEJAHTERA",
+        "category": "perkantoran",
+        "kecamatan": "Antapani"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.65786571042078, -6.912741828104688]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kantorpos Bandung Antapani",
+        "category": "perkantoran",
+        "kecamatan": "Antapani"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.6576042931209, -6.915972588228465]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Head Office PT. Medika Antapani",
+        "category": "perkantoran",
+        "kecamatan": "Antapani"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.65286000703789, -6.913155239483169]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "nama": "Kantor Pusat Bank BJB",
         "kecamatan": "Sumur Bandung",
         "jenis": "Perbankan",
